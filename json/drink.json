@@ -1,0 +1,59 @@
+{
+    "drink": {
+        "pepsi": {"ft": 520, "hu": "Pepsi", "l": "3dl"},
+        "pepsi2": {"ft": 520, "hu": "Pepsi Max", "l": "3dl"},
+        "schweppes1": {"ft": 520, "hu": "Schweppes Narancs", "l": "3dl"},
+        "schweppes2": {"ft": 520, "hu": "Schweppes Tonik", "l": "3dl"},
+
+        "drinks": [
+            ["Pepsi Cola", 520],
+            ["Pepsi Max", "3dl", 520, ""],
+            ["Schweppes Narancs", "3dl", 520, ""],
+            ["Schweppes Tonik", "3dl", 520, ""],
+            ["Canada Dry Gyömbér", "3dl", 520, ""],
+            ["Narancslé", {"ft": 520, "l": "3dl", "en": "Orange"}],
+            ["Őszibarack", "3dl", 520, "Peach"],
+            ["Alma", "3dl", 520, "Apple"],
+            ["Ásványvíz", "3dl", 520, "Apple"],
+            ["Szódavíz", "3dl", 520, "Apple"]
+        ],
+        "beers": [
+            ["Staropramen", {"ft": 950, "l": "0,5l"}],
+            ["Gösser Premium", {"ft": 950, "l": "0,5l"}],
+            ["Soproni", {"ft": 950, "l": "0,5l"}],
+            ["Csíki Barna", {"ft": 1250, "l": "0,5l"}],
+            ["Alkoholmentes", {"ft": 990, "l": "0,33l", "en": "Nonalholic"}],
+            ["Natur Zitrone", {"ft": 990, "l": "0,33l"}]
+        ]
+    },
+    "wine": {
+        "house": [
+            ["Hilltop Irsai Cuvée", {"ft": 5500, "ft2": 550, "l": "1000ml"}, "fehér, száraz", "white, dry"],
+            ["Hilltop Merlot", {"ft": 5500, "ft2": 550, "l": "1000ml"}],
+            ["Hilltop Rosé Cuvée", {"ft": 5500, "ft2": 550, "l": "1000ml"}]
+        ],
+        "tokaj": [
+
+        ],
+        "white": [
+
+        ],
+        "red": [
+
+        ],
+        "rose": [
+
+        ]
+    },
+    "lang": ["hu", "en"],
+    "categ": {
+        "drink": {
+            "hu": ["italok", "üditők", "sörök", "pezsgők", "röviditalok", "meleg italok", "kávék"],
+            "en": ["drinks", "soft drinks", "beers", "champagnes", "spirits", "hot drinks", "coffees"]
+        },
+        "wine": {
+            "hu": ["borlap"],
+            "en": ["wine list"]
+        }
+    }
+}

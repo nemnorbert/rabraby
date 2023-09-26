@@ -1,0 +1,290 @@
+//@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
+
+//////////////////////////////////////////////// SAAS VARIABLE
+$shadow1: 0 0 5px rgb(84 69 48 / 55%);
+$minWidth: 280px; // Galaxy Fold
+$maxWidth: 2000px;
+$pcWidth: 800px;
+$borderRadius1: 1rem;
+$gap1: 10px;
+
+//////////////////////////////////////////////// BASE
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {    
+    scroll-behavior: smooth;
+    color: black;
+    min-width: $minWidth;
+    font-family: 'Roboto', sans-serif;
+    word-break: break-word;
+    scroll-behavior: smooth;
+    scroll-padding-top: 115px;
+
+    --main_color: hsl(34, 49%, 63%);
+    --secundary_color: hsl(34, 30%, 45%);
+    --background_color1: white;
+    --background-color2: rgb(232, 232, 232);
+}
+body {
+    touch-action: none;
+    user-select: none;
+    zoom: 1 !important;
+}
+h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+
+//////////////////////////////////////////////// ELEMENTS
+header {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(109, 16, 16);
+    background-size: cover;
+    background-position: center;
+
+    h1, h2 {
+        color: white;
+        text-shadow: 0 0 50px black, 0 0 20px black, 0 0 5px black;
+        background-color: #2e2b24b9;
+        padding: 1rem;
+        border-radius: 1rem;
+        backdrop-filter: blur(5px);
+    }
+}
+.btn {
+    background-color: var(--main_color);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    padding: 0.5rem 0.8rem;
+    border-radius: 3rem;
+}
+
+//////////////////////////////////////////////// PRELOADER
+
+
+//////////////////////////////////////////////// NAVIGATION
+nav{
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    text-transform: uppercase;
+    box-shadow: $shadow1;
+    width: 100%;
+    z-index: 10;
+}
+
+// Mobile Menu
+#mobileMenu {
+    bottom: 0;
+    background-image: linear-gradient(to bottom, var(--main_color), var(--secundary_color));
+    justify-content: space-around;
+    text-align: center;
+    white-space: nowrap;
+    animation: mobileMenu 1s;
+    font-weight: bold;
+
+    @keyframes mobileMenu {
+        0% {bottom: -90px;}
+        100% {bottom: 0;}
+    }
+
+    a {
+        color: whitesmoke;
+        text-shadow: 0 0 5px hwb(35 19% 67% / 0.5);
+        padding: 6px 6px 10px 6px;
+        font-size: 12px;
+        grid-column: span 3;
+    }
+    i {
+        min-width: 10px;
+        font-size: 35px;
+    }
+    .active {
+        background-color: white;
+        background-image: linear-gradient(to bottom, white, rgb(235, 235, 235));
+        box-shadow: $shadow1;
+        color: var(--main_color_2);
+        text-shadow: none;
+        border-radius: 15px 15px 0 0;
+        margin-top: -10px;
+        padding-top: 16px;
+    }
+}
+
+// PC Menu, Top
+#mainMenu  {
+    top: 0;
+    height: 65px;
+    background-color: rgb(231, 231, 231);
+    padding: 0 15px;
+
+    .logo {
+        height: 45px;
+    }
+    #hamburger {
+        cursor: pointer;
+        justify-self: end;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        span {
+            height: 5px;
+            width: 35px;
+            border-radius: 2px;
+            background-color: var(--main_color);
+        }
+    }
+}
+#mainMenu > div, img {
+    grid-column: span 6;
+}
+
+//////////////////////////////////////////////// FOOD, MENU
+#food {
+    #foodCategories {
+        position: sticky;
+        z-index: 9;
+        top: 64px;
+        background-color: rgb(31, 31, 31);
+        .drink {
+            background-color: white;
+            color: black;
+        }
+        .content {
+            overflow: auto;
+            white-space: nowrap;
+            padding: 10px 5px;
+            .btn {
+                margin-right: 8px;
+            }
+        }
+    }
+    .foodBox {
+        padding-bottom: 2rem;
+
+        .foodTitles {
+            background-color: var(--main_color);
+            box-shadow: var(--shad_5);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            text-transform: uppercase;
+        }
+        .foodContent {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            padding: $gap1;
+            gap: $gap1;
+            
+            .foodCard {
+                grid-column: span 6;
+                background-color: var(--background_color1);
+                border-radius: $borderRadius1;
+                box-shadow: $shadow1;
+                position: relative;
+                transition: transform .5s;
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: $gap1;
+                align-items: center;
+                text-align: center;
+                padding-bottom: $gap1;
+            }
+            .foodCard:hover {
+                transform: scale(.9);
+            }
+            .code {
+                position: absolute;
+                left: 5px;
+                top: 5px;
+                font-size: 1rem;
+            }
+            b {
+               font-size: 1.1rem;
+               padding: 0 5px;
+            }
+            .price {
+                color: var(--main_color);
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+        }
+        img {
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            width: 100%;
+            border-radius: $borderRadius1;
+        }
+    }
+}
+
+
+//////////////////////////////////////////////// FOOTER
+footer {
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--main_color);
+
+    .social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: calc($gap1 / 2);
+        background-image: linear-gradient(to bottom, var(--main_color), var(--secundary_color));
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        a {color: white}
+        i {font-size: 2.5rem;}
+        .content {
+            display: flex;
+            gap: $gap1;
+        }
+    }
+
+    .middle {
+        background-image: linear-gradient(#2e2b24, #1b1915);
+        color: white;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        justify-items: center;
+        row-gap: $gap1;
+    }
+    .middle > div {
+        grid-column: span 12;
+    }
+
+    .bottom {
+        border-top: #1b1915 solid 2px;
+        background-color: #1b1915;
+        padding-bottom: 120px;
+    }
+}
+footer > div {
+    padding: calc($gap1 * 2);
+}
+
+//////////////////////////////////////////////// MEDIA
+@media only screen and (min-width: $pcWidth) {
+#mobileMenu {
+    display: none;
+}
+
+}

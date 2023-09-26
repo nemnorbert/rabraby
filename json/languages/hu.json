@@ -1,0 +1,112 @@
+{
+"iso": "hu",
+"title": "Rab Ráby Étterem",
+"meta_desc": "Étterem Szentendre belvárosában ahol régiségek, lélegzetelállító beltér, finom ételek és remek árak várnak. SZÉP kártya elfogadóhely",
+"restaurant": "Étterem",
+"since": "1982 óta",
+"loading": "Betöltés",
+"open":{
+    "days": ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"],
+    "title": "Nyitvatartás",
+    "status": {
+        "open": "Nyitva",
+        "close": "Zárva"
+    }
+},
+"mobile_nav": ["Főoldal", "Étlap", "Csoport", "Kapcsolat"],
+"nav":{
+    "home": "Főoldal",
+    "menu": "Étlap",
+    "groups": "Csoport",
+    "about": "Rólunk",
+    "contact": "Kapcsolat",
+    "gallery": "Galéria",
+    "sitemap": "Oldaltérkép",
+    "imprint": "Impresszum",
+    "parking": "Parkolás"
+},
+"home": {
+    "welcome": "Szeretettel várunk szentendrei éttermünkben, a belvárosban. Finom ételek, régiségek, lélegzetelállító beltér és kedvező árak, 1982 óta.",
+    "parking": "Hol tudok parkolni?",
+    "parking2": "Parkolás",
+    "parking3": "A 2012-es zónában tud parkolni (narancssárga jelölés), a Bajcsy-Zsilinszky Endre utcánál vagy a Bükkös parton. Parkolás akár 39 méter is lehet az étteremtől. A zöld pontok a parkoló automatákat jelzik. A távolság a vendéglőtől körülbelül 1-2 perc sétálva. Szentendrén hétvégén is kell fizetni a parkolásért!",
+    "moreinfo": "Részletek",
+    "faq": "Gyakran Ismételt Kérdések (GYIK)",
+    "dog": "Kutyabarát hely",
+    "garden": "Kerthelyiség",
+    "food": "Kiemelt ételeink",
+    "table": "Asztalfoglalás",
+    "table2": "Kérjük asztalfoglalását telefonon keresztül tegye meg, mert így azonnal be tudjuk jegyezni a foglalását.",
+    "table3": "Asztalfoglalás a 06-26-310-819 telefonszámon lehetséges. Csoportok részére vagy több héttel későbbi foglalások esetén online is lehet asztalt foglalni:",
+    "guest": "Vendégeink írták",
+    "guest_w": "Vélemény írása",
+    "menu": "Étlap megtekintése",
+    "ccard": "Szépkártya elfogadóhely"
+},
+"menu":{
+    "food": "Étlap",
+    "drink": "Itallap"
+},
+"alt": {
+    "food_1": "539 Panko bundában sült békacombok wok zöldséggel ",
+    "food_2": "529 Rostlapon vasalt filézett csirkecomb mediterrán salátával",
+    "food_3": "708 Túrós palacsinta vanília öntettel",
+    "food_4": "404 Ropogós kacsacomb, párolt pezsgőskáposztával, burgonyával",
+    "redcat": "a weboldal készítője: redcat",
+    "loan": "Támogatott az EU és Magyarország kormánya"
+},
+"group":{
+    "title": "Menü csoportoknak",
+    "download": "Letöltés",
+    "desc": "Természetesen más menüket is elkészítünk, valamint a szervezőknek ismételt csoportok étkeztetése esetén jutalékot biztosítunk, megegyezés szerint. <br><br> Amennyiben a menük árai felől érdeklődik, kérjük, aktuális árainkat telefonon vagy e-mailben kérje."
+},
+"about": {
+    "title": "Rólunk",
+    "vids": "Videóink",
+    "vip": "A Magyarországra érkező magas rangú politikai vezetők és feleségük is el szoktak látogatni éttermünkbe. Ilyen alkalmakkor örömmel teljesítjük a legmagasabb szintű biztonsági előírásokat.",
+    "desc": "Az éttermet még a vasfüggöny fennállásának idején Németh János és családja alapította 1982-ben. Nevét Jókai Mór Rab Ráby című regénye főhőséről kapta, aki Szentendrén élt és II. József idején oroszlánrészt vállalt a korrupció elleni küzdelemben. <br><br> Az épület, amiből az étterem lett kialakítva, több, mint 100 évvel ezelőtt még kovácsműhelyként működött. Egy néprajzi tárlaton túl, ritka érdekességek is találhatóak az étteremben."
+},
+"contact":{
+    "title": "kapcsolat",
+    "card": "digitális névjegykártya",
+    "addr": "2000 Szentendre, Kucsera Ferenc u. 1/a",
+    "cinfo": "Céginformációk",
+    "vat": "Adószám",
+    "vreg": "Cégjegyzék szám"
+},
+"404":{
+    "title": "Hoppá! 404-es hiba",
+    "desc": "Az oldal nem található amit keresel",
+    "desc_2": "Hasznos linkek helyette:"
+},
+"footer":{
+    "social": "Lépj velünk kapcsolatba:",
+    "szoveg": "1982 óta",
+    "contact": "Kapcsolat"
+},
+"park": {
+    "navi": "Navigáció",
+    "car": "Parkolóhoz",
+    "walk": "Étteremhez"
+},
+"faq": {
+    "paycard_ti": "Fizethetek bankkártyával, SZÉP kártyával?",
+    "paycard_de": "Igen, bankkártyával és az összes forgalomban lévő SZÉP kártyával fizethet nálunk. (American Express kártyát nem tudunk elfogadni)",
+    "park_ti": "Hol parkolhatok?",
+    "park_de": "A parkolás Szentendrén 2022-ben megváltozott: az óvárost csak engedéllyel lehet megközelíteni. A hozzánk legközelebbi parkoló kb 1 perc sétára, a Bajcsy-Zsilinszky Endre utcánál van. (Zóna kódja: 2012)",
+    "park_gu": "Parkolási segédlet",
+    "where_ti": "Hol találom a vendéglőt?",
+    "where_de": "Az étterem Szentendre belvárosában helyezkedik el, a Városháza és a Péter Pál templom között. A centrumban, a Főtértől 1 perc sétával megközelíthető.",
+    "garden_ti": "Van kerthelyiség, terasz?",
+    "garden_de": "Igen, egy hangulatos, szél védett belső udvara van az étteremnek, ami nyáron hűvös, árnyékos.",
+    "dog_ti": "Szabad kutyát bevinni?",
+    "dog_de": "Igen, nyitás óta kutyabarát hely vagyunk.",
+    "event_ti": "Rendezvényeket is vállalnak?",
+    "event_de": "Igen, esküvőket, keresztelőket, születésnapokat, névnapokat, osztálytalálkozókat, könyv bemutatókat, borkostolókat, halotti tort stb."
+},
+"guest":{
+    "1": ["A kedvenc helyünk Szentendrén, elvarázsló egyedi hangulat, a rengeteg múltat idéző régiség között! Számtalan alkalommal voltunk már itt, de az ember mindig felfedez valami újat... Az ételek háziasak és bőségesek!", "István Matula"],
+    "2": ["Belépve mint egy archív múzeumba lépnénk és mégis nagyon otthonos érzése támad az embernek. A személyzet gyors,figyelmes, az ételek kiválóak.Nagyon jól éreztük magunkat ajánljuk midenkinek!", "Róza Szabóné Nagy"],
+    "3": ["Gyors kiszolgálás, hagyományos magyar konyha. Az étterem hangulata magával ragadó, főleg azok számára, akik szeretik a régiségeket.", "Viktória Neumann"]
+}
+}

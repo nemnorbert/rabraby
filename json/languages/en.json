@@ -1,0 +1,109 @@
+{
+"iso": "en",
+"title": "Rab Ráby Restaurant",
+"meta_desc": "A restaurant in the downtown area of Szentendre where antiquities, breathtaking interior, delicious food, and great prices await.",
+"restaurant": "Restaurant",
+"since": "since 1982",
+"loading": "Loading",
+"open":{
+    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "title": ["Opening hours", "at this moment"],
+    "status": ["Closed", "Open"]
+},
+"mobile_nav": ["Home", "Menu", "Groups", "Contact"],
+"nav":{
+    "home": "Home",
+    "menu": "Menu",
+    "groups": "Groups",
+    "about": "About Us",
+    "contact": "Contact",
+    "gallery": "Gallery",
+    "sitemap": "Sitemap",
+    "imprint": "Imprint",
+    "parking": "Parking"
+},
+"home": {
+    "welcome": "We warmly welcome you to our restaurant in the downtown area of Szentendre. Delicious food, antiques, breathtaking interior, and favorable prices since 1982",
+    "parking": "Where can I park?",
+    "parking2": "Parking",
+    "parking3": "You can park in the 2012 zone (marked with orange signs) near Bajcsy-Zsilinszky Endre Street or on Bükkös shore. The distance from the restaurant can be up to 39 meters. The green dots indicate parking meters. It's about a 1-2 minute walk from the restaurant. Note that parking must be paid for on weekends in Szentendre!",
+    "moreinfo": "More info",
+    "faq": "Frequently Asked Questions (FAQ)",
+    "dog": "Dogs allowed",
+    "garden": "Garden",
+    "food": "Our featured food",
+    "table": "Reservation",
+    "table2": "Please book a table",
+    "table3": "Phone: +36-26-310-819 or online:",
+    "guest": "Ratings",
+    "guest_w": "Write a rating",
+    "menu": "Show menu",
+    "ccard": "Credit cards accepted"
+},
+"menu":{
+    "food": "Menu",
+    "drink": "Drinks"
+},
+"alt": {
+    "food_1": "539 Panko Breaded Roasted Frog Legs, with Wok Grilled Vegatables",
+    "food_2": "529 Ironed chicken thigh fillet with Mediterranian salad",
+    "food_3": "708 Cottage cheese pancakes with vanilla sauce",
+    "food_4": "404 Crispy duck leg with steamed cabbage and potatoes",
+    "redcat": "the creator of this website: redcat",
+    "loan": "Support from eu and hungary"
+},
+"group":{
+    "title": "Menu for groups",
+    "download": "Download",
+    "desc": "Check our menus for groups (EUR)"
+},
+"about": {
+    "title": "About Us",
+    "vids": "Our videos",
+    "vip": "From time to time we have the pleasure to welcome some foreign political leaders of high standing and their wives. At these occasions we are ready to observe safety regulations of the highest level.",
+    "desc": "The restaurant was founded by Németh János and his family while the Iron Curtain still existed in 1982. It was named after Rab Ráby, a novel by Jókai Mór, the protagonist of which fought against corruption during the reign of Joseph II and lived in Szentendre.<br><br> The building that was converted into a restaurant was a forge more than 100 years ago. Németh János has been changing the antiquities and bric-a-brac on show continuously since the opening of the restaurant, which greatly delights our guests. Apart from an ethnical collection there are other old curiosities on exhibit, such as the grape press from 1838, the National cash register, the American Heating stove or the still operable polyphone and so on. So far every guest has found his or her favourite piece here."
+},
+"contact":{
+    "title": "Contact",
+    "card": "digital business card",
+    "addr": "HU Szentendre, Kucsera Ferenc u. 1/a",
+    "cinfo": "Company informations",
+    "vat": "VAT Number (HU)",
+    "vreg": "Corporate registration number (HU)"
+},
+"404":{
+    "title": "Oops! Error 404",
+    "desc": "We can't seem to find the page you're looking for.",
+    "desc_2": "Here are some helpful links instead:"
+},
+"footer":{
+    "social": "Get connected with us:",
+    "szoveg": "since 1982",
+    "contact": "Contact"
+},
+"park": {
+    "navi": "Navigation",
+    "car": "to park place",
+    "walk": "to restaurant"
+},
+"faq": {
+    "paycard_ti": "Can I pay by credit/debit card?",
+    "paycard_de": "Yes, however, we do not accept American Express cards",
+    "park_ti": "Where can i park?",
+    "park_de": "Parking in Szentendre has changed in 2022: the Old Town can only be accessed with a permit. The nearest parking lot to us is located about a 1-minute walk away, at the Bajcsy-Zsilinszky Endre street. (Zone code: 2012)",
+    "park_gu": "Parking guide",
+    "where_ti": "Where can I find the restaurant?",
+    "where_de": "The restaurant is located in the downtown area of Szentendre, between the City Hall and the Péter Pál Church. It can be reached within a 1-minute walk from the main square, in the center.",
+    "garden_ti": "Is there a garden, terrace?",
+    "garden_de": "Yes, the restaurant has a cozy, wind-protected courtyard that is cool and shaded in the summer.",
+    "dog_ti": "Is the restaurant dog-friendly?",
+    "dog_de": "Yes, we have been a dog-friendly place since open.",
+    "event_ti": "Do you also cater for events?",
+    "event_de": "Yes, we cater for weddings, baptisms, birthdays, name days, class reunions, book launches, wine tastings, funeral receptions, etc."
+},
+"guest":{
+    "1": ["Best place in Szentendre to get the beloved Hungarian fisherman soup. It comes with a side of peasant bread and some sought of chili paste. You can ask for more bread if you run out. The restaurant is medieval themed and decked fully with interesting items and trinkets. The prices are very reasonable.", "SHEHAN JAYASEKERA"],
+    "2": ["Super freundliche Bedienung und wuuuuunderbares Essen zum kleinen Preis. Herrlich!", "BJÖRN FRÖHLICH"],
+    "3": ["Очень необычное место. Готовят вкусно, и не очень дорого. Кухня национальная. Очень много старинных вещей. Понравилось.", "СЕРЖ ГОРЕЛЫЙ"]
+}
+}

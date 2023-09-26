@@ -1,0 +1,60 @@
+{
+    "alert": {
+        "hu": ["Telefonszám: +36209149737"],
+        "en": []
+    },
+    "open": {
+        "default": [
+            {"hu": "hétfő", "open": "", "close": ""},
+            {"hu": "kedd", "open": "", "close": ""},
+            {"hu": "szerda", "open": "", "close": ""},
+            {"hu": "csütörtök", "open": "12", "close": "22"},
+            {"hu": "péntek", "open": "12", "close": "22"},
+            {"hu": "szombat", "open": "12", "close": "22"},
+            {"hu": "vasárnap", "open": "12", "close": "20"}
+        ],
+        "special": [
+            {"date": "2023.08.11.", "open": "12", "close": "20"}
+        ]
+    },
+    "contact": {
+        "phone": "+3626310819",
+        "mobile": "+36209149737",
+        "email": "info@rabraby.hu",
+        "address": "2000 Szentendre, Kucsera Ferenc u. 1/A",
+        "digicard": "https://id.red-cat.hu/rabraby",
+        "facebook": "https://www.facebook.com/rabraby.hu",
+        "instagram": "https://www.instagram.com/rabraby.hu",
+        "gpage": "https://g.page/rabraby?gm"
+    },
+    "bank": {
+        "company": "K&H Bank",
+        "account": "10403112-50526587-67851007",
+        "vatNum": "12134469-2-13",
+        "regNum": "13-09-072 136",
+        "swift": "OKHBHUHB",
+        "iban": "HU85-10403112-50526587-67851007"
+    },
+    "languages": {
+        "site": ["hu", "en"],
+        "foodMenu": ["hu", "en", "es", "de", "it", "pt", "ru", "zh", "ja", "ko", "fr"]
+    },
+    "menu": {
+        "main": ["home","menu", "groups", "about", "contact"],
+        "other": ["parking", "sitemap", "imprint"],
+        "mobile": [
+            {"hu": "főoldal", "en": "home", "icon": "house"},
+            {"hu": "étlap", "en": "menu", "icon": "book"},
+            {"hu": "csoportok", "en": "groups", "icon": "people"},
+            {"hu": "kapcsolat", "en": "contact", "icon": "telephone"}
+        ]
+    },
+    "mainPath": {
+        "test": "/rabraby/",
+        "live": "/"
+    },
+    "creator": {
+        "name": "REDCAT",
+        "url": "https://red-cat.hu/"
+    }
+}
