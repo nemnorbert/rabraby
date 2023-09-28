@@ -15,7 +15,7 @@
             {"id": "212", "huf": 2900, "allergens": [1, 3, 7]}
           ],
           "fish dishes": [
-            {"id": "539", "huf": 6900},
+            {"id": "539", "huf": 6900, "allergens": []},
             {"id": "305", "huf": 5900, "allergens": [1, 4]},
             {"id": "315", "huf": 3290, "allergens": [1, 4, 7]}
           ],
@@ -26,23 +26,23 @@
             {"id": "423", "huf": 4900, "allergens": [1]}
           ],
           "grilled dishes": [
-            {"id": "537", "huf": 2690},
-            {"id": "540", "huf": 3900},
-            {"id": "316", "huf": 7900},
-            {"id": "536", "huf": 7900},
-            {"id": "522", "huf": 7900},
-            {"id": "512", "huf": 3300},
-            {"id": "529", "huf": 3600},
-            {"id": "530", "huf": 3300},
-            {"id": "532", "huf": 3300},
-            {"id": "533", "huf": 4300},
-            {"id": "534", "huf": 3500}
+            {"id": "537", "huf": 2690, "allergens": []},
+            {"id": "540", "huf": 3900, "allergens": []},
+            {"id": "316", "huf": 7900, "allergens": []},
+            {"id": "536", "huf": 7900, "allergens": []},
+            {"id": "522", "huf": 7900, "allergens": []},
+            {"id": "512", "huf": 3300, "allergens": []},
+            {"id": "529", "huf": 3600, "allergens": []},
+            {"id": "530", "huf": 3300, "allergens": []},
+            {"id": "532", "huf": 3300, "allergens": []},
+            {"id": "533", "huf": 4300, "allergens": []},
+            {"id": "534", "huf": 3500, "allergens": []}
           ],
           "desserts": [
-            {"id": "702", "huf": 1490},
-            {"id": "707", "huf": 1700},
-            {"id": "708", "huf": 1490},
-            {"id": "706", "huf": 1490}
+            {"id": "702", "huf": 1490, "allergens": []},
+            {"id": "707", "huf": 1700, "allergens": []},
+            {"id": "708", "huf": 1490, "allergens": []},
+            {"id": "706", "huf": 1490, "allergens": []}
           ]
         },
     "category": {
@@ -61,7 +61,7 @@
     "allergens": {
         "title": {
             "hu": "Allergének kiválasztása",
-            "en": "Choose Allergens"
+            "en": "Allergens Selection"
         },
         "hu": ["Glutén", "Rákfélék", "Tojás", "Hal", "Földimogyoró", "Szójabab", "Tejtermékek", "Diófélék", "Zeller", "Mustár", "Szezámmag", "Kén-dioxid", "Csillagfürt", "Puhatestűek"],
         "en": ["Gluten", "Crustaceans", "Eggs", "Fish", "Peanuts", "Soya", "Milk", "Tree nuts", "Celery", "Mustard", "Sesame", "Sulphites", "Lupin", "Molluscs"]

@@ -139,7 +139,7 @@ function buildFood($foodJSON) {
       <summary>'.$foodJSON["allergens"]["title"][$menuLangTitle].'</summary>
       <div class="content">';
       for ($i=0; $i < count($foodJSON["allergens"]["hu"]); $i++) { 
-        echo '<div class="btn allergyBtn">'.$foodJSON["allergens"][$menuLang][$i].'</div>';
+        echo '<div class="btn allergyBtn" data-allergen="'.($i+1).'">'.$foodJSON["allergens"][$menuLang][$i].'</div>';
       }
       echo '</div>
       </details>';
@@ -159,8 +159,14 @@ function buildFood($foodJSON) {
           $food_code = $foodJSON["food"][$food_category_en][$ii]["id"]; // Food code
           $food_title = $foodJSON["translate"][$food_code][$menuLang]; // Food title
           $food_price = $foodJSON["food"][$food_category_en][$ii]["huf"]; // Food price
+          $food_allergen = $foodJSON["food"][$food_category_en][$ii]["allergens"];
+          $food_allergyNUM = "";
+
+          foreach ($food_allergen as $allergen) {
+            $food_allergyNUM .= $allergen . " ";
+        }
     
-          echo '<div class="foodCard">';
+          echo '<div class="foodItem" data-allergens="'.$food_allergyNUM.'">';
           echo '<img src="'.$siteInfo->mainPath.'img/food/'.$food_code.'.webp" alt="'.$food_title.'" loading="lazy">';
             echo '<div class="btn code">#'.$food_code.'</div>';
             echo '<b>'.$food_title.'</b>';

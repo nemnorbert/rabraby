@@ -33,7 +33,11 @@
 
 <?php mobileMenu($siteJSON, $siteInfo); ?>
 
-<div id="pre_loader">
-  <div class="logo"><span class="rr">Rab Ráby</span><br>Restaurant</div>
+<div id="preLoader">
+  <img class="logo" src="./img/logo/logo_black.webp" alt="">
   <p><?= $langJSON["loading"]; ?></p>
+</div>
+
+<div id="hamburgerMenu">
+  
 </div>

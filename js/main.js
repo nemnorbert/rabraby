@@ -1,4 +1,31 @@
+// Food, Menu
+const allergyBtns = document.querySelectorAll('.allergyBtn');
+const foodItems = document.querySelectorAll('.foodItem');
+const activeAllergens = new Set();
 
+allergyBtns.forEach(allergyBtn => {
+  allergyBtn.addEventListener("click", function () {
+    const allergenNumber = this.dataset.allergen;
+    
+    if (activeAllergens.has(allergenNumber)) {
+      this.classList.remove("active");
+      activeAllergens.delete(allergenNumber);
+    } else {
+      this.classList.add("active");
+      activeAllergens.add(allergenNumber);
+    }
+
+    foodItems.forEach(foodItem => {
+      const allergens = foodItem.dataset.allergens?.split(" ");
+      
+      if (allergens && allergens.some(allergen => activeAllergens.has(allergen))) {
+        foodItem.style.opacity = ".1";
+      } else {
+        foodItem.style = "";
+      }
+    });
+  });
+});
 
 
 
