@@ -6,23 +6,24 @@
 
   <div class="middle">
     <div>
-      <img class="logo" src="./img/logo_white.png" alt="">
+      <img class="logo" src="./img/logo/logo_white.webp" alt="">
       <div>anno 1982</div>
     </div>
     <div>
-      Haha
+      Nyitvatartás
     </div>
     <div>
-      hihi
+  
     </div>
     <div>
-      Ez is jo
+      Kapcsolat
+      +36205200000
     </div>
   </div>
 
   <div class="bottom">
-    <div class="menu">Menu </div>
-    <div class="creator">Powered By REDCAT</div>
+    <?= buildMenu($siteJSON, "other"); ?>
+    <a href="#">Powered by REDCAT</a>
   </div>
 </footer>
 

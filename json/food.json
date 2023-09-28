@@ -58,12 +58,12 @@
         "ko": ["전채", "국물요리", "면요리", "해물요리", "즉석요리", "구이요리", "디저트"],
         "fr": ["entrées", "soupes", "pâtes", "plats de poisson", "plats préparés", "plats grillés", "desserts"]
     },
-    "allergens_title": {
-        "hu": "Allergének",
-        "en": "Allergens"
-    },
     "allergens": {
-        "hu": ["Glutén", "Rákfélék", "Tojás", "Hal", "Földimogyoró", "Szójabab", "Tej", "Diófélék", "Zeller", "Mustár", "Szezámmag", "Kén-dioxid", "Csillagfürt", "Puhatestűek"],
+        "title": {
+            "hu": "Allergének kiválasztása",
+            "en": "Choose Allergens"
+        },
+        "hu": ["Glutén", "Rákfélék", "Tojás", "Hal", "Földimogyoró", "Szójabab", "Tejtermékek", "Diófélék", "Zeller", "Mustár", "Szezámmag", "Kén-dioxid", "Csillagfürt", "Puhatestűek"],
         "en": ["Gluten", "Crustaceans", "Eggs", "Fish", "Peanuts", "Soya", "Milk", "Tree nuts", "Celery", "Mustard", "Sesame", "Sulphites", "Lupin", "Molluscs"]
     },
     "translate": {

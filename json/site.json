@@ -1,6 +1,6 @@
 {
     "alert": {
-        "hu": ["Telefonszám: +36209149737"],
+        "hu": ["Új Telefonszám: +36209149737", "Karácsonykor is nyitva"],
         "en": []
     },
     "open": {
@@ -22,7 +22,7 @@
         "mobile": "+36209149737",
         "email": "info@rabraby.hu",
         "address": "2000 Szentendre, Kucsera Ferenc u. 1/A",
-        "digicard": "https://id.red-cat.hu/rabraby",
+        "card": "https://id.red-cat.hu/rabraby",
         "facebook": "https://www.facebook.com/rabraby.hu",
         "instagram": "https://www.instagram.com/rabraby.hu",
         "gpage": "https://g.page/rabraby?gm"

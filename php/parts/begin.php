@@ -27,7 +27,7 @@
 <body>
 
 <nav  id="mainMenu">
-  <img class="logo" src="./img/logo.png" alt="">
+  <img class="logo" src="./img/logo/logo_black.webp" alt="">
   <div id="hamburger"><span></span><span></span><span></span></div>
 </nav>
 

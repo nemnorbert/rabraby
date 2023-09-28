@@ -1,5 +1,6 @@
 <header>
-  <h1>Rab Ráby Restaurant</h1>
+  <?= buildAlert($siteJSON, $siteLang); ?>
+
 </header>
 
 <div class="welcome g0">

@@ -1,4 +1,4 @@
-//@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
 
 //////////////////////////////////////////////// SAAS VARIABLE
@@ -7,6 +7,7 @@ $minWidth: 280px; // Galaxy Fold
 $maxWidth: 2000px;
 $pcWidth: 800px;
 $borderRadius1: 1rem;
+$linearGradient1: linear-gradient(to bottom, var(--main_color), var(--secundary_color));
 $gap1: 10px;
 
 //////////////////////////////////////////////// BASE
@@ -26,14 +27,16 @@ html {
     scroll-padding-top: 115px;
 
     --main_color: hsl(34, 49%, 63%);
-    --secundary_color: hsl(34, 30%, 45%);
-    --background_color1: white;
-    --background-color2: rgb(232, 232, 232);
+    --secundary_color: hsl(34, 31%, 51%);
+    --secundary_color_dark: hsl(34, 31%, 15%);
+    --background_color1: hsl(32, 100%, 97%);
+    --background-color2: hsl(35, 43%, 88%);
 }
 body {
     touch-action: none;
     user-select: none;
     zoom: 1 !important;
+    background-color: var(--background-color2);
 }
 h1 {
     font-size: 2.5rem;
@@ -42,6 +45,7 @@ h1 {
 }
 a {
     text-decoration: none;
+    color: var(--main_color);
 }
 
 //////////////////////////////////////////////// ELEMENTS
@@ -71,6 +75,12 @@ header {
     display: inline-block;
     padding: 0.5rem 0.8rem;
     border-radius: 3rem;
+    cursor: pointer;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: $gap1;
 }
 
 //////////////////////////////////////////////// PRELOADER
@@ -91,7 +101,7 @@ nav{
 // Mobile Menu
 #mobileMenu {
     bottom: 0;
-    background-image: linear-gradient(to bottom, var(--main_color), var(--secundary_color));
+    background-image: $linearGradient1;
     justify-content: space-around;
     text-align: center;
     white-space: nowrap;
@@ -133,9 +143,6 @@ nav{
     background-color: rgb(231, 231, 231);
     padding: 0 15px;
 
-    .logo {
-        height: 45px;
-    }
     #hamburger {
         cursor: pointer;
         justify-self: end;
@@ -152,6 +159,26 @@ nav{
 }
 #mainMenu > div, img {
     grid-column: span 6;
+}
+
+//////////////////////////////////////////////// ALERTS
+.alertBox {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $gap1;
+    padding: $gap1;
+}
+.alertBox > div {
+    background-color: rgb(32, 85, 185);
+    color: white;
+    padding: 8px;
+    border-radius: 7px;
+    max-width: 600px;
 }
 
 //////////////////////////////////////////////// FOOD, MENU
@@ -174,11 +201,37 @@ nav{
             }
         }
     }
+    #allergysBox {
+        background-image: linear-gradient(to bottom, red, rgb(179, 0, 0));
+        color: white;
+        padding: 1rem;
+        text-align: center;
+
+        summary {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+        }
+        .btn {
+            opacity: .5;
+            transition: opacity .5s;
+        }
+        .btn:hover {
+            opacity: 1;
+        }
+    }
     .foodBox {
         padding-bottom: 2rem;
 
         .foodTitles {
-            background-color: var(--main_color);
+            background-image: $linearGradient1;
             box-shadow: var(--shad_5);
             color: #fff;
             text-align: center;
@@ -212,6 +265,7 @@ nav{
             }
             .code {
                 position: absolute;
+                font-weight: normal;
                 left: 5px;
                 top: 5px;
                 font-size: 1rem;
@@ -241,17 +295,18 @@ footer {
     text-transform: uppercase;
     text-align: center;
     color: var(--main_color);
+    background-image: linear-gradient(#2e2b24, #1b1915);
 
     .social {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: calc($gap1 / 2);
-        background-image: linear-gradient(to bottom, var(--main_color), var(--secundary_color));
-        font-size: 20px;
+        background-image: $linearGradient1;
+        font-size: 16px;
         font-weight: bold;
-        color: white;
-        a {color: white}
+        color: var(--secundary_color_dark);
+        a {color: var(--secundary_color_dark)}
         i {font-size: 2.5rem;}
         .content {
             display: flex;
@@ -260,18 +315,20 @@ footer {
     }
 
     .middle {
-        background-image: linear-gradient(#2e2b24, #1b1915);
         color: white;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         justify-items: center;
-        row-gap: $gap1;
+        row-gap: 30px;
     }
     .middle > div {
         grid-column: span 12;
     }
 
     .bottom {
+        display: flex;
+        flex-direction: column;
+        row-gap: $gap1;
         border-top: #1b1915 solid 2px;
         background-color: #1b1915;
         padding-bottom: 120px;

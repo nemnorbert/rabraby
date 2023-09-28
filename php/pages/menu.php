@@ -6,7 +6,7 @@
 
 
 <div id="food" class="box">
-  <?php buildFood(); ?>
+  <?php buildFood($foodJSON); ?>
 </div>
 
 

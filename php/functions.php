@@ -78,6 +78,29 @@ function l1nk($link) {
     return $link;
 }
 
+// Build Alerts
+function buildAlert($siteJSON, $siteLang) {
+    $alerts = $siteJSON["alert"][$siteLang];
+    if (count($alerts) > 0) {
+        $html = '<div class="alertBox">';
+        for ($i=0; $i < count($alerts); $i++) { 
+            $html .= '<div><i class="bi bi-info-circle"></i> '.$alerts[$i].'</div>';
+        }
+        $html .= '</div>';
+        return $html;
+    }
+}
+
+// Build Menu
+function buildMenu($siteJSON, $menu) {
+    $html = '<div class="menu">';
+    for ($i=0; $i < count($siteJSON["menu"][$menu]); $i++) { 
+        $html .= '<a href="#">'.$siteJSON["menu"][$menu][$i].'</a>';
+    }
+    $html .=  '</div>';
+    return $html;
+}
+
 // Mobile Menu
 function mobileMenu($siteJSON, $siteInfo) {
     $menu = $siteJSON["menu"]["mobile"];
@@ -91,8 +114,8 @@ function mobileMenu($siteJSON, $siteInfo) {
 }
 
 // Build Food Page Content
-function buildFood() {
-    global $siteInfo,$siteJSON,$langJSON,$foodJSON,$userLang;
+function buildFood($foodJSON) {
+    global $siteInfo,$siteJSON,$langJSON,$userLang;
     
     // Categories
     if (in_array($userLang, $siteJSON['languages']['foodMenu'])) {
@@ -112,17 +135,14 @@ function buildFood() {
         </div>';
       
       // Allergens
-      /*
-      echo 
-      '<div class="f0 food_allergen">
-      <h2>'.$foodJSON["allergens_title"][$menuLangTitle].'</h2>
+      echo '<details id="allergysBox">
+      <summary>'.$foodJSON["allergens"]["title"][$menuLangTitle].'</summary>
       <div class="content">';
       for ($i=0; $i < count($foodJSON["allergens"]["hu"]); $i++) { 
-        echo '<div class="btn">'.$foodJSON["allergens"][$menuLang][$i].'</div>';
+        echo '<div class="btn allergyBtn">'.$foodJSON["allergens"][$menuLang][$i].'</div>';
       }
       echo '</div>
-      </div>';
-      */
+      </details>';
     
       // Category Title
       for ($i=0; $i < count($foodJSON["category"][$menuLang]); $i++) {
@@ -142,7 +162,6 @@ function buildFood() {
     
           echo '<div class="foodCard">';
           echo '<img src="'.$siteInfo->mainPath.'img/food/'.$food_code.'.webp" alt="'.$food_title.'" loading="lazy">';
-          //echo '<div class="bottom">';
             echo '<div class="btn code">#'.$food_code.'</div>';
             echo '<b>'.$food_title.'</b>';
             echo '<div class="price">'.$food_price.' Ft</div>';
