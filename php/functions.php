@@ -92,10 +92,11 @@ function buildAlert($siteJSON, $siteLang) {
 }
 
 // Build Menu
-function buildMenu($siteJSON, $menu) {
+function buildMenu($siteJSON, $siteInfo, $menu) {
+    $menuArray = $siteJSON["menu"][$menu];
     $html = '<div class="menu">';
-    for ($i=0; $i < count($siteJSON["menu"][$menu]); $i++) { 
-        $html .= '<a href="#">'.$siteJSON["menu"][$menu][$i].'</a>';
+    for ($i=0; $i < count($menuArray); $i++) { 
+        $html .= '<a href="'.$siteInfo->mainPath.$menuArray[$i].'">'.$siteJSON["menu"][$menu][$i].'</a>';
     }
     $html .=  '</div>';
     return $html;
@@ -178,6 +179,15 @@ function buildFood($foodJSON) {
 }
 
 
+// Mobile Menu
+function buildContact() {
+    $html = '<div class="title">Title</div>';
+
+    
+    echo $html;
+}
+
+
 
 
 
@@ -210,7 +220,7 @@ function buildFood($foodJSON) {
 
 
 /////////////////////////////// ORIGINAL FUNCTIONS ///////////////////////////
-function PrintSocial() {
+function buildSocial() {
     global $siteJSON;
     echo '<a href="mailto:'.$siteJSON["contact"]["email"].'"><i class="bi bi-envelope-fill"></i></a>
     <a href="'.$siteJSON["contact"]["facebook"].'" target="_blank"><i class="bi bi-facebook"></i></a>
@@ -242,24 +252,6 @@ function printMenu($menu) {
     echo '</ul>';
 }
 
-function PrintLogo()
-{
-    global $langJSON;
-
-    echo '<div class="logo"><div class="rr">Rab Ráby</div>
-    <div class="restaurant">';
-    echo $langJSON["restaurant"];
-    echo '</div></div>';
-}
-function PrintFlag() {
-    global $siteLang;
-    $lang = $siteLang === "en" ? "hu" : "en";
-
-    echo '<div class="lang">
-        <img src="https://red-cat.hu/data/flag/'. $lang .'.svg" alt="Language Switcher, Flag">
-        </div>';
-}
-
 
 function printOpen($langJSON, $siteJSON) {
     $openJSON = $siteJSON["open_hours"];
@@ -284,6 +276,15 @@ function printOpen($langJSON, $siteJSON) {
     $text .= '</div>';
     echo $text;
 }
+
+
+
+
+
+
+
+
+
 
 
 ///////////////////// BACKEND

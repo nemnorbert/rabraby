@@ -46,6 +46,10 @@ h1 {
 a {
     text-decoration: none;
     color: var(--main_color);
+    transition: opacity .5s;
+}
+a:hover {
+    opacity: .7;
 }
 
 //////////////////////////////////////////////// ELEMENTS
@@ -236,10 +240,11 @@ nav{
         }
         .btn {
             opacity: .5;
-            transition: opacity .5s;
+            transition: opacity .5s, transform .5s;
         }
         .btn:hover {
             opacity: 1;
+            transform: scale(.9);
         }
         .active {
             background-color: var(--main_color);
@@ -351,6 +356,17 @@ footer {
         border-top: #1b1915 solid 2px;
         background-color: #1b1915;
         padding-bottom: 120px;
+
+        .creator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            
+            .logo {
+                height: 22px;
+            }
+        }
     }
 }
 footer > div {

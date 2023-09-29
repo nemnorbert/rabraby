@@ -1,7 +1,7 @@
 <footer>
   <div class="social">
     <div><?= $langJSON["footer"]["social"]; ?></div>
-    <div class="content"><?php PrintSocial(); ?></div>
+    <div class="content"><?php  ?></div>
   </div>
 
   <div class="middle">
@@ -16,14 +16,13 @@
   
     </div>
     <div>
-      Kapcsolat
-      +36205200000
+      <?= buildContact(); ?>
     </div>
   </div>
 
   <div class="bottom">
-    <?= buildMenu($siteJSON, "other"); ?>
-    <a href="#">Powered by REDCAT</a>
+    <?= buildMenu($siteJSON, $siteInfo, "other"); ?>
+    <a class="creator" href="<?= $siteJSON["creator"]["url"] ?>">Powered by <img class="logo" src="<?= $siteInfo->redcatPath ?>img/logo/logo1.png" alt="logo of creator"></a>
   </div>
 </footer>
 
