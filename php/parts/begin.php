@@ -26,10 +26,18 @@
 </head>
 <body>
 
-<nav  id="mainMenu">
+<nav id="primaryMenu">
   <img class="logo" src="./img/logo/logo_black.webp" alt="">
-  <div id="hamburger"><span></span><span></span><span></span></div>
+  <div id="hamburger" class="hamBtns"><span></span><span></span><span></span></div>
 </nav>
+
+<div id="secundaryMenu" data-visible="false">
+  <?= buildMenu($siteJSON, $siteInfo, "main"); ?>
+  <div class="switch">
+    <img class="lang" src="./img/flag/hu.svg" alt=""> 
+    <img class="hamBtns" src="./img/icon/exit.svg" alt="">
+  </div>
+</div>
 
 <?php mobileMenu($siteJSON, $siteInfo); ?>
 
@@ -37,7 +45,5 @@
   <img class="logo" src="./img/logo/logo_black.webp" alt="">
   <p><?= $langJSON["loading"]; ?></p>
 </div>
-
-<div id="hamburgerMenu">
   
 </div>

@@ -105,7 +105,7 @@ function buildMenu($siteJSON, $siteInfo, $menu) {
 // Mobile Menu
 function mobileMenu($siteJSON, $siteInfo) {
     $menu = $siteJSON["menu"]["mobile"];
-    $html = '<nav id="mobileMenu">';
+    $html = '<nav id="appMenu">';
     for ($i = 0; $i < 4; $i++) { 
         $active = $siteInfo -> page === $menu[$i]["en"] ? ["active", "-fill"] : ["", ""];
         $html .= '<a href="'.$menu[$i]["en"].'" class="'.$active[0].'"><i class="bi bi-'.$menu[$i]["icon"].$active[1].'"></i><br>'.$menu[$i]["hu"].'</a>';

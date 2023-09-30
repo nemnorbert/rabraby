@@ -9,6 +9,8 @@ $pcWidth: 800px;
 $borderRadius1: 1rem;
 $linearGradient1: linear-gradient(to bottom, var(--main_color), var(--secundary_color));
 $gap1: 10px;
+$blur1: 5px;
+$width: clamp($minWidth, 100vw, $maxWidth);
 
 //////////////////////////////////////////////// BASE
 * {
@@ -22,11 +24,11 @@ html {
     color: black;
     min-width: $minWidth;
     font-family: 'Roboto', sans-serif;
-    //word-break: break-word;
     scroll-behavior: smooth;
     scroll-padding-top: 115px;
 
     --main_color: hsl(34, 49%, 63%);
+    --main_color_transparent: hsla(34, 49%, 63%, 0.7);
     --secundary_color: hsl(34, 31%, 51%);
     --secundary_color_dark: hsl(34, 31%, 15%);
     --background_color1: hsl(32, 100%, 97%);
@@ -68,7 +70,7 @@ header {
         background-color: #2e2b24b9;
         padding: 1rem;
         border-radius: 1rem;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur($blur1);
     }
 }
 .btn {
@@ -84,7 +86,6 @@ header {
 .menu {
     display: flex;
     justify-content: center;
-    gap: $gap1;
 }
 
 //////////////////////////////////////////////// PRELOADER
@@ -101,24 +102,103 @@ nav{
     align-items: center;
     text-transform: uppercase;
     box-shadow: $shadow1;
-    width: 100%;
+    width: $width;
     z-index: 10;
 }
 
-// Mobile Menu
-#mobileMenu {
+
+// Primary Menu, Header
+#primaryMenu {
+    top: 0;
+    height: 65px;
+    background-color: rgb(231, 231, 231);
+
+    .logo {
+        padding-left: 5px;
+    }
+    #hamburger {
+        background-color: var(--main_color);
+        height: 100%;
+        cursor: pointer;
+        justify-self: end;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 8px;
+        padding: 0 15px;
+        span {
+            height: 5px;
+            width: 35px;
+            border-radius: 2px;
+            background-color: white;
+        }
+    }
+}
+#primaryMenu > div, img {
+    grid-column: span 6;
+}
+
+
+// Secundary Menu (Mobile)
+#secundaryMenu {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    z-index: 9;
+    position: fixed;
+    top: 65px;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--main_color_transparent);
+    backdrop-filter: blur(10px);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .menu {
+        grid-column: span 12;
+        flex-direction: column;
+        align-items: center;
+        font-weight: bold;
+        font-size: 2rem;
+        text-shadow: $shadow1;
+
+        a {
+            padding: 5px;
+            color: white;
+        }
+    }
+    .switch {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    img {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: $shadow1;
+    }
+}
+#secundaryMenu[data-visible = "true"] {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+
+// Mobile Menu, App Menu
+#appMenu {
     bottom: 0;
-    background-image: $linearGradient1;
+    background-image: linear-gradient(to bottom, var(--main_color_transparent), var(--main_color));
+    backdrop-filter: blur($blur1);
     justify-content: space-around;
     text-align: center;
     white-space: nowrap;
-    animation: mobileMenu 1s;
     font-weight: bold;
-
-    @keyframes mobileMenu {
-        0% {bottom: -90px;}
-        100% {bottom: 0;}
-    }
 
     a {
         color: whitesmoke;
@@ -141,43 +221,6 @@ nav{
         margin-top: -10px;
         padding-top: 16px;
     }
-}
-
-// Hamburger Menu
-#hamburgerMenu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 0, 255, 0.842);
-}
-
-// PC Menu, Top
-#mainMenu  {
-    top: 0;
-    height: 65px;
-    background-color: rgb(231, 231, 231);
-    padding: 0 15px;
-
-    #hamburger {
-        cursor: pointer;
-        justify-self: end;
-        display: flex;
-        flex-direction: column;
-        row-gap: 8px;
-        span {
-            height: 5px;
-            width: 35px;
-            border-radius: 2px;
-            background-color: var(--main_color);
-        }
-    }
-}
-#mainMenu > div, img {
-    grid-column: span 6;
 }
 
 //////////////////////////////////////////////// ALERTS
@@ -204,7 +247,7 @@ nav{
 #food {
     #foodCategories {
         position: sticky;
-        z-index: 9;
+        z-index: 8;
         top: 64px;
         background-color: rgb(31, 31, 31);
         .drink {
@@ -375,8 +418,15 @@ footer > div {
 
 //////////////////////////////////////////////// MEDIA
 @media only screen and (min-width: $pcWidth) {
-#mobileMenu {
+#appMenu {
     display: none;
 }
-
+#primaryMenu {
+    #hamburger {
+        display: none;
+    }
+}
+#secundaryMenu {
+    display: none;
+}
 }

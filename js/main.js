@@ -1,3 +1,20 @@
+const secMenu = document.querySelector('#secundaryMenu');
+const hamburgerBtns = document.querySelectorAll(".hamBtns");
+
+
+hamburgerBtns.forEach(hamBtn => {
+  hamBtn.addEventListener("click", () => {
+    const visibility = secMenu.getAttribute("data-visible");
+    if (visibility === "true") {
+      secMenu.setAttribute("data-visible", "false");
+    } else {
+      secMenu.setAttribute("data-visible", "true");
+    }
+  })
+})
+
+
+
 // Food, Menu
 const allergyBtns = document.querySelectorAll('.allergyBtn');
 const foodItems = document.querySelectorAll('.foodItem');
