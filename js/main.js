@@ -1,7 +1,13 @@
+let loadtime = new Date().getTime();
+
+
+// Variables
 const secMenu = document.querySelector('#secundaryMenu');
+const preLoaderBox = document.querySelector('#preLoader');
+const appMenuBox = document.querySelector('#appMenu');
 const hamburgerBtns = document.querySelectorAll(".hamBtns");
 
-
+// Hamburger Menu
 hamburgerBtns.forEach(hamBtn => {
   hamBtn.addEventListener("click", () => {
     const visibility = secMenu.getAttribute("data-visible");
@@ -14,8 +20,7 @@ hamburgerBtns.forEach(hamBtn => {
 })
 
 
-
-// Food, Menu
+// Allergy Filter in Food Menu
 const allergyBtns = document.querySelectorAll('.allergyBtn');
 const foodItems = document.querySelectorAll('.foodItem');
 const activeAllergens = new Set();
@@ -45,9 +50,21 @@ allergyBtns.forEach(allergyBtn => {
 });
 
 
+// PreLoader
+const preLoaderFunc = async () => {
+  loadtime_bonus = loadtime <= 1 ? (1 - loadtime)*1000 : 0;
+
+  const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+  await delay(loadtime_bonus);
+
+  preLoaderBox.style.transform = "translateY(-100%)";
+  appMenuBox.style.transform = "translateY(0%)";
+}
 
 
 
+loadtime = (new Date().getTime() - loadtime) / 1000;
+window.addEventListener("load", preLoaderFunc);
 
 
 /*

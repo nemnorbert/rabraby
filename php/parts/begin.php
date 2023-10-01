@@ -42,7 +42,7 @@
 <?php mobileMenu($siteJSON, $siteInfo); ?>
 
 <div id="preLoader">
-  <img class="logo" src="./img/logo/logo_black.webp" alt="">
+  <img class="logo" src="./img/logo/logo_white.webp" alt="">
   <p><?= $langJSON["loading"]; ?></p>
 </div>
   
