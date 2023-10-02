@@ -8,6 +8,3 @@
 <div id="food" class="box">
   <?php buildFood($foodJSON); ?>
 </div>
-
-
-

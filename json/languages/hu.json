@@ -69,7 +69,7 @@
 "contact":{
     "title": "kapcsolat",
     "card": "digitális névjegykártya",
-    "addr": "2000 Szentendre, Kucsera Ferenc u. 1/a",
+    "addres": "2000 Szentendre, Kucsera Ferenc u. 1/a",
     "cinfo": "Céginformációk",
     "vat": "Adószám",
     "vreg": "Cégjegyzék szám"
@@ -89,21 +89,32 @@
     "car": "Parkolóhoz",
     "walk": "Étteremhez"
 },
-"faq": {
-    "paycard_ti": "Fizethetek bankkártyával, SZÉP kártyával?",
-    "paycard_de": "Igen, bankkártyával és az összes forgalomban lévő SZÉP kártyával fizethet nálunk. (American Express kártyát nem tudunk elfogadni)",
-    "park_ti": "Hol parkolhatok?",
-    "park_de": "A parkolás Szentendrén 2022-ben megváltozott: az óvárost csak engedéllyel lehet megközelíteni. A hozzánk legközelebbi parkoló kb 1 perc sétára, a Bajcsy-Zsilinszky Endre utcánál van. (Zóna kódja: 2012)",
-    "park_gu": "Parkolási segédlet",
-    "where_ti": "Hol találom a vendéglőt?",
-    "where_de": "Az étterem Szentendre belvárosában helyezkedik el, a Városháza és a Péter Pál templom között. A centrumban, a Főtértől 1 perc sétával megközelíthető.",
-    "garden_ti": "Van kerthelyiség, terasz?",
-    "garden_de": "Igen, egy hangulatos, szél védett belső udvara van az étteremnek, ami nyáron hűvös, árnyékos.",
-    "dog_ti": "Szabad kutyát bevinni?",
-    "dog_de": "Igen, nyitás óta kutyabarát hely vagyunk.",
-    "event_ti": "Rendezvényeket is vállalnak?",
-    "event_de": "Igen, esküvőket, keresztelőket, születésnapokat, névnapokat, osztálytalálkozókat, könyv bemutatókat, borkostolókat, halotti tort stb."
-},
+"faq": [
+    {
+        "question": "Fizethetek bankkártyával, SZÉP kártyával?",
+        "answer": "Igen, bankkártyával és az összes forgalomban lévő SZÉP kártyával fizethet nálunk. (American Express kártyát nem tudunk elfogadni)"
+    },
+    {
+        "question": "Hol parkolhatok?",
+        "answer": "A parkolás Szentendrén 2022-ben megváltozott: az óvárost csak engedéllyel lehet megközelíteni. A hozzánk legközelebbi parkoló kb 1 perc sétára, a Bajcsy-Zsilinszky Endre utcánál van. (Zóna kódja: 2012)"
+    },
+    {
+        "question": "Hol találom a vendéglőt?",
+        "answer": "Az étterem Szentendre belvárosában helyezkedik el, a Városháza és a Péter Pál templom között. A centrumban, a Főtértől 1 perc sétával megközelíthető."
+    },
+    {
+        "question": "Van kerthelyiség, terasz?",
+        "answer": "Igen, egy hangulatos, szél védett belső udvara van az étteremnek, ami nyáron hűvös, árnyékos."
+    },
+    {
+        "question": "Szabad kutyát bevinni?",
+        "answer": "Igen, nyitás óta kutyabarát hely vagyunk."
+    },
+    {
+        "question": "Rendezvényeket is vállalnak?",
+        "answer": "Igen, esküvőket, keresztelőket, születésnapokat, névnapokat, osztálytalálkozókat, könyvbemutatókat, borkóstolókat, halotti tort stb."
+    }
+],   
 "guest":{
     "1": ["A kedvenc helyünk Szentendrén, elvarázsló egyedi hangulat, a rengeteg múltat idéző régiség között! Számtalan alkalommal voltunk már itt, de az ember mindig felfedez valami újat... Az ételek háziasak és bőségesek!", "István Matula"],
     "2": ["Belépve mint egy archív múzeumba lépnénk és mégis nagyon otthonos érzése támad az embernek. A személyzet gyors,figyelmes, az ételek kiválóak.Nagyon jól éreztük magunkat ajánljuk midenkinek!", "Róza Szabóné Nagy"],

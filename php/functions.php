@@ -179,12 +179,45 @@ function buildFood($foodJSON) {
 }
 
 
-// Mobile Menu
-function buildContact() {
-    $html = '<div class="title">Title</div>';
+// Contact 01
+function buildContactBase() {
+    global $siteJSON, $langJSON;
+    $html = '<div class="title">'.$langJSON["contact"]["title"].':</div>';
 
+    foreach ($siteJSON["contact"] as $item) {
+        if ($item["contact"]) {
+            $content = $item["content"] == "translate" ? $langJSON["contact"][$item["name"]] : $item["content"];
+            $html .= '<a target="_blank" href="'.$item["link"].'"><i class="bi bi-'.$item["icon"].'"></i> '.$content.'</a>';
+        }
+    }
     
     echo $html;
+}
+
+// Contact 02
+function buildContactIcon() {
+    global $siteJSON;
+    $html = '';
+    foreach ($siteJSON["contact"] as $item) {
+        if ($item["bar"]) {
+            $html .= '<a target="_blank" href="'.$item["link"].'"><i class="bi bi-'.$item["icon"].'"></i></a>';
+        }
+    }
+    echo $html;
+}
+
+// FAQ Content Generator
+function buildFAQ() {
+    global $langJSON;
+    $html = "";
+
+    foreach ($langJSON["faq"] as $item) {
+        $html .= '<details>
+            <summary>'.$item["question"].'</summary>
+            <p>'.$item["answer"].'</p>
+        </details>';
+    }
+    return $html;
 }
 
 

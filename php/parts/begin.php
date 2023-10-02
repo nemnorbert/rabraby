@@ -32,6 +32,7 @@
 </nav>
 
 <div id="secundaryMenu" data-visible="false">
+  <div class="contact"><?= buildContactIcon(); ?></div>
   <?= buildMenu($siteJSON, $siteInfo, "main"); ?>
   <div class="switch">
     <img class="lang" src="./img/flag/hu.svg" alt=""> 
@@ -43,7 +44,6 @@
 
 <div id="preLoader">
   <img class="logo" src="./img/logo/logo_white.webp" alt="">
-  <p><?= $langJSON["loading"]; ?></p>
 </div>
   
 </div>

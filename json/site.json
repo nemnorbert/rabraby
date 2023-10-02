@@ -18,13 +18,13 @@
         ]
     },
     "contact": [
-        {"name": "addres", "content": "translate", "link": "https://g.page/rabraby?gm", "icon": "geo-alt-fill", "contact": true, "bar": true},
+        {"name": "addres", "content": "translate", "link": "https://g.page/rabraby?gm", "icon": "map-fill", "contact": true, "bar": true},
         {"name": "mobile", "content": "+36 26 310 819", "link": "tel:+3626310819", "icon": "telephone-fill", "contact": true, "bar": false},
-        {"name": "phone", "content": "+36 20 914 9737", "link": "tel:+36209149737", "icon": "geo-alt-fill", "contact": true, "bar": false},
-        {"name": "mail", "content": "info@rabraby.hu", "link": "mailto:info@rabraby.hu", "icon": "geo-alt-fill", "contact": true, "bar": true},
-        {"name": "card", "content": "translate", "link": "https://id.red-cat.hu/rabraby", "icon": "geo-alt-fill", "contact": true, "bar": false},
-        {"name": "facebook", "content": null, "link": "https://", "icon": "geo-alt-fill", "contact": false, "bar": true},
-        {"name": "instagram", "content": null, "link": "https://", "icon": "geo-alt-fill", "contact": false, "bar": true}
+        {"name": "phone", "content": "+36 20 914 9737", "link": "tel:+36209149737", "icon": "phone", "contact": true, "bar": false},
+        {"name": "mail", "content": "info@rabraby.hu", "link": "mailto:info@rabraby.hu", "icon": "envelope-fill", "contact": true, "bar": true},
+        {"name": "card", "content": "translate", "link": "https://id.red-cat.hu/rabraby", "icon": "person-vcard-fill", "contact": true, "bar": false},
+        {"name": "facebook", "content": null, "link": "https://", "icon": "facebook", "contact": false, "bar": true},
+        {"name": "instagram", "content": null, "link": "https://", "icon": "instagram", "contact": false, "bar": true}
     ],
     "bank": {
         "company": "K&H Bank",

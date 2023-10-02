@@ -1,7 +1,7 @@
 <footer>
   <div class="social">
     <div><?= $langJSON["footer"]["social"]; ?></div>
-    <div class="content"><?php  ?></div>
+    <div class="content"><?= buildContactIcon(); ?></div>
   </div>
 
   <div class="middle">
@@ -15,8 +15,8 @@
     <div>
   
     </div>
-    <div>
-      <?= buildContact(); ?>
+    <div class="contact">
+      <?= buildContactbase(); ?>
     </div>
   </div>
 
@@ -26,7 +26,20 @@
   </div>
 </footer>
 
-
+<div id="popupWindow">
+  <div class="box">
+    <img class="cover" src="./img/food/537.webp" alt="">
+    <div class="content">
+      <div class="title">
+        <b>Ez egy tál étel</b>
+        <div class="price">4800 Ft</div>
+      </div>
+      
+      <i class="bi bi-x-circle-fill"></i>
+    </div>
+  </div>
+  <div class="background popupExit"></div>
+</div>
 
 <script>
 let siteData = {

@@ -86,21 +86,32 @@
     "car": "to park place",
     "walk": "to restaurant"
 },
-"faq": {
-    "paycard_ti": "Can I pay by credit/debit card?",
-    "paycard_de": "Yes, however, we do not accept American Express cards",
-    "park_ti": "Where can i park?",
-    "park_de": "Parking in Szentendre has changed in 2022: the Old Town can only be accessed with a permit. The nearest parking lot to us is located about a 1-minute walk away, at the Bajcsy-Zsilinszky Endre street. (Zone code: 2012)",
-    "park_gu": "Parking guide",
-    "where_ti": "Where can I find the restaurant?",
-    "where_de": "The restaurant is located in the downtown area of Szentendre, between the City Hall and the Péter Pál Church. It can be reached within a 1-minute walk from the main square, in the center.",
-    "garden_ti": "Is there a garden, terrace?",
-    "garden_de": "Yes, the restaurant has a cozy, wind-protected courtyard that is cool and shaded in the summer.",
-    "dog_ti": "Is the restaurant dog-friendly?",
-    "dog_de": "Yes, we have been a dog-friendly place since open.",
-    "event_ti": "Do you also cater for events?",
-    "event_de": "Yes, we cater for weddings, baptisms, birthdays, name days, class reunions, book launches, wine tastings, funeral receptions, etc."
-},
+"faq": [
+    {
+        "question": "Can I pay by credit/debit card?",
+        "answer": "Yes, however, we do not accept American Express cards"
+    },
+    {
+        "question": "Where can I park?",
+        "answer": "Parking in Szentendre has changed in 2022: the Old Town can only be accessed with a permit. The nearest parking lot to us is located about a 1-minute walk away, at the Bajcsy-Zsilinszky Endre street. (Zone code: 2012)"
+    },
+    {
+        "question": "Where can I find the restaurant?",
+        "answer": "The restaurant is located in the downtown area of Szentendre, between the City Hall and the Péter Pál Church. It can be reached within a 1-minute walk from the main square, in the center."
+    },
+    {
+        "question": "Is there a garden, terrace?",
+        "answer": "Yes, the restaurant has a cozy, wind-protected courtyard that is cool and shaded in the summer."
+    },
+    {
+        "question": "Is the restaurant dog-friendly?",
+        "answer": "Yes, we have been a dog-friendly place since open."
+    },
+    {
+        "question": "Do you also cater for events?",
+        "answer": "Yes, we cater for weddings, baptisms, birthdays, name days, class reunions, book launches, wine tastings, funeral receptions, etc."
+    }
+],
 "guest":{
     "1": ["Best place in Szentendre to get the beloved Hungarian fisherman soup. It comes with a side of peasant bread and some sought of chili paste. You can ask for more bread if you run out. The restaurant is medieval themed and decked fully with interesting items and trinkets. The prices are very reasonable.", "SHEHAN JAYASEKERA"],
     "2": ["Super freundliche Bedienung und wuuuuunderbares Essen zum kleinen Preis. Herrlich!", "BJÖRN FRÖHLICH"],
