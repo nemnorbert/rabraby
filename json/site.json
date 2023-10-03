@@ -26,6 +26,14 @@
         {"name": "facebook", "content": null, "link": "https://", "icon": "facebook", "contact": false, "bar": true},
         {"name": "instagram", "content": null, "link": "https://", "icon": "instagram", "contact": false, "bar": true}
     ],
+    "company": [
+        {"name": "vatNum", "text": "12134469-2-13"},
+        {"name": "regNum", "text": "13-09-072 136"},
+        {"name": "bankName", "text": "K&H Bank"},
+        {"name": "bankNumber", "text": "10403112-50526587-67851007"},
+        {"name": "iban", "text": "HU85-10403112-50526587-67851007"},
+        {"name": "swift", "text": "OKHBHUHB"}
+    ],
     "bank": {
         "company": "K&H Bank",
         "account": "10403112-50526587-67851007",

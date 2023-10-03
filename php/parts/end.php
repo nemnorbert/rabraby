@@ -26,6 +26,7 @@
   </div>
 </footer>
 
+<!--
 <div id="popupWindow">
   <div class="box">
     <img class="cover" src="./img/food/537.webp" alt="">
@@ -43,6 +44,7 @@
   </div>
   <div class="background popupExit"></div>
 </div>
+-->
 
 <script>
 let siteData = {

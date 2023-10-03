@@ -60,18 +60,23 @@ a:hover {
 header {
     min-height: 60vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(109, 16, 16);
     background-size: cover;
     background-position: center;
+    padding: 1rem;
+    padding-top: calc($topHeaderHeight + 10px);
 
     h1, h2 {
         color: white;
         text-shadow: 0 0 50px black, 0 0 20px black, 0 0 5px black;
+    }
+    .content {
         background-color: #2e2b24b9;
         padding: 1rem;
-        border-radius: 1rem;
+        border-radius: 2rem;
         backdrop-filter: blur($blur1);
     }
 }
@@ -355,7 +360,7 @@ nav{
     max-width: 600px;
 }
 
-//////////////////////////////////////////////// FOOD, MENU
+//////////////////////////////////////////////// FOOD, MENU PAGES
 #food {
     #foodCategories {
         position: sticky;
@@ -468,6 +473,37 @@ nav{
     }
 }
 
+//////////////////////////////////////////////// CONTACT PAGE
+header {
+    .contact {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+    .contact > div {
+        display: flex;
+    }
+    .infos {
+        flex-direction: column;
+        gap: .5rem;
+    }
+    .social {
+        font-size: 2.5rem;
+        gap: 1rem;
+        justify-content: center;
+    }
+}
+.companyInfo {
+    background-color: var(--main_color_transparent);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    line-height: 1.4rem;
+}
 
 //////////////////////////////////////////////// FOOTER
 footer {

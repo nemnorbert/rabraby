@@ -93,10 +93,11 @@ function buildAlert($siteJSON, $siteLang) {
 
 // Build Menu
 function buildMenu($siteJSON, $siteInfo, $menu) {
+    global $langJSON;
     $menuArray = $siteJSON["menu"][$menu];
     $html = '<div class="menu">';
     for ($i=0; $i < count($menuArray); $i++) { 
-        $html .= '<a href="'.$siteInfo->mainPath.$menuArray[$i].'">'.$siteJSON["menu"][$menu][$i].'</a>';
+        $html .= '<a href="'.$siteInfo->mainPath.$menuArray[$i].'">'.$langJSON["nav"][$menuArray[$i]].'</a>';
     }
     $html .=  '</div>';
     return $html;
@@ -182,15 +183,13 @@ function buildFood($foodJSON) {
 // Contact 01
 function buildContactBase() {
     global $siteJSON, $langJSON;
-    $html = '<div class="title">'.$langJSON["contact"]["title"].':</div>';
-
+    $html = '';
     foreach ($siteJSON["contact"] as $item) {
         if ($item["contact"]) {
             $content = $item["content"] == "translate" ? $langJSON["contact"][$item["name"]] : $item["content"];
             $html .= '<a target="_blank" href="'.$item["link"].'"><i class="bi bi-'.$item["icon"].'"></i> '.$content.'</a>';
         }
     }
-    
     echo $html;
 }
 
@@ -220,7 +219,16 @@ function buildFAQ() {
     return $html;
 }
 
-
+// Company Informations
+function buildCompanyInfos() {
+    global $langJSON, $siteJSON;
+    $comp = $langJSON["company"];
+    $html = "";
+    foreach ($siteJSON["company"] as $item) {
+        $html .= '<div><b>'.$comp[$item["name"]].':</b><br>'.$item["text"].'</div>';
+    }
+    return $html;
+}
 
 
 
