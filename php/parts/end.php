@@ -29,13 +29,16 @@
 <div id="popupWindow">
   <div class="box">
     <img class="cover" src="./img/food/537.webp" alt="">
-    <div class="content">
+    <div class="content food">
       <div class="title">
-        <b>Ez egy tál étel</b>
-        <div class="price">4800 Ft</div>
+        <b>Natúr filézett harcsaszeletek baconbe göngyölve, fokhagyma mártással</b><div class="btn">#117</div>
       </div>
       
-      <i class="bi bi-x-circle-fill"></i>
+      <div class="allergies">
+        <b>Allergének:</b><div class="btn">Tej</div><div class="btn">Glutén</div>
+      </div>
+
+      <i class="bi bi-x-circle-fill popupExit"></i>
     </div>
   </div>
   <div class="background popupExit"></div>

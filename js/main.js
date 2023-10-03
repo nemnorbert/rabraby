@@ -6,6 +6,8 @@ const secMenu = document.querySelector('#secundaryMenu');
 const preLoaderBox = document.querySelector('#preLoader');
 const appMenuBox = document.querySelector('#appMenu');
 const hamburgerBtns = document.querySelectorAll(".hamBtns");
+const popupWindowDiv = document.querySelector('#popupWindow');
+const popupExitDivs = document.querySelectorAll(".popupExit");
 
 // Hamburger Menu
 hamburgerBtns.forEach(hamBtn => {
@@ -19,11 +21,27 @@ hamburgerBtns.forEach(hamBtn => {
   })
 })
 
+// PopUp Exit
+popupExitDivs.forEach(exitDiv => {
+  exitDiv.addEventListener("click", () => {
+    popupWindowDiv.style.display = "none"
+  })
+})
 
-// Allergy Filter in Food Menu
+/////////////////////// MENU, FOOD SECTON ///////////////////////
+// Variables
 const allergyBtns = document.querySelectorAll('.allergyBtn');
 const foodItems = document.querySelectorAll('.foodItem');
 const activeAllergens = new Set();
+
+const buildFoodPopup = () => {
+  console.log("food popup activated");
+  popupWindowDiv.style.display = "block";
+}
+
+foodItems.forEach(foodItem => {
+  foodItem.addEventListener("click", buildFoodPopup)
+})
 
 allergyBtns.forEach(allergyBtn => {
   allergyBtn.addEventListener("click", function () {
