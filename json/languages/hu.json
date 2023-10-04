@@ -107,11 +107,11 @@
         "answer": "Igen, esküvőket, keresztelőket, születésnapokat, névnapokat, osztálytalálkozókat, könyvbemutatókat, borkóstolókat, halotti tort stb."
     }
 ],   
-"guest":{
-    "1": ["A kedvenc helyünk Szentendrén, elvarázsló egyedi hangulat, a rengeteg múltat idéző régiség között! Számtalan alkalommal voltunk már itt, de az ember mindig felfedez valami újat... Az ételek háziasak és bőségesek!", "István Matula"],
-    "2": ["Belépve mint egy archív múzeumba lépnénk és mégis nagyon otthonos érzése támad az embernek. A személyzet gyors,figyelmes, az ételek kiválóak.Nagyon jól éreztük magunkat ajánljuk midenkinek!", "Róza Szabóné Nagy"],
-    "3": ["Gyors kiszolgálás, hagyományos magyar konyha. Az étterem hangulata magával ragadó, főleg azok számára, akik szeretik a régiségeket.", "Viktória Neumann"]
-},
+"guest": [
+    {"name": "István Matula", "text": "A kedvenc helyünk Szentendrén, elvarázsló egyedi hangulat, a rengeteg múltat idéző régiség között! Számtalan alkalommal voltunk már itt, de az ember mindig felfedez valami újat... Az ételek háziasak és bőségesek!"},
+    {"name": "Róza Szabóné Nagy", "text": "Belépve mint egy archív múzeumba lépnénk és mégis nagyon otthonos érzése támad az embernek. A személyzet gyors,figyelmes, az ételek kiválóak.Nagyon jól éreztük magunkat ajánljuk midenkinek!"},
+    {"name": "Viktória Neumann", "text": "Gyors kiszolgálás, hagyományos magyar konyha. Az étterem hangulata magával ragadó, főleg azok számára, akik szeretik a régiségeket."}
+],
 "contact":{
     "title": "kapcsolat",
     "card": "digitális névjegykártya",

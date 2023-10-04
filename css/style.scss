@@ -35,6 +35,7 @@ html {
     --secundary_color_dark: hsl(34, 31%, 15%);
     --background_color1: hsl(32, 100%, 97%);
     --background-color2: hsl(35, 43%, 88%);
+    --background-color_transparent: hsla(36, 100%, 98%, 0.945);
 }
 body {
     touch-action: none;
@@ -135,7 +136,9 @@ nav{
 #primaryMenu {
     top: 0;
     height: $topHeaderHeight;
-    background-color: rgb(231, 231, 231);
+    background-color: #ffffff0e;
+    transition: background-color .5s;
+    backdrop-filter: blur($blur1);
 
     .logo {
         padding-left: 5px;
@@ -161,6 +164,9 @@ nav{
 #primaryMenu > div, img {
     grid-column: span 6;
 }
+#primaryMenu.scroll {
+    background-color: var(--background-color_transparent);
+}
 
 
 // Secundary Menu (Mobile)
@@ -176,7 +182,7 @@ nav{
     right: 0;
     background-image: linear-gradient(to top, var(--main_color_transparent), var(--main_color));
 
-    backdrop-filter: $blur1;
+    backdrop-filter: blur($blur1);
     transform: translateX(100%);
     opacity: 0;
     transition: transform .5s, opacity 1s;
@@ -261,6 +267,7 @@ nav{
 
 // Pop up Windows
 #popupWindow {
+    display: none;
     position: fixed;
     top: $topHeaderHeight;
     left: 0;
