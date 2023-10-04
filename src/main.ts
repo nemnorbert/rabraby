@@ -13,19 +13,36 @@ const popupWindowDiv: HTMLElement | null = document.querySelector('#popupWindow'
   const activeAllergens: Set<string> = new Set();
   const popupCoverDiv: HTMLImageElement | null = document.querySelector('#popupCoverDiv');
   const popupContentDiv: HTMLElement | null = document.querySelector('#popupContent');
-  let foodJSON : any;
+
+  let foodJSON;
+  //let otherJSON;
 
 // JSON Fetch
-const fetchJSON = (url:string) => {
-  return fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      return data;
-    })
-    .catch(error => {
-      throw error;
-    });
-}
+const fetchJSON = async (url: string) => {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// Aszinkron függvény a JSON fájlok betöltésére
+const loadJSONFiles = async () => {
+  try {
+    foodJSON = await fetchJSON("json/food.json");
+    //otherJSON = await fetchJSON("json/language/hu.json");
+  } catch (error) {
+    console.error("Hiba történt a JSON fájlok betöltésekor:", error);
+  }
+};
+
+// Aszinkron függvény hívása
+loadJSONFiles();
 
 // Hamburger Menu
 hamburgerBtns.forEach((hamBtn: HTMLElement) => {
