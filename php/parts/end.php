@@ -26,18 +26,6 @@
   </div>
 </footer>
 
-<div id="popupWindow">
-  <div class="box">
-    <img id="popupCover" class="cover" src="./img/food/537.webp" alt="">
-    <div id="popupContent" class="content food">
-      
-    </div>
-  </div>
-  <div class="background popupExit"></div>
-</div>
-
-
-
 
 
 <script>
@@ -55,5 +43,10 @@ let siteData = {
 };
 </script>
 <script src="<?= $siteInfo->mainPath ?>js/main.js?v=<?= time() ?>"></script>
+<?php
+  if ($siteInfo->page == "menu") {
+    echo '<script src="'.$siteInfo->mainPath.'js/menu.js?v='.time().'"></script>';
+  }
+?>
 </body>
 </html>

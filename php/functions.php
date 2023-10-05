@@ -116,67 +116,67 @@ function mobileMenu($siteJSON, $siteInfo) {
 }
 
 // Build Food Page Content
-function buildFood($foodJSON) {
-    global $siteInfo,$siteJSON,$langJSON,$userLang;
+function buildFood($foodJSON, $langJSON, $siteJSON, $siteInfo, $userLang) {
+    $iso = $langJSON["iso"];
+    $categories = $foodJSON["category"];
+
+    // Languages
+    $foodLangs = $siteJSON['languages']['foodMenu'];
+    $menuLang = in_array($userLang, $foodLangs) ? $userLang : "en";
     
-    // Categories
-    if (in_array($userLang, $siteJSON['languages']['foodMenu'])) {
-        $menuLang = $userLang;
-    } else {
-        $menuLang = 'en';
+    // Categories Bar
+    echo '<div id="foodCategories">
+    <div class="content">
+    <a class="btn drink" href="'.$siteInfo->mainPath.'pdf/itallap.pdf"><i class="bi bi-cup-hot-fill"></i> '.$langJSON["menu"]["drink"].'</a>';
+    for ($i=0; $i < count($categories["en"]); $i++) {
+        echo '<a href="#'.str_replace(' ', '', $categories["en"][$i]).'" class="btn">'.$categories[$menuLang][$i].'</a>';
     }
-    $menuLangTitle = $userLang == "hu" ? "hu" : "en";
-      
-      echo '<div id="foodCategories">
-        <div class="content">
-            <a class="btn drink" href="'.$siteInfo->mainPath.'pdf/itallap.pdf"><i class="bi bi-cup-hot-fill"></i> '.$langJSON["menu"]["drink"].'</a>';
-            for ($i=0; $i < count($foodJSON["category"]["hu"]); $i++) {
-                echo '<a href="#'.str_replace(' ', '', $foodJSON["category"]["en"][$i]).'" class="btn">'.$foodJSON["category"][$menuLang][$i].'</a>';
-            }
-      echo '</div>
-        </div>';
-      
-      // Allergens
-      echo '<details id="allergysBox">
-      <summary>'.$foodJSON["allergens"]["title"][$menuLangTitle].'</summary>
-      <div class="content">';
-      for ($i=0; $i < count($foodJSON["allergens"]["hu"]); $i++) { 
-        echo '<div class="btn allergyBtn" data-allergen="'.($i+1).'">'.$foodJSON["allergens"][$menuLang][$i].'</div>';
-      }
-      echo '</div>
-      </details>';
-    
-      // Category Title
-      for ($i=0; $i < count($foodJSON["category"][$menuLang]); $i++) {
-        $food_category_en = $foodJSON["category"]["en"][$i]; // Category title (english)
-        $food_category = $foodJSON["category"][$menuLang][$i]; // Category title (user language)
-    
+    echo    '</div>
+    </div>';
+
+    // Allergens Bar
+    echo '<details id="allergysBox">
+    <summary>'.$foodJSON["allergens"]["title"][$iso].'</summary>
+    <div class="content">';
+    for ($i=0; $i < count($foodJSON["allergens"]["hu"]); $i++) { 
+      echo '<div class="btn allergyBtn" data-allergen="'.($i+1).'">'.$foodJSON["allergens"][$menuLang][$i].'</div>';
+    }
+    echo '</div>
+    </details>';
+
+    // Category Title
+    for ($i=0; $i < count($categories[$menuLang]); $i++) {
+        $food_category_en = $categories["en"][$i]; // Category title (english)
+        $food_category = $categories[$menuLang][$i]; // Category title (user language)
+        
         echo '<div id="'.str_replace(' ', '', $food_category_en).'" class="foodBox">
         <div class="foodTitles">
         <h2>'.$food_category.'</h2></div>
         <div class="foodContent">';
-    
-    // Food Title
-        for ($ii=0; $ii < count($foodJSON["food"][$foodJSON["category"]["en"][$i]]); $ii++) {
-          $food_code = $foodJSON["food"][$food_category_en][$ii]["id"]; // Food code
-          $food_title = $foodJSON["translate"][$food_code][$menuLang]; // Food title
-          $food_price = $foodJSON["food"][$food_category_en][$ii]["huf"]; // Food price
-          $food_allergen = $foodJSON["food"][$food_category_en][$ii]["allergens"];
-          $food_allergyNUM = "";
+        
+        // Food Title
+        foreach ($foodJSON["food"] as $foodItem) {
+            if ($foodItem["category"] == $food_category_en) {
+                $id = $foodItem["id"];
+                $title = $foodJSON["translate"][$id][$menuLang];
+                $price = $foodItem["huf"];
+                $allergens = $foodItem["allergens"];
 
-          foreach ($food_allergen as $allergen) {
-            $food_allergyNUM .= $allergen . " ";
-        }
-    
-          echo '<div class="foodItem" data-allergens="'.$food_allergyNUM.'">';
-          echo '<img src="'.$siteInfo->mainPath.'img/food/'.$food_code.'.webp" alt="'.$food_title.'" loading="lazy">';
-            echo '<div class="btn code">#'.$food_code.'</div>';
-            echo '<b>'.$food_title.'</b>';
-            echo '<div class="price">'.$food_price.' Ft</div>';
-          echo '</div>';
+                $allergyNumber = "";
+                foreach ($allergens as $allergen) {
+                    $allergyNumber .= $allergen . " ";
+                }
+
+                echo '<div class="foodItem" data-allergens="'.$allergyNumber.'" data-code="'.$id.'">';
+                echo '<img src="'.$siteInfo->mainPath.'img/food/'.$id.'.webp" alt="'.$title.'" loading="lazy">';
+                echo '<div class="btn code">#'.$id.'</div>';
+                echo '<b>'.$title.'</b>';
+                echo '<div class="price">'.$price.' Ft</div>';
+                echo '</div>';
+            }
         }
         echo '</div></div>';
-      }
+    }
 }
 
 
