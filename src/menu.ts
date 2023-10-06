@@ -34,46 +34,39 @@ const loadJSONFiles = async () => {
 // When click a Food Item
 foodItems.forEach((foodItem: HTMLElement) => {
     foodItem.addEventListener("click", function () {
-        let allergyAlert = true;
+        
+        const code: string | undefined = this.dataset.code;
+        let food = foodJSON.food.find((item: FoodItem) => item.id === code);
 
-        if (foodItem.style.opacity === "0.1") {
-            allergyAlert = window.confirm("Olyan allergént tartalmazhat amit kiválasztottál!")
+        if (popupCoverDiv !== null) {
+        popupCoverDiv.src = `./img/food/${code}.webp`;
+        }
+        if (popupTitleDiv !== null && code !== undefined) {
+        popupTitleDiv.innerHTML = foodJSON.translate[code]["hu"];
+        }
+        if (popupCodeDiv !== null) {
+        popupCodeDiv.innerHTML = '#' + code;
+        }
+        if (popupAllergyDiv !== null) {
+        popupAllergyDiv.innerHTML = food.allergens.map((item: number) => {
+                return '<div class="btn">' + foodJSON.allergens["hu"][item-1]
+            }).join("</div>");
+        }
+        if (popupPriceDiv !== null) {
+            popupPriceDiv.innerHTML = food.huf.toLocaleString('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 });
         }
 
-        if (allergyAlert) {
-            const code: string | undefined = this.dataset.code;
-            let food = foodJSON.food.find((item: FoodItem) => item.id === code);
-    
-            if (popupCoverDiv !== null) {
-            popupCoverDiv.src = `./img/food/${code}.webp`;
-            }
-            if (popupTitleDiv !== null && code !== undefined) {
-            popupTitleDiv.innerHTML = foodJSON.translate[code]["hu"];
-            }
-            if (popupCodeDiv !== null) {
-            popupCodeDiv.innerHTML = '#' + code;
-            }
-            if (popupAllergyDiv !== null) {
-            popupAllergyDiv.innerHTML = food.allergens.map((item: number) => {
-                    return '<div class="btn">' + foodJSON.allergens["hu"][item-1]
-                }).join("</div>");
-            }
-            if (popupPriceDiv !== null) {
-                popupPriceDiv.innerHTML = food.huf.toLocaleString('hu-HU', { style: 'currency', currency: 'HUF', minimumFractionDigits: 0, maximumFractionDigits: 0 });
-            }
-    
-            // PopUp Exit
-            popupExitDivs.forEach(exitDiv => {
-                exitDiv.addEventListener("click", () => {
-                if (popupWindowDiv !== null) {
-                    popupWindowDiv.style.display = "none"
-                }
-                })
-            })
-    
+        // PopUp Exit
+        popupExitDivs.forEach(exitDiv => {
+            exitDiv.addEventListener("click", () => {
             if (popupWindowDiv !== null) {
-                popupWindowDiv.style.display = "block";
+                popupWindowDiv.style.display = "none"
             }
+            })
+        })
+
+        if (popupWindowDiv !== null) {
+            popupWindowDiv.style.display = "block";
         }
         
     });

@@ -1,6 +1,6 @@
 {
     "alert": {
-        "hu": ["Új Telefonszám: +36209149737", "Karácsonykor is nyitva"],
+        "hu": ["Új Telefonszám: +36209149737"],
         "en": []
     },
     "open": {
@@ -17,6 +17,9 @@
             {"date": "2023.08.11.", "open": "12", "close": "20"}
         ]
     },
+
+
+
     "contact": [
         {"name": "addres", "content": "translate", "link": "https://g.page/rabraby?gm", "icon": "map-fill", "contact": true, "bar": true},
         {"name": "mobile", "content": "+36 26 310 819", "link": "tel:+3626310819", "icon": "telephone-fill", "contact": true, "bar": false},
@@ -34,20 +37,12 @@
         {"name": "iban", "text": "HU85-10403112-50526587-67851007"},
         {"name": "swift", "text": "OKHBHUHB"}
     ],
-    "bank": {
-        "company": "K&H Bank",
-        "account": "10403112-50526587-67851007",
-        "vatNum": "12134469-2-13",
-        "regNum": "13-09-072 136",
-        "swift": "OKHBHUHB",
-        "iban": "HU85-10403112-50526587-67851007"
-    },
     "languages": {
         "site": ["hu", "en"],
         "foodMenu": ["hu", "en", "es", "de", "it", "pt", "ru", "zh", "ja", "ko", "fr"]
     },
     "menu": {
-        "main": ["home","menu", "groups", "about", "contact"],
+        "main": ["home","menu", "groups", "contact"],
         "other": ["parking", "sitemap", "imprint"],
         "mobile": [
             {"hu": "főoldal", "en": "home", "icon": "house"},

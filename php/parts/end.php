@@ -10,7 +10,9 @@
       <div>anno 1982</div>
     </div>
     <div>
-      Nyitvatartás
+      <div class="openHours">
+        <?= buildOpenHours(); ?>
+      </div>
     </div>
     <div>
   

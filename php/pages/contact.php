@@ -1,6 +1,6 @@
-<header>
+<header id="contactHeader" style="background-image: url(<?= l1nk("./img/contact.jpg") ?>);">
   <div class="content contact">
-    <h1>Kapcsolat</h1>
+    <h1><?= $langJSON["contact"]["title"] ?></h1>
     <div class="infos"><?= buildContactbase(); ?></div>
     <div class="social"><?= buildContactIcon(); ?></div>
   </div>

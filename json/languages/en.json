@@ -6,8 +6,8 @@
 "since": "since 1982",
 "loading": "Loading",
 "open":{
-    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     "title": ["Opening hours", "at this moment"],
+    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     "status": ["Closed", "Open"]
 },
 "mobile_nav": ["Home", "Menu", "Groups", "Contact"],
@@ -55,7 +55,7 @@
 "group":{
     "title": "Menu for groups",
     "download": "Download",
-    "desc": "Check our menus for groups (EUR)"
+    "text": "If you are interested in menu prices, please request our current prices by phone or email."
 },
 "about": {
     "title": "About Us",

@@ -6,8 +6,8 @@
 "since": "1982 óta",
 "loading": "Betöltés",
 "open":{
-    "days": ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"],
     "title": "Nyitvatartás",
+    "days": ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"],
     "status": {
         "open": "Nyitva",
         "close": "Zárva"
@@ -56,9 +56,9 @@
     "loan": "Támogatott az EU és Magyarország kormánya"
 },
 "group":{
-    "title": "Menü csoportoknak",
+    "title": "Csoport menü",
     "download": "Letöltés",
-    "desc": "Természetesen más menüket is elkészítünk, valamint a szervezőknek ismételt csoportok étkeztetése esetén jutalékot biztosítunk, megegyezés szerint. <br><br> Amennyiben a menük árai felől érdeklődik, kérjük, aktuális árainkat telefonon vagy e-mailben kérje."
+    "text": "Természetesen más menüket is elkészítünk, valamint a szervezőknek ismételt csoportok étkeztetése esetén jutalékot biztosítunk, megegyezés szerint. Amennyiben a menük árai felől érdeklődik, kérjük, aktuális árainkat telefonon vagy e-mailben kérje."
 },
 "about": {
     "title": "Rólunk",

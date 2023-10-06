@@ -219,6 +219,24 @@ function buildFAQ() {
     return $html;
 }
 
+// FAQ Content Generator
+function buildOpenHours() {
+    global $langJSON;
+    $html = '<div class="title">'.$langJSON["open"]["title"].'</div>';
+    
+    for ($i=0; $i < 7; $i++) { 
+        $today = date("N") == $i+1 ? " today" : "";
+        $name = $langJSON["open"]["days"][$i];
+
+        $html .= '<div class="day'.$today.'">
+            <div>'.$name.'</div>
+            <div>Zárva</div>
+        </div>';
+    }
+
+    return $html;
+}
+
 // Company Informations
 function buildCompanyInfos() {
     global $langJSON, $siteJSON;
