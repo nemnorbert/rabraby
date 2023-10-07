@@ -219,21 +219,33 @@ function buildFAQ() {
     return $html;
 }
 
-// FAQ Content Generator
-function buildOpenHours() {
-    global $langJSON;
+// Open Hours Generator
+function buildOpenHours($langJSON, $siteJSON) {
     $html = '<div class="title">'.$langJSON["open"]["title"].'</div>';
+    $weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     
     for ($i=0; $i < 7; $i++) { 
-        $today = date("N") == $i+1 ? " today" : "";
-        $name = $langJSON["open"]["days"][$i];
-
-        $html .= '<div class="day'.$today.'">
-            <div>'.$name.'</div>
-            <div>Zárva</div>
+        $class = date("N") == $i+1 ? " today" : "";
+        $day = $langJSON["open"]["days"][$i];
+        
+        $week = ($i+1) >= date("N") ? "this" : "next";
+        $timestamp = strtotime($week." ".$weekDays[$i]);
+        $status = date("Y-m-d", $timestamp);
+        
+        $openH = $siteJSON["openHours"];
+        $theDay = isset($openH["special"][$status]) ? $openH["special"][$status] : $openH["default"][$i];
+        
+        $status = $theDay["open"]." - ".$theDay["close"];
+        $class .= $status == " - "  ? " closed" : "";
+        $status = $status == " - " ? $langJSON["open"]["status"]["close"] : $status;
+        
+        // Final Build
+        $html .= '<div class="day'.$class.'">
+            <div>'.$day.'</div>
+            <div>'.$status.'</div>
         </div>';
     }
-
+    
     return $html;
 }
 

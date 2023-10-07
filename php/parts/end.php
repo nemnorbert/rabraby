@@ -11,7 +11,7 @@
     </div>
     <div>
       <div class="openHours">
-        <?= buildOpenHours(); ?>
+        <?= buildOpenHours($langJSON, $siteJSON); ?>
       </div>
     </div>
     <div>

@@ -567,28 +567,42 @@ header {
 /// OPEN HOURS
 .openHours {
     background-color: var(--background_color1);
-    color: var(--main_color);
+    color: var(--secundary_color_dark);
     display: flex;
     flex-direction: column;
     border-radius: 1rem;
-    //padding: 10px 0;
     font-weight: bold;
 
     .title {
         padding: 12px 0;
         font-size: 1.2rem;
-        border-bottom: 2px solid var(--main_color);
+        background-image: $linearGradient1;
+        color: white;
+        border-radius: 1rem 1rem 0 0;
     }
     .day {
         display: flex;
         justify-content: space-between;
-        column-gap: 20px;
+        column-gap: 30px;
         width: 100%;
-        padding: 8px 12px;
+        padding: 10px 12px;
+    }
+    div:last-child {
+        border-radius: 0 0 1rem 1rem;
     }
     .today {
         color: white;
         background-color: var(--main_color);
+        animation: openHours 5s infinite ease-in-out;
+
+        @keyframes openHours {
+            0%, 100% {background-color: var(--main_color);}
+            50% {background-color: var(--secundary_color);}
+        }
+    }
+    .closed {
+        color: red;
+        opacity: .7;
     }
 }
 
