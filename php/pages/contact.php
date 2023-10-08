@@ -5,8 +5,13 @@
     <div class="social"><?= buildContactIcon(); ?></div>
   </div>
 </header>
+
 <div class="companyInfo">
   <h2><?= $langJSON["company"]["title"]; ?>:</h2>
   <h3>Rab Ráby Kft.</h3>
   <?= buildCompanyInfos(); ?>
+</div>
+
+<div class="faq">
+  <?= buildFAQ($langJSON); ?>
 </div>
