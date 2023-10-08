@@ -1,6 +1,6 @@
 {
     "alert": {
-        "hu": ["Új Telefonszám: +36209149737"],
+        "hu": [],
         "en": []
     },
     "openHours": {
@@ -11,7 +11,7 @@
             {"hu": "csütörtök", "open": "12", "close": "22"},
             {"hu": "péntek", "open": "12", "close": "22"},
             {"hu": "szombat", "open": "12", "close": "22"},
-            {"hu": "vasárnap", "open": "12", "close": "20"}
+            {"hu": "vasárnap", "open": "12", "close": "19"}
         ],
         "special": {
             "2023-01-01": {"open": "12", "close": "20"}

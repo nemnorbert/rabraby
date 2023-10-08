@@ -31,15 +31,21 @@
     "parking2": "Parkolás",
     "parking3": "A 2012-es zónában tud parkolni (narancssárga jelölés), a Bajcsy-Zsilinszky Endre utcánál vagy a Bükkös parton. Parkolás akár 39 méter is lehet az étteremtől. A zöld pontok a parkoló automatákat jelzik. A távolság a vendéglőtől körülbelül 1-2 perc sétálva. Szentendrén hétvégén is kell fizetni a parkolásért!",
     "moreinfo": "Részletek",
-    "faq": "Gyakran Ismételt Kérdések (GYIK)",
+    "faq": "Gyakran Ismételt Kérdések",
     "dog": "Kutyabarát hely",
     "garden": "Kerthelyiség",
     "food": "Kiemelt ételeink",
-    "table": "Asztalfoglalás",
-    "table2": "Kérjük asztalfoglalását telefonon keresztül tegye meg, mert így azonnal be tudjuk jegyezni a foglalását.",
-    "table3": "Asztalfoglalás a 06-26-310-819 telefonszámon lehetséges. Csoportok részére vagy több héttel későbbi foglalások esetén online is lehet asztalt foglalni:",
+    "table": {
+        "title": "Asztalfoglalás",
+        "content": [
+            "Az asztalfoglalás egyszerű és kényelmes módja annak, hogy biztosítsd a helyedet. Telefonon és online is foglalhatsz nálunk.",
+            "Ha a hagyományos úton szeretnél asztalt foglalni, ne habozz hívni minket a következő telefonszámokon:",
+            "+36 26 310 819 / +36 20 914 9737",
+            "Online foglalásra pedig az alábbi platformokon van lehetőséged:"
+        ]
+    },
     "guest": "Vendégeink írták",
-    "guest_w": "Vélemény írása",
+    "guest2": "Vélemény írása",
     "menu": "Étlap megtekintése",
     "ccard": "Szépkártya elfogadóhely"
 },
@@ -109,7 +115,7 @@
 ],   
 "guest": [
     {"name": "István Matula", "text": "A kedvenc helyünk Szentendrén, elvarázsló egyedi hangulat, a rengeteg múltat idéző régiség között! Számtalan alkalommal voltunk már itt, de az ember mindig felfedez valami újat... Az ételek háziasak és bőségesek!"},
-    {"name": "Róza Szabóné Nagy", "text": "Belépve mint egy archív múzeumba lépnénk és mégis nagyon otthonos érzése támad az embernek. A személyzet gyors,figyelmes, az ételek kiválóak.Nagyon jól éreztük magunkat ajánljuk midenkinek!"},
+    {"name": "Róza Szabóné Nagy", "text": "Belépve mint egy archív múzeumba lépnénk és mégis nagyon otthonos érzése támad az embernek. A személyzet gyors,figyelmes, az ételek kiválóak. Nagyon jól éreztük magunkat ajánljuk midenkinek!"},
     {"name": "Viktória Neumann", "text": "Gyors kiszolgálás, hagyományos magyar konyha. Az étterem hangulata magával ragadó, főleg azok számára, akik szeretik a régiségeket."}
 ],
 "contact":{

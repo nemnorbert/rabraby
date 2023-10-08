@@ -205,10 +205,18 @@ function buildContactIcon() {
     echo $html;
 }
 
+// Reserve Module
+function buildReserve($langJSON) {
+    $html = '';
+    foreach ($langJSON["home"]["table"]["content"] as $item) {
+        $html .= '<p>'.$item.'</p>';
+    }
+    return $html;
+}
+
 // FAQ Content Generator
-function buildFAQ() {
-    global $langJSON;
-    $html = "";
+function buildFAQ($langJSON) {
+    $html = '<h2>'.$langJSON["home"]["faq"].'</h2>';
 
     foreach ($langJSON["faq"] as $item) {
         $html .= '<details>
@@ -216,6 +224,26 @@ function buildFAQ() {
             <p>'.$item["answer"].'</p>
         </details>';
     }
+    return $html;
+}
+
+// Guest
+function buildGuest($langJSON) {
+    $html = '<h2>'.$langJSON["home"]["guest"].'</h2>';
+    $random = $langJSON["guest"];
+    shuffle($random);
+
+    $html .= '<div class="content">';
+    for ($i=0; $i < 3; $i++) { 
+        $html .= '<div class="item">
+            <b>'.$random[$i]["name"].'</b>
+            <p>'.$random[$i]["text"].'</p>
+        </div>';
+    }
+    $html .= '</div>';
+    $html .= '<div class="ratings"><p>Google: 4+<br><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></p>
+        <a target="_blank" href="https://g.page/r/CSa2a1Wf650kEB0/review">'.$langJSON["home"]["guest2"].'</a></div>';
+
     return $html;
 }
 
