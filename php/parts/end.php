@@ -23,7 +23,9 @@
   </div>
 
   <div class="bottom">
-    <?= buildMenu($siteJSON, $siteINFO, $langJSON, "other"); ?>
+    <div class="menu">
+      <?= buildMenu($siteJSON, $siteINFO, $langJSON, "other"); ?>
+    </div>
     <a class="creator" href="<?= $siteJSON["creator"]["url"] ?>">Powered by <img class="logo" src="<?= $siteINFO->redcatPath ?>img/logo/logo1.png" alt="logo of creator"></a>
   </div>
 </footer>

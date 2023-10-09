@@ -85,11 +85,10 @@ function buildAlert($siteJSON, $siteINFO) {
 // Build Menu
 function buildMenu($siteJSON, $siteINFO, $langJSON, $menu) {
     $menuArray = $siteJSON["menu"][$menu];
-    $html = '<div class="menu">';
+    $html = '';
     for ($i=0; $i < count($menuArray); $i++) { 
         $html .= '<a href="'.$siteINFO->mainPath.$menuArray[$i].'">'.$langJSON["nav"][$menuArray[$i]].'</a>';
     }
-    $html .=  '</div>';
     return $html;
 }
 
@@ -258,7 +257,7 @@ function buildOpenHours($langJSON, $siteJSON) {
         $openH = $siteJSON["openHours"];
         $theDay = isset($openH["special"][$status]) ? $openH["special"][$status] : $openH["default"][$i];
         
-        $status = $theDay["open"]." - ".$theDay["close"];
+        $status = $theDay["open"] . " - " . $theDay["close"];
         $class .= $status == " - "  ? " closed" : "";
         $status = $status == " - " ? $langJSON["open"]["status"]["close"] : $status;
         

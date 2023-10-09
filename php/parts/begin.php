@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?= $langJSON["meta"]["desc"]; ?>">
     
-    <title><?= 'Rab Ráby, '.$langJSON["nav"][$siteINFO->page] ?></title>
+    <title><?= 'Rab Ráby, '.(isset($langJSON["nav"][$siteINFO->page]) ? $langJSON["nav"][$siteINFO->page] : "404") ?></title>
 
     <meta property="og:title" content="<?= $langJSON["title"]; ?>" />
     <meta property="og:description" content="<?= $langJSON["meta"]["desc"]; ?>" />
@@ -33,7 +33,9 @@
 
 <div id="secundaryMenu" data-visible="false">
   <div class="contact"><?= buildContactIcon($siteJSON); ?></div>
-  <?= buildMenu($siteJSON, $siteINFO, $langJSON, "main"); ?>
+    <div class="menu">
+      <?= buildMenu($siteJSON, $siteINFO, $langJSON, "main"); ?>
+    </div>
   <div class="switch">
     <img class="lang" src="<?= $siteINFO->mainPath ?>img/flag/hu.svg" alt=""> 
     <img class="hamBtns" src="<?= $siteINFO->mainPath ?>img/icon/exit.svg" alt="">
