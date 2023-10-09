@@ -19,8 +19,7 @@ interface FoodItem {
 /////////////////////// MENU, FOOD SECTON ///////////////////////
 const loadJSONFiles = async () => {
     try {
-      foodJSON = await fetchJSON("json/food.json");
-      //langJSON = await fetchJSON("json/language/hu.json");
+      foodJSON = await fetchJSON(siteINFO.mainPath + "json/food.json");
     } catch (error) {
       console.error("Hiba történt a JSON fájlok betöltésekor:", error);
     }
@@ -39,7 +38,7 @@ foodItems.forEach((foodItem: HTMLElement) => {
         let food = foodJSON.food.find((item: FoodItem) => item.id === code);
 
         if (popupCoverDiv !== null) {
-        popupCoverDiv.src = `./img/food/${code}.webp`;
+        popupCoverDiv.src = siteINFO.mainPath + `img/food/${code}.webp`;
         }
         if (popupTitleDiv !== null && code !== undefined) {
         popupTitleDiv.innerHTML = foodJSON.translate[code]["hu"];

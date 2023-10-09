@@ -44,12 +44,13 @@
     "menu": {
         "main": ["home","menu", "groups", "contact"],
         "other": ["parking", "sitemap", "imprint"],
-        "mobile": [
-            {"hu": "főoldal", "en": "home", "icon": "house"},
-            {"hu": "étlap", "en": "menu", "icon": "book"},
-            {"hu": "csoportok", "en": "groups", "icon": "people"},
-            {"hu": "kapcsolat", "en": "contact", "icon": "telephone"}
-        ]
+        "mobile": ["home","menu", "groups", "contact"]
+    },
+    "icons": {
+        "home": "house",
+        "menu": "book",
+        "groups": "people",
+        "contact": "telephone"
     },
     "mainPath": {
         "test": "/rabraby/",

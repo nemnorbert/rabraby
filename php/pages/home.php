@@ -1,5 +1,5 @@
 <header >
-  <?= buildAlert($siteJSON, $siteLang); ?>
+  <?= buildAlert($siteJSON, $siteINFO); ?>
 
   <div id="infoBtns">
     <div class="btn">Manófalvi</div>
@@ -22,7 +22,7 @@
     <h2><?= $langJSON["home"]["table"]["title"]; ?></h2>
     <?= buildReserve($langJSON); ?>
     <div class="contact">
-      <?= buildContactIcon(); ?>
+      <?= buildContactIcon($siteJSON); ?>
     </div>
   </div>
 </div>
@@ -36,7 +36,7 @@
 </div>
 
 <div class="support">
-  <a target="_blank" href="<?= $siteInfo->mainPath ?>img/hitel.jpg">
-  <img src="<?= $siteInfo->mainPath ?>img/hitel_mini.webp" loading="lazy" alt="Támogatott az EU és Magyarország kormánya">
+  <a target="_blank" href="<?= $siteINFO->mainPath ?>img/hitel.jpg">
+  <img src="<?= $siteINFO->mainPath ?>img/hitel_mini.webp" loading="lazy" alt="Támogatott az EU és Magyarország kormánya">
   </a>
 </div>

@@ -1,15 +1,15 @@
-<header id="contactHeader" style="background-image: url(<?= l1nk("./img/contact.jpg") ?>);">
+<header id="contactHeader" style="background-image: url(<?= $siteINFO -> mainPath ?>./img/contact.jpg);">
   <div class="content contact">
     <h1><?= $langJSON["contact"]["title"] ?></h1>
-    <div class="infos"><?= buildContactbase(); ?></div>
-    <div class="social"><?= buildContactIcon(); ?></div>
+    <div class="infos"><?= buildContactbase($siteJSON, $langJSON); ?></div>
+    <div class="social"><?= buildContactIcon($siteJSON); ?></div>
   </div>
 </header>
 
 <div class="companyInfo">
   <h2><?= $langJSON["company"]["title"]; ?>:</h2>
   <h3>Rab Ráby Kft.</h3>
-  <?= buildCompanyInfos(); ?>
+  <?= buildCompanyInfos($langJSON, $siteJSON); ?>
 </div>
 
 <div class="faq">

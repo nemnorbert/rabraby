@@ -1,29 +1,66 @@
 <?php
-// Scan URL
-function scanURL() {
-    global $testServer, $siteInfo;
+set_include_path( $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR );
 
+/////////////////////////////////////////////// BASE ///////////////////////////////////////////////
+// Scan URL
+function scanURL($siteINFO, $siteJSON) {
+    $available = $siteJSON['languages']['site'];
+    
     $url = $_SERVER['REQUEST_URI'];
-    $urlParts = explode("?", $url);
-    $urlParts = explode("/", $urlParts[0]);
+    $parts = explode("?", $url);
+    $parts = explode("/", $parts[0]);
     
-    $testServer = (strtolower($urlParts[1]) === "rabraby") ? true : false;
-    if ($testServer) {
-        $siteInfo -> mainPath = '/rabraby/';
-        $siteInfo -> redcatPath = '/redcat_center/';
+    $test = (strtolower($parts[1]) === "rabraby") ? true : false;
+    if ($test) {
+        $siteINFO -> mainPath = '/rabraby/';
+        $siteINFO -> redcatPath = '/redcat_center/';
     } else {
-        $siteInfo -> mainPath = '/';
-        //$siteInfo -> $siteJSON['mainPath']['live'];
+        $siteINFO -> mainPath = '/';
     }
-    
-    $i = ($testServer) ? 2 : 1;
-    $siteInfo -> page = ($urlParts[$i] !== "") ? $urlParts[$i] : "home";
+
+    if (count($parts) >= 3 && in_array(strtolower($parts[2]), $available)) {
+        $i = $test ? 3 : 2;
+        $siteINFO->langURL = strtolower($parts[2]);
+    } else {
+        $i = $test ? 2 : 1;
+    }
+
+    // Out
+    $siteINFO -> page = ($parts[$i] !== "") ? $parts[$i] : "home";
+    $siteINFO -> test = $test;
 }
 
+// Language Detection
+function langDetect($siteINFO, $siteJSON) {
+    global $langJSON;
+    $available = $siteJSON['languages']['site'];
+    $siteLang = "en"; $userLang = "en";
+
+    if (isset($siteINFO->langURL)) {
+        if (in_array($siteINFO->langURL, $available)) {
+            $siteLang = $siteINFO->langURL;
+        }
+    } else if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+        $userLang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+
+        if (in_array($userLang, $available)) {
+            $siteLang = $userLang;
+        }
+    }
+
+    // Out
+    $langJSON = loadJSON('json/languages/'.$siteLang.'.json');
+    $siteINFO -> langUser = $userLang;
+    $siteINFO -> langSite = $siteLang;
+    $siteINFO -> langAvailable = $available;
+}
+
+
+/////////////////////////////////////////////// FUNCTIONS ///////////////////////////////////////////////
 // Load JSON
 function loadJSON($filePath) {
     $json = file_get_contents($filePath);
-    return json_decode($json, true);
+    $data = json_decode($json, true);
 
     if (json_last_error() !== JSON_ERROR_NONE) {
         throw new Exception('Error decoding JSON: ' . json_last_error_msg());
@@ -32,55 +69,9 @@ function loadJSON($filePath) {
     return $data;
 }
 
-// Scan Cookies
-function cookieScan() {
-    global $cookieAccepted;
-    global $cookieLevel;
-
-    $cookieAccepted = false;
-    $cookieLevel = '{"necessary": false, "functionality": false, "tracking": false, "targeting": false}';
-    $cookieAccepted = isset($_COOKIE["cookie_consent_accepted"]) ? $_COOKIE["cookie_consent_accepted"] : $cookieAccepted;
-    $cookieLevel = isset($_COOKIE["cookie_consent_level"]) ? json_decode($_COOKIE["cookie_consent_level"], JSON_OBJECT_AS_ARRAY) : json_decode($cookieLevel, JSON_OBJECT_AS_ARRAY);
-}
-
-// Language Detection
-function languageDetect() {
-
-    global $siteLang;
-    global $availableLanguages;
-    $siteLang = "en";
-    
-    // Check if language cookie is set
-    if (isset($_COOKIE['language'])) {
-        $cookieLanguage = strtolower($_COOKIE['language']);
-        
-        if (in_array($cookieLanguage, $availableLanguages)) {
-            $siteLang = $cookieLanguage;
-        }
-    } else {
-        if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-            $browserLanguages = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
-            $browserLanguage = strtolower(substr(chop($browserLanguages[0]), 0, 2));
-        
-            if (in_array($browserLanguage, $availableLanguages)) {
-                $siteLang = $browserLanguage;
-            }
-        }
-    }
-
-    // Import lang data from JSON
-    global $langJSON;
-    $langJSON = loadJSON('json/languages/'.$siteLang.'.json');
-}
-
-function l1nk($link) {
-    global $siteInfo;
-    return $link;
-}
-
 // Build Alerts
-function buildAlert($siteJSON, $siteLang) {
-    $alerts = $siteJSON["alert"][$siteLang];
+function buildAlert($siteJSON, $siteINFO) {
+    $alerts = isset($siteJSON["alert"][$siteINFO -> langSite]) ? $siteJSON["alert"][$siteINFO -> langSite] : [];
     if (count($alerts) > 0) {
         $html = '<div class="alertBox">';
         for ($i=0; $i < count($alerts); $i++) { 
@@ -92,42 +83,49 @@ function buildAlert($siteJSON, $siteLang) {
 }
 
 // Build Menu
-function buildMenu($siteJSON, $siteInfo, $menu) {
-    global $langJSON;
+function buildMenu($siteJSON, $siteINFO, $langJSON, $menu) {
     $menuArray = $siteJSON["menu"][$menu];
     $html = '<div class="menu">';
     for ($i=0; $i < count($menuArray); $i++) { 
-        $html .= '<a href="'.$siteInfo->mainPath.$menuArray[$i].'">'.$langJSON["nav"][$menuArray[$i]].'</a>';
+        $html .= '<a href="'.$siteINFO->mainPath.$menuArray[$i].'">'.$langJSON["nav"][$menuArray[$i]].'</a>';
     }
     $html .=  '</div>';
     return $html;
 }
 
 // Mobile Menu
-function mobileMenu($siteJSON, $siteInfo) {
+function mobileMenu($siteJSON, $siteINFO, $langJSON) {
     $menu = $siteJSON["menu"]["mobile"];
     $html = '<nav id="appMenu">';
     for ($i = 0; $i < 4; $i++) { 
-        $active = $siteInfo -> page === $menu[$i]["en"] ? ["active", "-fill"] : ["", ""];
-        $html .= '<a href="'.$menu[$i]["en"].'" class="'.$active[0].'"><i class="bi bi-'.$menu[$i]["icon"].$active[1].'"></i><br>'.$menu[$i]["hu"].'</a>';
+        $active = $siteINFO -> page === $menu[$i] ? ["active", "-fill"] : ["", ""];
+        $html .= '<a href="'.$menu[$i].'" class="'.$active[0].'">
+        <i class="bi bi-'.$siteJSON["icons"][$menu[$i]].$active[1].'"></i>
+        <br>'.$langJSON["nav"][$menu[$i]].'</a>';
     }
     $html .= '</nav>';
     echo $html;
 }
 
 // Build Food Page Content
-function buildFood($foodJSON, $langJSON, $siteJSON, $siteInfo, $userLang) {
-    $iso = $langJSON["iso"];
+function buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO) {
+    $iso = $siteINFO -> langSite;
     $categories = $foodJSON["category"];
 
     // Languages
     $foodLangs = $siteJSON['languages']['foodMenu'];
-    $menuLang = in_array($userLang, $foodLangs) ? $userLang : "en";
+    $menuLang = "en";
+
+    if (isset($siteINFO -> langURL)) {
+        $menuLang = $siteINFO -> langURL;
+    } elseif (in_array($siteINFO -> langUser, $foodLangs)) {
+        $siteINFO -> langUser;
+    }
     
     // Categories Bar
     echo '<div id="foodCategories">
     <div class="content">
-    <a class="btn drink" href="'.$siteInfo->mainPath.'pdf/itallap.pdf"><i class="bi bi-cup-hot-fill"></i> '.$langJSON["menu"]["drink"].'</a>';
+    <a target="_blank" class="btn drink" href="'.$siteINFO->mainPath.'pdf/itallap.pdf"><i class="bi bi-cup-hot-fill"></i> '.$langJSON["menu"]["drink"].'</a>';
     for ($i=0; $i < count($categories["en"]); $i++) {
         echo '<a href="#'.str_replace(' ', '', $categories["en"][$i]).'" class="btn">'.$categories[$menuLang][$i].'</a>';
     }
@@ -168,7 +166,7 @@ function buildFood($foodJSON, $langJSON, $siteJSON, $siteInfo, $userLang) {
                 }
 
                 echo '<div class="foodItem" data-allergens="'.$allergyNumber.'" data-code="'.$id.'">';
-                echo '<img src="'.$siteInfo->mainPath.'img/food/'.$id.'.webp" alt="'.$title.'" loading="lazy">';
+                echo '<img src="'.$siteINFO->mainPath.'img/food/'.$id.'.webp" alt="'.$title.'" loading="lazy">';
                 echo '<div class="btn code">#'.$id.'</div>';
                 echo '<b>'.$title.'</b>';
                 echo '<div class="price">'.$price.' Ft</div>';
@@ -179,10 +177,8 @@ function buildFood($foodJSON, $langJSON, $siteJSON, $siteInfo, $userLang) {
     }
 }
 
-
 // Contact 01
-function buildContactBase() {
-    global $siteJSON, $langJSON;
+function buildContactBase($siteJSON, $langJSON) {
     $html = '';
     foreach ($siteJSON["contact"] as $item) {
         if ($item["contact"]) {
@@ -194,8 +190,7 @@ function buildContactBase() {
 }
 
 // Contact 02
-function buildContactIcon() {
-    global $siteJSON;
+function buildContactIcon($siteJSON) {
     $html = '';
     foreach ($siteJSON["contact"] as $item) {
         if ($item["bar"]) {
@@ -278,8 +273,7 @@ function buildOpenHours($langJSON, $siteJSON) {
 }
 
 // Company Informations
-function buildCompanyInfos() {
-    global $langJSON, $siteJSON;
+function buildCompanyInfos($langJSON, $siteJSON) {
     $comp = $langJSON["company"];
     $html = "";
     foreach ($siteJSON["company"] as $item) {
@@ -290,119 +284,10 @@ function buildCompanyInfos() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/////////////////////////////// ORIGINAL FUNCTIONS ///////////////////////////
-function buildSocial() {
-    global $siteJSON;
-    echo '<a href="mailto:'.$siteJSON["contact"]["email"].'"><i class="bi bi-envelope-fill"></i></a>
-    <a href="'.$siteJSON["contact"]["facebook"].'" target="_blank"><i class="bi bi-facebook"></i></a>
-    <a href="'.$siteJSON["contact"]["instagram"].'" target="_blank"><i class="bi bi-instagram"></i></a>
-    <a href="'.$siteJSON["contact"]["gpage"].'" target="_blank"><i class="bi bi-google"></i></a>';
-}
-function printContact() {
-    global $siteJSON;
-    global $langJSON;
-    echo '<p><a href="'.$siteJSON["contact"]["gpage"].'"><i class="bi bi-geo-alt-fill"></i> '.$siteJSON["contact"]["address"].'</a></p>
-    <p><a href="tel:'.$siteJSON["contact"]["phone"].'"><i class="bi bi-telephone-fill"></i> '.$siteJSON["contact"]["phone"].'</a></p>
-    <p><a href="tel:'.$siteJSON["contact"]["mobile"].'"><i class="bi bi-phone-fill"></i> '.$siteJSON["contact"]["mobile"].'</a></p>
-    <p><a href="mailto:'.$siteJSON["contact"]["email"].'"><i class="bi bi-envelope-fill"></i> '.$siteJSON["contact"]["email"].'</a></p>
-    <p><a target="_blank" href="'.$siteJSON["contact"]["digicard"].'"><i class="bi bi-person-vcard-fill"></i> '.$langJSON["contact"]["card"].'</a></p>';
-}
-
-
-
-function printMenu($menu) {
-    global $siteJSON;
-    global $siteInfo;
-    $path = $siteInfo->mainPath;
-    
-    echo '<ul class="'.$menu.'Menu">';
-    for ($i=0; $i < count($siteJSON["menu"][$menu]); $i++) { 
-        $page = $siteJSON["menu"][$menu][$i];
-        echo '<li><a href="'.$path.$page.'">'.$page.'</a></li>';
-    }
-    echo '</ul>';
-}
-
-
-function printOpen($langJSON, $siteJSON) {
-    $openJSON = $siteJSON["open_hours"];
-    $days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
-    $daysCount = count($days);
-    $text = '<div id="openHours">';
-    $text .= '<b>'.$langJSON["open"]["title"].':</b>';
-    $text .= '<div>';
-    for ($i = 0; $i < $daysCount; $i++) {
-        $day = $langJSON["open"]["days"][$i];
-        $today = (date("N") == $i + 1) ? ' now' : '';
-        
-        if (empty($openJSON[$days[$i]]["open"])) {
-            $text .= '<div class="day"><div>' . $day . ':</div><div class="closed">' . $langJSON["open"]["status"]["close"] . '</div></div>';
-        } else {
-            $text .= '<div class="day' . $today . '"><div>' . $day . ':</div><div>' . $openJSON[$days[$i]]["open"] . '-' . $openJSON[$days[$i]]["close"] . '</div></div>';
-        }
-    }
-
-    $text .= '</div>';
-    $text .= '<a href="parking"><div class="btn"><i class="bi bi-p-circle-fill"></i> ' . $langJSON["home"]["parking2"] . '</div></a>';
-    $text .= '</div>';
-    echo $text;
-}
-
-
-
-
-
-
-
-
-
-
-
-///////////////////// BACKEND
-$openJSON = "";
-
-set_include_path( $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR );
-$siteInfo = new stdClass();
-//$redcatJSON = loadJSON('json/redcat.json');
+/////////////////////////////////////////////// BACKEND ///////////////////////////////////////////////
+$siteINFO = new stdClass();
 $siteJSON = loadJSON('json/site.json');
 
-$testServer;
-scanUrl();
-
-$cookieAccepted;
-$cookieLevel;
-cookieScan();
-
-$siteLang;
-$availableLanguages = $siteJSON['languages']['site'];
-$userLang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-languageDetect();
+scanURL($siteINFO, $siteJSON);
+langDetect($siteINFO, $siteJSON);
 ?>

@@ -1,16 +1,18 @@
 {
 "iso": "en",
 "title": "Rab Ráby Restaurant",
-"meta_desc": "A restaurant in the downtown area of Szentendre where antiquities, breathtaking interior, delicious food, and great prices await.",
-"restaurant": "Restaurant",
-"since": "since 1982",
+"meta": {
+    "desc": "A restaurant in the downtown area of Szentendre where antiquities, breathtaking interior, delicious food, and great prices await."
+},
 "loading": "Loading",
 "open":{
-    "title": ["Opening hours", "at this moment"],
+    "title": "Opening hours",
     "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    "status": ["Closed", "Open"]
+    "status": {
+        "open": "Open",
+        "close": "Closed"
+    }
 },
-"mobile_nav": ["Home", "Menu", "Groups", "Contact"],
 "nav":{
     "home": "Home",
     "menu": "Menu",
@@ -42,7 +44,7 @@
         ]
     },    
     "guest": "Ratings",
-    "guest_w": "Write a rating",
+    "guest2": "Write a rating",
     "menu": "Show menu",
     "ccard": "Credit cards accepted"
 },
@@ -110,11 +112,11 @@
         "answer": "Yes, we cater for weddings, baptisms, birthdays, name days, class reunions, book launches, wine tastings, funeral receptions, etc."
     }
 ],
-"guest":{
-    "1": ["Best place in Szentendre to get the beloved Hungarian fisherman soup. It comes with a side of peasant bread and some sought of chili paste. You can ask for more bread if you run out. The restaurant is medieval themed and decked fully with interesting items and trinkets. The prices are very reasonable.", "SHEHAN JAYASEKERA"],
-    "2": ["Super freundliche Bedienung und wuuuuunderbares Essen zum kleinen Preis. Herrlich!", "BJÖRN FRÖHLICH"],
-    "3": ["Очень необычное место. Готовят вкусно, и не очень дорого. Кухня национальная. Очень много старинных вещей. Понравилось.", "СЕРЖ ГОРЕЛЫЙ"]
-},
+"guest": [
+    {"name": "SHEHAN JAYASEKERA", "text": "Best place in Szentendre to get the beloved Hungarian fisherman soup. It comes with a side of peasant bread and some sought of chili paste. You can ask for more bread if you run out. The restaurant is medieval themed and decked fully with interesting items and trinkets. The prices are very reasonable."},
+    {"name": "BJÖRN FRÖHLICH", "text": "Super freundliche Bedienung und wuuuuunderbares Essen zum kleinen Preis. Herrlich!"},
+    {"name": "СЕРЖ ГОРЕЛЫЙ", "text": "Очень необычное место. Готовят вкусно, и не очень дорого. Кухня национальная. Очень много старинных вещей. Понравилось."}
+],
 "contact":{
     "title": "Contact",
     "card": "digital business card",

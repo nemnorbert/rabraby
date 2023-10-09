@@ -1,9 +1,9 @@
 {
 "iso": "hu",
 "title": "Rab Ráby Étterem",
-"meta_desc": "Étterem Szentendre belvárosában ahol régiségek, lélegzetelállító beltér, finom ételek és remek árak várnak. SZÉP kártya elfogadóhely",
-"restaurant": "Étterem",
-"since": "1982 óta",
+"meta": {
+    "desc": "Étterem Szentendre belvárosában ahol régiségek, lélegzetelállító beltér, finom ételek és remek árak várnak. SZÉP kártya elfogadóhely"
+},
 "loading": "Betöltés",
 "open":{
     "title": "Nyitvatartás",
@@ -13,7 +13,6 @@
         "close": "Zárva"
     }
 },
-"mobile_nav": ["Főoldal", "Étlap", "Csoport", "Kapcsolat"],
 "nav":{
     "home": "Főoldal",
     "menu": "Étlap",
