@@ -30,15 +30,6 @@
   </div>
 </footer>
 
-
-
-<script>
-let siteINFO = {
-    language: "<?= $siteINFO -> langSite; ?>",
-    mainPath: "<?= $siteINFO->mainPath; ?>",
-    redcatPath: "<?= $siteINFO->redcatPath; ?>",
-};
-</script>
 <script src="<?= $siteINFO->mainPath ?>js/main.js?v=<?= time() ?>"></script>
 <?php
   if ($siteINFO->page === "menu") {

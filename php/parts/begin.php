@@ -25,6 +25,13 @@
     <link rel="stylesheet" href="<?= $siteINFO->mainPath ?>css/style.css?v=<?= time() ?>">
 </head>
 <body>
+<script>
+  let siteINFO = {
+      language: "<?= $siteINFO -> langSite; ?>",
+      mainPath: "<?= $siteINFO->mainPath; ?>",
+      redcatPath: "<?= $siteINFO->redcatPath; ?>",
+  };
+</script>
 
 <nav id="primaryMenu">
   <a class="logo" href="#">

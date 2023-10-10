@@ -420,6 +420,27 @@ nav{
 }
 
 // Welcome
+#home {
+    .widget {
+        background-color: var(--background-color_transparent);
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 .5rem .5rem .5rem;
+        border-radius: 1rem;
+        box-shadow: $shadow1;
+        
+        .title {
+            font-weight: bold;
+        }
+        :last-child {
+            opacity: .5;
+        }
+    }
+}
 .welcome {
     padding: 2rem 1rem;
     background-image: $linearGradient1;

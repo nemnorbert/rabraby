@@ -1,5 +1,6 @@
 <header id="home">
   <?= buildAlert($siteJSON, $siteINFO); ?>
+  <div id="homeWidget"></div>
 </header>
 
 <div class="welcome">
@@ -11,7 +12,7 @@
     <?= buildOpenHours($langJSON, $siteJSON); ?>
   </div>
   <div>
-    
+
   </div>
 </div>
 
@@ -38,3 +39,5 @@
   <img src="<?= $siteINFO->mainPath ?>img/hitel_mini.webp" loading="lazy" alt="Támogatott az EU és Magyarország kormánya">
   </a>
 </div>
+
+<script src="<?= $siteINFO->mainPath ?>js/home.js"></script>
