@@ -50,6 +50,7 @@ h2 {
     font-size: 1.8rem;
 }
 h1, h2 {
+    word-break: break-word;
     text-transform: uppercase;
     text-align: center;
 }
@@ -175,7 +176,7 @@ nav{
         }
     }
 }
-#primaryMenu > div, img {
+#primaryMenu > div, a {
     grid-column: span 6;
 }
 #primaryMenu.scroll {
@@ -374,23 +375,33 @@ nav{
 }
 
 //////////////////////////////////////////////// ALERTS
+#home {
+    background-color: magenta;
+    padding: 0;
+    justify-content: flex-start;
+}
 .alertBox {
-    position: absolute;
+    position: sticky;
     top: 65px;
     left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
     gap: $gap1;
     padding: $gap1;
+    text-align: center;
 }
-.alertBox > div {
-    background-color: rgb(32, 85, 185);
-    color: white;
-    padding: 8px;
-    border-radius: 7px;
+.alertBox > a {
+    background-color: var(--main_color);
+    color: var(--secundary_color_dark);
+    padding: .5rem;
+    border-radius: .5rem;
+    width: 100%;
     max-width: 600px;
+    font-size: 1.2rem;
 }
 
 
@@ -412,13 +423,11 @@ nav{
 .welcome {
     padding: 2rem 1rem;
     background-image: $linearGradient1;
-    .content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
 
 // Reserve
@@ -622,9 +631,6 @@ header {
         color: var(--secundary_color_dark);
         text-shadow: none;
     }
-    h1 {  
-        word-break: break-all;
-    }
     .menu {
         gap: 1rem;
         text-transform: uppercase;
@@ -679,6 +685,9 @@ header {
     .closed {
         color: red;
         opacity: .7;
+    }
+    .today.closed {
+        color: white;
     }
 }
 

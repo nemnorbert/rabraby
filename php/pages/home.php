@@ -1,19 +1,17 @@
-<header >
+<header id="home">
   <?= buildAlert($siteJSON, $siteINFO); ?>
-
-  <div id="infoBtns">
-    <div class="btn">Manófalvi</div>
-    <div class="btn">Jason Statham</div>
-    <div class="btn">Kályha</div>
-  </div>
 </header>
 
 <div class="welcome">
-  <h1>Rab Ráby Restaurant</h1>
-  <div class="content">
-    <div class="openHours">
-      <?= buildOpenHours($langJSON, $siteJSON); ?>
-    </div>
+  <div>
+    <h1>Rab Ráby Restaurant</h1>
+    <div><?= $langJSON["home"]["welcome"]; ?></div>
+  </div>
+  <div class="openHours">
+    <?= buildOpenHours($langJSON, $siteJSON); ?>
+  </div>
+  <div>
+    
   </div>
 </div>
 

@@ -65,12 +65,10 @@
 },
 "404":{
     "title": "404-es hiba",
-    "desc": "Az oldal nem található amit keresel",
-    "desc_2": "Hasznos linkek helyette:"
+    "desc": "Az oldal nem található amit keresel"
 },
 "footer":{
-    "social": "Lépj velünk kapcsolatba:",
-    "szoveg": "1982 óta",
+    "social": "Lépj velünk kapcsolatba",
     "contact": "Kapcsolat"
 },
 "park": {

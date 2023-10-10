@@ -1,6 +1,8 @@
 {
     "alert": {
-        "hu": [],
+        "hu": [
+            ["Új telefonszám:", "#"]
+        ],
         "en": []
     },
     "openHours": {

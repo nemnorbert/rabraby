@@ -27,7 +27,9 @@
 <body>
 
 <nav id="primaryMenu">
-  <img class="logo" src="<?= $siteINFO->mainPath ?>/img/logo/logo_black.webp" alt="Logo of Restaurant">
+  <a class="logo" href="#">
+    <img src="<?= $siteINFO->mainPath ?>/img/logo/logo_black.webp" alt="Logo of Restaurant">
+  </a>
   <div id="hamburger" class="hamBtns"><span></span><span></span><span></span></div>
 </nav>
 

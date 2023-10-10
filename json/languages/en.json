@@ -73,12 +73,10 @@
 },
 "404":{
     "title": "Error 404",
-    "desc": "We can't seem to find the page you're looking for.",
-    "desc_2": "Here are some helpful links instead:"
+    "desc": "We can't seem to find the page you're looking for."
 },
 "footer":{
-    "social": "Get connected with us:",
-    "szoveg": "since 1982",
+    "social": "Get connected with us",
     "contact": "Contact"
 },
 "park": {
