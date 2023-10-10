@@ -4,15 +4,19 @@
 </header>
 
 <div class="welcome">
-  <div>
+  <div class="text">
     <h1>Rab Ráby Restaurant</h1>
-    <div><?= $langJSON["home"]["welcome"]; ?></div>
+    <h3>Szentendre</h3>
+    <h4>anno 1982</h4>
+    <p><?= $langJSON["home"]["welcome"]; ?></p>
   </div>
   <div class="openHours">
     <?= buildOpenHours($langJSON, $siteJSON); ?>
   </div>
-  <div>
-
+  <div class="important">
+    <div>Meleg kandaló</div>
+    <div>Kutyabarát hely</div>
+    <div>Szépkártya elfogadóhely</div>
   </div>
 </div>
 

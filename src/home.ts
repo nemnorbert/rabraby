@@ -4,7 +4,6 @@ const weatherAPI = () => {
     const url = `https://api.weatherapi.com/v1/current.json?key=4f043957d881429198301911231010&q=Szentendre&aqi=no&lang=${lang}`;
     const widgetDIV: HTMLElement | null = document.querySelector('#homeWidget');
 
-    // Az API-tól való adatok lekérdezése
     fetch(url)
     .then((response) => {
         if (response.status !== 200) {
@@ -16,15 +15,13 @@ const weatherAPI = () => {
     })
     .then((data) => {
         weatherJSON = data.current;
-        console.log(weatherJSON);
 
         if (widgetDIV !== null) {
             widgetDIV.innerHTML = `
                 <img src="${weatherJSON.condition.icon}" alt="Weather logo, mini">
                 <div class="title">Szentendre</div>
                 <div>${weatherJSON.condition.text}</div>
-                <div>${weatherJSON.temp_c} ℃</div>
-                <div>(${weatherJSON.temp_f} °F)</div>`;
+                <div>${weatherJSON.temp_c} ℃</div>`;
             widgetDIV.classList.add('widget');
         }
     })

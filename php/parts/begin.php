@@ -38,6 +38,9 @@
     <img src="<?= $siteINFO->mainPath ?>/img/logo/logo_black.webp" alt="Logo of Restaurant">
   </a>
   <div id="hamburger" class="hamBtns"><span></span><span></span><span></span></div>
+  <div class="menu">
+    <?= buildMenu($siteJSON, $siteINFO, $langJSON, "main"); ?>
+  </div>
 </nav>
 
 <div id="secundaryMenu" data-visible="false">

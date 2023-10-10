@@ -1,9 +1,11 @@
 {
     "alert": {
         "hu": [
-            ["Új telefonszám:", "#"]
+            ["Üdvözlünk új weboldalunkon!", "#"]
         ],
-        "en": []
+        "en": [
+            ["Welcome to our new website!", "#"]
+        ]        
     },
     "openHours": {
         "default": [

@@ -4,7 +4,7 @@
 //////////////////////////////////////////////// SAAS VARIABLE
 $shadow1: 0 0 5px rgb(84 69 48 / 55%);
 $minWidth: 280px; // Galaxy Fold
-$maxWidth: 2000px;
+$maxWidth: 1000px;
 $pcWidth: 800px;
 $borderRadius1: 1rem;
 $linearGradient1: linear-gradient(to bottom, var(--main_color), var(--secundary_color));
@@ -44,7 +44,7 @@ body {
     background-color: var(--background-color2);
 }
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
 }
 h2 {
     font-size: 1.8rem;
@@ -53,6 +53,10 @@ h1, h2 {
     word-break: break-word;
     text-transform: uppercase;
     text-align: center;
+}
+header, main, footer {
+    max-width: $maxWidth;
+    margin: 0 auto;
 }
 a {
     text-decoration: none;
@@ -128,7 +132,7 @@ header {
     background-image: linear-gradient(to bottom, var(--main_color), var(--secundary_color));
 
     img {
-        height: 75px;
+        height: 100px;
     }
 }
 
@@ -140,7 +144,6 @@ nav{
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
     text-transform: uppercase;
-    box-shadow: $shadow1;
     width: $width;
     z-index: 10;
 }
@@ -154,6 +157,8 @@ nav{
     transition: background-color .5s;
     backdrop-filter: blur($blur1);
     max-width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 
     .logo {
         padding-left: 5px;
@@ -173,6 +178,17 @@ nav{
             width: 35px;
             border-radius: 2px;
             background-color: white;
+        }
+    }
+    .menu {
+        display: none;
+        justify-self: end;
+        gap: 1rem;
+        padding-right: 2rem;
+        font-weight: bold;
+
+        a {
+            color: var(--secundary_color_dark);
         }
     }
 }
@@ -388,11 +404,11 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-transform: uppercase;
     font-weight: bold;
     gap: $gap1;
     padding: $gap1;
     text-align: center;
+    z-index: 1;
 }
 .alertBox > a {
     background-color: var(--main_color);
@@ -401,7 +417,7 @@ nav{
     border-radius: .5rem;
     width: 100%;
     max-width: 600px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 
@@ -419,7 +435,6 @@ nav{
     width: 90%;
 }
 
-// Welcome
 #home {
     .widget {
         background-color: var(--background-color_transparent);
@@ -436,19 +451,24 @@ nav{
         .title {
             font-weight: bold;
         }
-        :last-child {
-            opacity: .5;
-        }
     }
 }
+
+// Welcome
 .welcome {
-    padding: 2rem 1rem;
+    padding: 2rem;
     background-image: $linearGradient1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
     align-items: center;
-    padding: 1rem;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 2rem;
+
+    .text {
+        text-align: center;
+    }
+}
+.welcome > div {
+    grid-column: span 12;
 }
 
 // Reserve
@@ -686,7 +706,11 @@ header {
         justify-content: space-between;
         column-gap: 30px;
         width: 100%;
-        padding: 10px 12px;
+        padding: 10px;
+
+        div:nth-child(2) {
+            font-size: 1.1rem;
+        }
     }
     div:last-child {
         border-radius: 0 0 1rem 1rem;
@@ -695,7 +719,6 @@ header {
         color: white;
         background-color: var(--main_color);
         animation: openHours 5s infinite ease-in-out;
-        font-size: 1.1rem;
         box-shadow: inset $shadow1;
 
         @keyframes openHours {
@@ -801,14 +824,14 @@ footer {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         justify-items: center;
-        row-gap: 30px;
+        row-gap: 2rem;
 
         .contact {
             display: flex;
             flex-direction: column;
             row-gap: 10px;
             line-height: 1.5rem;
-            padding: 0 1rem;
+            text-align: left;
         }
     }
     .middle > div {
@@ -851,8 +874,23 @@ footer > div {
     #hamburger {
         display: none;
     }
+    .menu {
+        display: flex;
+    }
 }
 #secundaryMenu {
     display: none;
+}
+.welcome, footer {
+    column-gap: 2rem;
+}
+.welcome > div {
+    grid-column: span 4;
+}
+#food .foodBox .foodContent .foodItem {
+    grid-column: span 3;
+}
+footer .middle > div {
+    grid-column: span 3;
 }
 }
