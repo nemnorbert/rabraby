@@ -274,10 +274,13 @@ function buildOpenHours($langJSON, $siteJSON) {
 // Company Informations
 function buildCompanyInfos($langJSON, $siteJSON) {
     $comp = $langJSON["company"];
-    $html = "";
+    
+    $html = '<div class="content">';
+    $html .= '<h3>Rab Ráby Kft.</h3>';
     foreach ($siteJSON["company"] as $item) {
         $html .= '<div><b>'.$comp[$item["name"]].':</b><br>'.$item["text"].'</div>';
     }
+    $html .= '</div>';
     return $html;
 }
 

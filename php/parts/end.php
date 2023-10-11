@@ -9,16 +9,21 @@
       <img class="logo" src="<?= $siteINFO->mainPath ?>img/logo/logo_white.webp" alt="">
       <div>anno 1982</div>
     </div>
+
     <div>
       <div class="openHours">
         <?= buildOpenHours($langJSON, $siteJSON); ?>
       </div>
     </div>
-    <div>
-  
-    </div>
+
     <div class="contact">
       <?= buildContactbase($siteJSON, $langJSON); ?>
+    </div>
+
+    <div class="support">
+      <a target="_blank" href="<?= $siteINFO->mainPath ?>img/hitel.jpg">
+      <img src="<?= $siteINFO->mainPath ?>img/hitel_mini.webp" loading="lazy" alt="Támogatott az EU és Magyarország kormánya">
+      </a>
     </div>
   </div>
 

@@ -21,9 +21,8 @@
             "2023-01-01": {"open": "12", "close": "20"}
         }
     },
-
-
-
+    
+    "phone": "+36209149737",
     "contact": [
         {"name": "addres", "content": "translate", "link": "https://g.page/rabraby?gm", "icon": "map-fill", "contact": true, "bar": true},
         {"name": "mobile", "content": "+36 26 310 819", "link": "tel:+3626310819", "icon": "telephone-fill", "contact": true, "bar": false},

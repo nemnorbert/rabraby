@@ -4,13 +4,12 @@
 "meta": {
     "desc": "A restaurant in the downtown area of Szentendre where antiquities, breathtaking interior, delicious food, and great prices await."
 },
-"loading": "Loading",
 "open":{
     "title": "Opening hours",
     "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     "status": {
         "open": "Open",
-        "close": "Closed"
+        "close": "Close"
     }
 },
 "nav":{
@@ -37,11 +36,10 @@
     "table": {
         "title": "Table Reservation",
         "content": [
-            "Table reservation is a simple and convenient way to secure your spot with us. You can make reservations with us both over the phone and online.",
-            "If you prefer the traditional method of reserving a table, do not hesitate to call us at the following phone numbers:",
-            "+36 26 310 819 / +36 20 914 9737",
-            "For online reservations, you have the following options:"
-        ]
+            "Table reservation is a simple and convenient way to secure your spot with us.",
+            "If you prefer the traditional method of reserving a table, do not hesitate to call us at the following phone numbers:"
+        ],
+        "online": "For online reservations, you have the following options:"
     },    
     "guest": "Ratings",
     "guest2": "Write a rating",
@@ -75,11 +73,7 @@
     "title": "Error 404",
     "desc": "We can't seem to find the page you're looking for."
 },
-"footer":{
-    "social": "Get connected with us",
-    "contact": "Contact"
-},
-"park": {
+"parking": {
     "navi": "Navigation",
     "car": "to park place",
     "walk": "to restaurant"
@@ -128,5 +122,9 @@
     "bankNumber": "Bank Account Number",
     "swift": "SWIFT (For International Transfers)",
     "iban": "IBAN (For International Transfers)"
+},
+"footer":{
+    "social": "Get connected with us",
+    "contact": "Contact"
 }
 }

@@ -8,7 +8,6 @@
 
 <div class="companyInfo">
   <h2><?= $langJSON["company"]["title"]; ?>:</h2>
-  <h3>Rab Ráby Kft.</h3>
   <?= buildCompanyInfos($langJSON, $siteJSON); ?>
 </div>
 

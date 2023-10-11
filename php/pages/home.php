@@ -5,7 +5,7 @@
 
 <div class="welcome">
   <div class="text">
-    <h1>Rab Ráby Restaurant</h1>
+    <h1><?= $langJSON["title"]; ?></h1>
     <h3>Szentendre</h3>
     <h4>anno 1982</h4>
     <p><?= $langJSON["home"]["welcome"]; ?></p>
@@ -24,6 +24,8 @@
   <div class="box">
     <h2><?= $langJSON["home"]["table"]["title"]; ?></h2>
     <?= buildReserve($langJSON); ?>
+    <?= '<a class="phone" href="tel:'.$siteJSON["phone"].'">'.$siteJSON["phone"].'</a>'; ?>
+    <?= '<p>'.$langJSON["home"]["table"]["online"].'</p>'; ?>
     <div class="contact">
       <?= buildContactIcon($siteJSON); ?>
     </div>
@@ -36,12 +38,6 @@
 
 <div class="faq">
   <?= buildFAQ($langJSON); ?>
-</div>
-
-<div class="support">
-  <a target="_blank" href="<?= $siteINFO->mainPath ?>img/hitel.jpg">
-  <img src="<?= $siteINFO->mainPath ?>img/hitel_mini.webp" loading="lazy" alt="Támogatott az EU és Magyarország kormánya">
-  </a>
 </div>
 
 <script src="<?= $siteINFO->mainPath ?>js/home.js"></script>

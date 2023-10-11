@@ -4,7 +4,6 @@
 "meta": {
     "desc": "Étterem Szentendre belvárosában ahol régiségek, lélegzetelállító beltér, finom ételek és remek árak várnak. SZÉP kártya elfogadóhely"
 },
-"loading": "Betöltés",
 "open":{
     "title": "Nyitvatartás",
     "days": ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"],
@@ -26,7 +25,6 @@
 },
 "home": {
     "welcome": "Szeretettel várunk szentendrei éttermünkben, a belvárosban. Finom ételek, régiségek, lélegzetelállító beltér és kedvező árak, 1982 óta.",
-    "parking": "Hol tudok parkolni?",
     "parking2": "Parkolás",
     "parking3": "A 2012-es zónában tud parkolni (narancssárga jelölés), a Bajcsy-Zsilinszky Endre utcánál vagy a Bükkös parton. Parkolás akár 39 méter is lehet az étteremtől. A zöld pontok a parkoló automatákat jelzik. A távolság a vendéglőtől körülbelül 1-2 perc sétálva. Szentendrén hétvégén is kell fizetni a parkolásért!",
     "moreinfo": "Részletek",
@@ -37,11 +35,10 @@
     "table": {
         "title": "Asztalfoglalás",
         "content": [
-            "Az asztalfoglalás egyszerű és kényelmes módja annak, hogy biztosítsd a helyedet. Telefonon és online is foglalhatsz nálunk.",
-            "Ha a hagyományos úton szeretnél asztalt foglalni, ne habozz hívni minket a következő telefonszámokon:",
-            "+36 26 310 819 / +36 20 914 9737",
-            "Online foglalásra pedig az alábbi platformokon van lehetőséged:"
-        ]
+            "Az asztalfoglalás egyszerű és kényelmes módja annak, hogy biztosítsd a helyedet.",
+            "Ha a hagyományos úton szeretnél asztalt foglalni, ne habozz hívni minket a következő telefonszámon:"
+        ],
+        "online": "Online foglalásra pedig az alábbi platformokon van lehetőséged:"
     },
     "guest": "Vendégeink írták",
     "guest2": "Vélemény írása",
@@ -67,11 +64,8 @@
     "title": "404-es hiba",
     "desc": "Az oldal nem található amit keresel"
 },
-"footer":{
-    "social": "Lépj velünk kapcsolatba",
-    "contact": "Kapcsolat"
-},
-"park": {
+"parking": {
+    "where": "Hol tudok parkolni?",
     "navi": "Navigáció",
     "car": "Parkolóhoz",
     "walk": "Étteremhez"
@@ -120,5 +114,9 @@
     "bankNumber": "Bankszámlaszám",
     "swift": "SWIFT (Nemzetközi utaláshoz)",
     "iban": "IBAN (Nemzetközi utaláshoz)"
+},
+"footer":{
+    "social": "Lépj velünk kapcsolatba",
+    "contact": "Kapcsolat"
 }
 }
