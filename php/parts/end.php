@@ -17,6 +17,7 @@
     </div>
 
     <div class="contact">
+      <b class="title"><?= $langJSON["contact"]["title"]; ?></b>
       <?= buildContactbase($siteJSON, $langJSON); ?>
     </div>
 

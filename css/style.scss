@@ -116,6 +116,14 @@ header {
     justify-content: center;
     flex-wrap: wrap;
 }
+.logo {
+    height: 60px;
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: auto;
+    }
+}
 
 //////////////////////////////////////////////// PRELOADER
 #preLoader {
@@ -126,7 +134,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 1rem;
+    row-gap: 3rem;
     color: white;
     text-transform: uppercase;
     font-weight: bold;
@@ -138,7 +146,17 @@ header {
         height: 100px;
     }
 }
-
+.custom-loader {
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    border:16px solid;
+    border-color:#F4F4F4 #0000;
+    animation:s1 1s infinite;
+}
+@keyframes s1 {
+    to{transform: rotate(.5turn)}
+}
 
 //////////////////////////////////////////////// NAVIGATION
 nav{
@@ -156,7 +174,7 @@ nav{
 #primaryMenu {
     top: 0;
     height: $topHeaderHeight;
-    background-color: #ffffff0e;
+    background-color: rgba(255, 255, 255, 0.514);
     transition: background-color .5s;
     backdrop-filter: blur($blur1);
     max-width: 100%;
@@ -166,7 +184,7 @@ nav{
     justify-content: space-between;
 
     .logo {
-        padding-left: 15px;
+        padding-left: 10px;
     }
     #hamburger {
         background-color: var(--main_color);
@@ -439,6 +457,9 @@ nav{
     width: 90%;
 }
 
+.container {
+    padding: 100px 2rem;
+}
 #home {
     .widget {
         background-color: var(--background-color_transparent);
@@ -459,8 +480,7 @@ nav{
 }
 
 // Welcome
-.welcome {
-    padding: 2rem;
+#welcome {
     background-image: $linearGradient1;
     display: grid;
     align-items: center;
@@ -472,13 +492,60 @@ nav{
         text-align: center;
     }
 }
-.welcome > div {
+#welcome > div {
     grid-column: span 12;
 }
 
+#aboutUs {
+    background-color: var(--secundary_color_dark);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    .box {
+        border-radius: $borderRadius1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+    }
+    .video {
+        padding: 1rem;
+        
+        div {
+            display: flex;
+            gap: 1rem;
+        }
+        img {
+            max-width: 100%;
+            border-radius: $borderRadius1;
+        }
+    }
+    .vip {
+        flex-wrap: wrap;
+        padding: 0;
+
+        p {
+            padding: 1rem;
+        }
+        img {
+            width: 100%;
+            border-radius: $borderRadius1 $borderRadius1 0 0;
+        }
+    }
+
+}
+#aboutUs > div {
+    max-width: 500px;
+    border-radius: 2rem;
+    background-color: var(--background_color1);
+    text-align: justify;
+}
+
 // Reserve
-.reserve {
-    padding: 2rem;
+#reservation {
+    background-size: cover;
 
     .box {
         max-width: 500px;
@@ -632,7 +699,7 @@ nav{
 }
 
 
-//////////////////////////////////////////////// CONTACT PAGE
+//////////////////////////////////////////////// GROUPS PAGE
 header {
     .groups {
         .btn {
@@ -660,13 +727,21 @@ header {
     }
     .infos {
         flex-direction: column;
-        gap: .5rem;
+        gap: 1rem;
+        font-size: 1.3rem;
     }
     .social {
         font-size: 2.5rem;
         gap: 1rem;
         justify-content: center;
     }
+}
+.companyContent {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+.companyContent > div {
+    grid-column: span 12;
 }
 .companyInfo {
     background-color: var(--main_color_transparent);
@@ -852,6 +927,7 @@ footer {
         column-gap: 2rem;
 
         .contact {
+            color: var(--main_color);
             display: flex;
             flex-direction: column;
             row-gap: 10px;
@@ -865,10 +941,13 @@ footer {
 
     .bottom {
         display: flex;
-        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        column-gap: 8rem;
         row-gap: 2rem;
         border-top: #1b1915 solid 2px;
         background-color: #1b1915;
+        padding: 2rem;
         padding-bottom: 120px;
 
         .menu {
@@ -909,21 +988,22 @@ header h1 {
 #secundaryMenu {
     display: none;
 }
-.welcome, footer {
+#welcome, footer {
     column-gap: 2rem;
 }
-.welcome > div {
+#welcome > div {
     grid-column: span 4;
 }
-.companyInfo .content {
-    justify-content: space-between;
-    flex-direction: row;
-    column-gap: 3rem;
+.companyContent > div {
+    grid-column: span 6;
 }
 #food .foodBox .foodContent .foodItem {
     grid-column: span 3;
 }
 footer .middle > div {
     grid-column: span 3;
+}
+footer .bottom {
+    justify-content: space-between;
 }
 }

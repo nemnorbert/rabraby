@@ -22,6 +22,7 @@
         }
     },
     
+    "garden": true,
     "phone": "+36209149737",
     "contact": [
         {"name": "addres", "content": "translate", "link": "https://g.page/rabraby?gm", "icon": "map-fill", "contact": true, "bar": true},
@@ -46,7 +47,7 @@
     },
     "menu": {
         "main": ["home","menu", "groups", "contact"],
-        "other": ["parking", "sitemap", "imprint"],
+        "other": ["sitemap"],
         "mobile": ["home","menu", "groups", "contact"]
     },
     "icons": {

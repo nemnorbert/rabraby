@@ -1,0 +1,36 @@
+{
+    "faq": [
+        {
+            "question": "Можно ли платить банковской картой или картой SZÉP?",
+            "answer": "Да, у нас можно оплатить кредитной картой и всеми картами SZÉP. (Карты American Express не принимаются)."
+        },
+        {
+            "question": "Где можно припарковаться?",
+            "answer": "В Сентендре в 2022 году изменилась система парковки: в старом городе можно припарковаться только с разрешением. Ближайшая к нам парковка находится всего в 1 минуте ходьбы, на улице Байчи-Зсилински Эндре. (Код зоны: 2012)."
+        },
+        {
+            "question": "Где находится ресторан?",
+            "answer": "Ресторан расположен в центре Сентендре между Ратушей и церковью Святого Петра Поля. Мы находимся в самом центре и всего в 1 минуте ходьбы от Главной площади."
+        },
+        {
+            "question": "Есть ли у вас открытая площадка или терраса?",
+            "answer": "Да, у нас есть уютный внутренний двор, защищенный от ветра, который в жаркое время создает прохладу и тень."
+        },
+        {
+            "question": "Разрешено ли приносить с собой собак?",
+            "answer": "Да, с момента открытия мы всегда были дружелюбными к собакам."
+        },
+        {
+            "question": "Вы проводите мероприятия?",
+            "answer": "Да, мы проводим свадьбы, крестины, дни рождения, именные дни, встречи выпускников, презентации книг, дегустации вина, памятные обеды и многое другое."
+        }
+    ],  
+    "reviews": [
+        {"name": "István Matula", "text": "A kedvenc helyünk Szentendrén, elvarázsló egyedi hangulat, a rengeteg múltat idéző régiség között! Számtalan alkalommal voltunk már itt, de az ember mindig felfedez valami újat... Az ételek háziasak és bőségesek!"},
+        {"name": "Róza Szabóné Nagy", "text": "Belépve mint egy archív múzeumba lépnénk és mégis nagyon otthonos érzése támad az embernek. A személyzet gyors, figyelmes, az ételek kiválóak. Nagyon jól éreztük magunkat ajánljuk mindenkinek!"},
+        {"name": "Viktória Neumann", "text": "Gyors kiszolgálás, hagyományos magyar konyha. Az étterem hangulata magával ragadó, főleg azok számára, akik szeretik a régiségeket."},
+        {"name": "Ilona Fedelin", "text": "Szülinapomat ünnepeltünk egy 22 fő plusz 4 gyerek társaságában. Nagyon remek, hangulatos hely. Udvarias kiszolgálás. Az ételek nagyon finomak voltak."},
+        {"name": "Györgyi Zsigri", "text": "Aki szereti a régiségeket, annak egy igazi kincses tár az étterem. Miközben a finom ételed fogyasztod, a tárgyak mesélnek neked, és megelevenedik a múlt. Ehhez nem csak a szemed járul hozzá, hanem az ízlelőbimbóid is, miközben magadévá teszed a tányérodon lévő jobbnál jobb falatokat. Az erdei gyümölcsös csirkemell filé az aprócska burgonya hercegnőkkel mennyei ízorgiát jelentett. A környezet, az ételek és a felszolgálás külön-külön is megérdemli az 5-5-5 pontot."},
+        {"name": "Virginia Dr. Eisenhauer", "text": "Ismét egy élmény volt. Az étel remek, a kiszolgálás jó, az étterem atmoszférája pedig varázslatos. Nekem egy picit nosztalgikus idejárni, mert a férjemmel itt volt az első randevúnk."}
+    ]
+}

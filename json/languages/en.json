@@ -65,9 +65,9 @@
 },
 "about": {
     "title": "About Us",
-    "vids": "Our videos",
+    "video": "Videos",
     "vip": "From time to time we have the pleasure to welcome some foreign political leaders of high standing and their wives. At these occasions we are ready to observe safety regulations of the highest level.",
-    "desc": "The restaurant was founded by Németh János and his family while the Iron Curtain still existed in 1982. It was named after Rab Ráby, a novel by Jókai Mór, the protagonist of which fought against corruption during the reign of Joseph II and lived in Szentendre.<br><br> The building that was converted into a restaurant was a forge more than 100 years ago. Németh János has been changing the antiquities and bric-a-brac on show continuously since the opening of the restaurant, which greatly delights our guests. Apart from an ethnical collection there are other old curiosities on exhibit, such as the grape press from 1838, the National cash register, the American Heating stove or the still operable polyphone and so on. So far every guest has found his or her favourite piece here."
+    "text": "The restaurant was founded by Németh János and his family while the Iron Curtain still existed in 1982. It was named after Rab Ráby, a novel by Jókai Mór, the protagonist of which fought against corruption during the reign of Joseph II and lived in Szentendre.<br><br> The building that was converted into a restaurant was a forge more than 100 years ago. Németh János has been changing the antiquities and bric-a-brac on show continuously since the opening of the restaurant, which greatly delights our guests. Apart from an ethnical collection there are other old curiosities on exhibit, such as the grape press from 1838, the National cash register, the American Heating stove or the still operable polyphone and so on. So far every guest has found his or her favourite piece here."
 },
 "404":{
     "title": "Error 404",
@@ -77,6 +77,24 @@
     "navi": "Navigation",
     "car": "to park place",
     "walk": "to restaurant"
+},
+"contact":{
+    "title": "Contact",
+    "card": "digital business card",
+    "addres": "HU Szentendre, Kucsera Ferenc u. 1/a"
+},
+"company": {
+    "title": "Company Informations",
+    "vatNum": "VAT Number",
+    "regNum": "Registration Number",
+    "bankName": "Bank",
+    "bankNumber": "Bank Account Number",
+    "swift": "SWIFT (For International Transfers)",
+    "iban": "IBAN (For International Transfers)"
+},
+"footer":{
+    "social": "Get connected with us",
+    "contact": "Contact"
 },
 "faq": [
     {
@@ -104,27 +122,14 @@
         "answer": "Yes, we cater for weddings, baptisms, birthdays, name days, class reunions, book launches, wine tastings, funeral receptions, etc."
     }
 ],
-"guest": [
-    {"name": "SHEHAN JAYASEKERA", "text": "Best place in Szentendre to get the beloved Hungarian fisherman soup. It comes with a side of peasant bread and some sought of chili paste. You can ask for more bread if you run out. The restaurant is medieval themed and decked fully with interesting items and trinkets. The prices are very reasonable."},
-    {"name": "BJÖRN FRÖHLICH", "text": "Super freundliche Bedienung und wuuuuunderbares Essen zum kleinen Preis. Herrlich!"},
-    {"name": "СЕРЖ ГОРЕЛЫЙ", "text": "Очень необычное место. Готовят вкусно, и не очень дорого. Кухня национальная. Очень много старинных вещей. Понравилось."}
-],
-"contact":{
-    "title": "Contact",
-    "card": "digital business card",
-    "addres": "HU Szentendre, Kucsera Ferenc u. 1/a"
-},
-"company": {
-    "title": "Company Information",
-    "vatNum": "VAT Number",
-    "regNum": "Registration Number",
-    "bankName": "Bank",
-    "bankNumber": "Bank Account Number",
-    "swift": "SWIFT (For International Transfers)",
-    "iban": "IBAN (For International Transfers)"
-},
-"footer":{
-    "social": "Get connected with us",
-    "contact": "Contact"
-}
+"reviews": [
+    {"name": "John Smith", "text": "Wow!!! What a find!!! A little gem. I cannot recommend enough. The interior is like a museum and the welcome we received was like being an honoured guest or member of the family. Great food for honest and reasonable price. I cannot recommend enough. Thank you so very much."},
+    {"name": "Emily Davis", "text": "The interior is unique and interesting. The price is reasonable. The food is fresh and we werent waiting for so long to get the food. Its cool ☺️"},
+    {"name": "Michael Johnson", "text": "Wonderful place, very cozy, interior is just fantastic. Brilliant service, friendly, quick. Will come back"},
+    {"name": "Sarah Brown", "text": "Tourist trap but still fantastic. The goulash is really tasty and served in a metal cauldron. The decoration is... Super... All types of old vintage things, you can stay in the restaurant for 2h and you'll never get bored of looking at the walls. The chairs have coat of arms. Ideal for groups of friends that want to travel back in time and have a great time together."},
+    {"name": "David White", "text": "Best place in Szentandre to get the beloved Hungarian fisherman soup. It comes with a side of peasant bread and some sought of chili paste. You can ask for more bread if you run out. The restaurant is medieval themed and decked fully with interesting items and trinkets. The prices are very reasonable."},
+    {"name": "Jennifer Clark", "text": "Fantastic place, looks like a museum. Food is really good, portions are huge, authentic receipts."},
+    {"name": "William Hall", "text": "The whole restaurant is a museum! Great stuff from different eras well sorted and something for your eyes. But you will forget everything around you when the food arrives.. Great time!"},
+    {"name": "Linda Lewis", "text": "The greatest find in Szentandre! The goulash is amazing. Definitely a must when near/in Budapest. This restaurant is worth the trip! :)"}
+]
 }

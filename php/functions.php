@@ -224,7 +224,7 @@ function buildFAQ($langJSON) {
 // Guest
 function buildGuest($langJSON) {
     $html = '<h2>'.$langJSON["home"]["guest"].'</h2>';
-    $random = $langJSON["guest"];
+    $random = $langJSON["reviews"];
     shuffle($random);
 
     $html .= '<div class="content">';

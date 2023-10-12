@@ -58,4 +58,5 @@
 
 <div id="preLoader">
   <img class="logo" src="<?= $siteINFO->mainPath ?>img/logo/logo_white.webp" alt="Logo of Restaurant">
+  <div class="custom-loader"></div>
 </div>

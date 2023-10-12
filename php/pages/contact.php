@@ -6,11 +6,13 @@
   </div>
 </header>
 
-<div class="companyInfo">
-  <h2><?= $langJSON["company"]["title"]; ?>:</h2>
-  <?= buildCompanyInfos($langJSON, $siteJSON); ?>
-</div>
+<div class="companyContent">
+  <div class="companyInfo">
+    <h2><?= $langJSON["company"]["title"]; ?>:</h2>
+    <?= buildCompanyInfos($langJSON, $siteJSON); ?>
+  </div>
 
-<div class="faq">
-  <?= buildFAQ($langJSON); ?>
+  <div class="faq">
+    <?= buildFAQ($langJSON); ?>
+  </div>
 </div>
