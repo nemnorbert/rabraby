@@ -5,17 +5,20 @@ set_include_path( $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR );
 // Scan URL
 function scanURL($siteINFO, $siteJSON) {
     $available = $siteJSON['languages']['site'];
-    
+    $langUser = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : "en";
+    $bad = false;
+
     $url = $_SERVER['REQUEST_URI'];
     $parts = explode("?", $url);
     $parts = explode("/", $parts[0]);
     
+    // Test or Live
     $test = (strtolower($parts[1]) === "rabraby") ? true : false;
     if ($test) {
-        $siteINFO -> mainPath = '/rabraby/';
+        $siteINFO -> mainPath = $siteJSON["mainPath"]["test"];
         $siteINFO -> redcatPath = '/redcat_center/';
     } else {
-        $siteINFO -> mainPath = '/';
+        $siteINFO -> mainPath = $siteJSON["mainPath"]["web"];
     }
 
     if (count($parts) >= 3 && in_array(strtolower($parts[2]), $available)) {
@@ -23,11 +26,19 @@ function scanURL($siteINFO, $siteJSON) {
         $siteINFO->langURL = strtolower($parts[2]);
     } else {
         $i = $test ? 2 : 1;
+        $bad = true;
     }
 
     // Out
     $siteINFO -> page = ($parts[$i] !== "") ? $parts[$i] : "home";
     $siteINFO -> test = $test;
+
+    if ($bad) {
+        $iso = in_array($langUser, $available) ? $langUser : "en";
+        $newURL = 'Location: '.$siteINFO -> mainPath . $iso . "/" . $siteINFO -> page;
+        header($newURL);
+        exit;
+    }
 }
 
 // Language Detection
@@ -87,7 +98,7 @@ function buildMenu($siteJSON, $siteINFO, $langJSON, $menu) {
     $menuArray = $siteJSON["menu"][$menu];
     $html = '';
     for ($i=0; $i < count($menuArray); $i++) { 
-        $html .= '<a href="'.$siteINFO->mainPath.$menuArray[$i].'">'.$langJSON["nav"][$menuArray[$i]].'</a>';
+        $html .= '<a href="'.$siteINFO->mainPath.$siteINFO -> langSite.'/'.$menuArray[$i].'">'.$langJSON["nav"][$menuArray[$i]].'</a>';
     }
     return $html;
 }
@@ -174,6 +185,21 @@ function buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO) {
         }
         echo '</div></div>';
     }
+}
+
+// Build Google Lang Page Meta
+function buildGoogleLang() {
+    global $siteINFO;
+
+    $array = array_merge(["x-default"], $siteINFO -> langAvailable);
+    $lang = array_merge(["en"], $siteINFO -> langAvailable);
+    $html = '<meta name="google-site-verification" content="0whkGTv_HMGrl7OIzwdiRY0IUc_0xuZKDGf0cgPywLw"/>';
+    $page = $siteINFO -> page;
+
+    for ($i=0; $i < count($array); $i++) {
+        $html .= '<link rel="alternate" hreflang="'.$array[$i].'" href="https://rabraby.hu/'.$lang[$i].'/'.$page.'"/>';
+    }
+    return $html;
 }
 
 // Contact 01
@@ -292,4 +318,8 @@ $siteJSON = loadJSON('json/site.json');
 
 scanURL($siteINFO, $siteJSON);
 langDetect($siteINFO, $siteJSON);
+
+
+
+buildGoogleLang();
 ?>

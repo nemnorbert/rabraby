@@ -7,12 +7,12 @@
 </header>
 
 <div class="companyContent">
-  <div class="companyInfo">
+  <div class="companyInfo container">
     <h2><?= $langJSON["company"]["title"]; ?>:</h2>
     <?= buildCompanyInfos($langJSON, $siteJSON); ?>
   </div>
 
-  <div class="faq">
+  <div class="faq container">
     <?= buildFAQ($langJSON); ?>
   </div>
 </div>

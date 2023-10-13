@@ -4,18 +4,30 @@
 </header>
 
 <div id="welcome" class="container">
+  <div class="openHours">
+    <?= buildOpenHours($langJSON, $siteJSON); ?>
+  </div>
   <div class="text">
     <h1><?= $langJSON["title"]; ?></h1>
     <h3>anno 1982</h3>
     <p><?= $langJSON["home"]["welcome"]; ?></p>
   </div>
-  <div class="openHours">
-    <?= buildOpenHours($langJSON, $siteJSON); ?>
-  </div>
+
   <div class="important">
     <div>Meleg kandaló</div>
     <div>Kutyabarát hely</div>
     <div>Szépkártya elfogadóhely</div>
+  </div>
+</div>
+
+<div id="food">
+  <h2>Kiemelt ételeink</h2>
+  <div class="content">
+    <a href="#"><img src="<?= $siteINFO->mainPath ?>/img/food/530.webp" alt="Food"></a>
+    <a href="#"><img src="<?= $siteINFO->mainPath ?>/img/food/530.webp" alt="Food"></a>
+    <a href="#"><img src="<?= $siteINFO->mainPath ?>/img/food/530.webp" alt="Food"></a>
+    <a href="#"><img src="<?= $siteINFO->mainPath ?>/img/food/530.webp" alt="Food"></a>
+    <a href="#"><img src="<?= $siteINFO->mainPath ?>/img/food/530.webp" alt="Food"></a>
   </div>
 </div>
 
@@ -38,25 +50,17 @@
     <p><?= $langJSON["about"]["text"]; ?></p>
   </div>
 
-  <div class="box video">
-    <h2><?= $langJSON["about"]["video"]; ?></h2>
-    <div>
-      <a target="_blank" href="#"><img src="<?= $siteINFO->mainPath ?>/img/video1.webp" alt="Video 01"></a>
-      <a target="_blank" href="#"><img src="<?= $siteINFO->mainPath ?>/img/video2.webp" alt="Video 02"></a>
-    </div>
-  </div>
-
   <div class="box vip">
     <img src="<?= $siteINFO->mainPath ?>/img/vip.jpg" alt="VIP">
     <p><?= $langJSON["about"]["vip"]; ?></p>
   </div>
 </div>
 
-<div class="guest" class="container">
+<div class="guest container">
   <?= buildGuest($langJSON); ?>
 </div>
 
-<div class="faq">
+<div class="faq container">
   <?= buildFAQ($langJSON); ?>
 </div>
 

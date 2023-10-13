@@ -5,7 +5,7 @@
 </header>
 
 
-<div id="food" class="box">
+<div id="foodMenu" class="box">
   <?php buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO); ?>
 </div>
 

@@ -58,7 +58,11 @@
     },
     "mainPath": {
         "test": "/rabraby/",
-        "live": "/"
+        "web": "/"
+    },
+    "redcatPath": {
+        "test": "/",
+        "web": "/"
     },
     "creator": {
         "name": "REDCAT",

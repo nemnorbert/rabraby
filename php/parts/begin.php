@@ -12,12 +12,7 @@
     <meta property="og:url" content="https://rabraby.hu/" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="" />
-
-    <meta name="google-site-verification" content="0whkGTv_HMGrl7OIzwdiRY0IUc_0xuZKDGf0cgPywLw" />
-    <link rel="alternate" hreflang="hu" href="https://rabraby.hu/hu/" />
-    <link rel="alternate" hreflang="en" href="https://rabraby.hu/en/"/>
-    <link rel="alternate" hreflang="x-default" href="https://rabraby.hu/en/" />
-
+    <?= buildGoogleLang($siteINFO); ?>
     <link rel="apple-touch-icon" sizes="180x180" href="<?= $siteINFO->mainPath ?>img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= $siteINFO->mainPath ?>img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= $siteINFO->mainPath ?>img/favicon/favicon-16x16.png">
