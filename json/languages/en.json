@@ -1,6 +1,7 @@
 {
 "iso": "en",
 "title": "Rab Ráby Restaurant",
+"currencies": ["EUR", "USD"],
 "meta": {
     "desc": "A restaurant in the downtown area of Szentendre where antiquities, breathtaking interior, delicious food, and great prices await."
 },
@@ -45,6 +46,10 @@
     "guest2": "Write a rating",
     "menu": "Show menu",
     "ccard": "Credit cards accepted"
+},
+"allergy": {
+    "title": "Allergens",
+    "array": ["Gluten", "Crustaceans", "Eggs", "Fish", "Peanuts", "Soybeans", "Milk", "Nuts", "Sesame seeds", "Mustard", "Celery", "Anthocyanins", "Lupin", "Mollusks"]
 },
 "menu":{
     "food": "Menu",

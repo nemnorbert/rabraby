@@ -21,7 +21,6 @@
             "2023-01-01": {"open": "12", "close": "20"}
         }
     },
-    
     "garden": true,
     "phone": "+36209149737",
     "contact": [
@@ -42,7 +41,7 @@
         {"name": "swift", "text": "OKHBHUHB"}
     ],
     "languages": {
-        "site": ["hu", "en"],
+        "site": ["hu", "en", "ru"],
         "foodMenu": ["hu", "en", "es", "de", "it", "pt", "ru", "zh", "ja", "ko", "fr"]
     },
     "menu": {
@@ -61,8 +60,8 @@
         "web": "/"
     },
     "redcatPath": {
-        "test": "/",
-        "web": "/"
+        "test": "/redcat/",
+        "web": "https://center.red-cat.hu/"
     },
     "creator": {
         "name": "REDCAT",

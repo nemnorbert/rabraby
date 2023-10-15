@@ -16,9 +16,10 @@ function scanURL($siteINFO, $siteJSON) {
     $test = (strtolower($parts[1]) === "rabraby") ? true : false;
     if ($test) {
         $siteINFO -> mainPath = $siteJSON["mainPath"]["test"];
-        $siteINFO -> redcatPath = '/redcat_center/';
+        $siteINFO -> redcatPath = $siteJSON["redcatPath"]["test"];
     } else {
         $siteINFO -> mainPath = $siteJSON["mainPath"]["web"];
+        $siteINFO -> mainPath = $siteJSON["redcatPath"]["web"];
     }
 
     if (count($parts) >= 3 && in_array(strtolower($parts[2]), $available)) {
@@ -83,7 +84,7 @@ function loadJSON($filePath) {
 // Build Alerts
 function buildAlert($siteJSON, $siteINFO) {
     $alerts = isset($siteJSON["alert"][$siteINFO -> langSite]) ? $siteJSON["alert"][$siteINFO -> langSite] : [[],[]];
-    if (count($alerts) > 0) {
+    if (isset($siteJSON["alert"][$siteINFO -> langSite])) {
         $html = '<div class="alertBox">';
         for ($i=0; $i < count($alerts); $i++) { 
             $html .= '<a blank="_target" href="'.$alerts[$i][1].'">'.$alerts[$i][0].'</a>';
@@ -144,10 +145,10 @@ function buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO) {
 
     // Allergens Bar
     echo '<details id="allergysBox">
-    <summary>'.$foodJSON["allergens"]["title"][$iso].'</summary>
+    <summary>'.$langJSON["allergy"]["title"].'</summary>
     <div class="content">';
-    for ($i=0; $i < count($foodJSON["allergens"]["hu"]); $i++) { 
-      echo '<div class="btn allergyBtn" data-allergen="'.($i+1).'">'.$foodJSON["allergens"][$menuLang][$i].'</div>';
+    for ($i=0; $i < count($langJSON["allergy"]["array"]); $i++) { 
+      echo '<div class="btn allergyBtn" data-allergen="'.($i+1).'">'.$langJSON["allergy"]["array"][$i].'</div>';
     }
     echo '</div>
     </details>';
@@ -159,31 +160,11 @@ function buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO) {
         
         echo '<div id="'.str_replace(' ', '', $food_category_en).'" class="foodBox">
         <div class="foodTitles">
-        <h2>'.$food_category.'</h2></div>
-        <div class="foodContent">';
+        <h2>'.$food_category.'</h2></div>';
         
-        // Food Title
-        foreach ($foodJSON["food"] as $foodItem) {
-            if ($foodItem["category"] == $food_category_en) {
-                $id = $foodItem["id"];
-                $title = $foodJSON["translate"][$id][$menuLang];
-                $price = $foodItem["huf"];
-                $allergens = $foodItem["allergens"];
-
-                $allergyNumber = "";
-                foreach ($allergens as $allergen) {
-                    $allergyNumber .= $allergen . " ";
-                }
-
-                echo '<div class="foodItem" data-allergens="'.$allergyNumber.'" data-code="'.$id.'">';
-                echo '<img src="'.$siteINFO->mainPath.'img/food/'.$id.'.webp" alt="'.$title.'" loading="lazy">';
-                echo '<div class="btn code">#'.$id.'</div>';
-                echo '<b>'.$title.'</b>';
-                echo '<div class="price">'.$price.' Ft</div>';
-                echo '</div>';
-            }
-        }
-        echo '</div></div>';
+        // Food Content
+        foodContent($food_category_en);
+        echo '</div>';
     }
 }
 
@@ -201,6 +182,79 @@ function buildGoogleLang() {
     }
     return $html;
 }
+
+// Food Generator
+function foodContent($category) {
+    global $langJSON, $siteINFO, $foodJSON;
+    $foods = $foodJSON["food"];
+    $lang = $siteINFO -> langSite;
+    $currencyCount = "";
+    
+    if ($lang !== "hu") {
+        // Currencies
+        $jsonData = loadJSON("https://center.red-cat.hu/json/currency.json");
+        $json = isset($langJSON["currencies"][0]) && $jsonData["success"] ? $jsonData["rates"] : false;
+        $currencyArray = [];
+        if ($json) {
+            $text = "";
+            $eur = $json["HUF"] * 0.94;
+            foreach ($langJSON["currencies"] as $item) {
+                $currencyPrice = $json[$item];
+                $result = $eur / $currencyPrice;
+                array_push($currencyArray, array($result, $item));
+            }
+        }
+    }
+    
+    $html = '<div class="foodContent">';
+        foreach ($foods as $food) {
+
+            // Checker
+            $check = isset($food["star"]) ? true : false;
+            if ($category !== false) {
+                $check = $category == $food["category"] ? true : false;
+            }
+
+            $symbol = $lang == "hu" ? "Ft" : "HUF";
+
+            // Final Generator
+            if ($check) {
+                $id = $food["id"];
+                $title = $foodJSON[$id][$lang];
+                $huf = $food["huf"];
+
+                // Allergy
+                $allergens = $food["allergens"];
+                $allergyNums = "";
+                foreach ($allergens as $allergen) {
+                    $allergyNums .= $allergen . " ";
+                }
+
+                // Currency Counter
+                if ($lang !== "hu") {
+                    $currencyCount = '<div class="price2">';
+                    for ($i=0; $i < count($currencyArray); $i++) { 
+                        $currencyCount .= '~'.number_format($huf / $currencyArray[$i][0], 0).' '.$currencyArray[$i][1].' ';
+                    }
+                    $currencyCount .= '*</div>';
+                }
+
+                // HTML
+                $html .= '<div id="'.$id.'" class="foodItem" data-allergens="'.$allergyNums.'" data-code="'.$id.'">
+                <img src="'.$siteINFO->mainPath.'img/food/'.$id.'.webp" alt="'.$title.'" loading="lazy">
+                <div class="btn code">#'.$id.'</div>
+                    <b>'.$title.'</b>
+                    <div class="price">'.$huf.' '.$symbol.'</div>
+                    '.$currencyCount.'
+                </div>';
+            }
+        }
+    $html .= '</div>';
+    //var_dump($currencyArray);
+    echo $html;
+}
+
+
 
 // Contact 01
 function buildContactBase($siteJSON, $langJSON) {

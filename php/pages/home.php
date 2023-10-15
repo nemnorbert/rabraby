@@ -1,3 +1,5 @@
+<?php $foodJSON = loadJSON('json/food.json'); ?>
+
 <header id="home" style="background-image: url(<?= $siteINFO -> mainPath ?>./img/header.jpg);">
   <?= buildAlert($siteJSON, $siteINFO); ?>
   <div id="homeWidget"></div>
@@ -14,24 +16,17 @@
   </div>
 
   <div class="important">
-    <div>Meleg kandaló</div>
-    <div>Kutyabarát hely</div>
-    <div>Szépkártya elfogadóhely</div>
+    <?= var_dump($langJSON["currencyPrice"]) ?>
   </div>
 </div>
 
-<div id="food">
+<div id="food" class="homeFood">
   <h2>Kiemelt ételeink</h2>
-  <div class="content">
-    <a href="#"><img src="<?= $siteINFO->mainPath ?>/img/food/530.webp" alt="Food"></a>
-    <a href="#"><img src="<?= $siteINFO->mainPath ?>/img/food/530.webp" alt="Food"></a>
-    <a href="#"><img src="<?= $siteINFO->mainPath ?>/img/food/530.webp" alt="Food"></a>
-    <a href="#"><img src="<?= $siteINFO->mainPath ?>/img/food/530.webp" alt="Food"></a>
-    <a href="#"><img src="<?= $siteINFO->mainPath ?>/img/food/530.webp" alt="Food"></a>
-  </div>
+  <?= foodContent(false); ?>
+  <div class="btn">Teljes étlap</div>
 </div>
 
-<div id="reservation" class="container" style="background-image: url(<?= $siteINFO -> mainPath ?>./img/contact.jpg);">
+<div id="reservation" class="container" style="background-image: url(<?= $siteINFO -> mainPath ?>./img/city_transparent.webp);">
   <div class="box">
     <h2><?= $langJSON["home"]["table"]["title"]; ?></h2>
     <?= buildReserve($langJSON); ?>

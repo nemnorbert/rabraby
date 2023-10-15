@@ -45,6 +45,10 @@
     "menu": "Étlap megtekintése",
     "ccard": "Szépkártya elfogadóhely"
 },
+"allergy": {
+    "title": "Allergének",
+    "array": ["Glutén", "Rákfélék", "Tojás", "Hal", "Földimogyoró", "Szója", "Tej", "Diófélék", "Szezámmag", "Mustár", "Zeller", "Beltartalmi antociánok", "Lupin", "Molluszka"]
+},
 "menu":{
     "food": "Étlap",
     "drink": "Itallap"

@@ -27,7 +27,7 @@ html {
     min-width: $minWidth;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
-    scroll-padding-top: 115px;
+    scroll-padding-top: 125px;
 
     --main_color: hsl(34, 49%, 63%);
     --main_color_transparent: hsla(34, 49%, 63%, 0.7);
@@ -462,7 +462,7 @@ nav{
 }
 
 .container {
-    padding: 100px 2rem;
+    padding: 60px 1rem;
 }
 #home {
     .widget {
@@ -510,10 +510,15 @@ nav{
     grid-column: span 12;
 }
 
+/*
 #food {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     .content {
         display: grid;
         grid-template-columns: repeat(10, 1fr);
+        gap: 1rem;
     }
     a {
         grid-column: span 5;
@@ -525,8 +530,12 @@ nav{
         width: 100%;
         height: auto;
         object-fit: cover;
+        border-radius: $borderRadius1;
+        aspect-ratio: 1/1;
+        box-shadow: $shadow1;
     }
 }
+*/
 
 #aboutUs {
     background-color: var(--secundary_color_dark);
@@ -607,7 +616,11 @@ nav{
 
 
 //////////////////////////////////////////////// FOOD, MENU PAGES
-#foodMenu {
+#food {
+    .price2 {
+        color: var(--main_color);
+        font-weight: bold;
+    }
     #foodCategories {
         position: sticky;
         z-index: 8;
@@ -668,53 +681,68 @@ nav{
             padding: 1rem;
             text-transform: uppercase;
         }
-        .foodContent {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            padding: $gap1;
+    }
+    .foodContent {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        padding: .5rem;
+        gap: .5rem;
+        
+        .foodItem {
+            grid-column: span 5;
+            background-color: var(--background_color1);
+            border-radius: $borderRadius1;
+            box-shadow: $shadow1;
+            position: relative;
+            transition: transform .5s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             gap: $gap1;
-            
-            .foodItem {
-                grid-column: span 6;
-                background-color: var(--background_color1);
-                border-radius: $borderRadius1;
-                box-shadow: $shadow1;
-                position: relative;
-                transition: transform .5s;
-                cursor: pointer;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                gap: $gap1;
-                align-items: center;
-                text-align: center;
-                padding-bottom: $gap1;
-            }
-            .foodItem:hover {
-                transform: scale(.9);
-            }
-            .code {
-                position: absolute;
-                font-weight: normal;
-                left: 5px;
-                top: 5px;
-                font-size: 1rem;
-            }
-            b {
-               padding: 0 5px;
-            }
-            .price {
-                color: var(--main_color);
-                font-weight: bold;
-                font-size: 1.5rem;
-            }
+            align-items: center;
+            text-align: center;
+            padding-bottom: $gap1;
+        }
+        .foodItem:hover {
+            transform: scale(.9);
+        }
+        .code {
+            position: absolute;
+            font-weight: normal;
+            left: 5px;
+            top: 5px;
+            font-size: 1rem;
+        }
+        b {
+           padding: 0 5px;
+        }
+        .price {
+            border-radius: .5rem;
+            background-color: var(--main_color);
+            color: white;
+            padding: .5rem;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
         img {
             aspect-ratio: 4/3;
             object-fit: cover;
             width: 100%;
-            border-radius: $borderRadius1;
+            border-radius: $borderRadius1 $borderRadius1 0 0;
         }
+    }
+}
+
+.homeFood {
+    padding: 2rem 0;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .foodContent .foodItem:nth-child(n+5) {
+        display: none !important;
     }
 }
 
@@ -765,7 +793,6 @@ header {
 }
 .companyInfo {
     background-color: var(--main_color_transparent);
-    //padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -1013,14 +1040,14 @@ header h1 {
 #welcome > div {
     grid-column: span 4;
 }
-#food a {
-    grid-column: span 2;
+.homeFood .foodContent .foodItem:nth-child(n+5) {
+    display: flex !important;;
 }
 .companyContent > div {
     grid-column: span 6;
 }
-#foodMenu .foodBox .foodContent .foodItem {
-    grid-column: span 3;
+#food .foodContent .foodItem {
+    grid-column: span 2;
 }
 footer .middle > div {
     grid-column: span 3;
