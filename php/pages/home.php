@@ -16,14 +16,13 @@
   </div>
 
   <div class="important">
-    <?= var_dump($langJSON["currencyPrice"]) ?>
   </div>
 </div>
 
 <div id="food" class="homeFood">
-  <h2>Kiemelt ételeink</h2>
+  <h2><?= $langJSON["menu"]["star"]; ?></h2>
   <?= foodContent(false); ?>
-  <div class="btn">Teljes étlap</div>
+  <div class="btn"><?= $langJSON["menu"]["show"]; ?></div>
 </div>
 
 <div id="reservation" class="container" style="background-image: url(<?= $siteINFO -> mainPath ?>./img/city_transparent.webp);">

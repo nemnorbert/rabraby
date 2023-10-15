@@ -41,7 +41,7 @@
         {"name": "swift", "text": "OKHBHUHB"}
     ],
     "languages": {
-        "site": ["hu", "en", "ru"],
+        "site": ["hu", "en", "ru", "zh"],
         "foodMenu": ["hu", "en", "es", "de", "it", "pt", "ru", "zh", "ja", "ko", "fr"]
     },
     "menu": {

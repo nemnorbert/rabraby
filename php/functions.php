@@ -2,6 +2,11 @@
 set_include_path( $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR );
 
 /////////////////////////////////////////////// BASE ///////////////////////////////////////////////
+function checkURL($siteINFO, $siteJSON) {
+    
+}
+
+
 // Scan URL
 function scanURL($siteINFO, $siteJSON) {
     $available = $siteJSON['languages']['site'];
@@ -19,14 +24,15 @@ function scanURL($siteINFO, $siteJSON) {
         $siteINFO -> redcatPath = $siteJSON["redcatPath"]["test"];
     } else {
         $siteINFO -> mainPath = $siteJSON["mainPath"]["web"];
-        $siteINFO -> mainPath = $siteJSON["redcatPath"]["web"];
+        $siteINFO -> redcatPath = $siteJSON["redcatPath"]["web"];
     }
 
+    //
     if (count($parts) >= 3 && in_array(strtolower($parts[2]), $available)) {
         $i = $test ? 3 : 2;
         $siteINFO->langURL = strtolower($parts[2]);
     } else {
-        $i = $test ? 2 : 1;
+        $i = $test ? 2 : 2;
         $bad = true;
     }
 
@@ -242,7 +248,7 @@ function foodContent($category) {
                 // HTML
                 $html .= '<div id="'.$id.'" class="foodItem" data-allergens="'.$allergyNums.'" data-code="'.$id.'">
                 <img src="'.$siteINFO->mainPath.'img/food/'.$id.'.webp" alt="'.$title.'" loading="lazy">
-                <div class="btn code">#'.$id.'</div>
+                <div class="code">#'.$id.'</div>
                     <b>'.$title.'</b>
                     <div class="price">'.$huf.' '.$symbol.'</div>
                     '.$currencyCount.'
@@ -250,7 +256,6 @@ function foodContent($category) {
             }
         }
     $html .= '</div>';
-    //var_dump($currencyArray);
     echo $html;
 }
 

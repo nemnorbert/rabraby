@@ -7,10 +7,7 @@
 "open":{
     "title": "Nyitvatartás",
     "days": ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"],
-    "status": {
-        "open": "Nyitva",
-        "close": "Zárva"
-    }
+    "status": {"open": "Nyitva", "close": "Zárva"}
 },
 "nav":{
     "home": "Főoldal",
@@ -23,15 +20,24 @@
     "imprint": "Impresszum",
     "parking": "Parkolás"
 },
+"company": {
+    "title": "Céginformációk",
+    "vatNum": "Adószám",
+    "regNum": "Cégjegyzékszám",
+    "bankName": "Bank",
+    "bankNumber": "Bankszámlaszám",
+    "swift": "SWIFT (Nemzetközi utaláshoz)",
+    "iban": "IBAN (Nemzetközi utaláshoz)"
+},
+"allergy": {
+    "title": "Allergének",
+    "array": ["Glutén", "Rákfélék", "Tojás", "Hal", "Földimogyoró", "Szója", "Tej", "Diófélék", "Szezámmag", "Mustár", "Zeller", "Beltartalmi antociánok", "Lupin", "Molluszka"]
+},
+
+
 "home": {
     "welcome": "Szeretettel várunk szentendrei éttermünkben, a belvárosban. Finom ételek, régiségek, lélegzetelállító beltér és kedvező árak, 1982 óta.",
-    "parking2": "Parkolás",
-    "parking3": "A 2012-es zónában tud parkolni (narancssárga jelölés), a Bajcsy-Zsilinszky Endre utcánál vagy a Bükkös parton. Parkolás akár 39 méter is lehet az étteremtől. A zöld pontok a parkoló automatákat jelzik. A távolság a vendéglőtől körülbelül 1-2 perc sétálva. Szentendrén hétvégén is kell fizetni a parkolásért!",
-    "moreinfo": "Részletek",
     "faq": "Gyakran Ismételt Kérdések",
-    "dog": "Kutyabarát hely",
-    "garden": "Kerthelyiség",
-    "food": "Kiemelt ételeink",
     "table": {
         "title": "Asztalfoglalás",
         "content": [
@@ -41,15 +47,11 @@
         "online": "Online foglalásra pedig az alábbi platformokon van lehetőséged:"
     },
     "guest": "Vendégeink írták",
-    "guest2": "Vélemény írása",
-    "menu": "Étlap megtekintése",
-    "ccard": "Szépkártya elfogadóhely"
-},
-"allergy": {
-    "title": "Allergének",
-    "array": ["Glutén", "Rákfélék", "Tojás", "Hal", "Földimogyoró", "Szója", "Tej", "Diófélék", "Szezámmag", "Mustár", "Zeller", "Beltartalmi antociánok", "Lupin", "Molluszka"]
+    "guest2": "Vélemény írása"
 },
 "menu":{
+    "show": "Teljes étlap",
+    "star": "Kiemelt ételeink",
     "food": "Étlap",
     "drink": "Itallap"
 },
@@ -79,46 +81,24 @@
     "card": "digitális névjegykártya",
     "addres": "2000 Szentendre, Kucsera Ferenc u. 1/a"
 },
-"company": {
-    "title": "Céginformációk",
-    "vatNum": "Adószám",
-    "regNum": "Cégjegyzékszám",
-    "bankName": "Bank",
-    "bankNumber": "Bankszámlaszám",
-    "swift": "SWIFT (Nemzetközi utaláshoz)",
-    "iban": "IBAN (Nemzetközi utaláshoz)"
-},
 "footer":{
-    "social": "Lépj velünk kapcsolatba",
-    "contact": "Kapcsolat"
+    "social": "Lépj velünk kapcsolatba"
 },
 
 
 "faq": [
-    {
-        "question": "Fizethetek bankkártyával, SZÉP kártyával?",
-        "answer": "Igen, bankkártyával és az összes forgalomban lévő SZÉP kártyával fizethet nálunk. (American Express kártyát nem tudunk elfogadni)"
-    },
-    {
-        "question": "Hol parkolhatok?",
-        "answer": "A parkolás Szentendrén 2022-ben megváltozott: az óvárost csak engedéllyel lehet megközelíteni. A hozzánk legközelebbi parkoló kb 1 perc sétára, a Bajcsy-Zsilinszky Endre utcánál van. (Zóna kódja: 2012)"
-    },
-    {
-        "question": "Hol találom a vendéglőt?",
-        "answer": "Az étterem Szentendre belvárosában helyezkedik el, a Városháza és a Péter Pál templom között. A centrumban, a Főtértől 1 perc sétával megközelíthető."
-    },
-    {
-        "question": "Van kerthelyiség, terasz?",
-        "answer": "Igen, egy hangulatos, szél védett belső udvara van az étteremnek, ami nyáron hűvös, árnyékos."
-    },
-    {
-        "question": "Szabad kutyát bevinni?",
-        "answer": "Igen, nyitás óta kutyabarát hely vagyunk."
-    },
-    {
-        "question": "Rendezvényeket is vállalnak?",
-        "answer": "Igen, esküvőket, keresztelőket, születésnapokat, névnapokat, osztálytalálkozókat, könyvbemutatókat, borkóstolókat, halotti tort stb."
-    }
+    {"question": "Fizethetek bankkártyával, SZÉP kártyával?",
+    "answer": "Igen, bankkártyával és az összes forgalomban lévő SZÉP kártyával fizethet nálunk. (American Express kártyát nem tudunk elfogadni)"},
+    {"question": "Hol parkolhatok?",
+    "answer": "A parkolás Szentendrén 2022-ben megváltozott: az óvárost csak engedéllyel lehet megközelíteni. A hozzánk legközelebbi parkoló kb 1 perc sétára, a Bajcsy-Zsilinszky Endre utcánál van. (Zóna kódja: 2012)"},
+    {"question": "Hol találom a vendéglőt?",
+    "answer": "Az étterem Szentendre belvárosában helyezkedik el, a Városháza és a Péter Pál templom között. A centrumban, a Főtértől 1 perc sétával megközelíthető."},
+    {"question": "Van kerthelyiség, terasz?",
+    "answer": "Igen, egy hangulatos, szél védett belső udvara van az étteremnek, ami nyáron hűvös, árnyékos."},
+    {"question": "Szabad kutyát bevinni?",
+    "answer": "Igen, nyitás óta kutyabarát hely vagyunk."},
+    {"question": "Rendezvényeket is vállalnak?",
+    "answer": "Igen, esküvőket, keresztelőket, születésnapokat, névnapokat, osztálytalálkozókat, könyvbemutatókat, borkóstolókat, halotti tort stb."}
 ],   
 "reviews": [
     {"name": "Kovács János", "text": "A kedvenc helyünk Szentendrén, elvarázsló egyedi hangulat, a rengeteg múltat idéző régiség között! Számtalan alkalommal voltunk már itt, de az ember mindig felfedez valami újat... Az ételek háziasak és bőségesek!"},
