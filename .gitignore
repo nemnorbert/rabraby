@@ -1,6 +1,7 @@
 img/
 pdf/
 js/
+log/
 *.js
 *.css
 *.css.map

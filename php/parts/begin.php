@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?= $langJSON["meta"]["desc"]; ?>">
-    
     <title><?= 'Rab Ráby, '.(isset($langJSON["nav"][$siteINFO->page]) ? $langJSON["nav"][$siteINFO->page] : "404") ?></title>
 
     <meta property="og:title" content="<?= $langJSON["title"]; ?>" />
@@ -12,7 +11,8 @@
     <meta property="og:url" content="https://rabraby.hu/" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="" />
-    <?= buildGoogleLang($siteINFO); ?>
+
+    <?= buildGoogleMeta($siteINFO); ?>
     <link rel="apple-touch-icon" sizes="180x180" href="<?= $siteINFO->mainPath ?>img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= $siteINFO->mainPath ?>img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= $siteINFO->mainPath ?>img/favicon/favicon-16x16.png">
@@ -30,7 +30,7 @@
 
 <nav id="primaryMenu">
   <a class="logo" href="#">
-    <img src="<?= $siteINFO->mainPath ?>/img/logo/logo_black.webp" alt="Logo of Restaurant">
+    <img src="<?= $siteINFO->mainPath ?>img/logo/logo_black.webp" alt="Logo of Restaurant">
   </a>
   <div id="hamburger" class="hamBtns"><span></span><span></span><span></span></div>
   <div class="menu">

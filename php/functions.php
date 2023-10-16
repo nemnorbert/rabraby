@@ -1,80 +1,18 @@
 <?php
-set_include_path( $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR );
-
-/////////////////////////////////////////////// BASE ///////////////////////////////////////////////
-function checkURL($siteINFO, $siteJSON) {
-    
-}
-
-
-// Scan URL
-function scanURL($siteINFO, $siteJSON) {
-    $available = $siteJSON['languages']['site'];
-    $langUser = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : "en";
-    $bad = false;
-
-    $url = $_SERVER['REQUEST_URI'];
-    $parts = explode("?", $url);
-    $parts = explode("/", $parts[0]);
-    
-    // Test or Live
-    $test = (strtolower($parts[1]) === "rabraby") ? true : false;
-    if ($test) {
-        $siteINFO -> mainPath = $siteJSON["mainPath"]["test"];
-        $siteINFO -> redcatPath = $siteJSON["redcatPath"]["test"];
-    } else {
-        $siteINFO -> mainPath = $siteJSON["mainPath"]["web"];
-        $siteINFO -> redcatPath = $siteJSON["redcatPath"]["web"];
-    }
-
-    //
-    if (count($parts) >= 3 && in_array(strtolower($parts[2]), $available)) {
-        $i = $test ? 3 : 2;
-        $siteINFO->langURL = strtolower($parts[2]);
-    } else {
-        $i = $test ? 2 : 2;
-        $bad = true;
-    }
-
-    // Out
-    $siteINFO -> page = ($parts[$i] !== "") ? $parts[$i] : "home";
-    $siteINFO -> test = $test;
-
-    if ($bad) {
-        $iso = in_array($langUser, $available) ? $langUser : "en";
-        $newURL = 'Location: '.$siteINFO -> mainPath . $iso . "/" . $siteINFO -> page;
-        header($newURL);
-        exit;
-    }
-}
-
-// Language Detection
-function langDetect($siteINFO, $siteJSON) {
-    global $langJSON;
-    $available = $siteJSON['languages']['site'];
-    $siteLang = "en"; $userLang = "en";
-
-    if (isset($siteINFO->langURL)) {
-        if (in_array($siteINFO->langURL, $available)) {
-            $siteLang = $siteINFO->langURL;
-        }
-    } else if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-        $userLang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-
-        if (in_array($userLang, $available)) {
-            $siteLang = $userLang;
-        }
-    }
-
-    // Out
-    $langJSON = loadJSON('json/languages/'.$siteLang.'.json');
-    $siteINFO -> langUser = $userLang;
-    $siteINFO -> langSite = $siteLang;
-    $siteINFO -> langAvailable = $available;
-}
-
-
 /////////////////////////////////////////////// FUNCTIONS ///////////////////////////////////////////////
+/*
+function errorHandler($errno, $errstr, $errfile, $errline) {
+    if (error_reporting() & $errno) {
+        $message = $time." - Error [$errno]: $errstr in $errfile on line $errline";
+        $time = date('Y-m-d H:i:s');
+        $logFile = "log/log_".date('Y')."-".date('m').".txt";
+        error_log($message, 3, $logFile);
+    }
+
+}
+set_error_handler("errorHandler");
+*/
+
 // Load JSON
 function loadJSON($filePath) {
     $json = file_get_contents($filePath);
@@ -85,6 +23,13 @@ function loadJSON($filePath) {
     }
 
     return $data;
+}
+
+function errorExport($text, $where) {
+    $time = date('Y-m-d H:i:s');
+    $message = "$time - [$text] in $where" . PHP_EOL;
+    $logFile = "log/log_".date('y')."-".date('m').".txt";
+    error_log($message, 3, $logFile);
 }
 
 // Build Alerts
@@ -175,9 +120,7 @@ function buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO) {
 }
 
 // Build Google Lang Page Meta
-function buildGoogleLang() {
-    global $siteINFO;
-
+function buildGoogleMeta($siteINFO) {
     $array = array_merge(["x-default"], $siteINFO -> langAvailable);
     $lang = array_merge(["en"], $siteINFO -> langAvailable);
     $html = '<meta name="google-site-verification" content="0whkGTv_HMGrl7OIzwdiRY0IUc_0xuZKDGf0cgPywLw"/>';
@@ -258,8 +201,6 @@ function foodContent($category) {
     $html .= '</div>';
     echo $html;
 }
-
-
 
 // Contact 01
 function buildContactBase($siteJSON, $langJSON) {
@@ -368,17 +309,4 @@ function buildCompanyInfos($langJSON, $siteJSON) {
     $html .= '</div>';
     return $html;
 }
-
-
-
-/////////////////////////////////////////////// BACKEND ///////////////////////////////////////////////
-$siteINFO = new stdClass();
-$siteJSON = loadJSON('json/site.json');
-
-scanURL($siteINFO, $siteJSON);
-langDetect($siteINFO, $siteJSON);
-
-
-
-buildGoogleLang();
 ?>

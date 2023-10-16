@@ -16,6 +16,7 @@
   </div>
 
   <div class="important">
+    <?php var_dump($_SERVER['REQUEST_URI']); ?>
   </div>
 </div>
 
@@ -45,7 +46,7 @@
   </div>
 
   <div class="box vip">
-    <img src="<?= $siteINFO->mainPath ?>/img/vip.jpg" alt="VIP">
+    <img src="<?= $siteINFO->mainPath ?>img/vip.jpg" alt="VIP">
     <p><?= $langJSON["about"]["vip"]; ?></p>
   </div>
 </div>
