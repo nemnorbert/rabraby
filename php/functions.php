@@ -1,18 +1,5 @@
 <?php
 /////////////////////////////////////////////// FUNCTIONS ///////////////////////////////////////////////
-/*
-function errorHandler($errno, $errstr, $errfile, $errline) {
-    if (error_reporting() & $errno) {
-        $message = $time." - Error [$errno]: $errstr in $errfile on line $errline";
-        $time = date('Y-m-d H:i:s');
-        $logFile = "log/log_".date('Y')."-".date('m').".txt";
-        error_log($message, 3, $logFile);
-    }
-
-}
-set_error_handler("errorHandler");
-*/
-
 // Load JSON
 function loadJSON($filePath) {
     $json = file_get_contents($filePath);
@@ -47,10 +34,11 @@ function buildAlert($siteJSON, $siteINFO) {
 
 // Build Menu
 function buildMenu($siteJSON, $siteINFO, $langJSON, $menu) {
+    $urlIso = $siteINFO -> urlIso ? $siteINFO -> langSite.'/' : "";
     $menuArray = $siteJSON["menu"][$menu];
     $html = '';
     for ($i=0; $i < count($menuArray); $i++) { 
-        $html .= '<a href="'.$siteINFO->mainPath.$siteINFO -> langSite.'/'.$menuArray[$i].'">'.$langJSON["nav"][$menuArray[$i]].'</a>';
+        $html .= '<a href="'.$siteINFO->mainPath.$urlIso.$menuArray[$i].'">'.$langJSON["nav"][$menuArray[$i]].'</a>';
     }
     return $html;
 }
@@ -71,19 +59,9 @@ function mobileMenu($siteJSON, $siteINFO, $langJSON) {
 
 // Build Food Page Content
 function buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO) {
-    $iso = $siteINFO -> langSite;
-    $categories = $foodJSON["category"];
+    $lang = $siteINFO -> langSite;
+    $categories = $langJSON["menu"]["categories"];
 
-    // Languages
-    $foodLangs = $siteJSON['languages']['foodMenu'];
-    $menuLang = "en";
-
-    if (isset($siteINFO -> langURL)) {
-        $menuLang = $siteINFO -> langURL;
-    } elseif (in_array($siteINFO -> langUser, $foodLangs)) {
-        $siteINFO -> langUser;
-    }
-    
     // Categories Bar
     echo '<div id="foodCategories">
     <div class="content">
@@ -255,8 +233,10 @@ function buildGuest($langJSON) {
 
     $html .= '<div class="content">';
     for ($i=0; $i < 3; $i++) { 
+        $title = isset($random[$i]["title"]) ? $random[$i]["title"] : "";
         $html .= '<div class="item">
             <b>'.$random[$i]["name"].'</b>
+            <i>'. $title .'</i>
             <p>'.$random[$i]["text"].'</p>
         </div>';
     }

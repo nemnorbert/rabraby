@@ -31,6 +31,7 @@
         {"id": "708", "huf": 1490, "allergens": [1, 3, 7], "category": "desserts"},
         {"id": "706", "huf": 1490, "allergens": [7], "category": "desserts"}
     ],
+    "categories": ["starters", "soups", "pastas", "fish dishes", "ready meals", "grilled dishes", "desserts"],
     "category": {
         "hu": ["előételek", "levesek", "tészták", "halételek", "készételek", "frissensültek", "desszertek"],
         "en": ["starters", "soups", "pastas", "fish dishes", "ready meals", "grilled dishes", "desserts"],
@@ -43,14 +44,6 @@
         "ja": ["前菜", "スープ", "パスタ", "魚料理", "レディメイドの料理", "グリル料理", "デザート"],
         "ko": ["전채", "국물요리", "면요리", "해물요리", "즉석요리", "구이요리", "디저트"],
         "fr": ["entrées", "soupes", "pâtes", "plats de poisson", "plats préparés", "plats grillés", "desserts"]
-    },
-    "allergens": {
-        "title": {
-            "hu": "Allergének kiválasztása",
-            "en": "Allergens Selection"
-        },
-        "hu": ["Glutén", "Rákfélék", "Tojás", "Hal", "Földimogyoró", "Szójabab", "Tej", "Diófélék", "Zeller", "Mustár", "Szezámmag", "Kén-dioxid", "Csillagfürt", "Puhatestűek"],
-        "en": ["Gluten", "Crustaceans", "Eggs", "Fish", "Peanuts", "Soya", "Milk", "Tree nuts", "Celery", "Mustard", "Sesame", "Sulphites", "Lupin", "Molluscs"]
     },
     "533": {
         "hu": "Roston sült szűzérmék baconbe tekerve, fokhagymás szósszal",

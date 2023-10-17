@@ -11,6 +11,10 @@
   <?php buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO); ?>
 </div>
 
+<?php if (isset($langJSON["menu"]["currency"])) {
+  echo '<div class="infoPrice">*'.$langJSON["menu"]["currency"].'</div>';
+} ?>
+
 <div id="popupWindow">
   <div class="box">
     <div id="popupCode" class="code btn"></div>

@@ -5,12 +5,10 @@
   </div>
 
   <div class="middle">
-    <div>
+    <div class="first">
       <img class="logo" src="<?= $siteINFO->mainPath ?>img/logo/logo_white.webp" alt="">
       <div>anno 1982</div>
-    </div>
 
-    <div>
       <div class="openHours">
         <?= buildOpenHours($langJSON, $siteJSON); ?>
       </div>

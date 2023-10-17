@@ -18,7 +18,8 @@
     "gallery": "Galéria",
     "sitemap": "Oldaltérkép",
     "imprint": "Impresszum",
-    "parking": "Parkolás"
+    "parking": "Parkolás",
+    "404": "Oldal nem található"
 },
 "company": {
     "title": "Céginformációk",
@@ -52,6 +53,7 @@
 "menu":{
     "show": "Teljes étlap",
     "star": "Kiemelt ételeink",
+    "categories": ["előételek", "levesek", "tészták", "halételek", "készételek", "frissensültek", "desszertek"],
     "food": "Étlap",
     "drink": "Itallap"
 },
@@ -63,7 +65,7 @@
 "about": {
     "title": "Rólunk",
     "video": "Videók",
-    "vip": "A Magyarországra érkező magas rangú politikai vezetők és feleségük is el szoktak látogatni éttermünkbe. Ilyen alkalmakkor örömmel teljesítjük a legmagasabb szintű biztonsági előírásokat.",
+    "vip": "Novák Katalin - Magyarország köztársasági elnöke",
     "text": "Az éttermet még a vasfüggöny fennállásának idején Németh János és családja alapította 1982-ben. Nevét Jókai Mór Rab Ráby című regénye főhőséről kapta, aki Szentendrén élt és II. József idején oroszlánrészt vállalt a korrupció elleni küzdelemben. <br><br> Az épület, amiből az étterem lett kialakítva, több, mint 100 évvel ezelőtt még kovácsműhelyként működött. Egy néprajzi tárlaton túl, ritka érdekességek is találhatóak az étteremben."
 },
 "404":{
@@ -101,9 +103,9 @@
     "answer": "Igen, esküvőket, keresztelőket, születésnapokat, névnapokat, osztálytalálkozókat, könyvbemutatókat, borkóstolókat, halotti tort stb."}
 ],   
 "reviews": [
-    {"name": "Kovács János", "text": "A kedvenc helyünk Szentendrén, elvarázsló egyedi hangulat, a rengeteg múltat idéző régiség között! Számtalan alkalommal voltunk már itt, de az ember mindig felfedez valami újat... Az ételek háziasak és bőségesek!"},
+    {"name": "Novák Katalin", "title": "Magyarország Köztársasági Elnöke", "text": "Köszönöm szépen, hogy egy fárasztó munkanapon, rövid időre megpihenhettünk itt, és igazi házias ízeket kóstoltunk. Szeretettel: Novák Katalin"},
     {"name": "Varga Mária", "text": "Belépve mint egy archív múzeumba lépnénk és mégis nagyon otthonos érzése támad az embernek. A személyzet gyors, figyelmes, az ételek kiválóak. Nagyon jól éreztük magunkat ajánljuk mindenkinek!"},
-    {"name": "Molnár Gábor", "text": "Gyors kiszolgálás, hagyományos magyar konyha. Az étterem hangulata magával ragadó, főleg azok számára, akik szeretik a régiségeket."},
+    {"name": "Molnár Gábor", "text": "A Rab Ráby Étterem egy igazi gyöngyszem! Az étlap széles választékot kínál, és az ételek mindig frissek és kiváló minőségűek. Mindig találok valami finomat a menüből, és a desszertek is isteniek!"},
     {"name": "Nagy Ildikó", "text": "Szülinapomat ünnepeltünk egy 22 fő plusz 4 gyerek társaságában. Nagyon remek, hangulatos hely. Udvarias kiszolgálás. Az ételek nagyon finomak voltak."},
     {"name": "Szabó Ferenc", "text": "Aki szereti a régiségeket, annak egy igazi kincses tár az étterem. Miközben a finom ételed fogyasztod, a tárgyak mesélnek neked, és megelevenedik a múlt. Ehhez nem csak a szemed járul hozzá, hanem az ízlelőbimbóid is, miközben magadévá teszed a tányérodon lévő jobbnál jobb falatokat. Az erdei gyümölcsös csirkemell filé az aprócska burgonya hercegnőkkel mennyei ízorgiát jelentett. A környezet, az ételek és a felszolgálás külön-külön is megérdemli az 5-5-5 pontot."},
     {"name": "Kovács Éva", "text": "Ismét egy élmény volt. Az étel remek, a kiszolgálás jó, az étterem atmoszférája pedig varázslatos. Nekem egy picit nosztalgikus idejárni, mert a férjemmel itt volt az első randevúnk."}

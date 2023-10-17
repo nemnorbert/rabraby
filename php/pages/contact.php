@@ -8,7 +8,7 @@
 
 <div class="companyContent">
   <div class="companyInfo container">
-    <h2><?= $langJSON["company"]["title"]; ?>:</h2>
+    <h2><?= $langJSON["company"]["title"]; ?></h2>
     <?= buildCompanyInfos($langJSON, $siteJSON); ?>
   </div>
 

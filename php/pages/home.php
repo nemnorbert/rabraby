@@ -16,7 +16,7 @@
   </div>
 
   <div class="important">
-    <?php var_dump($_SERVER['REQUEST_URI']); ?>
+
   </div>
 </div>
 
@@ -24,6 +24,9 @@
   <h2><?= $langJSON["menu"]["star"]; ?></h2>
   <?= foodContent(false); ?>
   <div class="btn"><?= $langJSON["menu"]["show"]; ?></div>
+  <?php if (isset($langJSON["menu"]["currency"])) {
+    echo '<div class="infoPrice">*'.$langJSON["menu"]["currency"].'</div>';
+  } ?>
 </div>
 
 <div id="reservation" class="container" style="background-image: url(<?= $siteINFO -> mainPath ?>./img/city_transparent.webp);">
@@ -46,7 +49,7 @@
   </div>
 
   <div class="box vip">
-    <img src="<?= $siteINFO->mainPath ?>img/vip.jpg" alt="VIP">
+    <img src="<?= $siteINFO->mainPath ?>img/president.webp" alt="VIP">
     <p><?= $langJSON["about"]["vip"]; ?></p>
   </div>
 </div>
