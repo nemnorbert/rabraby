@@ -60,7 +60,7 @@
     "food": "Menu",
     "star": "Featured Dishes",
     "categories": ["starters", "soups", "pastas", "fish dishes", "ready meals", "grilled dishes", "desserts"],
-    "currency": "Informational price: You can view the prices in your own currency, but you can pay with the country's own currency (HUF) if you prefer to use cash.",
+    "currency": "Only Informational price! You can pay with Hungarian Forint (HUF) or Card",
     "drink": "Drinks"
 },
 "group":{
@@ -78,12 +78,6 @@
     "title": "404 Error",
     "desc": "The page you are looking for cannot be found."
 },
-"parking": {
-    "where": "Where Can I Park?",
-    "navi": "Navigation",
-    "car": "To Parking",
-    "walk": "To the Restaurant"
-},
 "contact":{
     "title": "Contact",
     "card": "Digital Business Card",
@@ -92,6 +86,7 @@
 "footer":{
     "social": "Connect with Us"
 },
+
 
 
 "faq": [

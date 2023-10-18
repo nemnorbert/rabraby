@@ -28,7 +28,7 @@ html {
     min-width: $minWidth;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
-    scroll-padding-top: 125px;
+    scroll-padding-top: 120px;
 
     --main_color: hsl(34, 49%, 63%);
     --main_color_transparent: hsla(34, 49%, 63%, 0.7);
@@ -409,6 +409,11 @@ nav{
             font-size: 2rem;
             font-weight: bold;
         }
+        .price2 {
+            padding: 1rem;
+            color: var(--secundary_color);
+            font-weight: bold;
+        }
     }
     .code {
         position: fixed;
@@ -595,7 +600,9 @@ nav{
         font-weight: bold;
     }
     #foodCategories {
-        position: sticky;
+        position: fixed;
+        width: 100%;
+        max-width: $maxWidth;
         z-index: 8;
         top: $topHeaderHeight;
         background-color: rgb(31, 31, 31);
@@ -657,12 +664,12 @@ nav{
     }
     .foodContent {
         display: grid;
-        grid-template-columns: repeat(10, 1fr);
+        grid-template-columns: repeat(12, 1fr);
         padding: .5rem;
         gap: .5rem;
         
         .foodItem {
-            grid-column: span 5;
+            grid-column: span 6;
             background-color: var(--background_color1);
             border-radius: $borderRadius2;
             box-shadow: $shadow1;
@@ -678,7 +685,7 @@ nav{
             padding-bottom: $gap1;
         }
         .foodItem:hover {
-            transform: scale(.9);
+            transform: scale(.95);
         }
         .code {
             position: absolute;
@@ -893,6 +900,9 @@ header {
         flex-wrap: wrap;
         gap: 1rem;
         justify-content: center;
+        i {
+            color: var(--secundary_color);
+        }
     }
     .item {
         display: flex;
@@ -983,6 +993,12 @@ footer {
             line-height: 1.5rem;
             text-align: left;
         }
+        .support {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
     }
     .middle > div {
         grid-column: span 12;
@@ -1053,10 +1069,10 @@ header h1 {
     gap: 1rem;
 }
 #food .foodContent .foodItem {
-    grid-column: span 2;
+    grid-column: span 3;
 }
 footer .middle > div {
-    grid-column: span 4;
+    grid-column: span 3;
 }
 footer .middle {
     column-gap: 2rem;

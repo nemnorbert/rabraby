@@ -59,7 +59,7 @@
         "food": "Speisekarte",
         "star": "Hervorgehobene Gerichte",
         "categories": ["Vorspeisen", "Suppen", "Nudelgerichte", "Fischgerichte", "Fertiggerichte", "Gegrilltes", "Desserts"],
-        "currency": "Informationeller Preis: Sie können die Preise in Ihrer eigenen Währung anzeigen, aber Sie können auch in der Landeswährung (HUF) bezahlen, wenn Sie lieber bar bezahlen möchten.",
+        "currency": "Nur informativer Preis! Sie können mit ungarischem Forint (HUF) oder Karte bezahlen",
         "drink": "Getränke"
     },
     "group": {

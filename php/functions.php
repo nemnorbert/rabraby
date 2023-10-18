@@ -34,11 +34,10 @@ function buildAlert($siteJSON, $siteINFO) {
 
 // Build Menu
 function buildMenu($siteJSON, $siteINFO, $langJSON, $menu) {
-    $urlIso = $siteINFO -> urlIso ? $siteINFO -> langSite.'/' : "";
     $menuArray = $siteJSON["menu"][$menu];
     $html = '';
     for ($i=0; $i < count($menuArray); $i++) { 
-        $html .= '<a href="'.$siteINFO->mainPath.$urlIso.$menuArray[$i].'">'.$langJSON["nav"][$menuArray[$i]].'</a>';
+        $html .= '<a href="'.$siteINFO -> link.$menuArray[$i].'">'.$langJSON["nav"][$menuArray[$i]].'</a>';
     }
     return $html;
 }
@@ -61,13 +60,14 @@ function mobileMenu($siteJSON, $siteINFO, $langJSON) {
 function buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO) {
     $lang = $siteINFO -> langSite;
     $categories = $langJSON["menu"]["categories"];
+    $categoriesEN = $foodJSON["categories"];
 
     // Categories Bar
     echo '<div id="foodCategories">
     <div class="content">
     <a target="_blank" class="btn drink" href="'.$siteINFO->mainPath.'pdf/itallap.pdf"><i class="bi bi-cup-hot-fill"></i> '.$langJSON["menu"]["drink"].'</a>';
-    for ($i=0; $i < count($categories["en"]); $i++) {
-        echo '<a href="#'.str_replace(' ', '', $categories["en"][$i]).'" class="btn">'.$categories[$menuLang][$i].'</a>';
+    for ($i=0; $i < count($categories); $i++) {
+        echo '<a href="#'.str_replace(' ', '', $categoriesEN[$i]).'" class="btn">'.$categories[$i].'</a>';
     }
     echo    '</div>
     </div>';
@@ -83,16 +83,16 @@ function buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO) {
     </details>';
 
     // Category Title
-    for ($i=0; $i < count($categories[$menuLang]); $i++) {
-        $food_category_en = $categories["en"][$i]; // Category title (english)
-        $food_category = $categories[$menuLang][$i]; // Category title (user language)
+    for ($i=0; $i < count($categories); $i++) {
+        $item = $categories[$i]; // Category title (english)
+        $itemEN = $categoriesEN[$i]; // Category title (user language)
         
-        echo '<div id="'.str_replace(' ', '', $food_category_en).'" class="foodBox">
+        echo '<div id="'.str_replace(' ', '', $itemEN).'" class="foodBox">
         <div class="foodTitles">
-        <h2>'.$food_category.'</h2></div>';
+        <h2>'.$item.'</h2></div>';
         
         // Food Content
-        foodContent($food_category_en);
+        foodContent($itemEN);
         echo '</div>';
     }
 }
@@ -159,20 +159,20 @@ function foodContent($category) {
 
                 // Currency Counter
                 if ($lang !== "hu") {
-                    $currencyCount = '<div class="price2">';
+                    $currencyCount = '';
                     for ($i=0; $i < count($currencyArray); $i++) { 
                         $currencyCount .= '~'.number_format($huf / $currencyArray[$i][0], 0).' '.$currencyArray[$i][1].' ';
                     }
-                    $currencyCount .= '*</div>';
+                    $currencyCount .= '*';
                 }
 
                 // HTML
-                $html .= '<div id="'.$id.'" class="foodItem" data-allergens="'.$allergyNums.'" data-code="'.$id.'">
+                $html .= '<div id="'.$id.'" class="foodItem" data-name="'.$title.'" data-allergens="'.$allergyNums.'" data-price1="'.$huf.'" data-price2="'.$currencyCount.'" data-code="'.$id.'">
                 <img src="'.$siteINFO->mainPath.'img/food/'.$id.'.webp" alt="'.$title.'" loading="lazy">
                 <div class="code">#'.$id.'</div>
                     <b>'.$title.'</b>
                     <div class="price">'.$huf.' '.$symbol.'</div>
-                    '.$currencyCount.'
+                    <div class="price2">'.$currencyCount.'</div>
                 </div>';
             }
         }

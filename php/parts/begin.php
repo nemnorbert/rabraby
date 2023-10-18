@@ -13,6 +13,7 @@
     <meta property="og:image" content="" />
 
     <?= buildGoogleMeta($siteINFO); ?>
+    
     <link rel="apple-touch-icon" sizes="180x180" href="<?= $siteINFO->mainPath ?>img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= $siteINFO->mainPath ?>img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= $siteINFO->mainPath ?>img/favicon/favicon-16x16.png">
@@ -29,7 +30,7 @@
 </script>
 
 <nav id="primaryMenu">
-  <a class="logo" href="#">
+  <a class="logo" href="<?= $siteINFO->link."home" ?>">
     <img src="<?= $siteINFO->mainPath ?>img/logo/logo_black.webp" alt="Logo of Restaurant">
   </a>
   <div id="hamburger" class="hamBtns"><span></span><span></span><span></span></div>

@@ -17,7 +17,7 @@
         {"id": "423", "huf": 4900,"star": true, "allergens": [], "category": "ready meals"},
         {"id": "537", "huf": 2690, "allergens": [1, 3], "category": "grilled dishes"},
         {"id": "540", "huf": 3900, "allergens": [7], "category": "grilled dishes"},
-        {"id": "316", "huf": 7900,"star": true, "allergens": [1, 3, 4, 7, 10], "person": 2, "category": "grilled dishes"},
+        {"id": "316", "huf": 7900, "allergens": [1, 3, 4, 7, 10], "person": 2, "category": "grilled dishes"},
         {"id": "536", "huf": 7900,"star": true, "allergens": [1, 3, 7, 10], "person": 2, "category": "grilled dishes"},
         {"id": "522", "huf": 7900,"star": true, "allergens": [1, 3, 7, 11], "person": 2, "category": "grilled dishes"},
         {"id": "512", "huf": 3300, "allergens": [1], "category": "grilled dishes"},
@@ -27,7 +27,7 @@
         {"id": "533", "huf": 4300, "allergens": [1], "category": "grilled dishes"},
         {"id": "534", "huf": 3500,"star": true, "allergens": [1, 3, 7], "category": "grilled dishes"},
         {"id": "702", "huf": 1490, "allergens": [1, 3, 7], "category": "desserts"},
-        {"id": "707", "huf": 1700,"star": true, "allergens": [1, 3, 7], "category": "desserts"},
+        {"id": "707", "huf": 1700, "allergens": [1, 3, 7], "category": "desserts"},
         {"id": "708", "huf": 1490, "allergens": [1, 3, 7], "category": "desserts"},
         {"id": "706", "huf": 1490, "allergens": [7], "category": "desserts"}
     ],

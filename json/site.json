@@ -29,8 +29,8 @@
         {"name": "phone", "content": "+36 20 914 9737", "link": "tel:+36209149737", "icon": "phone", "contact": true, "bar": false},
         {"name": "mail", "content": "info@rabraby.hu", "link": "mailto:info@rabraby.hu", "icon": "envelope-fill", "contact": true, "bar": true},
         {"name": "card", "content": "translate", "link": "https://id.red-cat.hu/rabraby", "icon": "person-vcard-fill", "contact": true, "bar": false},
-        {"name": "facebook", "content": null, "link": "https://", "icon": "facebook", "contact": false, "bar": true},
-        {"name": "instagram", "content": null, "link": "https://", "icon": "instagram", "contact": false, "bar": true}
+        {"name": "facebook", "content": null, "link": "https://www.facebook.com/rabraby.hu", "icon": "facebook", "contact": false, "bar": true},
+        {"name": "instagram", "content": null, "link": "https://www.instagram.com/rabraby.hu", "icon": "instagram", "contact": false, "bar": true}
     ],
     "company": [
         {"name": "vatNum", "text": "12134469-2-13"},
@@ -41,7 +41,7 @@
         {"name": "swift", "text": "OKHBHUHB"}
     ],
     "languages": {
-        "site": ["hu", "en", "de", "ru", "zh"],
+        "site": ["hu", "en", "es", "de", "ru", "zh"],
         "foodMenu": ["hu", "en", "es", "de", "it", "pt", "ru", "zh", "ja", "ko", "fr"]
     },
     "menu": {

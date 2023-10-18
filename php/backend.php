@@ -34,11 +34,13 @@ if (in_array($parts[1], $siteINFO -> langAvailable)) {
 $siteINFO -> page = $siteINFO -> page === "" ? "home" : $siteINFO -> page;
 $langJSON = loadJSON('json/languages/'.$siteINFO -> langSite.'.json');
 
-    // 404 Error
-    if (!isset($langJSON["nav"][$siteINFO->page])) {
-        errorExport("Error 404", $requestURI);
-        header('Location: '.$siteINFO -> mainPath ."404");
-    }
+// 404 Error
+if (!isset($langJSON["nav"][$siteINFO->page])) {
+    errorExport("Error 404", $requestURI);
+    header('Location: '.$siteINFO -> mainPath ."404");
+}
+
+$siteINFO -> link = $siteINFO -> urlIso ? $siteINFO -> mainPath.$siteINFO -> langSite . '/' : $siteINFO -> mainPath;
 
 /*
 echo '<pre>';
