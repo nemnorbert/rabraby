@@ -12,13 +12,14 @@
             {"hu": "hétfő", "open": "", "close": ""},
             {"hu": "kedd", "open": "", "close": ""},
             {"hu": "szerda", "open": "", "close": ""},
-            {"hu": "csütörtök", "open": "12", "close": "22"},
-            {"hu": "péntek", "open": "12", "close": "22"},
+            {"hu": "csütörtök", "open": "12", "close": "21"},
+            {"hu": "péntek", "open": "12", "close": "21"},
             {"hu": "szombat", "open": "12", "close": "22"},
             {"hu": "vasárnap", "open": "12", "close": "19"}
         ],
         "special": {
-            "2023-01-01": {"open": "12", "close": "20"}
+            "2023-10-23": {"open": "12", "close": "19"},
+            "2023-10-26": {"open": "", "close": ""}
         }
     },
     "garden": true,

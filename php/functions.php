@@ -161,18 +161,28 @@ function foodContent($category) {
                 if ($lang !== "hu") {
                     $currencyCount = '';
                     for ($i=0; $i < count($currencyArray); $i++) { 
-                        $currencyCount .= '~'.number_format($huf / $currencyArray[$i][0], 0).' '.$currencyArray[$i][1].' ';
+                        $currencyCount .= '~'.number_format($huf / $currencyArray[$i][0], 0, ',', ' ').' '.$currencyArray[$i][1].' ';
                     }
                     $currencyCount .= '*';
                 }
 
                 // HTML
                 $html .= '<div id="'.$id.'" class="foodItem" data-name="'.$title.'" data-allergens="'.$allergyNums.'" data-price1="'.$huf.'" data-price2="'.$currencyCount.'" data-code="'.$id.'">
-                <img src="'.$siteINFO->mainPath.'img/food/'.$id.'.webp" alt="'.$title.'" loading="lazy">
-                <div class="code">#'.$id.'</div>
-                    <b>'.$title.'</b>
-                    <div class="price">'.$huf.' '.$symbol.'</div>
-                    <div class="price2">'.$currencyCount.'</div>
+                    <div class="code">#'.$id.'</div>
+                    <div class="image">
+                        <img src="'.$siteINFO->mainPath.'img/food/'.$id.'.webp" alt="'.$title.'" loading="lazy">
+                    </div>
+                    <div class="content">
+                        <div class="title">
+                            <b>'.$title.'</b>
+                        </div>
+                        <div class="bottom">';
+                if ($lang !== "hu") {
+                    $html .= '<div class="price2">'.$currencyCount.'</div>';
+                }
+                $html .=     '<div class="price">'.number_format($huf, 0, ',', ' ').' '.$symbol.'</div>
+                        </div>
+                    </div>
                 </div>';
             }
         }

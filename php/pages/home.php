@@ -22,9 +22,9 @@
 <div id="food" class="homeFood">
   <h2><?= $langJSON["menu"]["star"]; ?></h2>
   <?= foodContent(false); ?>
-  <?= '<a class="btn" href="'.$siteINFO -> link.'menu">'.$langJSON["menu"]["show"].'</a>'; ?>
+  <?= '<a class="btn" href="'.$siteINFO -> link.'menu"><i class="bi bi-book"></i> '.$langJSON["menu"]["show"].'</a>'; ?>
   <?php if (isset($langJSON["menu"]["currency"])) {
-    echo '<div class="infoPrice">*'.$langJSON["menu"]["currency"].'</div>';
+    echo '<div id="infoPrice">*'.$langJSON["menu"]["currency"].'</div>';
   } ?>
 </div>
 

@@ -12,7 +12,7 @@
 </div>
 
 <?php if (isset($langJSON["menu"]["currency"])) {
-  echo '<div class="infoPrice">*'.$langJSON["menu"]["currency"].'</div>';
+  echo '<div id="infoPrice">*'.$langJSON["menu"]["currency"].'</div>';
 } ?>
 
 <?php require_once "php/modules/menuPopUp.php"; ?>

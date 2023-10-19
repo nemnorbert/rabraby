@@ -5,9 +5,11 @@
 $shadow1: 0 0 5px rgb(84 69 48 / 55%);
 $minWidth: 280px; // Galaxy Fold
 $maxWidth: 2000px;
-$pcWidth: 800px;
+$tabletWidth: 768px;
+$pcWidth: 1024px;
 $borderRadius1: 1rem;
 $borderRadius2: 1.5rem;
+$foodItemRadius: 30px;
 $linearGradient1: linear-gradient(to bottom, var(--main_color), var(--secundary_color));
 $gap1: 10px;
 $blur1: 5px;
@@ -59,6 +61,7 @@ p {
     line-height: 150%;
 }
 header, main, footer {
+    min-width: $minWidth;
     max-width: $maxWidth;
     margin: 0 auto;
     overflow: auto;
@@ -129,6 +132,9 @@ header > .content {
         height: 100%;
         width: auto;
     }
+}
+main {
+    background-color: var(--background_color1);
 }
 
 //////////////////////////////////////////////// PRELOADER
@@ -595,10 +601,6 @@ nav{
 
 //////////////////////////////////////////////// FOOD, MENU PAGES
 #food {
-    .price2 {
-        color: var(--main_color);
-        font-weight: bold;
-    }
     #foodCategories {
         position: fixed;
         width: 100%;
@@ -664,74 +666,99 @@ nav{
     }
     .foodContent {
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        padding: .5rem;
-        gap: .5rem;
+        grid-template-columns: repeat(20, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+    }
         
-        .foodItem {
-            grid-column: span 6;
-            background-color: var(--background_color1);
-            border-radius: $borderRadius2;
-            box-shadow: $shadow1;
-            position: relative;
-            transition: transform .5s;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: $gap1;
-            align-items: center;
-            text-align: center;
-            padding-bottom: $gap1;
-        }
-        .foodItem:hover {
-            transform: scale(.95);
+    .foodItem {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        grid-column: span 10;
+        box-shadow: $shadow1;
+        border-radius: $foodItemRadius;
+        background-color: var(--background_color1);
+        transition: transform .25s;
+        align-items: center;
+        font-weight: bold;
+
+        &:hover {
+            transform: scale(1.05);
         }
         .code {
+            opacity: .7;
             position: absolute;
-            font-weight: normal;
-            border-radius: 0 0 .5rem .5rem;
-            background-color: var(--background_color1);
-            color: var(--main_color);
-            padding: .5rem;
-            left: 2rem;
-            font-weight: bold;
+            left: $foodItemRadius;
             top: 0;
-            font-size: 1rem;
+            padding: 5px;
+            border-radius: 0 0 10px 10px;
+            background-color: var(--background_color1);
             box-shadow: 0px 5px 5px var(--main_color_transparent);
         }
-        b {
-           padding: 0 5px;
+        .image {
+            width: 100%;
+            img {
+                border-radius: $foodItemRadius $foodItemRadius 0 0;
+                aspect-ratio: 4/3;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+        .title {
+            display: flex;
+            flex-direction: column;
+            min-height: 75px;
+            justify-content: center;
+
+            b {
+                padding: 10px;
+            }
+        }
+        .content {
+            position: relative;
+            border-radius: $foodItemRadius 0 $foodItemRadius $foodItemRadius;
+            margin-top: calc(-1 * $foodItemRadius);
+            background-color: white;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
         }
         .price {
-            border-radius: .5rem;
             background-color: var(--main_color);
             color: white;
-            padding: .5rem;
-            font-weight: bold;
+            padding: 10px;
+            border-radius: 0 0 $foodItemRadius $foodItemRadius;
+            text-align: center;
             font-size: 1.2rem;
         }
-        img {
-            aspect-ratio: 4/3;
-            object-fit: cover;
-            position: relative;
-            width: 100%;
-            border-radius: $borderRadius2 $borderRadius2 0 0;
+        .price2 {
+            background-color: var(--background-color2);
+            padding: 10px;
+            color: var(--main_color);
         }
-        img::before {
+        .bottom {
+            display: flex;
+            flex-direction: column;
+        }
+        .content::before {
             content: "";
+            width: $foodItemRadius;
+            height: $foodItemRadius;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-            z-index: 1; /* Ha a gradient az előtérben legyen a képhez képest */
-          }
+            top: calc(-1 * $foodItemRadius);
+            right: 0;
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI3LjkuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxNDMuMSAxNDMuMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTQzLjEgMTQzLjE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT4KPGc+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMCwwdjE0My4xaDE0My4xQzY0LjEsMTQzLjEsMCw3OSwwLDB6Ii8+CjwvZz4KPC9zdmc+Cg==);
+            background-size: 30px;
+            transform: scaleX(-1);
+        }
     }
 }
-.infoPrice {
+#infoPrice {
     color: var(--secundary_color);
+    text-align: center;
     font-weight: bold;
     padding: 2rem;
     max-width: $pcWidth;
@@ -744,10 +771,6 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .foodContent .foodItem:nth-child(n+5) {
-        display: none !important;
-    }
 }
 
 
@@ -1035,49 +1058,63 @@ footer > div {
 }
 
 //////////////////////////////////////////////// MEDIA
-@media only screen and (min-width: $pcWidth) {
-header h1 {
-    font-size: 3rem;
+@media only screen and (max-width: 350px) {
+    #food .foodContent {
+        column-gap: 0;
+    }
+    #food .foodContent .foodItem {
+        grid-column: span 20;
+    }
 }
-#appMenu {
-    display: none;
-}
-#primaryMenu {
-    #hamburger {
+/// TABLET
+@media only screen and (min-width: $tabletWidth) {
+    #food .foodContent .foodItem {
+        grid-column: span 5;
+    }
+    header h1 {
+        font-size: 3rem;
+    }
+    #appMenu {
         display: none;
     }
-    .menu {
-        display: flex;
+    #primaryMenu {
+        #hamburger {
+            display: none;
+        }
+        .menu {
+            display: flex;
+        }
+    }
+    #secundaryMenu {
+        display: none;
+    }
+    #welcome, footer {
+        column-gap: 2rem;
+    }
+    #welcome > div {
+        grid-column: span 4;
+    }
+    .homeFood .foodContent .foodItem:nth-child(n+5) {
+        display: flex !important;;
+    }
+    .companyContent > div {
+        grid-column: span 6;
+    }
+    
+    footer .middle > div {
+        grid-column: span 3;
+    }
+    footer .middle {
+        column-gap: 2rem;
+    }
+    footer .bottom {
+        justify-content: space-between;
     }
 }
-#secundaryMenu {
-    display: none;
-}
-#welcome, footer {
-    column-gap: 2rem;
-}
-#welcome > div {
-    grid-column: span 4;
-}
-.homeFood .foodContent .foodItem:nth-child(n+5) {
-    display: flex !important;;
-}
-.companyContent > div {
-    grid-column: span 6;
-}
-#food .foodContent {
-    gap: 1rem;
-}
+
+/// DESKTOP
+@media only screen and (min-width: $pcWidth) {
 #food .foodContent .foodItem {
-    grid-column: span 3;
-}
-footer .middle > div {
-    grid-column: span 3;
-}
-footer .middle {
-    column-gap: 2rem;
-}
-footer .bottom {
-    justify-content: space-between;
+    grid-column: span 4;
 }
 }
