@@ -600,6 +600,9 @@ nav{
 
 
 //////////////////////////////////////////////// FOOD, MENU PAGES
+.homeFood .foodItem:nth-child(n+5) {
+    display: none !important;
+}
 #food {
     #foodCategories {
         position: fixed;
@@ -679,32 +682,44 @@ nav{
         grid-column: span 10;
         box-shadow: $shadow1;
         border-radius: $foodItemRadius;
-        background-color: var(--background_color1);
+        background-color: var(--main_color);
         transition: transform .25s;
         align-items: center;
         font-weight: bold;
 
         &:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
         .code {
-            opacity: .7;
             position: absolute;
             left: $foodItemRadius;
-            top: 0;
+            top: -5px;
+            z-index: 1;
             padding: 5px;
-            border-radius: 0 0 10px 10px;
-            background-color: var(--background_color1);
+            border-radius: 5px;
+            background-color: var(--main_color);
+            color: var(--background_color1);
             box-shadow: 0px 5px 5px var(--main_color_transparent);
         }
         .image {
+            position: relative;
             width: 100%;
+            min-height: 100px;
             img {
                 border-radius: $foodItemRadius $foodItemRadius 0 0;
-                aspect-ratio: 4/3;
+                aspect-ratio: 1/1;
                 object-fit: cover;
                 width: 100%;
             }
+        }
+        .image::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 25%;
+            left: 0;
+            bottom: 0;
+            background-image: linear-gradient(to top, var(--main_color), transparent);
         }
         .title {
             display: flex;
@@ -726,23 +741,6 @@ nav{
             flex-direction: column;
             text-align: center;
         }
-        .price {
-            background-color: var(--main_color);
-            color: white;
-            padding: 10px;
-            border-radius: 0 0 $foodItemRadius $foodItemRadius;
-            text-align: center;
-            font-size: 1.2rem;
-        }
-        .price2 {
-            background-color: var(--background-color2);
-            padding: 10px;
-            color: var(--main_color);
-        }
-        .bottom {
-            display: flex;
-            flex-direction: column;
-        }
         .content::before {
             content: "";
             width: $foodItemRadius;
@@ -754,6 +752,24 @@ nav{
             background-size: 30px;
             transform: scaleX(-1);
         }
+        .price {
+            background-color: var(--main_color);
+            color: white;
+            padding: 10px;
+            border-radius: 0 0 $foodItemRadius $foodItemRadius;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+        .price2 {
+            background-color: var(--background-color2);
+            padding: 10px;
+            color: var(--main_color);
+        }
+        .bottom {
+            display: flex;
+            flex-direction: column;
+        }
+        
     }
 }
 #infoPrice {
@@ -947,7 +963,6 @@ header {
 /// FAQ
 .faq {
     color: var(--secundary_color_dark);
-    //padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -1094,9 +1109,6 @@ footer > div {
     #welcome > div {
         grid-column: span 4;
     }
-    .homeFood .foodContent .foodItem:nth-child(n+5) {
-        display: flex !important;;
-    }
     .companyContent > div {
         grid-column: span 6;
     }
@@ -1109,6 +1121,15 @@ footer > div {
     }
     footer .bottom {
         justify-content: space-between;
+    }
+}
+
+@media only screen and (min-width: 400px) {
+    #food .foodContent {
+        gap: 1rem;
+    }
+    #food .foodContent .foodItem {
+        grid-column: span 10;
     }
 }
 

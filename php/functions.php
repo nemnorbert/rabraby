@@ -170,7 +170,7 @@ function foodContent($category) {
                 $html .= '<div id="'.$id.'" class="foodItem" data-name="'.$title.'" data-allergens="'.$allergyNums.'" data-price1="'.$huf.'" data-price2="'.$currencyCount.'" data-code="'.$id.'">
                     <div class="code">#'.$id.'</div>
                     <div class="image">
-                        <img src="'.$siteINFO->mainPath.'img/food/'.$id.'.webp" alt="'.$title.'" loading="lazy">
+                        <img src="'.$siteINFO->mainPath.'img/food/'.$id.'_400px.webp" alt="'.$title.'" loading="lazy">
                     </div>
                     <div class="content">
                         <div class="title">

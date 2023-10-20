@@ -1,14 +1,15 @@
 {
     "food": [
+        {"id": "002", "huf": 2490, "allergens": [1, 3, 4, 7], "category": "starters"},
         {"id": "003", "huf": 2800, "allergens": [1, 3, 7], "category": "starters"},
         {"id": "004", "huf": 2290, "allergens": [1, 3, 7, 10], "category": "starters"},
-        {"id": "105", "huf": 1050, "allergens": [7], "category": "soups"},
         {"id": "107", "huf": 1050, "allergens": [1, 7], "category": "soups"},
         {"id": "110", "huf": 1490, "allergens": [1, 3, 9], "category": "soups"},
+        {"id": "413", "huf": 3300, "allergens": [], "category": "soups"},
         {"id": "411", "huf": 3100, "allergens": [1, 3, 9], "category": "soups"},
         {"id": "306", "huf": 3500,"star": true, "allergens": [4], "category": "soups"},
         {"id": "212", "huf": 2900, "allergens": [1, 3, 7], "category": "pastas"},
-        {"id": "539", "huf": 6900,"star": true, "allergens": [1, 3, 4, 10], "category": "fish dishes"},
+        {"id": "320", "huf": 6900,"star": true, "allergens": [1, 3, 4, 10], "category": "fish dishes"},
         {"id": "305", "huf": 5900, "allergens": [1, 4], "category": "fish dishes"},
         {"id": "315", "huf": 3290, "allergens": [1, 4, 7], "category": "fish dishes"},
         {"id": "404", "huf": 5900, "allergens": [], "category": "ready meals"},
@@ -201,7 +202,7 @@
         "ko": "카포슈바르식 치킨 파프리카시",
         "fr": "Paprikash de poulet à la façon de Kaposvar"
     },
-    "539": {
+    "320": {
         "hu": "Panko bundában sült békacombok wok zöldséggel",
         "en": "Fried frog legs in panko breadcrumbs",
         "es": "Piernas de rana fritas en pan rallado panko",
@@ -266,6 +267,19 @@
         "ko": "프렌치 양파 스프 치즈 추가",
         "fr": "Soupe à l'oignon française, avec du fromage"
         },
+    "413": {
+        "hu": "Jókai bableves füstölt csülökkel",
+        "en": "Jókai bean soup with smoked knuckle",
+        "es": "Sopa de judías Jókai con codillo ahumado",
+        "de": "Jókai Bohnensuppe mit geräuchertem Eisbein",
+        "it": "Zuppa di fagioli Jókai con stinco affumicato",
+        "pt": "Sopa de feijão Jókai com joelho defumado",
+        "ru": "Гороховый суп Жокаи с копченой ножкой",
+        "zh": "约凯豆汤烟熏猪蹄",
+        "ja": "ヨーカイビーンスープ、スモークニーレ添え",
+        "ko": "요카이 콩 스모크 무릎 수프",
+        "fr": "Soupe aux haricots Jókai avec jarret fumé"
+    },  
     "411": {
         "hu": "Magyar gulyásleves bográcsban",
         "en": "Hungarian goulash soup in a cauldron",
@@ -318,6 +332,19 @@
         "ko": "세게드 양식 어민 수프",
         "fr": "Soupe de pêcheur à la Szeged"
         },
+    "002": {
+        "hu": "Hortobágyi húsos palacsinta",
+        "en": "Hortobágy meat pancake",
+        "es": "Tortitas de carne Hortobágy",
+        "de": "Hortobágy Fleischpfannkuchen",
+        "it": "Pancake di carne Hortobágy",
+        "pt": "Panqueca de carne Hortobágy",
+        "ru": "Мясные блинчики Хортобай",
+        "zh": "Hortobágy肉饼",
+        "ja": "ホルトバージのミートパンケーキ",
+        "ko": "호르토바이 고기 팬케이크",
+        "fr": "Crêpe à la viande Hortobágy"
+    },  
     "004": {
         "hu": "Rántott gombafejek, tartármártással",
         "en": "Breaded mushroom caps with tartar sauce",
