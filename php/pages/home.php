@@ -10,7 +10,7 @@
     <?= buildOpenHours($langJSON, $siteJSON); ?>
   </div>
   <div class="text">
-    <h1><?= $langJSON["title"]; ?></h1>
+    <h1><?= $langJSON["title"]; ?>, Szentendre</h1>
     <h3>anno 1982</h3>
     <p><?= $langJSON["home"]["welcome"]; ?></p>
   </div>

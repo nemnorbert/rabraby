@@ -1,3 +1,7 @@
 RewriteEngine On
+RewriteCond %{HTTP_HOST} !^localhost$
+RewriteCond %{HTTP_HOST} ^www.rabraby.hu [NC]
+RewriteRule ^(.*)$ https://rabraby.hu/$1 [L,R=301]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php
