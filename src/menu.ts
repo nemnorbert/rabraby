@@ -21,42 +21,44 @@ interface FoodItem {
 // When click a Food Item
 foodItems.forEach((foodItem: HTMLElement) => {
     foodItem.addEventListener("click", function () {
-        
-        let code: string | undefined = this.dataset.code;
-        let name: string | undefined = this.dataset.name;
-        let huf: string | undefined = this.dataset.price1;
-        let price2: string | undefined = this.dataset.price2;
+        if (popupContentDiv !== null) {
+            let code: string | undefined = this.dataset.code;
+            let name: string | undefined = this.dataset.name;
+            let huf: string | undefined = this.dataset.price1;
+            let price2: string | undefined = this.dataset.price2;
 
-        if (popupCoverDiv !== null) {
-            popupCoverDiv.src = siteINFO.mainPath + `img/food/${code}.webp`;
-        }
-        if (popupTitleDiv !== null && name !== undefined) {
-            popupTitleDiv.innerHTML = name;
-        }
-        if (popupCodeDiv !== null) {
-            popupCodeDiv.innerHTML = '#' + code;
-        }
-        if (popupPrice2Div !== null && price2 !== undefined) {
-            popupPrice2Div.innerHTML = price2;
-        }
-        if (popupPriceDiv !== null) {
-            popupPriceDiv.innerHTML = huf+" HUF";
-        }
+            let htmlContent = '<div id="foodBox">';
+            htmlContent += `<img src="${siteINFO.mainPath}img/food/${code}_400px.webp" alt="Food Box Image">`;
+            htmlContent += `<b>${name}</b>`;
+            htmlContent += '</div>';
 
-        // PopUp Exit
-        popupExitDivs.forEach(exitDiv => {
-            exitDiv.addEventListener("click", () => {
-            if (popupWindowDiv !== null) {
-                popupWindowDiv.style.display = "none"
+            /*
+            if (popupCoverDiv !== null) {
+                popupCoverDiv.src = siteINFO.mainPath + `img/food/${code}.webp`;
             }
-            })
-        })
+            if (popupTitleDiv !== null && name !== undefined) {
+                popupTitleDiv.innerHTML = name;
+            }
+            if (popupCodeDiv !== null) {
+                popupCodeDiv.innerHTML = '#' + code;
+            }
+            if (popupPrice2Div !== null && price2 !== undefined) {
+                popupPrice2Div.innerHTML = price2;
+            }
+            if (popupPriceDiv !== null) {
+                popupPriceDiv.innerHTML = huf+" HUF";
+            }
 
-        if (popupWindowDiv !== null) {
-            popupWindowDiv.style.display = "block";
+            let flags = siteJSON.languages.site;
+            let htmlContent = '<div id="flagSwitch">';
+            flags.forEach(flag => {
+                htmlContent += `<a href="${siteINFO.mainPath+flag+"/"+siteINFO.page}"><img src="${siteINFO.mainPath}img/flag/${flag}.svg" alt="flag of ${flag}"></a>`;
+            });
+            */
+            popupContentDiv.innerHTML = htmlContent;
         }
-        
-    });
+        popUpSwitcher();
+        });
 });
 
 // Allergen Functions

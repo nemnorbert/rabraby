@@ -40,16 +40,21 @@
   </div>
 </div>
 
-<div id="aboutUs" class="container">
+<div id="aboutUs">
 
-  <div class="box">
+  <div class="about">
     <h2><?= $langJSON["about"]["title"]; ?></h2>
     <p><?= $langJSON["about"]["text"]; ?></p>
   </div>
 
-  <div class="box vip">
-    <img src="<?= $siteINFO->mainPath ?>img/president.webp" alt="VIP">
+  <div class="box">
+    <img src="<?= $siteINFO->mainPath ?>img/president.webp" alt="Picture of President (Hungary)">
     <p><?= $langJSON["about"]["vip"]; ?></p>
+  </div>
+
+  <div class="box">
+    <img src="<?= $siteINFO->mainPath ?>img/balogh.webp" alt="Picture of Balogh Levente & Moldován András">
+    <p>Balogh Levente & Moldován András</p>
   </div>
 </div>
 

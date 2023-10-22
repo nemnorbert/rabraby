@@ -6,7 +6,8 @@ const secMenu: HTMLElement | null = document.querySelector('#secundaryMenu');
 const preLoaderBox: HTMLElement | null = document.querySelector('#preLoader');
 const appMenuBox: HTMLElement | null = document.querySelector('#appMenu');
 const hamburgerBtns: NodeListOf<HTMLElement> = document.querySelectorAll(".hamBtns");
-const flagDiv: HTMLElement | null = document.querySelector('#flag');
+const flagDiv: HTMLImageElement | null = document.querySelector('#flag');
+let flagsIMGs: NodeListOf<HTMLElement>;
 
 // Popup Window Variables
 const popupWindowDiv: HTMLElement | null = document.querySelector('#popUp');
@@ -87,12 +88,12 @@ if (headerTop !== null) {
 // Language Switcher
 if (flagDiv !== null) {
   flagDiv.addEventListener("click", () => {
-    if (popupContentDiv !== null) {
+    let flagSwitch: HTMLElement | null = document.querySelector('#flagSwitch');
+    if (popupContentDiv !== null && flagSwitch === null) {
       let flags = siteJSON.languages.site;
-      let htmlContent = '<b>Nyelvek</b>';
-      htmlContent += '<div class="flags">';
+      let htmlContent = '<div id="flagSwitch">';
       flags.forEach(flag => {
-        htmlContent += `<div class="flag"><img src="${siteINFO.mainPath}img/flag/${flag}.svg" alt="flag of ${flag}"></div>`;
+        htmlContent += `<a href="${siteINFO.mainPath+flag+"/"+siteINFO.page}"><img src="${siteINFO.mainPath}img/flag/${flag}.svg" alt="flag of ${flag}"></a>`;
       });
       htmlContent += '</div>';
       popupContentDiv.innerHTML = htmlContent;
@@ -102,7 +103,9 @@ if (flagDiv !== null) {
 }
 
 
-popupExitDivs.forEach((exitDiv) => {
+
+
+popupExitDivs.forEach(exitDiv => {
   exitDiv.addEventListener("click", popUpSwitcher)
 })
 

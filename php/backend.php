@@ -23,7 +23,7 @@ $requestURI = str_replace($preURL, '', $requestURI);
 $parts = explode("?", $requestURI);
 $parts = explode("/", $parts[0]);
 
-if (in_array($parts[1], $siteINFO -> langAvailable)) {
+if (in_array($parts[1], $siteINFO -> langAvailable) && isset($parts[2])) {
     $siteINFO -> langSite = $parts[1];
     $siteINFO -> page = $parts[2];
 } else {

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?= $langJSON["meta"]["desc"]; ?>">
+    <meta name="theme-color" content="hsl(34, 49%, 63%)">
     <title><?= 'Rab Ráby, '.(isset($langJSON["nav"][$siteINFO->page]) ? $langJSON["nav"][$siteINFO->page] : "404") ?></title>
 
     <meta property="og:title" content="<?= $langJSON["title"]; ?>" />
@@ -26,6 +27,7 @@
       language: "<?= $siteINFO -> langSite; ?>",
       mainPath: "<?= $siteINFO->mainPath; ?>",
       redcatPath: "<?= $siteINFO->redcatPath; ?>",
+      page: "<?= $siteINFO->page; ?>",
   };
 </script>
 
