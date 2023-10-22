@@ -12,6 +12,13 @@ function loadJSON($filePath) {
     return $data;
 }
 
+// Redirect
+function urlRedirect($siteINFO) {
+    header("HTTP/1.1 301 Moved Permanently");
+    header('Location: ' . $siteINFO -> link . $siteINFO -> page);
+    exit();
+}
+
 function errorExport($text, $where) {
     $time = date('Y-m-d H:i:s');
     $message = "$time - [$text] in $where" . PHP_EOL;

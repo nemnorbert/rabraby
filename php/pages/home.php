@@ -22,7 +22,7 @@
 <div id="food" class="homeFood">
   <h2><?= $langJSON["menu"]["star"]; ?></h2>
   <?= foodContent(false); ?>
-  <?= '<a class="btn" href="'.$siteINFO -> link.'menu"><i class="bi bi-book"></i> '.$langJSON["menu"]["show"].'</a>'; ?>
+  <?= '<a class="btn" href="'.$siteINFO -> link.'menu"><i class="bi bi-book"></i> '.$langJSON["menu"]["show"].' ('.count($foodJSON["food"]).')</a>'; ?>
   <?php if (isset($langJSON["menu"]["currency"])) {
     echo '<div id="infoPrice">*'.$langJSON["menu"]["currency"].'</div>';
   } ?>
@@ -61,5 +61,4 @@
   <?= buildFAQ($langJSON); ?>
 </div>
 
-<?php require_once "php/modules/menuPopUp.php"; ?>
 <script src="<?= $siteINFO->mainPath ?>js/home.js"></script>

@@ -18,17 +18,6 @@ interface FoodItem {
 
 
 /////////////////////// MENU, FOOD SECTON ///////////////////////
-/*
-const loadJSONFiles = async () => {
-    try {
-      foodJSON = await fetchJSON(siteINFO.mainPath + "json/food.json");
-    } catch (error) {
-      console.error("Hiba történt a JSON fájlok betöltésekor:", error);
-    }
-  };
-  loadJSONFiles();
-*/
-
 // When click a Food Item
 foodItems.forEach((foodItem: HTMLElement) => {
     foodItem.addEventListener("click", function () {
@@ -37,8 +26,6 @@ foodItems.forEach((foodItem: HTMLElement) => {
         let name: string | undefined = this.dataset.name;
         let huf: string | undefined = this.dataset.price1;
         let price2: string | undefined = this.dataset.price2;
-
-        //let food = foodJSON.food.find((item: FoodItem) => item.id === code);
 
         if (popupCoverDiv !== null) {
             popupCoverDiv.src = siteINFO.mainPath + `img/food/${code}.webp`;
@@ -78,6 +65,7 @@ allergyBtns.forEach((allergyBtn: HTMLElement) => {
         const allergenNumber: string | undefined = this.dataset.allergen;
 
         if (allergenNumber !== undefined) {
+            
             if (activeAllergens.has(allergenNumber)) {
                 this.classList.remove("active");
                 activeAllergens.delete(allergenNumber);

@@ -34,6 +34,11 @@
   </div>
 </footer>
 
+<div id="popUp" style="display: none;">
+  <div id="popUpContent"></div>
+  <div class="background popupExit"></div>
+</div>
+
 <script src="<?= $siteINFO->mainPath ?>js/main.js?v=<?= time() ?>"></script>
 <?php
   if ($siteINFO->page === "menu" OR $siteINFO->page === "home") {

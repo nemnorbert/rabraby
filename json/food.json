@@ -1,6 +1,6 @@
 {
     "food": [
-        {"id": "002", "huf": 2490, "allergens": [1, 3, 4, 7], "category": "starters"},
+        {"id": "002", "huf": 2490,"star": true, "allergens": [1, 3, 4, 7], "category": "starters"},
         {"id": "003", "huf": 2800, "allergens": [1, 3, 7], "category": "starters"},
         {"id": "004", "huf": 2290, "allergens": [1, 3, 7, 10], "category": "starters"},
         {"id": "107", "huf": 1050, "allergens": [1, 7], "category": "soups"},
@@ -16,10 +16,12 @@
         {"id": "402", "huf": 3900,"star": true, "allergens": [1, 3], "category": "ready meals"},
         {"id": "415", "huf": 2900, "allergens": [1, 3, 7], "category": "ready meals"},
         {"id": "423", "huf": 4900,"star": true, "allergens": [], "category": "ready meals"},
-        {"id": "537", "huf": 2690, "allergens": [1, 3], "category": "grilled dishes"},
+        {"id": "410", "huf": 4990, "allergens": [], "category": "ready meals"},
+        {"id": "537", "huf": 2690,"star": true, "allergens": [1, 3], "category": "grilled dishes"},
         {"id": "540", "huf": 3900, "allergens": [7], "category": "grilled dishes"},
         {"id": "316", "huf": 7900, "allergens": [1, 3, 4, 7, 10], "person": 2, "category": "grilled dishes"},
         {"id": "536", "huf": 7900,"star": true, "allergens": [1, 3, 7, 10], "person": 2, "category": "grilled dishes"},
+        {"id": "407", "huf": 3100, "allergens": [], "category": "grilled dishes"},
         {"id": "522", "huf": 7900,"star": true, "allergens": [1, 3, 7, 11], "person": 2, "category": "grilled dishes"},
         {"id": "512", "huf": 3300, "allergens": [1], "category": "grilled dishes"},
         {"id": "529", "huf": 3600, "allergens": [7], "category": "grilled dishes"},
@@ -201,6 +203,30 @@
         "ja": "カポシュヴァール風チキンパプリカシュ",
         "ko": "카포슈바르식 치킨 파프리카시",
         "fr": "Paprikash de poulet à la façon de Kaposvar"
+    },
+    "407": {
+        "hu": "Töltött paprika, burgonyával",
+        "en": "Stuffed Peppers with Potatoes",
+        "es": "Pimientos rellenos con patatas",
+        "de": "Gefüllte Paprika mit Kartoffeln",
+        "it": "Peperoni ripieni con patate",
+        "pt": "Pimentões recheados com batatas",
+        "ru": "Фаршированный перец с картофелем",
+        "zh": "土豆烤青椒",
+        "ja": "じゃがいも入りの詰め物入りピーマン",
+        "ko": "감자와 고추로 가득 찬 페퍼 스태프"
+    },
+    "410": {
+        "hu": "Magyar libamájszeletek, házi lecsóval, burgonyával",
+        "en": "Hungarian Foie Gras Slices with Homemade Lecsó and Potatoes",
+        "es": "Lonchas de foie gras húngaro con lecsó casero y patatas",
+        "de": "Ungarische Gänseleberscheiben mit hausgemachtem Lecsó und Kartoffeln",
+        "it": "Fettine di fegato d'oca ungherese con lecsó fatto in casa e patate",
+        "pt": "Fatias de foie gras húngaro com lecsó caseiro e batatas",
+        "ru": "Кусочки венгерской гусятиной печени с домашним лечо и картофелем",
+        "zh": "匈牙利鹅肝薄片，搭配自制的莱切和土豆",
+        "ja": "ハンガリー風フォアグラスライス、自家製レーチョとポテト",
+        "ko": "헝가리식 푸아그라 슬라이스와 홈메이드 레추, 감자"
     },
     "320": {
         "hu": "Panko bundában sült békacombok wok zöldséggel",

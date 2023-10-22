@@ -32,7 +32,7 @@
 },
 "allergy": {
     "title": "Allergének",
-    "array": ["Glutén", "Rákfélék", "Tojás", "Hal", "Földimogyoró", "Szója", "Tej", "Diófélék", "Szezámmag", "Mustár", "Zeller", "Beltartalmi antociánok", "Lupin", "Molluszka"]
+    "array": ["Glutén", "Rákfélék", "Tojás", "Hal", "Földimogyoró", "Szója", "Tej", "Diófélék", "Zeller", "Mustár", "Szezámmag", "Kén-dioxid", "Csillagfürt", "Puhatestűek"]
 },
 
 
@@ -99,6 +99,8 @@
     "answer": "Igen, egy hangulatos, szél védett belső udvara van az étteremnek, ami nyáron hűvös, árnyékos."},
     {"question": "Szabad kutyát bevinni?",
     "answer": "Igen, nyitás óta kutyabarát hely vagyunk."},
+    {"question": "Van Wifi?",
+    "answer": "Igen, jelszó nélkül. Wifi név: RAB_RÁBY_WIFI"},
     {"question": "Rendezvényeket is vállalnak?",
     "answer": "Igen, esküvőket, keresztelőket, születésnapokat, névnapokat, osztálytalálkozókat, könyvbemutatókat, borkóstolókat, halotti tort stb."}
 ],   

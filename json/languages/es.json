@@ -36,7 +36,7 @@
 },
 "allergy": {
     "title": "Alérgenos",
-    "array": ["Gluten", "Crustáceos", "Huevos", "Pescado", "Cacahuetes", "Soja", "Leche", "Nueces", "Sésamo", "Mostaza", "Apio", "Antocianinas", "Lupino", "Moluscos"]
+    "array": ["Gluten", "Crustáceos", "Huevos", "Pescado", "Cacahuetes", "Soja", "Leche", "Frutos secos", "Apio", "Mostaza", "Sésamo", "Dióxido de azufre", "Altramuces", "Moluscos"]
 },
 
 
@@ -96,7 +96,8 @@
     {"question": "¿Dónde se encuentra el restaurante?", "answer": "El restaurante está ubicado en el centro de Szentendre, entre el Ayuntamiento y la Iglesia de Péter Pál. Se puede llegar en 1 minuto a pie desde la plaza principal, en el centro."},
     {"question": "¿Tiene jardín o terraza?", "answer": "Sí, el restaurante tiene un patio acogedor, protegido del viento, que es fresco y sombreado en verano."},
     {"question": "¿El restaurante es apto para perros?", "answer": "Sí, hemos sido un lugar amigable para perros desde que abrimos."},
-    {"question": "¿Ofrecen servicios para eventos?", "answer": "Sí, ofrecemos servicios para bodas, bautizos, cumpleaños, onomásticos, reuniones de exalumnos, lanzamientos de libros, catas de vino, recepciones fúnebres, etc."}
+    {"question": "¿Ofrecen servicios para eventos?", "answer": "Sí, ofrecemos servicios para bodas, bautizos, cumpleaños, onomásticos, reuniones de exalumnos, lanzamientos de libros, catas de vino, recepciones fúnebres, etc."},
+    {"question": "¿Hay Wifi?", "answer": "Sí, sin contraseña. Nombre del Wifi: RAB_RÁBY_WIFI"}
 ],
 "reviews": [
     {"name": "Katalin Novák", "title": "Presidenta de Hungría", "text": "Gracias por brindarnos un breve respiro en un agotador día de trabajo y permitirnos saborear sabores genuinamente caseros. Con cálidos saludos: Katalin Novák"},

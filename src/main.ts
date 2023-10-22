@@ -1,17 +1,21 @@
 let loadtime: number = new Date().getTime();
 
 /////////////////////// Variables ///////////////////////
+let siteJSON;
 const secMenu: HTMLElement | null = document.querySelector('#secundaryMenu');
 const preLoaderBox: HTMLElement | null = document.querySelector('#preLoader');
 const appMenuBox: HTMLElement | null = document.querySelector('#appMenu');
 const hamburgerBtns: NodeListOf<HTMLElement> = document.querySelectorAll(".hamBtns");
+const flagDiv: HTMLElement | null = document.querySelector('#flag');
 
 // Popup Window Variables
-const popupWindowDiv: HTMLElement | null = document.querySelector('#popupWindow');
-const popupCoverDiv: HTMLImageElement | null = document.querySelector('#popupCover');
-const popupContentDiv: HTMLElement | null = document.querySelector('#popupContent');
-const popupTitleDiv: HTMLElement | null = document.querySelector('#popupTitle');
+const popupWindowDiv: HTMLElement | null = document.querySelector('#popUp');
+const popupContentDiv: HTMLElement | null = document.querySelector('#popUpContent');
 const popupExitDivs: NodeListOf<HTMLElement> = document.querySelectorAll(".popupExit");
+/*
+const popupCoverDiv: HTMLImageElement | null = document.querySelector('#popupCover');
+const popupTitleDiv: HTMLElement | null = document.querySelector('#popupTitle');
+*/
 
 // JSON Fetch
 const fetchJSON = async (url: string) => {
@@ -43,6 +47,16 @@ hamburgerBtns.forEach((hamBtn: HTMLElement) => {
 });
 
 
+const popUpSwitcher = () => {
+  if (popupWindowDiv !== null) {
+    if (popupWindowDiv.style.display === "none") {
+      popupWindowDiv.style.display = "flex"
+    } else {
+      popupWindowDiv.style.display = "none"
+    }
+  }
+}
+
 // PreLoader
 const preLoaderFunc = async () => {
   const loadtime_bonus = loadtime <= 1 ? (1 - loadtime)*1000 : 0;
@@ -70,6 +84,38 @@ if (headerTop !== null) {
   });
 }
 
+// Language Switcher
+if (flagDiv !== null) {
+  flagDiv.addEventListener("click", () => {
+    if (popupContentDiv !== null) {
+      let flags = siteJSON.languages.site;
+      let htmlContent = '<b>Nyelvek</b>';
+      htmlContent += '<div class="flags">';
+      flags.forEach(flag => {
+        htmlContent += `<div class="flag"><img src="${siteINFO.mainPath}img/flag/${flag}.svg" alt="flag of ${flag}"></div>`;
+      });
+      htmlContent += '</div>';
+      popupContentDiv.innerHTML = htmlContent;
+    }
+    popUpSwitcher();
+  });
+}
 
+
+popupExitDivs.forEach((exitDiv) => {
+  exitDiv.addEventListener("click", popUpSwitcher)
+})
+
+async function asyncFunction() {
+  try {
+    siteJSON = await fetchJSON(siteINFO.mainPath + "json/site.json");
+  } catch (error) {
+    console.error("Hiba történt:", error);
+  }
+}
+
+asyncFunction();
+
+// END
 loadtime = (new Date().getTime() - loadtime) / 1000;
 window.addEventListener("load", preLoaderFunc);

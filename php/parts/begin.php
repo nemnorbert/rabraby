@@ -33,9 +33,15 @@
   <a class="logo" href="<?= $siteINFO->link."home" ?>">
     <img src="<?= $siteINFO->mainPath ?>img/logo/logo_black.webp" alt="Logo of Restaurant">
   </a>
-  <div id="hamburger" class="hamBtns"><span></span><span></span><span></span></div>
-  <div class="menu">
-    <?= buildMenu($siteJSON, $siteINFO, $langJSON, "main"); ?>
+  
+  <div class="right">
+    <div class="menu">
+      <?= buildMenu($siteJSON, $siteINFO, $langJSON, "main"); ?>
+    </div>
+    <div id="flag">
+      <img src="<?= $siteINFO->mainPath ?>img/flag/<?= $siteINFO->langSite ?>.svg" alt="language switcher">
+    </div>
+    <div id="hamburger" class="hamBtns"><span></span><span></span><span></span></div>
   </div>
 </nav>
 

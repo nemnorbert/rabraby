@@ -36,7 +36,7 @@
 },
 "allergy": {
     "title": "Allergens",
-    "array": ["Gluten", "Crustaceans", "Eggs", "Fish", "Peanuts", "Soy", "Milk", "Nuts", "Sesame", "Mustard", "Celery", "Anthocyanins", "Lupin", "Mollusks"]
+    "array": ["Gluten", "Crustaceans", "Eggs", "Fish", "Peanuts", "Soy", "Milk", "Nuts", "Celery", "Mustard", "Sesame seeds", "Sulfur dioxide", "Lupin", "Mollusks"]
 },
 
 
@@ -101,7 +101,9 @@
     {"question": "Is the restaurant dog-friendly?",
     "answer": "Yes, we have been a dog-friendly place since open."},
     {"question": "Do you also cater for events?",
-    "answer": "Yes, we cater for weddings, baptisms, birthdays, name days, class reunions, book launches, wine tastings, funeral receptions, etc."}
+    "answer": "Yes, we cater for weddings, baptisms, birthdays, name days, class reunions, book launches, wine tastings, funeral receptions, etc."},
+    {"question": "Is there Wifi?",
+    "answer": "Yes, without a password. Wifi name: RAB_RÁBY_WIFI"}
 ],
 "reviews": [
     {"name": "Katalin Novák", "title": "President of Hungary", "text": "Thank you for providing us a brief respite on a tiring workday and letting us savor genuine homely flavors. With warm regards: Katalin Novák"},

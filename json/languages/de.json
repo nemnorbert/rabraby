@@ -36,7 +36,7 @@
     },
     "allergy": {
         "title": "Allergene",
-        "array": ["Gluten", "Krebstiere", "Eier", "Fisch", "Erdnüsse", "Soja", "Milch", "Nüsse", "Sesam", "Senf", "Sellerie", "Anthocyane", "Lupinen", "Weichtiere"]
+        "array": ["Gluten", "Krebstiere", "Eier", "Fisch", "Erdnüsse", "Soja", "Milch", "Nüsse", "Sellerie", "Senf", "Sesamsamen", "Schwefeldioxid", "Lupinen", "Weichtiere"]
     },
 
 
@@ -105,7 +105,9 @@
         {"question": "Ist das Restaurant hundefreundlich?",
             "answer": "Ja, wir sind seit der Eröffnung ein hundefreundlicher Ort."},
         {"question": "Bieten Sie auch Catering für Veranstaltungen an?",
-            "answer": "Ja, wir bieten Catering für Hochzeiten, Taufen, Geburtstage, Namenstage, Klassentreffen, Buchvorstellungen, Weinverkostungen, Trauerfeiern usw. an."}
+            "answer": "Ja, wir bieten Catering für Hochzeiten, Taufen, Geburtstage, Namenstage, Klassentreffen, Buchvorstellungen, Weinverkostungen, Trauerfeiern usw. an."},
+        {"question": "Gibt es Wifi?",
+            "answer": "Ja, ohne Passwort. Wifi-Name: RAB_RÁBY_WIFI"}
     ],
     "reviews": [
         {"name": "Katalin Novák", "title": "Präsidentin von Ungarn", "text": "Vielen Dank, dass Sie uns an einem anstrengenden Arbeitstag eine kurze Verschnaufpause gegönnt haben und wir echte hausgemachte Aromen genießen konnten. Mit herzlichen Grüßen: Katalin Novák"},
