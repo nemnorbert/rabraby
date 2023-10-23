@@ -1,82 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 
+<!-- DEFAULT -->
 <url>
-  <loc>https://rabraby.hu/</loc>
-  <lastmod>2023-04-07T12:18:24+00:00</lastmod>
+  <loc>https://rabraby.hu/home</loc>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://rabraby.hu/en/home</loc>
-  <lastmod>2023-04-07T12:18:24+00:00</lastmod>
+  <loc>https://rabraby.hu/menu</loc>
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://rabraby.hu/groups</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/contact</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/sitemap</loc>
+  <priority>0.80</priority>
+</url>
+
+
+<!-- EN -->
+<url>
+  <loc>https://rabraby.hu/en/home</loc>
+  <priority>1.00</priority>
+</url>
+<url>
   <loc>https://rabraby.hu/en/menu</loc>
-  <lastmod>2023-04-07T12:18:24+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://rabraby.hu/en/groups</loc>
-  <lastmod>2023-04-07T12:18:24+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rabraby.hu/en/about</loc>
-  <lastmod>2023-04-07T12:18:24+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://rabraby.hu/en/contact</loc>
-  <lastmod>2023-04-07T12:18:24+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rabraby.hu/parking</loc>
-  <lastmod>2023-04-07T12:18:24+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rabraby.hu/menu</loc>
-  <lastmod>2023-04-07T12:18:24+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rabraby.hu/en/parking</loc>
-  <lastmod>2023-04-07T12:18:24+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://rabraby.hu/en/sitemap</loc>
-  <lastmod>2023-04-07T12:18:24+00:00</lastmod>
   <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rabraby.hu/en/imprint</loc>
-  <lastmod>2023-04-07T12:18:24+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://rabraby.hu/pdf/etlap.pdf</loc>
-  <lastmod>2023-04-01T14:47:16+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://rabraby.hu/pdf/itallap.pdf</loc>
-  <lastmod>2023-04-01T14:47:16+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://rabraby.hu/pdf/csoport.pdf</loc>
-  <lastmod>2023-04-03T09:25:49+00:00</lastmod>
-  <priority>0.64</priority>
 </url>
 
+
+<!-- HU -->
+<url>
+  <loc>https://rabraby.hu/hu/home</loc>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/hu/menu</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/hu/groups</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/hu/contact</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/hu/sitemap</loc>
+  <priority>0.80</priority>
+</url>
+
+
+<!-- DE -->
+<url>
+  <loc>https://rabraby.hu/de/home</loc>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/de/menu</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/de/groups</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/de/contact</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/de/sitemap</loc>
+  <priority>0.80</priority>
+</url>
+
+
+<!-- ES -->
+<url>
+  <loc>https://rabraby.hu/es/home</loc>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/es/menu</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/es/groups</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/es/contact</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/es/sitemap</loc>
+  <priority>0.80</priority>
+</url>
+
+
+<!-- ZH -->
+<url>
+  <loc>https://rabraby.hu/zh/home</loc>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/zh/menu</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/zh/groups</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/zh/contact</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/zh/sitemap</loc>
+  <priority>0.80</priority>
+</url>
+
+
+<!-- RU -->
+<url>
+  <loc>https://rabraby.hu/ru/home</loc>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/ru/menu</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/ru/groups</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/ru/contact</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/ru/sitemap</loc>
+  <priority>0.80</priority>
+</url>
 
 </urlset>

@@ -108,7 +108,7 @@ function buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO) {
 function buildGoogleMeta($siteINFO) {
     $array = array_merge(["x-default"], $siteINFO -> langAvailable);
     $lang = array_merge(["en"], $siteINFO -> langAvailable);
-    $html = '<meta name="google-site-verification" content="0whkGTv_HMGrl7OIzwdiRY0IUc_0xuZKDGf0cgPywLw"/>';
+    $html = '<meta name="google-site-verification" content="BPa8GuaOXP4IZtISH4p8X3XAZk50VYdhuwax7mQy9BQ" />';
     $page = $siteINFO -> page;
 
     for ($i=0; $i < count($array); $i++) {

@@ -897,22 +897,16 @@ header {
         border-radius: 0 0 1rem 1rem;
     }
     .today {
-        color: white;
-        background-color: var(--main_color);
         animation: openHours 5s infinite ease-in-out;
-        box-shadow: inset $shadow1;
 
         @keyframes openHours {
-            0%, 100% {background-color: var(--main_color);}
-            50% {background-color: var(--secundary_color);}
+            0%, 100% {background-color: var(--main_color_transparent);}
+            50% {background-color: transparent;}
         }
     }
     .closed {
         color: red;
         opacity: .7;
-    }
-    .today.closed {
-        color: white;
     }
 }
 

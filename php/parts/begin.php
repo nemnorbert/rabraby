@@ -7,11 +7,11 @@
     <meta name="theme-color" content="hsl(34, 49%, 63%)">
     <title><?= $langJSON["title"].', '.ucfirst($langJSON["nav"][$siteINFO->page]).' ('.$siteINFO -> langSite.')'; ?></title>
 
-    <meta property="og:title" content="<?= $langJSON["title"]; ?>" />
-    <meta property="og:description" content="<?= $langJSON["meta"]["desc"]; ?>" />
-    <meta property="og:url" content="https://rabraby.hu/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="" />
+    <meta property="og:title" content="<?= $langJSON["title"]; ?>">
+    <meta property="og:description" content="<?= $langJSON["meta"]["desc"]; ?>">
+    <meta property="og:url" content="https://rabraby.hu/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="">
 
     <?= buildGoogleMeta($siteINFO); ?>
     
