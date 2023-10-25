@@ -63,6 +63,19 @@ function mobileMenu($siteJSON, $siteINFO, $langJSON) {
     echo $html;
 }
 
+// Build Google Lang Page Meta
+function buildGoogleMeta($siteINFO) {
+    $array = array_merge(["x-default"], $siteINFO -> langAvailable);
+    $lang = array_merge(["en"], $siteINFO -> langAvailable);
+    $html = '<meta name="google-site-verification" content="BPa8GuaOXP4IZtISH4p8X3XAZk50VYdhuwax7mQy9BQ" />';
+    $page = $siteINFO -> page;
+
+    for ($i=0; $i < count($array); $i++) {
+        $html .= '<link rel="alternate" hreflang="'.$array[$i].'" href="https://rabraby.hu/'.$lang[$i].'/'.$page.'"/>';
+    }
+    return $html;
+}
+
 // Build Food Page Content
 function buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO) {
     $lang = $siteINFO -> langSite;
@@ -102,19 +115,6 @@ function buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO) {
         foodContent($itemEN);
         echo '</div>';
     }
-}
-
-// Build Google Lang Page Meta
-function buildGoogleMeta($siteINFO) {
-    $array = array_merge(["x-default"], $siteINFO -> langAvailable);
-    $lang = array_merge(["en"], $siteINFO -> langAvailable);
-    $html = '<meta name="google-site-verification" content="BPa8GuaOXP4IZtISH4p8X3XAZk50VYdhuwax7mQy9BQ" />';
-    $page = $siteINFO -> page;
-
-    for ($i=0; $i < count($array); $i++) {
-        $html .= '<link rel="alternate" hreflang="'.$array[$i].'" href="https://rabraby.hu/'.$lang[$i].'/'.$page.'"/>';
-    }
-    return $html;
 }
 
 // Food Generator
@@ -180,9 +180,7 @@ function foodContent($category) {
                         <img src="'.$siteINFO->mainPath.'img/food/'.$id.'_400px.webp" alt="'.$title.'" loading="lazy">
                     </div>
                     <div class="content">
-                        <div class="title">
-                            <b>'.$title.'</b>
-                        </div>
+                        <div class="title">'.$title.'</div>
                         <div class="bottom">';
                 if ($lang !== "hu") {
                     $html .= '<div class="price2">'.$currencyCount.'</div>';
@@ -248,7 +246,7 @@ function buildGuest($langJSON) {
     $random = $langJSON["reviews"];
     shuffle($random);
 
-    $html .= '<div class="content">';
+    //$html .= '<div class="content">';
     for ($i=0; $i < 3; $i++) { 
         $title = isset($random[$i]["title"]) ? $random[$i]["title"] : "";
         $html .= '<div class="item">
@@ -257,7 +255,7 @@ function buildGuest($langJSON) {
             <p>'.$random[$i]["text"].'</p>
         </div>';
     }
-    $html .= '</div>';
+    //$html .= '</div>';
     $html .= '<div class="ratings"><p>Google: 4+<br><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></p>
         <a target="_blank" href="https://g.page/r/CSa2a1Wf650kEB0/review">'.$langJSON["home"]["guest2"].'</a></div>';
 

@@ -11,7 +11,7 @@
   </div>
   <div class="text">
     <h1><?= $langJSON["title"]; ?>, Szentendre</h1>
-    <h3>anno 1982</h3>
+    <div>anno 1982</div>
     <p><?= $langJSON["home"]["welcome"]; ?></p>
   </div>
 

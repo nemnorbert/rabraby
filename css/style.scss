@@ -722,10 +722,7 @@ nav{
             flex-direction: column;
             min-height: 75px;
             justify-content: center;
-
-            b {
-                padding: 10px;
-            }
+            padding: 10px;
         }
         .content {
             position: relative;
@@ -913,25 +910,17 @@ header {
 // Guest
 .guest {
     background-image: $linearGradient1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-items: center;
+    align-items: start;
+    row-gap: 2rem;
 
     h2 {
         color: white;
     }
     b {
         text-transform: uppercase;
-    }
-    .content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-        i {
-            color: var(--secundary_color);
-        }
     }
     .item {
         display: flex;
@@ -941,6 +930,10 @@ header {
         background-color: var(--background_color1);
         border-radius: 1rem;
         max-width: 500px;
+
+        i {
+            color: var(--main_color);
+        }
     }
     .ratings {
         text-align: center;
@@ -948,6 +941,11 @@ header {
         color: white;
         a {color: white;}
     }
+}
+.guest > h2,
+.guest > div {
+    grid-column: span 12;
+    width: 100%;
 }
 
 /// FAQ
@@ -1130,6 +1128,12 @@ footer > div {
 
 /// DESKTOP
 @media only screen and (min-width: $pcWidth) {
+.guest {
+    gap: 2rem;
+    .item {
+        grid-column: span 4;
+    }
+}
 #aboutUs > div {
     grid-column: span 4;
 }

@@ -9,10 +9,10 @@
     },
     "openHours": {
         "default": [
-            {"hu": "hétfő", "open": "", "close": ""},
+            {"hu": "hétfő", "open": "12", "close": "19"},
             {"hu": "kedd", "open": "", "close": ""},
             {"hu": "szerda", "open": "", "close": ""},
-            {"hu": "csütörtök", "open": "12", "close": "21"},
+            {"hu": "csütörtök", "open": "", "close": ""},
             {"hu": "péntek", "open": "12", "close": "21"},
             {"hu": "szombat", "open": "12", "close": "22"},
             {"hu": "vasárnap", "open": "12", "close": "19"}

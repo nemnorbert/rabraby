@@ -6,7 +6,7 @@
 
   <div class="middle">
     <div class="first">
-      <img class="logo" src="<?= $siteINFO->mainPath ?>img/logo/logo_white.webp" alt="">
+      <img class="logo" src="<?= $siteINFO->mainPath ?>img/logo/logo_white.webp" alt="Logo of Restaurant (White)">
       <div>anno 1982</div>
     </div>
 

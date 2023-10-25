@@ -2,7 +2,7 @@
   $foodJSON = loadJSON('json/food.json');
 ?>
 
-<header id="foodHeader" style="background-image: url(<?= $siteINFO->mainPath ?>img/food1.webp);">
+<header id="foodHeader" style="background-image: url(<?= $siteINFO->mainPath ?>img/background/food_bg2.webp);">
   <h1 class="title"><?= $langJSON["menu"]["food"]; ?></h1>
 </header>
 
