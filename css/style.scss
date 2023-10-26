@@ -46,16 +46,13 @@ body {
     zoom: 1 !important;
     background-color: var(--background-color2);
 }
-h1 {
-    font-size: 2.2rem;
-}
 h2 {
     font-size: 1.8rem;
+    text-align: center;
 }
 h1, h2 {
     word-break: break-word;
     text-transform: uppercase;
-    text-align: center;
 }
 p {
     line-height: 150%;
@@ -77,18 +74,17 @@ a:hover {
 
 //////////////////////////////////////////////// ELEMENTS
 header {
-    height: clamp(200px, 70vh, 800px);
+    height: clamp(200px, 80vh, 800px);
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(109, 16, 16);
     background-size: cover;
     background-position: center;
-    padding: calc($topHeaderHeight + 20px) 1rem;
+    padding: calc($topHeaderHeight + 10px) 1rem 1rem 1rem;
 
-    h1, h2 {
+    h2 {
         color: white;
         text-shadow: 0 0 50px black, 0 0 20px black, 0 0 5px black;
     }
@@ -187,9 +183,9 @@ nav{
     z-index: 2;
     top: 0;
     height: $topHeaderHeight;
-    background-color: rgba(255, 255, 255, 0.514);
+    //background-color: rgba(255, 255, 255, 0.514);
     transition: background-color .5s;
-    backdrop-filter: blur($blur1);
+    //backdrop-filter: blur($blur1);
     max-width: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -414,12 +410,75 @@ nav{
     }
 }
 
-//////////////////////////////////////////////// ALERTS
-#home {
-    background-color: magenta;
-    padding: 0;
-    justify-content: flex-start;
+//////////////////////////////////////////////// HOME
+#home > div, #home > a {
+    height: 100%;
+    width: 100%;
+    border-radius: $borderRadius2;
+    box-shadow: $shadow1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 12;
+
+    img, video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: $borderRadius1;
+    }
 }
+#home {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    height: auto;
+    background-image: linear-gradient(to bottom, transparent, var(--background-color2));
+    
+    .main {
+        position: relative;
+        min-height: 50vh;
+
+        .title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            z-index: 1;
+            color: white;
+            background-image: linear-gradient(to bottom, transparent, rgba(34, 34, 34, 0.822));
+            text-shadow: $shadow1;
+            border-radius: $borderRadius1;
+        }
+        h1 {
+            font-size: 1.5rem;
+        }
+        #bgHome {
+            width: 100%;
+            position: absolute;
+            inset: 0;
+        }
+    }
+    .secundary {
+        width: 100%;
+        max-width: none;
+    }
+    .menu {
+        position: relative;
+        .title {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            background-color: var(--background_color1);
+            padding: 1rem;
+            border-radius: $borderRadius1 $borderRadius1 0 0;
+        }
+    }
+}
+
 .alertBox {
     position: sticky;
     top: 65px;
@@ -780,6 +839,7 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--background-color2);
 }
 
 
@@ -878,6 +938,7 @@ header {
         background-image: $linearGradient1;
         color: white;
         border-radius: 1rem 1rem 0 0;
+        width: 100%;
     }
     .day {
         display: flex;
@@ -885,6 +946,7 @@ header {
         column-gap: 30px;
         width: 100%;
         padding: 10px;
+        flex-wrap: wrap;
 
         div:nth-child(2) {
             font-size: 1.1rem;
@@ -913,7 +975,7 @@ header {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     justify-items: center;
-    align-items: start;
+    align-items: center;
     row-gap: 2rem;
 
     h2 {
@@ -1105,12 +1167,19 @@ footer > div {
     #secundaryMenu {
         display: none;
     }
+    #home {
+        .secundary {
+            grid-column: span 6;
+        }
+    }
+    /*
     #welcome, footer {
         column-gap: 2rem;
     }
     #welcome > div {
         grid-column: span 4;
     }
+    */
     .companyContent > div {
         grid-column: span 6;
     }
@@ -1128,6 +1197,15 @@ footer > div {
 
 /// DESKTOP
 @media only screen and (min-width: $pcWidth) {
+#home {
+    .main {
+        grid-column: span 8;
+        grid-row: span 2;
+    }
+    .secundary {
+        grid-column: span 4;
+    }
+}
 .guest {
     gap: 2rem;
     .item {

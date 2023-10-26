@@ -1,23 +1,24 @@
 <?php $foodJSON = loadJSON('json/food.json'); ?>
 
-<header id="home" style="background-image: url(<?= $siteINFO -> mainPath ?>./img/header.jpg);">
-  <?= buildAlert($siteJSON, $siteINFO); ?>
-  <div id="homeWidget"></div>
-</header>
-
-<div id="welcome" class="container">
-  <div class="openHours">
+<header id="home">
+  <div class="main">
+    <div class="title">
+      <h1><?= $langJSON["title"]; ?>, Szentendre</h1>
+      <p><?= $langJSON["home"]["welcome"]; ?></p>
+    </div>
+    <div id="bgHome">
+      <video src="<?= $siteINFO->mainPath ?>img/video1.mp4" loop="" autoplay="" poster="" muted="" playsinline=""></video>
+      <!--<img src="<?= $siteINFO->mainPath ?>img/balogh.webp" alt="Picture of Balogh Levente & Moldován András">-->
+    </div>
+  </div>
+  <div class="secundary openHours">
     <?= buildOpenHours($langJSON, $siteJSON); ?>
   </div>
-  <div class="text">
-    <h1><?= $langJSON["title"]; ?>, Szentendre</h1>
-    <div>anno 1982</div>
-    <p><?= $langJSON["home"]["welcome"]; ?></p>
-  </div>
-
-  <div class="important">
-  </div>
-</div>
+  <a class="secundary menu" href="#">
+    <div class="title">Menu</div>
+    <img src="<?= $siteINFO->mainPath ?>img/food/330_400px.webp" alt="">
+  </a>
+</header>
 
 <div id="food" class="homeFood">
   <h2><?= $langJSON["menu"]["star"]; ?></h2>
