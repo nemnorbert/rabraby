@@ -1,11 +1,8 @@
 {
     "alert": {
-        "hu": [
-            ["Üdvözlünk új weboldalunkon!", "#"]
-        ],
-        "en": [
+        "al": [
             ["Welcome to our new website!", "#"]
-        ]        
+        ]      
     },
     "openHours": {
         "default": [

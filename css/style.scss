@@ -86,7 +86,7 @@ header {
     background-position: center;
     padding: calc($topHeaderHeight + 10px) $gap1 $gap1 1rem;
 
-    h2 {
+    h1, h2 {
         color: white;
         text-shadow: 0 0 50px black, 0 0 20px black, 0 0 5px black;
     }
@@ -173,18 +173,18 @@ nav{
     align-items: center;
     text-transform: uppercase;
     width: $width;
-    z-index: 10;
+    transform: translate3d(0,0,0);
 }
 
 
 // Primary Menu, Header
 #primaryMenu {
-    z-index: 3;
+    z-index: 50;
     top: 0;
     height: $topHeaderHeight;
-    //background-color: rgba(255, 255, 255, 0.514);
+    background-color: var(--background-color_transparent);
+    box-shadow: $shadow1;
     transition: background-color .5s;
-    //backdrop-filter: blur($blur1);
     max-width: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -240,10 +240,6 @@ nav{
         }
     }
 }
-#primaryMenu.scroll {
-    background-color: var(--background-color_transparent);
-    box-shadow: $shadow1;
-}
 
 
 // Secundary Menu (Mobile)
@@ -251,10 +247,10 @@ nav{
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
-    z-index: 9;
+    z-index: 49;
     position: fixed;
     top: 65px;
-    bottom: 70px;
+    bottom: 64px;
     left: 0;
     right: 0;
     background-image: linear-gradient(to top, var(--main_color_transparent), var(--main_color));
@@ -310,19 +306,18 @@ nav{
 // Mobile Menu, App Menu
 #appMenu {
     bottom: 0;
-    background-image: linear-gradient(to bottom, var(--main_color_transparent), var(--main_color));
-    backdrop-filter: blur($blur1);
+    background-image: linear-gradient(to bottom, var(--main_color), var(--secundary_color));
+    box-shadow: $shadow1;
     justify-content: space-around;
     text-align: center;
     white-space: nowrap;
     font-weight: bold;
-    transition: transform 0.5s 0.15s;
-    transform: translateY(120%);
+    z-index: 50;
 
     a {
         color: whitesmoke;
         text-shadow: 0 0 5px hwb(35 19% 67% / 0.5);
-        padding: 6px 6px 10px 6px;
+        padding: 5px;
         font-size: 12px;
         grid-column: span 3;
     }
@@ -332,13 +327,8 @@ nav{
     }
     .active {
         background-color: white;
-        background-image: linear-gradient(to bottom, white, rgb(235, 235, 235));
-        box-shadow: $shadow1;
         color: var(--main_color);
         text-shadow: none;
-        border-radius: 15px 15px 0 0;
-        margin-top: -10px;
-        padding-top: 16px;
     }
 }
 
@@ -346,7 +336,7 @@ nav{
 #popUp {
     position: fixed;
     inset: 0;
-    z-index: 5;
+    z-index: 55;
     
     #popUpContent {
         position: fixed;
@@ -449,8 +439,7 @@ nav{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
-    height: auto;
-    //background-image: linear-gradient(to bottom, transparent, var(--background-color2));
+    padding: 5rem $gap1 2rem $gap1;
     
     .main {
         position: relative;
@@ -461,7 +450,6 @@ nav{
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 1rem;
             z-index: 1;
             color: white;
             background-image: linear-gradient(to bottom, transparent, rgba(34, 34, 34, 0.822));
@@ -470,6 +458,9 @@ nav{
         }
         h1 {
             font-size: 1.5rem;
+        }
+        h1, p {
+            padding: .3rem 1rem;
         }
         #homeCover {
             width: 100%;
@@ -483,6 +474,7 @@ nav{
     }
     .menu {
         position: relative;
+        max-height: 200px;
     }
     /*
     .gift::after {
@@ -497,27 +489,23 @@ nav{
 
 #homeWidget {
     display: flex;
-    gap: $gap1;
-    padding-top: .5rem;
+    gap: .5rem;
+    padding: 0.5rem 0 0.8rem 1rem;
+    overflow: auto;
+    white-space: nowrap;
 
     .bold {
         font-weight: bold;
     }
     .item {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 2px;
-        //background-color: rgba(39, 39, 39, 0.9);
-        background-color: var(--main_color_transparent);
-        border-radius: $borderRadius1;
-        padding: .5rem;
+        gap: 5px;
+        background-color: var(--main_color);
+        border-radius: $borderRadius2;
+        padding: 7px 10px;
         box-shadow: $shadow1;
-
-        img {
-            width: 64px;
-            height: 64px;
-        }
+        align-items: center;
+        font-weight: bold;
     }
 }
 
@@ -536,6 +524,7 @@ nav{
     gap: 10px;
     box-shadow: inset 0px 5px 5px rgba(31, 31, 31, 0.2), 0px 5px 5px rgba(31, 31, 31, 0.2);
     border-radius: 0 0 $gap2 $gap2;
+    text-align: center;
 }
 
 
@@ -563,7 +552,6 @@ nav{
     grid-template-columns: repeat(12, 1fr);
 
     .about {
-        background-attachment: fixed;
         background-color: var(--background_color1);
         padding: $gap2;
         display: flex;
@@ -579,6 +567,7 @@ nav{
     }
     .box {
         position: relative;
+        z-index: 1;
 
         img {
             width: 100%;
@@ -644,10 +633,7 @@ nav{
 
 
 //////////////////////////////////////////////// FOOD, MENU PAGES
-.homeFood .foodItem:nth-child(n+5) {
-    display: none !important;
-}
-#food {
+#food, #foodHome {
     #foodCategories {
         position: sticky;
         width: 100%;
@@ -769,9 +755,11 @@ nav{
         .title {
             display: flex;
             flex-direction: column;
-            min-height: 75px;
-            justify-content: center;
-            padding: 10px;
+            min-height: 60px;
+            justify-content: flex-start;
+            padding: 15px;
+            max-height: 70px;
+            overflow: auto;
         }
         .content {
             position: relative;
@@ -814,6 +802,11 @@ nav{
         
     }
 }
+
+#foodHome {
+    display: none;
+}
+
 #infoPrice {
     color: var(--secundary_color);
     text-align: center;
@@ -823,13 +816,6 @@ nav{
     margin: 0 auto;
 }
 
-.homeFood {
-    padding: 2rem 0;
-    gap: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 
 //////////////////////////////////////////////// GROUPS PAGE
@@ -1127,9 +1113,6 @@ footer > div {
 @media only screen and (min-width: $tabletWidth) {
 /* Tablet screens */
 
-    .homeFood .foodItem:nth-child(n+5) {
-        display: flex !important;
-    }
     #food .foodContent .foodItem {
         grid-column: span 5;
     }
@@ -1150,6 +1133,9 @@ footer > div {
         }
         .secundary {
             grid-column: span 6;
+        }
+        .menu {
+            max-height: none;
         }
     }
     .companyContent > div {
@@ -1191,15 +1177,22 @@ footer > div {
     }
     #home {
         gap: $gap2;
-        padding: 85px $gap2 1rem $gap2;
+        padding: 95px $gap2 1rem $gap2;
 
         .main {
             grid-column: span 8;
             grid-row: span 2;
+
+            h1, p {
+                padding: 0.3rem 2rem;
+            }
         }
         .secundary {
             grid-column: span 4;
         }
+    }
+    #homeWidget {
+        padding: 0.5rem 0 2rem 2rem;
     }
     .guest {
         gap: 2rem;

@@ -92,13 +92,10 @@ const preLoader = async () => {
       preLoaderBox.style.display = "none";
     }, 500);
   }
-  if (appMenuBox !== null) {
-    appMenuBox.style.transform = "translateY(0%)";
-  }
 }
 
 
-// Header autohide
+/* Header autohide
 const headerTop = document.querySelector('#primaryMenu');
 if (headerTop !== null) {
   window.addEventListener('scroll', () => {
@@ -108,7 +105,7 @@ if (headerTop !== null) {
         headerTop.classList.remove('scroll');
     }
   });
-}
+}*/
 
 // Language Switcher
 if (flagDiv !== null) {

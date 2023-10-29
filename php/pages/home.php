@@ -2,7 +2,7 @@
 
 <?= buildAlert($siteJSON, $siteINFO); ?>
 
-<header id="home">
+<div id="home">
   <div class="main">
     <div class="title2">
       <?= buildContactIcon($siteJSON); ?>
@@ -11,6 +11,7 @@
       <h1><?= $langJSON["title"]; ?>, Szentendre</h1>
       <p><?= $langJSON["home"]["welcome"]; ?></p>
       <div id="homeWidget">
+        <?= buildBubble($langJSON); ?>
       </div>
     </div>
     <div id="homeCover">
@@ -24,9 +25,9 @@
   <div class="secundary openHours">
     <?= buildOpenHours($langJSON, $siteJSON); ?>
   </div>
-</header>
+</div>
 
-<div id="food" class="homeFood">
+<div id="foodHome">
   <h2><?= $langJSON["menu"]["star"]; ?></h2>
   <?= foodContent(false); ?>
   <?= '<a class="btn" href="'.$siteINFO -> link.'menu"><i class="bi bi-book"></i> '.$langJSON["menu"]["show"].' ('.count($foodJSON["food"]).')</a>'; ?>
@@ -72,5 +73,3 @@
 <div class="faq container">
   <?= buildFAQ($langJSON); ?>
 </div>
-
-<script src="<?= $siteINFO->mainPath ?>js/home.js"></script>

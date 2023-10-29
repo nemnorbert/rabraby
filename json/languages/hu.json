@@ -34,6 +34,7 @@
     "title": "Allergének",
     "array": ["Glutén", "Rákfélék", "Tojás", "Hal", "Földimogyoró", "Szója", "Tej", "Diófélék", "Zeller", "Mustár", "Szezámmag", "Kén-dioxid", "Csillagfürt", "Puhatestűek"]
 },
+"bubbles": ["Szépkártya elfogadóhely","Kutyabaráthely"],
 
 
 "home": {

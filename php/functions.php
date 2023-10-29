@@ -39,6 +39,17 @@ function buildAlert($siteJSON, $siteINFO) {
     }
 }
 
+// Build Alerts
+function buildBubble($langJSON) {
+    if (isset($langJSON["bubbles"][0])) {
+        $bubble = '';
+        foreach ($langJSON["bubbles"] as $item) {
+            $bubble .= '<div class="item">'.$item.'</div>';
+        }
+        echo $bubble;
+    }
+}
+
 // Build Menu
 function buildMenu($siteJSON, $siteINFO, $langJSON, $menu) {
     $menuArray = $siteJSON["menu"][$menu];
@@ -66,7 +77,7 @@ function mobileMenu($siteJSON, $siteINFO, $langJSON) {
 // Build Google Lang Page Meta
 function buildGoogleMeta($siteINFO) {
     $array = array_merge(["x-default"], $siteINFO -> langAvailable);
-    $lang = array_merge(["en"], $siteINFO -> langAvailable);
+    $lang = array_merge(["hu"], $siteINFO -> langAvailable);
     $html = '<meta name="google-site-verification" content="BPa8GuaOXP4IZtISH4p8X3XAZk50VYdhuwax7mQy9BQ" />';
     $page = $siteINFO -> page;
 
