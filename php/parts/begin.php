@@ -53,7 +53,6 @@
       <?= buildMenu($siteJSON, $siteINFO, $langJSON, "main"); ?>
     </div>
   <div class="switch">
-    <img class="lang" src="<?= $siteINFO->mainPath ?>img/flag/hu.svg" alt="Flag of Current Language"> 
     <img class="hamBtns" src="<?= $siteINFO->mainPath ?>img/icon/exit.svg" alt="Exit icon">
   </div>
 </div>

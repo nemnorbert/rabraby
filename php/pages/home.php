@@ -1,23 +1,29 @@
 <?php $foodJSON = loadJSON('json/food.json'); ?>
 
+<?= buildAlert($siteJSON, $siteINFO); ?>
+
 <header id="home">
   <div class="main">
+    <div class="title2">
+      <?= buildContactIcon($siteJSON); ?>
+    </div>
     <div class="title">
       <h1><?= $langJSON["title"]; ?>, Szentendre</h1>
       <p><?= $langJSON["home"]["welcome"]; ?></p>
+      <div id="homeWidget">
+      </div>
     </div>
-    <div id="bgHome">
-      <video src="<?= $siteINFO->mainPath ?>img/video1.mp4" loop="" autoplay="" poster="" muted="" playsinline=""></video>
-      <!--<img src="<?= $siteINFO->mainPath ?>img/balogh.webp" alt="Picture of Balogh Levente & Moldován András">-->
+    <div id="homeCover">
+      <img src="<?= $siteINFO->mainPath ?>img/cover.webp" alt="cover image of home page">
     </div>
   </div>
+  <a class="secundary menu" href="<?= $siteINFO->link ?>menu">
+    <div class="title2"><i class="bi bi-book-half"></i> <?= $langJSON["nav"]["menu"]; ?></div>
+    <img src="<?= $siteINFO->mainPath ?>img/food/330_400px.webp" alt="Menu">
+  </a>
   <div class="secundary openHours">
     <?= buildOpenHours($langJSON, $siteJSON); ?>
   </div>
-  <a class="secundary menu" href="#">
-    <div class="title">Menu</div>
-    <img src="<?= $siteINFO->mainPath ?>img/food/330_400px.webp" alt="">
-  </a>
 </header>
 
 <div id="food" class="homeFood">

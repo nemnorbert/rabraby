@@ -30,9 +30,9 @@ function errorExport($text, $where) {
 function buildAlert($siteJSON, $siteINFO) {
     $alerts = isset($siteJSON["alert"][$siteINFO -> langSite]) ? $siteJSON["alert"][$siteINFO -> langSite] : [[],[]];
     if (isset($siteJSON["alert"][$siteINFO -> langSite])) {
-        $html = '<div class="alertBox">';
+        $html = '<div id="alertBox">';
         for ($i=0; $i < count($alerts); $i++) { 
-            $html .= '<a blank="_target" href="'.$alerts[$i][1].'">'.$alerts[$i][0].'</a>';
+            $html .= '<div><i class="bi bi-info-circle"></i> '.$alerts[$i][0].'</div>';
         }
         $html .= '</div>';
         return $html;

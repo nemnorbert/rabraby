@@ -17,11 +17,11 @@ const weatherAPI = () => {
         weatherJSON = data.current;
 
         if (widgetDIV !== null) {
-            widgetDIV.innerHTML = `
-                <img src="${weatherJSON.condition.icon}" alt="Weather logo, mini">
-                <div class="title">Szentendre</div>
-                <div>${weatherJSON.condition.text}</div>
-                <div>${weatherJSON.temp_c} ℃</div>`;
+            widgetDIV.innerHTML = `<div class="item">
+                    <img src="${weatherJSON.condition.icon}" alt="Weather logo, mini">
+                    <div>${weatherJSON.condition.text}</div>
+                    <div>${weatherJSON.temp_c} ℃</div>
+                </div>`;
             widgetDIV.classList.add('widget');
         }
     })

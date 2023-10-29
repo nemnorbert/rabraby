@@ -5,6 +5,7 @@ let siteJSON;
 const secMenu: HTMLElement | null = document.querySelector('#secundaryMenu');
 const preLoaderBox: HTMLElement | null = document.querySelector('#preLoader');
 const appMenuBox: HTMLElement | null = document.querySelector('#appMenu');
+const homeCover: HTMLElement | null = document.querySelector('#homeCover');
 const hamburgerBtns: NodeListOf<HTMLElement> = document.querySelectorAll(".hamBtns");
 const flagDiv: HTMLImageElement | null = document.querySelector('#flag');
 let flagsIMGs: NodeListOf<HTMLElement>;
@@ -39,13 +40,20 @@ hamburgerBtns.forEach((hamBtn: HTMLElement) => {
     if (secMenu !== null) {
       const visibility: string | null = secMenu.getAttribute("data-visible");
       if (visibility === "true") {
-          secMenu.setAttribute("data-visible", "false");
+        secMenu.setAttribute("data-visible", "false");
+        setTimeout(() => {
+          secMenu.style.display = "none";
+        }, 200);
       } else {
+        secMenu.style.display = "flex";
+        setTimeout(() => {
           secMenu.setAttribute("data-visible", "true");
+        }, 200);
       }
     }
-  })
+  });
 });
+
 
 
 const popUpSwitcher = () => {
@@ -58,14 +66,31 @@ const popUpSwitcher = () => {
   }
 }
 
+// Video Cover Loader
+const fastConnection = () => {
+  if (homeCover !== null) {
+    homeCover.innerHTML = `<video src="${siteINFO.mainPath}img/video1.mp4" loop="" autoplay="" poster="" muted="" playsinline=""></video>`
+  }
+}
+
 // PreLoader
-const preLoaderFunc = async () => {
+const preLoader = async () => {
+  loadtime = (new Date().getTime() - loadtime) / 1000;
+  console.log(loadtime);
+
   const loadtime_bonus = loadtime <= 1 ? (1 - loadtime)*1000 : 0;
   const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
   await delay(loadtime_bonus);
 
+  if (loadtime < 4) {
+    fastConnection();
+  }
+
   if (preLoaderBox !== null) {
     preLoaderBox.style.transform = "translateY(-100%)";
+    setTimeout(() => {
+      preLoaderBox.style.display = "none";
+    }, 500);
   }
   if (appMenuBox !== null) {
     appMenuBox.style.transform = "translateY(0%)";
@@ -77,7 +102,7 @@ const preLoaderFunc = async () => {
 const headerTop = document.querySelector('#primaryMenu');
 if (headerTop !== null) {
   window.addEventListener('scroll', () => {
-    if (window.scrollY >= 65) {
+    if (window.scrollY >= 20) {
         headerTop.classList.add('scroll');
     } else if (window.scrollY < 64) {
         headerTop.classList.remove('scroll');
@@ -120,5 +145,4 @@ async function asyncFunction() {
 asyncFunction();
 
 // END
-loadtime = (new Date().getTime() - loadtime) / 1000;
-window.addEventListener("load", preLoaderFunc);
+window.addEventListener("load", preLoader);

@@ -11,7 +11,8 @@ $borderRadius1: 1rem;
 $borderRadius2: 1.5rem;
 $foodItemRadius: 30px;
 $linearGradient1: linear-gradient(to bottom, var(--main_color), var(--secundary_color));
-$gap1: 10px;
+$gap1: 1rem;
+$gap2: 2rem;
 $blur1: 5px;
 $width: clamp($minWidth, 100vw, $maxWidth);
 $topHeaderHeight: 65px;
@@ -41,13 +42,12 @@ html {
     --background-color_transparent: hsla(36, 100%, 98%, 0.945);
 }
 body {
-    touch-action: none;
     user-select: none;
     zoom: 1 !important;
     background-color: var(--background-color2);
 }
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 h1, h2 {
@@ -61,7 +61,9 @@ header, main, footer {
     min-width: $minWidth;
     max-width: $maxWidth;
     margin: 0 auto;
-    overflow: auto;
+}
+main {
+    background-color: var(--background_color1);
 }
 a {
     text-decoration: none;
@@ -82,7 +84,7 @@ header {
     align-items: center;
     background-size: cover;
     background-position: center;
-    padding: calc($topHeaderHeight + 10px) 1rem 1rem 1rem;
+    padding: calc($topHeaderHeight + 10px) $gap1 $gap1 1rem;
 
     h2 {
         color: white;
@@ -128,9 +130,6 @@ header > .content {
         height: 100%;
         width: auto;
     }
-}
-main {
-    background-color: var(--background_color1);
 }
 
 //////////////////////////////////////////////// PRELOADER
@@ -180,7 +179,7 @@ nav{
 
 // Primary Menu, Header
 #primaryMenu {
-    z-index: 2;
+    z-index: 3;
     top: 0;
     height: $topHeaderHeight;
     //background-color: rgba(255, 255, 255, 0.514);
@@ -195,7 +194,6 @@ nav{
     .right {
         display: flex;
         align-items: center;
-        column-gap: 1rem;
         height: 100%;
     }
     .logo {
@@ -215,7 +213,6 @@ nav{
         }
     }
     #hamburger {
-        background-color: var(--main_color);
         height: 100%;
         cursor: pointer;
         justify-self: end;
@@ -227,8 +224,8 @@ nav{
         span {
             height: 5px;
             width: 35px;
-            border-radius: 2px;
-            background-color: white;
+            border-radius: 5px;
+            background-color: var(--main_color);
         }
     }
     .menu {
@@ -417,7 +414,7 @@ nav{
     border-radius: $borderRadius2;
     box-shadow: $shadow1;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     grid-column: span 12;
 
@@ -427,13 +424,33 @@ nav{
         object-fit: cover;
         border-radius: $borderRadius1;
     }
+    .title2 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0 $borderRadius1;
+        background-color: var(--main_color);
+        display: flex;
+        gap: $gap1;
+        box-shadow: -2px 2px 5px hsl(0deg 0% 0% / 37%);
+
+        a {
+            color: white;
+        }
+    }
 }
 #home {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
     height: auto;
-    background-image: linear-gradient(to bottom, transparent, var(--background-color2));
+    //background-image: linear-gradient(to bottom, transparent, var(--background-color2));
     
     .main {
         position: relative;
@@ -454,7 +471,7 @@ nav{
         h1 {
             font-size: 1.5rem;
         }
-        #bgHome {
+        #homeCover {
             width: 100%;
             position: absolute;
             inset: 0;
@@ -466,41 +483,59 @@ nav{
     }
     .menu {
         position: relative;
-        .title {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-            background-color: var(--background_color1);
-            padding: 1rem;
-            border-radius: $borderRadius1 $borderRadius1 0 0;
+    }
+    /*
+    .gift::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgb(189, 0, .8));
+        border-radius: $borderRadius1;
+    }
+    */
+}
+
+#homeWidget {
+    display: flex;
+    gap: $gap1;
+    padding-top: .5rem;
+
+    .bold {
+        font-weight: bold;
+    }
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 2px;
+        //background-color: rgba(39, 39, 39, 0.9);
+        background-color: var(--main_color_transparent);
+        border-radius: $borderRadius1;
+        padding: .5rem;
+        box-shadow: $shadow1;
+
+        img {
+            width: 64px;
+            height: 64px;
         }
     }
 }
 
-.alertBox {
+#alertBox {
     position: sticky;
     top: 65px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: rgb(255, 44, 44);
+    color: white;
+    z-index: 2;
+    padding: 10px 1rem;
     font-weight: bold;
-    gap: $gap1;
-    padding: $gap1;
-    text-align: center;
-    z-index: 1;
-}
-.alertBox > a {
-    background-color: var(--main_color);
-    color: var(--secundary_color_dark);
-    padding: .5rem;
-    border-radius: .5rem;
-    width: 100%;
-    max-width: 600px;
-    font-size: 1.1rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: inset 0px 5px 5px rgba(31, 31, 31, 0.2), 0px 5px 5px rgba(31, 31, 31, 0.2);
+    border-radius: 0 0 $gap2 $gap2;
 }
 
 
@@ -519,52 +554,7 @@ nav{
 }
 
 .container {
-    padding: 60px 2rem;
-}
-#home {
-    .widget {
-        background-color: var(--background-color_transparent);
-        position: absolute;
-        left: 10px;
-        bottom: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: .5rem;
-        border-radius: 1rem;
-        box-shadow: $shadow1;
-        
-        .title {
-            font-weight: bold;
-        }
-    }
-}
-
-// Welcome
-#welcome {
-    background-image: $linearGradient1;
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(12, 1fr);
-    row-gap: 2rem;
-    justify-items: center;
-
-    .text {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        background-color: var(--background_color1);
-        padding: 2rem;
-        border-radius: 1rem;
-        text-align: center;
-        box-shadow: $shadow1;
-        p {
-            text-align: justify;
-        }
-    }
-}
-#welcome > div {
-    grid-column: span 12;
+    padding: 60px $gap1;
 }
 
 #aboutUs {
@@ -575,7 +565,7 @@ nav{
     .about {
         background-attachment: fixed;
         background-color: var(--background_color1);
-        padding: 3rem;
+        padding: $gap2;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -662,7 +652,7 @@ nav{
         position: sticky;
         width: 100%;
         max-width: $maxWidth;
-        z-index: 1;
+        z-index: 2;
         top: $topHeaderHeight;
         background-color: rgb(31, 31, 31);
         .drink {
@@ -725,7 +715,7 @@ nav{
         display: grid;
         grid-template-columns: repeat(20, 1fr);
         gap: 1rem;
-        padding: 1rem;
+        padding: $gap1;
     }
         
     .foodItem {
@@ -839,7 +829,6 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--background-color2);
 }
 
 
@@ -935,7 +924,7 @@ header {
     .title {
         padding: 12px 0;
         font-size: 1.2rem;
-        background-image: $linearGradient1;
+        background-color: var(--main_color);
         color: white;
         border-radius: 1rem 1rem 0 0;
         width: 100%;
@@ -945,7 +934,7 @@ header {
         justify-content: space-between;
         column-gap: 30px;
         width: 100%;
-        padding: 10px;
+        padding: 10px $gap1;
         flex-wrap: wrap;
 
         div:nth-child(2) {
@@ -1124,23 +1113,20 @@ footer > div {
 
 //////////////////////////////////////////////// MEDIA
 @media only screen and (max-width: 350px) {
+/* Ultra mini screens */
+
     #food .foodContent {
         column-gap: 0;
-    }
-    #food .foodContent .foodItem {
-        grid-column: span 20;
-    }
-}
-@media only screen and (min-width: 400px) {
-    #food .foodContent {
-        gap: 1rem;
-    }
-    #food .foodContent .foodItem {
-        grid-column: span 10;
+
+        .foodItem {
+            grid-column: span 20;
+        }
     }
 }
-/// TABLET
+  
 @media only screen and (min-width: $tabletWidth) {
+/* Tablet screens */
+
     .homeFood .foodItem:nth-child(n+5) {
         display: flex !important;
     }
@@ -1150,9 +1136,42 @@ footer > div {
     header h1 {
         font-size: 3rem;
     }
-    #appMenu {
+    #secundaryMenu {
         display: none;
     }
+    #home {
+        .main {
+            h1 {
+                font-size: 2.5rem;
+            }
+            p {
+                max-width: 80%;
+            }
+        }
+        .secundary {
+            grid-column: span 6;
+        }
+    }
+    .companyContent > div {
+        grid-column: span 6;
+    }
+
+    footer {
+        .middle > div {
+            grid-column: span 3;
+        }
+        .middle {
+            column-gap: 2rem;
+        }
+        .bottom {
+            justify-content: space-between;
+        }
+    }
+}
+
+@media only screen and (min-width: $pcWidth) {
+/* Destop and big screens */
+
     #primaryMenu {
         #flag {
             margin-right: 1rem;
@@ -1160,62 +1179,38 @@ footer > div {
         #hamburger {
             display: none;
         }
+        .right {
+            column-gap: 1rem;
+        }
         .menu {
             display: flex;
         }
     }
-    #secundaryMenu {
+    #appMenu {
         display: none;
     }
     #home {
+        gap: $gap2;
+        padding: 85px $gap2 1rem $gap2;
+
+        .main {
+            grid-column: span 8;
+            grid-row: span 2;
+        }
         .secundary {
-            grid-column: span 6;
+            grid-column: span 4;
         }
     }
-    /*
-    #welcome, footer {
-        column-gap: 2rem;
+    .guest {
+        gap: 2rem;
+        .item {
+            grid-column: span 4;
+        }
     }
-    #welcome > div {
+    #aboutUs > div {
         grid-column: span 4;
     }
-    */
-    .companyContent > div {
-        grid-column: span 6;
-    }
-    
-    footer .middle > div {
-        grid-column: span 3;
-    }
-    footer .middle {
-        column-gap: 2rem;
-    }
-    footer .bottom {
-        justify-content: space-between;
-    }
-}
-
-/// DESKTOP
-@media only screen and (min-width: $pcWidth) {
-#home {
-    .main {
-        grid-column: span 8;
-        grid-row: span 2;
-    }
-    .secundary {
+    #food .foodContent .foodItem {
         grid-column: span 4;
     }
-}
-.guest {
-    gap: 2rem;
-    .item {
-        grid-column: span 4;
-    }
-}
-#aboutUs > div {
-    grid-column: span 4;
-}
-#food .foodContent .foodItem {
-    grid-column: span 4;
-}
 }
