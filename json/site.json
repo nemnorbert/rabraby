@@ -39,8 +39,8 @@
         {"name": "swift", "text": "OKHBHUHB"}
     ],
     "languages": {
-        "site": ["hu", "en", "es", "de", "ru", "zh"],
-        "foodMenu": ["hu", "en", "es", "de", "it", "pt", "ru", "zh", "ja", "ko", "fr"]
+        "site": ["hu", "en", "de", "es", "fr", "ru", "zh"],
+        "foodMenu": ["hu", "en", "es", "de", "it", "pl", "ru", "zh", "ja", "ko", "fr"]
     },
     "menu": {
         "main": ["home","menu", "groups", "contact"],

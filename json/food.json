@@ -214,7 +214,8 @@
         "ru": "Фаршированный перец с картофелем",
         "zh": "土豆烤青椒",
         "ja": "じゃがいも入りの詰め物入りピーマン",
-        "ko": "감자와 고추로 가득 찬 페퍼 스태프"
+        "ko": "감자와 고추로 가득 찬 페퍼 스태프",
+        "fr": "Poivrons farcis avec pommes de terre"
     },
     "410": {
         "hu": "Magyar libamájszeletek, házi lecsóval, burgonyával",
@@ -226,7 +227,8 @@
         "ru": "Кусочки венгерской гусятиной печени с домашним лечо и картофелем",
         "zh": "匈牙利鹅肝薄片，搭配自制的莱切和土豆",
         "ja": "ハンガリー風フォアグラスライス、自家製レーチョとポテト",
-        "ko": "헝가리식 푸아그라 슬라이스와 홈메이드 레추, 감자"
+        "ko": "헝가리식 푸아그라 슬라이스와 홈메이드 레추, 감자",
+        "fr": "Tranches de foie gras hongrois avec ratatouille maison et pommes de terre"
     },
     "320": {
         "hu": "Panko bundában sült békacombok wok zöldséggel",
@@ -499,7 +501,6 @@
         "zh": "羊奶芝士填充的炸猪排",
         "ja": "羊乳チーズ入りポークシュニッツェル",
         "ko": "양치즈로 채운 돼지 슈니첼",
-        "fr": "Escalope de porc farcie au fromage de brebis",
-        "he": "סניצל חזיר ממולא בגבינת כבשים"
+        "fr": "Escalope de porc farcie au fromage de brebis"
         }
 }

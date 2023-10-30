@@ -162,4 +162,27 @@
   <priority>0.80</priority>
 </url>
 
+
+<!-- FR -->
+<url>
+  <loc>https://rabraby.hu/fr/home</loc>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/fr/menu</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/fr/groups</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/fr/contact</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://rabraby.hu/fr/sitemap</loc>
+  <priority>0.80</priority>
+</url>
+
 </urlset>
