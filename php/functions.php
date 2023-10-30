@@ -32,14 +32,14 @@ function buildAlert($siteJSON, $siteINFO) {
     if (isset($siteJSON["alert"][$siteINFO -> langSite])) {
         $html = '<div id="alertBox">';
         for ($i=0; $i < count($alerts); $i++) { 
-            $html .= '<div><i class="bi bi-info-circle"></i> '.$alerts[$i][0].'</div>';
+            $html .= '<div><i class="bi bi-exclamation-circle-fill"></i> '.$alerts[$i][0].'</div>';
         }
         $html .= '</div>';
         return $html;
     }
 }
 
-// Build Alerts
+// Build Bubbles
 function buildBubble($langJSON) {
     if (isset($langJSON["bubbles"][0])) {
         $bubble = '';

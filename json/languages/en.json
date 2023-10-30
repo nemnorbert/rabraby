@@ -10,7 +10,7 @@
     "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     "status": {
         "open": "Open",
-        "close": "Close"
+        "close": "Closed"
     }
 },
 "nav":{

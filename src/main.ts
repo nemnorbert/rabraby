@@ -124,7 +124,24 @@ if (flagDiv !== null) {
   });
 }
 
+// Auto hide
+let timeout:number;
+let prevScrollPos = window.pageYOffset;
 
+window.addEventListener("scroll", function() {
+  if (window.innerWidth < 768) {
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+      const currentScrollPos = window.pageYOffset;
+      if (prevScrollPos > currentScrollPos) {
+        appMenuBox.style.bottom = "0";
+      } else {
+        appMenuBox.style.bottom = "-65px";
+      }
+      prevScrollPos = currentScrollPos;
+    }, 200);
+  }
+});
 
 
 popupExitDivs.forEach(exitDiv => {

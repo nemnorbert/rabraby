@@ -20,7 +20,7 @@
   </div>
   <a class="secundary menu" href="<?= $siteINFO->link ?>menu">
     <div class="title2"><i class="bi bi-book-half"></i> <?= $langJSON["nav"]["menu"]; ?></div>
-    <img src="<?= $siteINFO->mainPath ?>img/food/330_400px.webp" alt="Menu">
+    <img src="<?= $siteINFO->mainPath ?>img/food_800px.webp" alt="Menu">
   </a>
   <div class="secundary openHours">
     <?= buildOpenHours($langJSON, $siteJSON); ?>

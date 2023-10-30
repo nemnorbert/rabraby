@@ -1,7 +1,7 @@
 {
     "alert": {
-        "al": [
-            ["Welcome to our new website!", "#"]
+        "hu": [
+            ["Hétfőn is nyitva", "#"]
         ]      
     },
     "openHours": {

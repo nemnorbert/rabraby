@@ -38,6 +38,7 @@
         "title": "Allergene",
         "array": ["Gluten", "Krebstiere", "Eier", "Fisch", "Erdnüsse", "Soja", "Milch", "Nüsse", "Sellerie", "Senf", "Sesamsamen", "Schwefeldioxid", "Lupinen", "Weichtiere"]
     },
+    "bubbles": ["Kostenloses WLAN", "Hundefreundlich", "Akzeptiert Kreditkarten"],
 
 
     "home": {
