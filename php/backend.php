@@ -37,11 +37,16 @@ $langJSON = loadJSON('json/languages/'.$siteINFO -> langSite.'.json');
 
 // 404 Error
 if (!isset($langJSON["nav"][$siteINFO->page])) {
-    errorExport("Error 404", $requestURI);
+    exportIT("Error404", $requestURI);
     $siteINFO -> page = "404";
+}
+// Wifi Guest?
+if ($siteINFO -> redirect) {
+    exportIT("WifiGuest", "");
 }
 
 $siteINFO -> link = $siteINFO -> mainPath . $siteINFO -> langSite . '/';
+
 
 // Redirect it? If yes go other page
 if ($siteINFO -> redirect) {

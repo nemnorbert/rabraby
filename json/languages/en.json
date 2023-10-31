@@ -39,6 +39,7 @@
     "array": ["Gluten", "Crustaceans", "Eggs", "Fish", "Peanuts", "Soy", "Milk", "Nuts", "Celery", "Mustard", "Sesame seeds", "Sulfur dioxide", "Lupin", "Mollusks"]
 },
 "bubbles": ["Free wifi", "Pet-friendly", "Accepts credit cards"],
+"wifiWelcome": "Welcome to our Wi-Fi network!",
 
 
 "home": {

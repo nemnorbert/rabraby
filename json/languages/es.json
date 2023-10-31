@@ -39,7 +39,7 @@
     "array": ["Gluten", "Crustáceos", "Huevos", "Pescado", "Cacahuetes", "Soja", "Leche", "Frutos secos", "Apio", "Mostaza", "Sésamo", "Dióxido de azufre", "Altramuces", "Moluscos"]
 },
 "bubbles": ["Wi-Fi gratuito", "Amigable con los perros", "Acepta tarjetas de crédito"],
-
+"wifiWelcome": "¡Bienvenido a nuestra red Wi-Fi!",
 
 
 "home": {

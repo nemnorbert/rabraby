@@ -514,7 +514,6 @@ nav{
 #alertBox {
     position: sticky;
     top: 65px;
-    background-color: rgb(255, 44, 44);
     color: white;
     z-index: 2;
     padding: 10px 1rem;
@@ -527,6 +526,12 @@ nav{
     box-shadow: inset 0px 5px 5px rgba(31, 31, 31, 0.2), 0px 5px 5px rgba(31, 31, 31, 0.2);
     border-radius: 0 0 $gap2 $gap2;
     text-align: center;
+}
+.alertRed {
+    background-color: rgb(255, 44, 44);
+}
+.alertBlue {
+    background-color: rgb(44, 100, 255);
 }
 
 

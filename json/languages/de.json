@@ -39,7 +39,7 @@
         "array": ["Gluten", "Krebstiere", "Eier", "Fisch", "Erdnüsse", "Soja", "Milch", "Nüsse", "Sellerie", "Senf", "Sesamsamen", "Schwefeldioxid", "Lupinen", "Weichtiere"]
     },
     "bubbles": ["Kostenloses WLAN", "Hundefreundlich", "Akzeptiert Kreditkarten"],
-
+    "wifiWelcome": "Willkommen in unserem Wi-Fi-Netzwerk!",
 
     "home": {
         "welcome": "Wir heißen Sie herzlich willkommen in unserem Restaurant im Stadtzentrum von Szentendre. Seit 1982 bieten wir köstliche Speisen, Antiquitäten, atemberaubendes Interieur und bezahlbare Preise.",

@@ -14,29 +14,52 @@ function loadJSON($filePath) {
 
 // Redirect
 function urlRedirect($siteINFO) {
+    $url = $siteINFO -> link . $siteINFO -> page;
+
+    if (isset($_GET['wifiGuest'])) {
+        $url .= "?wi=true"; 
+    }
+
     header("HTTP/1.1 301 Moved Permanently");
-    header('Location: ' . $siteINFO -> link . $siteINFO -> page);
+    header('Location: ' . $url);
     exit();
 }
 
-function errorExport($text, $where) {
+function exportIT($text, $other) {
+    $path = "log";
+    $other = "in ".$other;
+    if ($text === "WifiGuest") {
+        $path = "wifi";
+        $other = "lang: ";
+        $other .= isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : "?";
+    }
+
     $time = date('Y-m-d H:i:s');
-    $message = "$time - [$text] in $where" . PHP_EOL;
-    $logFile = "log/log_".date('y')."-".date('m').".txt";
+    $message = "$time - [$text] $other" . PHP_EOL;
+    $logFile = "log/".$path."_".date('y')."-".date('m').".txt";
     error_log($message, 3, $logFile);
 }
 
 // Build Alerts
-function buildAlert($siteJSON, $siteINFO) {
-    $alerts = isset($siteJSON["alert"][$siteINFO -> langSite]) ? $siteJSON["alert"][$siteINFO -> langSite] : [[],[]];
-    if (isset($siteJSON["alert"][$siteINFO -> langSite])) {
-        $html = '<div id="alertBox">';
-        for ($i=0; $i < count($alerts); $i++) { 
-            $html .= '<div><i class="bi bi-exclamation-circle-fill"></i> '.$alerts[$i][0].'</div>';
+function buildAlert($siteJSON, $siteINFO, $langJSON) {
+    $langSite = $siteINFO->langSite;
+
+    $alerts = $siteJSON["alert"][$langSite] ?? [[], []];
+
+    if (isset($_GET['wi'])) {
+        $alertType = 'alertBlue';
+        $alertMessage = '<div><i class="bi bi-wifi"></i> '.$langJSON["wifiWelcome"].'</div>';
+    } else {
+        $alertType = 'alertRed';
+        $alertMessage = '';
+
+        foreach ($alerts as $alert) {
+            $alertMessage .= '<div><i class="bi bi-exclamation-circle-fill"></i> ' . $alert[0] . '</div>';
         }
-        $html .= '</div>';
-        return $html;
     }
+
+    $html = '<div id="alertBox" class="' . $alertType . '">' . $alertMessage . '</div>';
+    return $html;
 }
 
 // Build Bubbles

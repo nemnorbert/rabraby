@@ -1,6 +1,6 @@
 <?php $foodJSON = loadJSON('json/food.json'); ?>
 
-<?= buildAlert($siteJSON, $siteINFO); ?>
+<?= buildAlert($siteJSON, $siteINFO, $langJSON); ?>
 
 <div id="home">
   <div class="main">

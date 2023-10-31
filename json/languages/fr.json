@@ -38,7 +38,9 @@
       "title": "Allergènes",
       "array": ["Gluten", "Crustacés", "Œufs", "Poisson", "Arachides", "Soja", "Lait", "Noix", "Céleri", "Moutarde", "Graines de sésame", "Dioxyde de soufre", "Lupin", "Mollusques"]
     },
-    "bubbles": ["Wi-Fi gratuit", "Convivial pour les chiens", "Accepte les cartes de crédit"],    
+    "bubbles": ["Wi-Fi gratuit", "Convivial pour les chiens", "Accepte les cartes de crédit"],
+    "wifiWelcome": "Bienvenue sur notre réseau Wi-Fi !",
+    
     
     "home": {
         "welcome": "Nous vous souhaitons chaleureusement la bienvenue dans notre restaurant situé en plein cœur de Szentendre. Des plats délicieux, des antiquités, un intérieur à couper le souffle et des prix abordables depuis 1982.",
