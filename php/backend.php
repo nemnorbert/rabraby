@@ -40,10 +40,6 @@ if (!isset($langJSON["nav"][$siteINFO->page])) {
     exportIT("Error404", $requestURI);
     $siteINFO -> page = "404";
 }
-// Wifi Guest?
-if ($siteINFO -> redirect) {
-    exportIT("WifiGuest", "");
-}
 
 $siteINFO -> link = $siteINFO -> mainPath . $siteINFO -> langSite . '/';
 

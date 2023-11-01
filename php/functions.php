@@ -16,8 +16,9 @@ function loadJSON($filePath) {
 function urlRedirect($siteINFO) {
     $url = $siteINFO -> link . $siteINFO -> page;
 
-    if (isset($_GET['wifiGuest'])) {
-        $url .= "?wi=true"; 
+    if (isset($_GET['wifi']) && $_GET['wifi'] === "145") {
+        $url .= "?wi=true";
+        exportIT("WifiGuest", "");
     }
 
     header("HTTP/1.1 301 Moved Permanently");
@@ -28,7 +29,7 @@ function urlRedirect($siteINFO) {
 function exportIT($text, $other) {
     $path = "log";
     $other = "in ".$other;
-    if ($text === "WifiGuest") {
+    if ($text === "WifiGuest" && isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
         $path = "wifi";
         $other = "lang: ";
         $other .= isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : "?";
@@ -42,24 +43,24 @@ function exportIT($text, $other) {
 
 // Build Alerts
 function buildAlert($siteJSON, $siteINFO, $langJSON) {
-    $langSite = $siteINFO->langSite;
-
-    $alerts = $siteJSON["alert"][$langSite] ?? [[], []];
-
+    
     if (isset($_GET['wi'])) {
         $alertType = 'alertBlue';
         $alertMessage = '<div><i class="bi bi-wifi"></i> '.$langJSON["wifiWelcome"].'</div>';
-    } else {
+        $html = '<div id="alertBox" class="' . $alertType . '">' . $alertMessage . '</div>';
+        return $html;
+    }
+
+    if (isset($siteJSON["alert"][$siteINFO->langSite][0])) {
+        $alerts = $siteJSON["alert"][$siteINFO->langSite];
         $alertType = 'alertRed';
         $alertMessage = '';
-
         foreach ($alerts as $alert) {
             $alertMessage .= '<div><i class="bi bi-exclamation-circle-fill"></i> ' . $alert[0] . '</div>';
         }
+        $html = '<div id="alertBox" class="' . $alertType . '">' . $alertMessage . '</div>';
+        return $html;
     }
-
-    $html = '<div id="alertBox" class="' . $alertType . '">' . $alertMessage . '</div>';
-    return $html;
 }
 
 // Build Bubbles
