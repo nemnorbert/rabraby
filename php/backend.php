@@ -4,6 +4,7 @@ $siteJSON = loadJSON('json/site.json');
 $siteINFO -> langAvailable = $siteJSON["languages"]["site"];
 $siteINFO -> langUser = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : false;
 $siteINFO -> redirect = false;
+$currencyJSON = "";
 
 // Test Server?
 if ($_SERVER['SERVER_NAME'] === 'localhost') {

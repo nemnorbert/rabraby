@@ -147,14 +147,15 @@ function buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO) {
         <h2>'.$item.'</h2></div>';
         
         // Food Content
-        foodContent($itemEN);
+        foodContent($itemEN, $langJSON, $siteINFO, $foodJSON);
         echo '</div>';
     }
 }
 
 // Food Generator
-function foodContent($category) {
-    global $langJSON, $siteINFO, $foodJSON;
+function foodContent($category, $langJSON, $siteINFO, $foodJSON) {
+    global $currencyJSON;
+
     $foods = $foodJSON["food"];
     $lang = $siteINFO -> langSite;
     $currencyCount = "";
@@ -162,6 +163,7 @@ function foodContent($category) {
     if ($lang !== "hu") {
         // Currencies
         $jsonData = loadJSON("https://center.red-cat.hu/json/currency.json");
+        $currencyJSON = $jsonData;
         $json = isset($langJSON["currencies"][0]) && $jsonData["success"] ? $jsonData["rates"] : false;
         $currencyArray = [];
         if ($json) {

@@ -12,5 +12,5 @@
 </div>
 
 <?php if (isset($langJSON["menu"]["currency"])) {
-  echo '<div id="infoPrice">*'.$langJSON["menu"]["currency"].'</div>';
+  echo '<div id="infoPrice">*'.$langJSON["menu"]["currency"].' <br>'.$currencyJSON["date"].'</div>';
 } ?>

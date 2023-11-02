@@ -1,7 +1,13 @@
 RewriteEngine On
+
+# www -> non-www and HTTP -> HTTPS
 RewriteCond %{HTTP_HOST} !^localhost$
 RewriteCond %{HTTP_HOST} ^www.rabraby.hu [NC]
 RewriteRule ^(.*)$ https://rabraby.hu/$1 [L,R=301]
 
+# Bann WP
+RewriteRule ^wp.* - [F]
+
+# Közvetlen kiszolgálás, ha a kért fájl vagy könyvtár létezik
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php
