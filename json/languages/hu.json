@@ -57,6 +57,7 @@
     "star": "Kiemelt ételeink",
     "categories": ["előételek", "levesek", "tészták", "halételek", "készételek", "frissensültek", "desszertek"],
     "food": "Étlap",
+    "price": "Az árak tájékoztató jellegűek! Előfordulhatnak hibák, a tényleges ár a nyomtatott étlapunkon érhető el!",
     "drink": "Itallap"
 },
 "group":{

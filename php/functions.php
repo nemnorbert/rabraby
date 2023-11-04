@@ -207,7 +207,7 @@ function foodContent($category, $langJSON, $siteINFO, $foodJSON) {
                     for ($i=0; $i < count($currencyArray); $i++) { 
                         $currencyCount .= '~'.number_format($huf / $currencyArray[$i][0], 0, ',', ' ').' '.$currencyArray[$i][1].' ';
                     }
-                    $currencyCount .= '*';
+                    $currencyCount .= '**';
                 }
 
                 // HTML
@@ -222,7 +222,7 @@ function foodContent($category, $langJSON, $siteINFO, $foodJSON) {
                 if ($lang !== "hu") {
                     $html .= '<div class="price2">'.$currencyCount.'</div>';
                 }
-                $html .=     '<div class="price">'.number_format($huf, 0, ',', ' ').' '.$symbol.'</div>
+                $html .=     '<div class="price">'.number_format($huf, 0, ',', ' ').' '.$symbol.'*</div>
                         </div>
                     </div>
                 </div>';
@@ -230,6 +230,20 @@ function foodContent($category, $langJSON, $siteINFO, $foodJSON) {
         }
     $html .= '</div>';
     echo $html;
+}
+
+function priceInfo($langJSON) {
+    $price = "";
+    $currency = "";
+
+    if (isset($langJSON["menu"]["price"])) {
+        $price = '*'.$langJSON["menu"]["price"].'<br>';
+    }
+    if (isset($langJSON["menu"]["currency"])) {
+        $currency = '**'.$langJSON["menu"]["currency"].'<br>';
+    }
+
+    echo '<div id="infoPrice">'.$price.$currency.'</div>';
 }
 
 // Contact 01

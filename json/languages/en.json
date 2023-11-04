@@ -62,6 +62,7 @@
     "star": "Featured Dishes",
     "categories": ["starters", "soups", "pastas", "fish dishes", "ready meals", "grilled dishes", "desserts"],
     "currency": "Only Informational price! You can pay with Hungarian Forint (HUF) or Card",
+    "price": "The prices are indicative! Errors may occur, the actual prices can be found on our printed menu.",
     "drink": "Drinks"
 },
 "group":{

@@ -11,6 +11,4 @@
   <?php buildFood($foodJSON, $langJSON, $siteJSON, $siteINFO); ?>
 </div>
 
-<?php if (isset($langJSON["menu"]["currency"])) {
-  echo '<div id="infoPrice">*'.$langJSON["menu"]["currency"].' <br>'.$currencyJSON["date"].'</div>';
-} ?>
+<?php priceInfo($langJSON); ?>

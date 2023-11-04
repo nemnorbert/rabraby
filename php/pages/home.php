@@ -33,9 +33,7 @@ $foodJSON = loadJSON('json/food.json');
   <h2><?= $langJSON["menu"]["star"]; ?></h2>
   <?= foodContent(false, $langJSON, $siteINFO, $foodJSON); ?>
   <?= '<a class="btn" href="'.$siteINFO -> link.'menu"><i class="bi bi-book"></i> '.$langJSON["menu"]["show"].' ('.count($foodJSON["food"]).')</a>'; ?>
-  <?php if (isset($langJSON["menu"]["currency"])) {
-    echo '<div id="infoPrice">*'.$langJSON["menu"]["currency"]. ' <br>'.$currencyJSON["date"].'</div>';
-  } ?>
+  <?php priceInfo($langJSON); ?>
 </div>
 
 <div id="reservation" class="container" style="background-image: url(<?= $siteINFO -> mainPath ?>./img/city_transparent.webp);">

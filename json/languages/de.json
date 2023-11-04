@@ -61,6 +61,7 @@
         "star": "Hervorgehobene Gerichte",
         "categories": ["Vorspeisen", "Suppen", "Nudelgerichte", "Fischgerichte", "Fertiggerichte", "Gegrilltes", "Desserts"],
         "currency": "Nur informativer Preis! Sie können mit ungarischem Forint (HUF) oder Karte bezahlen",
+        "price": "Die Preise dienen zur Orientierung! Fehler können auftreten, die tatsächlichen Preise finden Sie in unserer gedruckten Speisekarte.",
         "drink": "Getränke"
     },
     "group": {

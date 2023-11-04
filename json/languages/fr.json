@@ -57,12 +57,13 @@
         "guest2": "Écrire un avis"
     },
     "menu": {
-    "show": "Menu Complet",
-    "food": "Menu",
-    "star": "Plats Vedettes",
-    "categories": ["entrées", "soupes", "pâtes", "plats de poisson", "plats préparés", "plats grillés", "desserts"],
-    "currency": "Prix informatif uniquement ! Vous pouvez payer en forints hongrois (HUF) ou par carte",
-    "drink": "Boissons"
+      "show": "Menu Complet",
+      "food": "Menu",
+      "star": "Plats Vedettes",
+      "categories": ["entrées", "soupes", "pâtes", "plats de poisson", "plats préparés", "plats grillés", "desserts"],
+      "currency": "Prix informatif uniquement ! Vous pouvez payer en forints hongrois (HUF) ou par carte",
+      "price": "Les prix sont indicatifs ! Des erreurs peuvent survenir, les prix réels se trouvent sur notre menu imprimé.",
+      "drink": "Boissons"
     },
     "group": {
         "title": "Menus de Groupe",

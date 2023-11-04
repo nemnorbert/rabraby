@@ -62,6 +62,7 @@
     "star": "Platos destacados",
     "categories": ["entradas", "sopas", "pastas", "platos de pescado", "platos preparados", "platos a la parrilla", "postres"],
     "currency": "¡Solo precio informativo! Puedes pagar con Forint húngaro (HUF) o tarjeta",
+    "price": "¡Los precios son indicativos! Pueden ocurrir errores, los precios reales se encuentran en nuestro menú impreso.",
     "drink": "Bebidas"
 },
 "group":{
