@@ -31,6 +31,11 @@
   };
 </script>
 
+<div id="preLoader">
+  <img class="logo" src="<?= $siteINFO->mainPath ?>img/logo/logo_white.webp" alt="Logo of Restaurant">
+  <img class="loading" src="<?= $siteINFO->mainPath ?>img/loading.webp" alt="Loading Image">
+</div>
+
 <nav id="primaryMenu">
   <a class="logo" href="<?= $siteINFO->link."home" ?>">
     <img src="<?= $siteINFO->mainPath ?>img/logo/logo_black.webp" alt="Logo of Restaurant">
@@ -58,8 +63,3 @@
 </div>
 
 <?php mobileMenu($siteJSON, $siteINFO, $langJSON); ?>
-
-<div id="preLoader">
-  <img class="logo" src="<?= $siteINFO->mainPath ?>img/logo/logo_white.webp" alt="Logo of Restaurant">
-  <div class="custom-loader"></div>
-</div>
