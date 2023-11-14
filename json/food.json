@@ -9,7 +9,7 @@
         {"id": "411", "huf": 3100, "allergens": [1, 3, 9], "category": "soups"},
         {"id": "306", "huf": 3500,"star": true, "allergens": [4], "category": "soups"},
         {"id": "212", "huf": 2900, "allergens": [1, 3, 7], "category": "pastas"},
-        {"id": "320", "huf": 6900,"star": true, "allergens": [1, 3, 4, 10], "category": "fish dishes"},
+        {"id": "320", "huf": 7900,"star": true, "allergens": [1, 3, 4, 10], "category": "fish dishes"},
         {"id": "305", "huf": 5900, "allergens": [1, 4], "category": "fish dishes"},
         {"id": "315", "huf": 3290, "allergens": [1, 4, 7], "category": "fish dishes"},
         {"id": "404", "huf": 5900, "allergens": [], "category": "ready meals"},

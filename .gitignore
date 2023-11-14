@@ -6,3 +6,4 @@ log/
 *.css
 *.css.map
 google*
+*config.php

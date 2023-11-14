@@ -18,7 +18,7 @@ function urlRedirect($siteINFO) {
 
     if (isset($_GET['wifi']) && $_GET['wifi'] === "145") {
         $url .= "?wi=true";
-        exportIT("WifiGuest", "");
+        wifiGuest();
     }
 
     header("HTTP/1.1 301 Moved Permanently");
@@ -26,14 +26,27 @@ function urlRedirect($siteINFO) {
     exit();
 }
 
+function wifiGuest() {
+    global $siteINFO;
+
+    $lang = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : "?";
+    $os = "?";
+
+    if (isset($_SERVER['HTTP_USER_AGENT'])) {
+        $os = $_SERVER['HTTP_USER_AGENT'];
+        $os = explode('(', $os, 2);
+        $os = explode(')', $os[1], 2);
+        $os = $os[0];
+    }
+
+    $sql = "INSERT INTO `wifi` (`id`, `date`, `lang`, `os`) VALUES (NULL, current_timestamp(), '".$lang."', '".$os."')";
+
+    addToDatabase($siteINFO, $sql);
+}
+
 function exportIT($text, $other) {
     $path = "log";
-    $other = "in ".$other;
-    if ($text === "WifiGuest" && isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-        $path = "wifi";
-        $other = "lang: ";
-        $other .= isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) : "?";
-    }
+    $other = "/ ".$other;
 
     $time = date('Y-m-d H:i:s');
     $message = "$time - [$text] $other" . PHP_EOL;
@@ -61,6 +74,46 @@ function buildAlert($siteJSON, $siteINFO, $langJSON) {
         $html = '<div id="alertBox" class="' . $alertType . '">' . $alertMessage . '</div>';
         return $html;
     }
+}
+
+// Connect to Database
+function connectToDatabase($siteINFO) {
+    try {
+        $testMode = isset($siteINFO->test) ? $siteINFO->test : false;
+        $servername = $testMode ? DB_LOCAL_HOST : DB_SERVER_HOST;
+        $username = $testMode ? DB_LOCAL_USER : DB_SERVER_USER;
+        $password = $testMode ? DB_LOCAL_PASSWORD : DB_SERVER_PASSWORD;
+        $dbname = $testMode ? DB_LOCAL_NAME : DB_SERVER_NAME;
+
+        $db = new mysqli($servername, $username, $password, $dbname);
+
+        if ($db->connect_error) {
+            throw new Exception("Sikertelen kapcsolódás: " . $db->connect_error);
+        }
+
+        return $db;
+
+    } catch (Exception $e) {
+        exportIT("DB Connection Error", $e->getMessage());
+        die();
+    }
+}
+
+function addToDatabase($siteINFO, $sql) {
+    $db = connectToDatabase($siteINFO);
+
+    if ($db->connect_error) {
+        die("Sikertelen kapcsolódás: " . $db->connect_error);
+    }
+
+    if ($db->query($sql) === TRUE) {
+        //echo "Siker!!!";
+    } else {
+        echo "Error: " . $db->error;
+        exportIT("DB Error", $db->error);
+    }
+
+    $db->close();
 }
 
 // Build Bubbles
