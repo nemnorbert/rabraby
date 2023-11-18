@@ -41,7 +41,7 @@ function wifiGuest() {
 
     $sql = "INSERT INTO `wifi` (`id`, `date`, `lang`, `os`) VALUES (NULL, current_timestamp(), '".$lang."', '".$os."')";
 
-    addToDatabase($siteINFO, $sql);
+    manageDatabase($siteINFO, $sql);
 }
 
 function exportIT($text, $other) {
@@ -99,7 +99,7 @@ function connectToDatabase($siteINFO) {
     }
 }
 
-function addToDatabase($siteINFO, $sql) {
+function manageDatabase($siteINFO, $sql) {
     $db = connectToDatabase($siteINFO);
 
     if ($db->connect_error) {

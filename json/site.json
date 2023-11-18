@@ -1,4 +1,5 @@
 {
+    "languages": ["hu", "en", "de", "es", "fr", "ru", "zh"],
     "alert": {
         "hu": [
             ["Hétfőn is nyitva", "#"]
@@ -38,10 +39,6 @@
         {"name": "iban", "text": "HU85-10403112-50526587-67851007"},
         {"name": "swift", "text": "OKHBHUHB"}
     ],
-    "languages": {
-        "site": ["hu", "en", "de", "es", "fr", "ru", "zh"],
-        "foodMenu": ["hu", "en", "es", "de", "it", "pl", "ru", "zh", "ja", "ko", "fr"]
-    },
     "menu": {
         "main": ["home","menu", "groups", "contact"],
         "other": ["sitemap"],
