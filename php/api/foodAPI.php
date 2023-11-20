@@ -70,11 +70,29 @@ function connectDB($siteINFO) {
     }
 }
 
+function buildCurrency($currencyJSON, $langJSON, $foods) {
+    $currencies = $langJSON["currencies"] ?? [];
+
+    if (empty($currencies)) {
+        return false;
+    }
+
+    $rates = $currencyJSON["rates"];
+    $eur = $rates["HUF"] * 1;
+    $out = [];
+    foreach ($currencies as $item) {
+        $value = $foods["price"] / ($eur / $rates[$item]);
+        $out[] = ["currency" => $item, "value" => round($value)];
+    }
+
+    return $out;
+}
 
 
 //////////// MAIN CODE ////////////
-$langJSON = loadJSON('json/food.json');
+$langFoodJSON = loadJSON('json/food.json');
 $siteJSON = loadJSON('json/site.json');
+$currencyJSON = loadJSON("https://center.red-cat.hu/json/currency.json");
 $siteINFO->test = $_SERVER['SERVER_NAME'] === 'localhost' ?? false;
 
 
@@ -86,10 +104,12 @@ $get_type = isset($_GET['type']) ? $_GET['type'] : false;
 $get_type = in_array($get_type, $all_types) ? $get_type : false;
 
 $get_lang = isset($_GET['lang']) ? $_GET['lang'] : "en";
-$get_lang = in_array($get_lang, $siteJSON['languages']) ? $_GET['lang'] : "en";
-$name = $langJSON[$get_code][$get_lang];
+$get_lang = in_array($get_lang, $siteJSON['languages']) ? $get_lang : "en";
+$langJSON = loadJSON('json/languages/'.$get_lang.'.json');
 
-if (!$get_code || !$get_type) {
+$name = isset($langFoodJSON[$get_code][$get_lang]) ? $langFoodJSON[$get_code][$get_lang] : false;
+
+if (!$get_code || !$get_type || !$name) {
     errorHandler("bad_params", "wrong parameters");
 }
 
@@ -135,7 +155,7 @@ $db->close();
 $type = $get_type;
 
 // GENERATE ONE ITEM
-$json = array(
+$apiOut = array(
     // HEAD
     'type' => $type,
     'lang' => $get_lang,
@@ -144,11 +164,11 @@ $json = array(
     'id' => $foods["id"],
     'name' => $name,
     'category' => $foods["category"],
-    'price' => array(
-        'huf' => (int)$foods["price"]
-    )
+    'price' => (int)$foods["price"]
 );
+$apiOut["price_other"] = buildCurrency($currencyJSON, $langJSON, $foods);
+$apiOut["allergies"] = false;
     
 header('Content-Type: application/json');
-echo json_encode($json);
+echo json_encode($apiOut);
 ?>
