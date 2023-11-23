@@ -70,18 +70,18 @@ function connectDB($siteINFO) {
     }
 }
 
-function buildCurrency($currencyJSON, $langJSON, $foods) {
+function buildCurrency($currencyJSON, $langJSON, $row) {
     $currencies = $langJSON["currencies"] ?? [];
 
     if (empty($currencies)) {
-        return false;
+        return null;
     }
 
     $rates = $currencyJSON["rates"];
-    $eur = $rates["HUF"] * 1;
+    $eur = $rates["HUF"] * 0.94;
     $out = [];
     foreach ($currencies as $item) {
-        $value = $foods["price"] / ($eur / $rates[$item]);
+        $value = $row["price"] / ($eur / $rates[$item]);
         $out[] = ["currency" => $item, "value" => round($value)];
     }
 
@@ -101,7 +101,7 @@ $get_code = isset($_GET['id']) ? $_GET['id'] : false;
 $all_types = ["all", "one", "stars"];
 
 $get_type = isset($_GET['type']) ? $_GET['type'] : false;
-$get_type = in_array($get_type, $all_types) ? $get_type : false;
+$type = in_array($get_type, $all_types) ? $get_type : "all";
 
 $get_lang = isset($_GET['lang']) ? $_GET['lang'] : "en";
 $get_lang = in_array($get_lang, $siteJSON['languages']) ? $get_lang : "en";
@@ -123,27 +123,72 @@ echo "<pre>";
 
 // DATABASE
 $db = connectDB($siteINFO);
-if ($siteINFO->status === "ready") {
 
-    // SQL1
-    $sql = 'SELECT f.rr_id AS id, f.active, f.star, f.name, f.allergies, c.category, p.price
+if ($siteINFO->status === "ready") {
+    // SQL
+    $sql = 'SELECT f.rr_id AS id, f.active, f.star, f.name, f.allergy, c.category, p.price
         FROM `foods` AS f
         LEFT JOIN category AS c ON f.category = c.id
         LEFT JOIN price AS p ON f.rr_id = p.rr_code
-        WHERE f.rr_id = "'.$get_code.'" AND p.date = (
+        WHERE f.active = 1';
+
+    switch ($type) {
+        case "one":
+            $sql .= ' AND f.rr_id = "'.$get_code.'"';
+            break;
+        case "stars":
+            $sql .= ' AND f.star = 1';
+            break;
+        default:
+            //
+    }
+
+    switch ($type) {
+        case "one":
+            $sql .= ' AND f.rr_id = "'.$get_code.'"';
+            break;
+        case "star":
+            $sql .= ' AND f.star = 1';
+            break;
+        case "all":
+            break;
+        default:
+    }
+
+    $sql .= ' AND p.date = (
             SELECT MAX(date) 
             FROM price 
             WHERE rr_code = f.rr_id
-        );';
+        )
+        ORDER BY f.category ASC, f.rr_id ASC';
 
+
+    // RESULT
     $result = $db->query($sql);
 
+    if ($result === false) {
+        errorHandler("database_error", "SQL query error");
+    }
+
     if ($result !== false) {
-        if ($result->num_rows > 0) {
-            $foods = $result->fetch_assoc();
+        $foods = array();
+
+        while ($row = $result->fetch_assoc()) {
+            $row['name'] = $langFoodJSON[$row['id']][$get_lang];
+            $row['active'] = (bool)$row['active'];
+            $row['star'] = (bool)$row['star'];
+            $row['category2'] = 'kateg';
+            $row['price'] = intval($row['price']);
+            $row["price_other"] = buildCurrency($currencyJSON, $langJSON, $row);
+            $foods[] = $row;
+        }
+
+        if (!empty($foods)) {
+
         } else {
             errorHandler("database_error", "No matching records found");
         }
+
         $result->close();
     } else {
         errorHandler("database_error", "SQL query error");
@@ -154,21 +199,19 @@ $db->close();
 
 $type = $get_type;
 
-// GENERATE ONE ITEM
+// HEAD
 $apiOut = array(
-    // HEAD
     'type' => $type,
     'lang' => $get_lang,
-
-    // FOOD DETAILS
-    'id' => $foods["id"],
-    'name' => $name,
-    'category' => $foods["category"],
-    'price' => (int)$foods["price"]
 );
-$apiOut["price_other"] = buildCurrency($currencyJSON, $langJSON, $foods);
-$apiOut["allergies"] = false;
-    
+
+// FOOD DETAILS
+if (!empty($foods)) {
+    $apiOut['foods'] = $foods; // Módosítva az 'items' kulcsra, amely tartalmazza az összes eredményt
+} else {
+    $apiOut['foods'] = null; // Ha nincs találat
+}
+
 header('Content-Type: application/json');
 echo json_encode($apiOut);
 ?>
