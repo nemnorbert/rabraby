@@ -93,7 +93,6 @@ if ($siteINFO->status === "ready") {
             $row['name'] = $langFoodJSON[$row['id']][$get_lang];
             $row['active'] = (bool)$row['active'];
             $row['star'] = (bool)$row['star'];
-            $row['category2'] = 'kateg';
             $row['price'] = intval($row['price']);
             $row["price_other"] = buildCurrency($currencyJSON, $langJSON, $row);
             $foods[] = $row;

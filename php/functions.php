@@ -366,35 +366,31 @@ function buildGuest($langJSON) {
     return $html;
 }
 
-// Open Hours Generator
-function buildOpenHours($langJSON, $siteJSON) {
-    $html = '<div class="title">'.$langJSON["open"]["title"].'</div>';
-    $weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    
-    for ($i=0; $i < 7; $i++) { 
-        $class = date("N") == $i+1 ? " today" : "";
-        $day = $langJSON["open"]["days"][$i];
-        
-        $week = ($i+1) >= date("N") ? "this" : "next";
-        $timestamp = strtotime($week." ".$weekDays[$i]);
-        $status = date("Y-m-d", $timestamp);
-        
-        $openH = $siteJSON["openHours"];
-        $theDay = isset($openH["special"][$status]) ? $openH["special"][$status] : $openH["default"][$i];
-        
-        $status = $theDay["open"] . " - " . $theDay["close"];
-        $class .= $status == " - "  ? " closed" : "";
-        $status = $status == " - " ? $langJSON["open"]["status"]["close"] : $status;
-        
-        // Final Build
-        $html .= '<div class="day'.$class.'">
-            <div>'.$day.'</div>
-            <div>'.$status.'</div>
-        </div>';
+// Open Hours
+function buildOpenHours($openAPI, $langJSON) {
+
+    if ($openAPI) {
+        $html = '<div class="title">' . $openAPI["title"] . '</div>';
+        for ($i = 0; $i < 7; $i++) {
+            $day = $openAPI["days"][$i];
+
+            $class = $day["today"] ? " today" : "";
+            $class .= $day["open"] ? "" : " closed";
+            $openTime = $day["open"] ? $day["open_time"] . ' - ' . $day["close_time"] : $langJSON["open"]["status"]["close"];
+
+            $html .= '<div class="day' . $class . '">
+                <div>' . $day["day"] . '</div>
+                <div>' . $openTime . '</div>
+            </div>';
+        }
+    } else {
+        $html = '<div class="title">' . $langJSON["open"]["title"] . ':</div>
+        <a target="_blank" href="https://g.page/rabraby?gm">Google Page</a>';
     }
-    
+
     return $html;
 }
+
 
 // Company Informations
 function buildCompanyInfos($langJSON, $siteJSON) {

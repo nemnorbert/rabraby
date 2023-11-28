@@ -25,7 +25,7 @@ $foodJSON = loadJSON('json/food.json');
     <img src="<?= $siteINFO->mainPath ?>img/food_800px.webp" alt="Menu">
   </a>
   <div class="secundary openHours">
-    <?= buildOpenHours($langJSON, $siteJSON); ?>
+    <?= buildOpenHours($openAPI, $langJSON); ?>
   </div>
 </div>
 
