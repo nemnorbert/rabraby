@@ -370,19 +370,24 @@ function buildGuest($langJSON) {
 function buildOpenHours($openAPI, $langJSON) {
 
     if ($openAPI) {
+        $specount = 0;
         $html = '<div class="title">' . $openAPI["title"] . '</div>';
         for ($i = 0; $i < 7; $i++) {
             $day = $openAPI["days"][$i];
 
             $class = $day["today"] ? " today" : "";
             $class .= $day["open"] ? "" : " closed";
+            $special = $day["special"] ? "**" : "";
+            $specount = $day["special"] ? $specount + 1 : $specount;
             $openTime = $day["open"] ? $day["open_time"] . ' - ' . $day["close_time"] : $langJSON["open"]["status"]["close"];
 
             $html .= '<div class="day' . $class . '">
                 <div>' . $day["day"] . '</div>
-                <div>' . $openTime . '</div>
+                <div>' . $openTime . $special . '</div>
             </div>';
         }
+        $spe = $specount > 0 ? '<div class="special">**'.$langJSON["open"]["special"].' ('.$specount.')</div>' : "";
+        $html .= $spe;
     } else {
         $html = '<div class="title">' . $langJSON["open"]["title"] . ':</div>
         <a target="_blank" href="https://g.page/rabraby?gm">Google Page</a>';

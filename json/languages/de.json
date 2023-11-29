@@ -11,7 +11,8 @@
         "status": {
             "open": "Geöffnet",
             "close": "Geschlossen"
-        }
+        },
+        "special": "Besondere Öffnungszeiten"
     },
     "nav": {
         "home": "Startseite",

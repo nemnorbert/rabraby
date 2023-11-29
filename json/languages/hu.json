@@ -7,7 +7,8 @@
 "open":{
     "title": "Nyitvatartás",
     "days": ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"],
-    "status": {"open": "Nyitva", "close": "Zárva"}
+    "status": {"open": "Nyitva", "close": "Zárva"},
+    "special": "Különleges nyitvatartás"
 },
 "nav":{
     "home": "Főoldal",

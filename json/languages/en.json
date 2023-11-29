@@ -8,10 +8,8 @@
 "open":{
     "title": "Opening hours",
     "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    "status": {
-        "open": "Open",
-        "close": "Closed"
-    }
+    "status": {"open": "Open","close": "Closed"},
+    "special": "Special opening hours"
 },
 "nav":{
     "home": "Home",
