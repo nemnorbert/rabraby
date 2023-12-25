@@ -1,9 +1,7 @@
 {
     "languages": ["hu", "en", "de", "es", "fr", "ru", "zh"],
     "alert": {
-        "hu": [
-            ["Hétfőn is nyitva", "#"]
-        ]      
+        "hu": []      
     },
     "openHours": {
         "default": [

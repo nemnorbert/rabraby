@@ -52,8 +52,8 @@ if ($siteINFO -> redirect) {
 
 // Load Open Hours
 try {
-    $pre = $siteINFO->test ? "http://localhost/redcat/api/" : "https://center.red-cat.hu/api/";
-    $openAPI = loadJSON($pre."openWeek?id=rabraby&lang=".$siteINFO -> langSite);
+    $pre = $siteINFO->test ? "http://localhost/redcat_api/" : "https://api.red-cat.hu/";
+    $openAPI = loadJSON($pre."openTime?id=rabraby&lang=".$siteINFO -> langSite);
 } catch (\Throwable $th) {
     $openAPI = false;
 }

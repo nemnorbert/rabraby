@@ -15,12 +15,6 @@ function loadJSON($filePath) {
 // Redirect
 function urlRedirect($siteINFO) {
     $url = $siteINFO -> link . $siteINFO -> page;
-
-    if (isset($_GET['wifi']) && $_GET['wifi'] === "145") {
-        $url .= "?wi=true";
-        wifiGuest();
-    }
-
     header("HTTP/1.1 301 Moved Permanently");
     header('Location: ' . $url);
     exit();
@@ -377,7 +371,7 @@ function buildOpenHours($openAPI, $langJSON) {
 
             $class = $day["today"] ? " today" : "";
             $class .= $day["open"] ? "" : " closed";
-            $special = $day["special"] ? "**" : "";
+            $special = $day["special"] ? "*" : "";
             $specount = $day["special"] ? $specount + 1 : $specount;
             $openTime = $day["open"] ? $day["open_time"] . ' - ' . $day["close_time"] : $langJSON["open"]["status"]["close"];
 
@@ -386,7 +380,7 @@ function buildOpenHours($openAPI, $langJSON) {
                 <div>' . $openTime . $special . '</div>
             </div>';
         }
-        $spe = $specount > 0 ? '<div class="special">**'.$langJSON["open"]["special"].' ('.$specount.')</div>' : "";
+        $spe = $specount > 0 ? '<div class="special">*'.$langJSON["open"]["special"].' ('.$specount.')</div>' : "";
         $html .= $spe;
     } else {
         $html = '<div class="title">' . $langJSON["open"]["title"] . ':</div>
