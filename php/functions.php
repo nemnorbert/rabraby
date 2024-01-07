@@ -365,22 +365,22 @@ function buildOpenHours($openAPI, $langJSON) {
 
     if ($openAPI) {
         $specount = 0;
-        $html = '<div class="title">' . $openAPI["title"] . '</div>';
-        for ($i = 0; $i < 7; $i++) {
-            $day = $openAPI["days"][$i];
+        $html = '<div class="title">' . $openAPI["translate"]["title"] . '</div>';
+        foreach ($openAPI["open"] as $item) {
 
-            $class = $day["today"] ? " today" : "";
-            $class .= $day["open"] ? "" : " closed";
-            $special = $day["special"] ? "*" : "";
-            $specount = $day["special"] ? $specount + 1 : $specount;
-            $openTime = $day["open"] ? $day["open_time"] . ' - ' . $day["close_time"] : $langJSON["open"]["status"]["close"];
+            $class = $item["today"] ? " today" : "";
+            $class .= !$item["open"][0] ? " closed" : "";
+            $special = $item["special"] ? "(*) " : "";
+            $specount = $item["special"] ? $specount + 1 : $specount;
+            $openTime = ($item["open"][0] ?? false && $item["open"][1] ?? false) ? ($item["open"][0]." - ".$item["open"][1]) : $openAPI["translate"]["close"];
 
             $html .= '<div class="day' . $class . '">
-                <div>' . $day["day"] . '</div>
-                <div>' . $openTime . $special . '</div>
+                <div title="'.$item["date"].'">' . $item["day"] . '</div>
+                <div>'.$special.$openTime.'</div>
             </div>';
         }
-        $spe = $specount > 0 ? '<div class="special">*'.$langJSON["open"]["special"].' ('.$specount.')</div>' : "";
+
+        $spe = $specount > 0 ? '<div class="special">*'.$openAPI["translate"]["special"].' ('.$specount.')</div>' : "";
         $html .= $spe;
     } else {
         $html = '<div class="title">' . $langJSON["open"]["title"] . ':</div>
