@@ -63,7 +63,7 @@ function buildAlert($siteJSON, $siteINFO, $langJSON) {
         $alertType = 'alertRed';
         $alertMessage = '';
         foreach ($alerts as $alert) {
-            $alertMessage .= '<div><i class="bi bi-exclamation-circle-fill"></i> ' . $alert[0] . '</div>';
+            $alertMessage .= '<div><i class="bi bi-exclamation-circle-fill"></i> ' . $alerts[0] . '</div>';
         }
         $html = '<div id="alertBox" class="' . $alertType . '">' . $alertMessage . '</div>';
         return $html;

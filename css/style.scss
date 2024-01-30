@@ -179,18 +179,20 @@ nav{
 
 
 // Primary Menu, Header
-#primaryMenu {
-    z-index: 50;
+#mainMenu {
     top: 0;
+    z-index: 50;
+    transform: translateX(-50%);
+    left: 50%;
+    position: fixed;
     height: $topHeaderHeight;
     background-color: var(--background-color_transparent);
     box-shadow: $shadow1;
     transition: background-color .5s;
-    max-width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    width: clamp(200px, 100%, $maxWidth);
     display: flex;
     justify-content: space-between;
+    text-transform: uppercase;
 
     .right {
         display: flex;
@@ -1190,7 +1192,7 @@ footer > div {
 @media only screen and (min-width: $pcWidth) {
 /* Destop and big screens */
 
-    #primaryMenu {
+    #mainMenu {
         #flag {
             margin-right: 1rem;
         }

@@ -36,7 +36,7 @@
   <img class="loading" src="<?= $siteINFO->mainPath ?>img/loading.webp" alt="Loading Image">
 </div>
 
-<nav id="primaryMenu">
+<div id="mainMenu">
   <a class="logo" href="<?= $siteINFO->link."home" ?>">
     <img src="<?= $siteINFO->mainPath ?>img/logo/logo_black.webp" alt="Logo of Restaurant">
   </a>
@@ -50,7 +50,7 @@
     </div>
     <div id="hamburger" class="hamBtns"><span></span><span></span><span></span></div>
   </div>
-</nav>
+</div>
 
 <div id="secundaryMenu" data-visible="false">
   <div class="contact"><?= buildContactIcon($siteJSON); ?></div>
