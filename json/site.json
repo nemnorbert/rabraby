@@ -1,13 +1,7 @@
 {
     "languages": ["hu", "en", "de", "es", "fr", "ru", "zh"],
     "alert": {
-        "hu": ["Februárban pihenünk, márciustól ismét nyitva."],
-        "en": ["We are closed in February, reopening from March."],
-        "de": ["Im Februar haben wir geschlossen, ab März sind wir wieder geöffnet."],
-        "es": ["Permaneceremos cerrados en febrero, volvemos a abrir a partir de marzo."],
-        "fr": ["Fermé en février, réouverture à partir de mars."],
-        "ru": ["В феврале мы закрыты, с марта снова открыты."],
-        "zh": ["我们二月份休息，三月份恢复营业。"]
+        "hu": []
     },    
     "openHours": {
         "default": [

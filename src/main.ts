@@ -14,10 +14,7 @@ let flagsIMGs: NodeListOf<HTMLElement>;
 const popupWindowDiv: HTMLElement | null = document.querySelector('#popUp');
 const popupContentDiv: HTMLElement | null = document.querySelector('#popUpContent');
 const popupExitDivs: NodeListOf<HTMLElement> = document.querySelectorAll(".popupExit");
-/*
-const popupCoverDiv: HTMLImageElement | null = document.querySelector('#popupCover');
-const popupTitleDiv: HTMLElement | null = document.querySelector('#popupTitle');
-*/
+
 
 // JSON Fetch
 const fetchJSON = async (url: string) => {
@@ -94,18 +91,33 @@ const preLoader = async () => {
   }
 }
 
+// Széchenyi 2020 AutoHide
+const infoBlokk = document.querySelector('#infoBlokk');
+const szechenyi2020 = () => {
+  let lastScrollTop = 0;
+  let ticking = false;
 
-/* Header autohide
-const headerTop = document.querySelector('#primaryMenu');
-if (headerTop !== null) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY >= 20) {
-        headerTop.classList.add('scroll');
-    } else if (window.scrollY < 64) {
-        headerTop.classList.remove('scroll');
-    }
-  });
-}*/
+  if (infoBlokk !== null) {
+    window.addEventListener("scroll", function() {
+      lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          if (lastScrollTop <= 200) {
+            infoBlokk.classList.remove('scroll');
+          } else {
+            infoBlokk.classList.add('scroll');
+          }
+          ticking = false;
+        });
+
+        ticking = true;
+      }
+    });
+  }
+}
+szechenyi2020();
+
 
 // Language Switcher
 if (flagDiv !== null) {
@@ -125,6 +137,7 @@ if (flagDiv !== null) {
 }
 
 // Auto hide
+/*
 let timeout:number;
 let prevScrollPos = window.pageYOffset;
 
@@ -142,7 +155,7 @@ window.addEventListener("scroll", function() {
     }, 200);
   }
 });
-
+*/
 
 popupExitDivs.forEach(exitDiv => {
   exitDiv.addEventListener("click", popUpSwitcher)

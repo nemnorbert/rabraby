@@ -56,11 +56,6 @@ $foodJSON = loadJSON('json/food.json');
   </div>
 
   <div class="box">
-    <img src="<?= $siteINFO->mainPath ?>img/president.webp" alt="Picture of President (Hungary)">
-    <p><?= $langJSON["about"]["vip"]; ?></p>
-  </div>
-
-  <div class="box">
     <img src="<?= $siteINFO->mainPath ?>img/balogh.webp" alt="Picture of Balogh Levente & Moldován András">
     <p>Balogh Levente & Moldován András</p>
   </div>

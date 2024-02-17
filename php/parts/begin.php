@@ -62,4 +62,7 @@
   </div>
 </div>
 
-<?php mobileMenu($siteJSON, $siteINFO, $langJSON); ?>
+
+<a target="_blank" id="infoBlokk" href="<?= $siteINFO->mainPath ?>img/hitel.jpg">
+  <img src="<?= $siteINFO->mainPath ?>img/2020.png" alt="">
+</a>
