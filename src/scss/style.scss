@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -8,43 +10,164 @@
     --color-secundary: hsl(34, 31%, 15%);
 }
 
+// General
 a {
     color: var(--color-primary);
     text-decoration: none;
 }
+p {
+    text-align: justify;
+}
+h1, h2 {
+    word-break: break-word;
+    text-transform: uppercase;
+}
+.btns {
+    display: flex;
+    gap: .5em;
+}
+.btns > div {
+    border-radius: $border-radius-1;
+    padding: .5em;
+    background-color: var(--color-primary);
+    color: var(--color-secundary);
+}
+
+// Body
 body {
     background-color: rgb(20, 20, 20);
 }
+.box {
+    border-radius: $border-radius-1;
+    position: relative;
+    box-shadow: $shadow-1;
+    background-color: #2e2b2436;
+}
 
 nav {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
-    background-color: #d9d9d9;
-    padding: 1em;
     width: 100%;
+    z-index: 10;
+    
+    .alert {
+        background-color: red;
+    }
+    .menu {
+        background-color: #d9d9d9;
+    }
+    .menu-laptop {
+        display: none;
+    }
+}
+nav > div {
+    padding: .5em;
 }
 
 main {
-    background-color: rgb(71, 17, 17);
     min-height: 100vh;
+    max-width: $max-width;
+    margin: 0 auto;
 }
-main > div {
-    min-height: 60vh;
-    background-color: #1b1915;
+header, main > div {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2em;
+    min-height: 350px;
     padding: 2em;
 }
 
+// Header
 header {
-    min-height: 80vh;
-    background-color: #2e2b24;
+    background-color: transparent;
+    height: clamp(250px, 80vh, 800px);
+    gap: 1em;
+    padding: 1em;
+
+    .welcome {
+        background-color: yellow;
+        grid-row: span 2;
+        grid-column: span 12;
+
+        .title {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            row-gap: .5em;
+            h1 {
+                font-size: 2.5rem;
+            }
+            .btns {
+                overflow: auto;
+                white-space: nowrap;
+            }
+        }
+
+        .social {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: magenta;
+            border-radius: 0 $border-radius-1 0px $border-radius-1;
+            padding: .5em;
+        }
+    }
+    .opens, .slider {
+        grid-column: span 12;
+    }
+    .opens {
+        background-color: aquamarine;
+    }
+    .slider {
+        background-color: rgb(34, 95, 75);
+    }
 }
 
+#menu {
+    background-color: darkgreen;
+}
+
+#guest {
+    background-color: var(--color-primary);
+}
+
+#other > div {
+    grid-column: span 6;
+}
 #faq {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 1em;
+    row-gap: 1em;
     background-color: wheat;
+    color: var(--color-secundary);
+
+    h2 {
+        text-align: center;
+    }
+    details {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        background-color: var(--color-primary);
+        background-image: linear-gradient(transparent, #1c1c1c1f);
+        box-shadow: $shadow-1;
+
+        summary {
+            font-weight: bold;
+            padding: .5em;
+        }
+        p {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left: solid 3px var(--color-secundary);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    }
 }
 
 footer {
@@ -61,6 +184,8 @@ footer {
     .middle {
         flex-direction: row;
         justify-content: space-around;
+        max-width: $max-width;
+        margin: 0 auto;
 
         .brand {
             display: flex;
@@ -96,5 +221,56 @@ footer > div {
 
     img {
         width: 100%;
+    }
+}
+
+
+// Ultra Mini
+@media only screen and (max-width: $phone-width) {
+    body {
+        background-color: pink;
+    }
+}
+
+// Tablet
+@media only screen and (min-width: $tablet-width) {
+    body {
+        background-color: aqua;
+    }
+    header {
+        .welcome {
+            grid-row: span 1;
+            grid-column: span 12;
+        }
+        .opens, .slider {
+            grid-column: span 6;
+        }
+    }
+}
+
+// Laptop
+@media only screen and (min-width: $laptop-width) {
+    body {
+        background-color: rgb(255, 174, 0);
+    }
+    nav {
+        .menu-laptop {
+            display: flex;
+            column-gap: .5em;
+        }
+    }
+    header {
+        padding-top: 2em;
+        grid-template-rows: auto 1fr;
+        .welcome {
+            grid-row: span 2;
+            grid-column: span 8;
+        }
+        .opens, .slider {
+            grid-column: span 4;
+        }
+        .opens {
+            height: clamp(100px, 25vh, 200px);
+        }
     }
 }

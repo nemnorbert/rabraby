@@ -3,36 +3,60 @@
     <%- include('partials/navigation', data) %>
 
     <main>
-        <header>
-            <h1>RABRABY</h1>
+        <header id="home">
+            <div class="welcome box">
+                <div class="title">
+                    <h1>Rab Ráby Étterem</h1>
+                    <p>Szeretettel várunk szentendrei éttermünkben, a belvárosban. Finom ételek, régiségek, lélegzetelállító beltér és kedvező árak, 1982 óta.</p>
+                    <div class="btns">
+                        <div>Kutyabarát hely</div>
+                        <div>Szépkártya elfogadó hely</div>
+                    </div>
+                </div>
+                <div class="social">
+                    <%- data.socialDiv %>
+                </div>
+            </div>
+            <div class="opens box">
+                <h2>OPEEEN HOURS</h2>
+            </div>
+            <div class="slider box">
+                <h2>SLIIIIIDER</h2>
+            </div>
         </header>
 
         <div id="menu">
             <h2>Étlap</h2>
         </div>
 
-        <div id="reservation">
-            <h2>Foglalás</h2>
-        </div>
-
-        <div id="group">
-            <h2>Csoportok</h2>
+        <div>
+            <div id="reservation" class="box">
+                <h2>Foglalás</h2>
+            </div>
+    
+            <div id="contact" class="box">
+                <h2>Kapcsolat</h2>
+            </div>
         </div>
 
         <div id="about">
             <h2>Rólunk</h2>
         </div>
 
-        <div id="guest">
-            <h2>Vendégkönyv</h2>
+        
+        <div>
+            <div id="guest">
+                <h2><i class="bi bi-map-fill"></i> Vendégkönyv</h2>
+            </div>
         </div>
 
-        <div id="faq">
-            <%- data.faqDiv %>
-        </div>
-
-        <div id="contact">
-            <h2>Elérhetőségeink</h2>
+        <div id="other">
+            <div id="company" class="box">
+                <h2>Banki információk</h2>
+            </div>
+            <div id="faq" class="box">
+                <%- data.faqDiv %>
+            </div>
         </div>
     </main>
     
