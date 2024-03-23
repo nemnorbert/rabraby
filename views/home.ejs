@@ -1,0 +1,44 @@
+<%- include('partials/head', data) %>
+<body>
+    <%- include('partials/navigation', data) %>
+
+    <main>
+        <header>
+            <h1>RABRABY</h1>
+        </header>
+
+        <div id="menu">
+            <h2>Étlap</h2>
+        </div>
+
+        <div id="reservation">
+            <h2>Foglalás</h2>
+        </div>
+
+        <div id="group">
+            <h2>Csoportok</h2>
+        </div>
+
+        <div id="about">
+            <h2>Rólunk</h2>
+        </div>
+
+        <div id="guest">
+            <h2>Vendégkönyv</h2>
+        </div>
+
+        <div id="faq">
+            <%- data.faqDiv %>
+        </div>
+
+        <div id="contact">
+            <h2>Elérhetőségeink</h2>
+        </div>
+    </main>
+    
+    <%- include('partials/footer', data) %>
+    <a target="_blank" id="szechenyi" href="/img/2020_big.jpg">
+        <img src="/img/2020.png" alt="">
+    </a>
+</body>
+</html>
