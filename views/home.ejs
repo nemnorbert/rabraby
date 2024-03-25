@@ -62,20 +62,22 @@
         <div id="info">
             <div id="contact" class="box">
                 <h2>Kapcsolat</h2>
+                <%- data.contactDiv %>
+                <div>social</div>
             </div>
             <div id="faq" class="box">
                 <%- data.faqDiv %>
             </div>
             <div id="company" class="box">
-                <h2>Cég információk</h2>
                 <%- data.companyDiv %>
             </div>
         </div>
     </main>
     
-    <%- include('partials/footer', data) %>
     <a target="_blank" id="szechenyi" href="/img/2020_big.jpg">
         <img src="/img/2020.png" alt="">
     </a>
+
+    <%- include('partials/footer', data) %>
 </body>
 </html>

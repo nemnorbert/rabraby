@@ -20,8 +20,9 @@ const translate = {
         ]
     },
     contact: {
-        map: '2000 Szentendre, Kucsera Ferenc u. 1/A',
-        card: 'Digitális Névjegykártya'
+        map: 'Hungary, 2000 Szentendre, Kucsera Ferenc St. 1/A',
+        email: '',
+        card: 'Digital business card'
     },
     company: {
         title: 'Cég információk',

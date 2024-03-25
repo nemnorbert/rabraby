@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { socialBtn, faqDiv, companyTrans } = require('../utils/functions');
+const { socialBtn, faqDiv, companyBuilder, contactBuilder } = require('../utils/functions');
 
 router.get('/', async (req, res, next) => {
     try {
@@ -8,7 +8,8 @@ router.get('/', async (req, res, next) => {
             title: "Teszt",
             socialDiv: socialBtn(),
             faqDiv: faqDiv(),
-            companyDiv: companyTrans(),
+            companyDiv: companyBuilder(),
+            contactDiv: contactBuilder(),
         };
 
         res.render('home', { data });

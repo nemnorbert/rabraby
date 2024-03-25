@@ -8,6 +8,7 @@
 :root {
     --color-primary: hsl(34, 49%, 63%);
     --color-secundary: hsl(34, 31%, 15%);
+    --color-bg-1: rgba(245, 222, 179, .9);
 }
 html {
     scroll-behavior: smooth;
@@ -21,7 +22,7 @@ body {
 
 // General
 a {
-    color: var(--color-primary);
+    color: var(--color-secundary);
     text-decoration: none;
 }
 p {
@@ -182,17 +183,27 @@ main {
 #menu > div, #info > div, #about > div, #group > div {
     grid-column: span 12;
 }
-#faq {
+
+
+#info > div {
+    padding: 25px;
+    background-color: var(--color-bg-1);
     display: flex;
     flex-direction: column;
-    padding: $spacing-1;
+    justify-content: space-between;
     row-gap: 15px;
-    background-color: wheat;
-    color: var(--color-secundary);
 
     h2 {
         text-align: center;
+        border-bottom: solid 2px var(--color-primary);
+        border-top: solid 2px var(--color-primary);
+        padding: 5px;
     }
+}
+#contact > div, #contact > a {
+    font-size: 20px;
+}
+#faq {
     details {
         padding: .5em;
         border-radius: 0.5rem;

@@ -24,21 +24,55 @@ const faqDiv = () => {
     return `<h2>${translate.faq.title}</h2> ${result}`;
 }
 
-const companyTrans = () => {
+const companyBuilder = () => {
     const company = config?.company;
     if (!company) { return; }
-    let result = '<h3>Rab Ráby Kft.</h3>';
+    let result = `<h2>${translate?.company?.title}</h2>
+    <h3>${company?.name}</h3>`;
 
-    for (let key in company) {
-        console.log(`${key}: ${company[key]}`);
-        const title = translate.company[key] ?? key;
+    for (let key in company?.data) {
+        const title = translate?.company?.[key] ?? key;
         result += `<div>
             <b>${title}:</b>
-            <p>${company[key]}</p>
+            <p>${company?.data?.[key]}</p>
         </div>`;
     }
     
     return result;
 }
 
-module.exports = { socialBtn, faqDiv, companyTrans };
+const socialBuild = (type) => {
+    const contact = config?.contact;
+    let result = ``;
+
+    for (let key in contact) {
+        if (contact?.[key]?.base) {
+            let title = translate?.contact?.[key] ?? key;
+            const icon = contact?.[key]?.icon;
+            title = `<i class="bi bi-${icon}"></i> ${title}`;
+
+            const link = contact?.[key]?.href ? null : contact?.[key]?.link;
+            result += link ? `<a target="_blank" href="${link}">${title}</a>` : `<div>${title}</div>`;
+        }
+    }
+    return result;
+}
+
+const contactBuilder = () => {
+    const contact = config?.contact;
+    let result = ``;
+
+    for (let key in contact) {
+        if (contact?.[key]?.base) {
+            let title = translate?.contact?.[key] ?? key;
+            const icon = contact?.[key]?.icon;
+            title = `<i class="bi bi-${icon}"></i> ${title}`;
+
+            const link = contact?.[key]?.href ? null : contact?.[key]?.link;
+            result += link ? `<a target="_blank" href="${link}">${title}</a>` : `<div>${title}</div>`;
+        }
+    }
+    return result;
+}
+
+module.exports = { socialBtn, faqDiv, companyBuilder, contactBuilder };
