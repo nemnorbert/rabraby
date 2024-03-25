@@ -9,6 +9,15 @@
     --color-primary: hsl(34, 49%, 63%);
     --color-secundary: hsl(34, 31%, 15%);
 }
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: rgb(66, 66, 66);
+    scroll-padding-top: $nav-height;
+    $min-width: $min-width;
+}
+
 
 // General
 a {
@@ -33,10 +42,6 @@ h1, h2 {
     color: var(--color-secundary);
 }
 
-// Body
-body {
-    background-color: rgb(20, 20, 20);
-}
 .box {
     border-radius: $border-radius-1;
     position: relative;
@@ -44,21 +49,63 @@ body {
     background-color: #2e2b2436;
 }
 
+.alert {
+    background-color: var(--color-primary);
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 nav {
     position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
+    box-shadow: $shadow-1;
+    background-color: #d9d9d9d0;
+    background-image: linear-gradient(transparent, #26262614);
+    backdrop-filter: blur(5px);
     
-    .alert {
-        background-color: red;
-    }
     .menu {
-        background-color: #d9d9d9;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        align-items: center;
+        height: $nav-height;
+        max-width: $max-width;
+        padding: 0 10px;
+        margin: 0 auto;
+
+        .logo {
+            max-width: 150px;
+            img {width: 100%;}
+        }
+    }
+    .menu > div {
+        grid-column: span 6;
     }
     .menu-laptop {
         display: none;
+        align-self: center;
+        justify-self: center;
+        font-weight: bold;
+        text-transform: uppercase;
+        column-gap: 1em;
+        font-size: 1.3em;
+    }
+    .right {
+        align-self: center;
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        column-gap: 1em;
+      
+        .lang {
+            padding: 0 5px;
+        }
+    }
+    a {
+        color: var(--color-secundary);
     }
 }
 nav > div {
@@ -69,21 +116,24 @@ main {
     min-height: 100vh;
     max-width: $max-width;
     margin: 0 auto;
+    padding: $spacing-1 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-1;
 }
-header, main > div {
+#home, main > div {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 2em;
+    row-gap: $spacing-1;
     min-height: 350px;
-    padding: 2em;
+    padding: 0 $spacing-1;
 }
 
-// Header
-header {
+// #home
+#home {
     background-color: transparent;
     height: clamp(250px, 80vh, 800px);
-    gap: 1em;
-    padding: 1em;
+    gap: $spacing-1;
 
     .welcome {
         background-color: yellow;
@@ -95,7 +145,7 @@ header {
             left: 0;
             bottom: 0;
             right: 0;
-            padding: 1em;
+            padding: $spacing-1;
             display: flex;
             flex-direction: column;
             row-gap: .5em;
@@ -117,7 +167,7 @@ header {
             padding: .5em;
         }
     }
-    .opens, .slider {
+    .opens, .slider, #reservation {
         grid-column: span 12;
     }
     .opens {
@@ -128,22 +178,15 @@ header {
     }
 }
 
-#menu {
-    background-color: darkgreen;
-}
 
-#guest {
-    background-color: var(--color-primary);
-}
-
-#other > div {
-    grid-column: span 6;
+#menu > div, #info > div, #about > div, #group > div {
+    grid-column: span 12;
 }
 #faq {
     display: flex;
     flex-direction: column;
-    padding: 1em;
-    row-gap: 1em;
+    padding: $spacing-1;
+    row-gap: 15px;
     background-color: wheat;
     color: var(--color-secundary);
 
@@ -151,7 +194,7 @@ header {
         text-align: center;
     }
     details {
-        padding: 0.5rem;
+        padding: .5em;
         border-radius: 0.5rem;
         background-color: var(--color-primary);
         background-image: linear-gradient(transparent, #1c1c1c1f);
@@ -159,17 +202,16 @@ header {
 
         summary {
             font-weight: bold;
-            padding: .5em;
         }
         p {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-left: solid 3px var(--color-secundary);
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 1em;
         }
     }
 }
 
+
+
+// Footer
 footer {
     color: var(--color-primary);
     background-image: linear-gradient(#2e2b24, #1b1915);
@@ -182,8 +224,7 @@ footer {
     }
 
     .middle {
-        flex-direction: row;
-        justify-content: space-around;
+        justify-items: center;
         max-width: $max-width;
         margin: 0 auto;
 
@@ -196,6 +237,9 @@ footer {
             }
         }
     }
+    .middle > div, .social > div, .bottom > div {
+        grid-column: span 12;
+    }
 
     .bottom {
         background-color: #1b1915;
@@ -203,13 +247,10 @@ footer {
     }
 }
 footer > div {
-    padding: 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: .5em;
+    padding: $spacing-2;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    justify-items: center;
 }
 
 #szechenyi {
@@ -229,6 +270,11 @@ footer > div {
 @media only screen and (max-width: $phone-width) {
     body {
         background-color: pink;
+        min-width: 260px;
+        overflow-x: hidden;
+    }
+    nav .menu .logo {
+        max-width: 120px;
     }
 }
 
@@ -237,13 +283,49 @@ footer > div {
     body {
         background-color: aqua;
     }
-    header {
+    #home {
         .welcome {
-            grid-row: span 1;
+            min-height: 30vh;
             grid-column: span 12;
         }
         .opens, .slider {
             grid-column: span 6;
+        }
+    }
+    #menu {
+        column-gap: $spacing-1;
+    }
+    #menu > div {
+        grid-column: span 6;
+    }
+    #info {
+        column-gap: $spacing-1;
+
+        #contact {
+            grid-column: span 12;
+        }
+        #faq, #company {
+            grid-column: span 6;
+        }
+    }
+
+    #about {
+        row-gap: $spacing-1;
+        #guest {
+            grid-column: span 6;
+        }
+    }
+
+    #group {
+        column-gap: $spacing-1;
+    }
+    #group > div {
+        grid-column: span 6;
+    }
+
+    footer {
+        .middle > div {
+            grid-column: span 4;
         }
     }
 }
@@ -254,23 +336,44 @@ footer > div {
         background-color: rgb(255, 174, 0);
     }
     nav {
+        .menu > div {
+            grid-column: span 4;
+        }
         .menu-laptop {
             display: flex;
-            column-gap: .5em;
+        }
+        .right {
+            .mobile {
+                display: none;
+            }
         }
     }
-    header {
-        padding-top: 2em;
-        grid-template-rows: auto 1fr;
+    #home {
+        grid-template-rows: auto 1fr 1fr;
         .welcome {
-            grid-row: span 2;
+            grid-row: span 3;
             grid-column: span 8;
         }
-        .opens, .slider {
+        .opens, .slider, #reservation {
             grid-column: span 4;
         }
         .opens {
             height: clamp(100px, 25vh, 200px);
+        }
+    }
+
+    #about {
+        #guest {
+            grid-column: span 4;  
+        }
+        #about_us {
+            grid-column: span 8;
+        }
+    }
+
+    #info {
+        #faq, #company, #contact {
+            grid-column: span 4;
         }
     }
 }

@@ -3,6 +3,8 @@
     <%- include('partials/navigation', data) %>
 
     <main>
+
+
         <header id="home">
             <div class="welcome box">
                 <div class="title">
@@ -23,39 +25,50 @@
             <div class="slider box">
                 <h2>SLIIIIIDER</h2>
             </div>
-        </header>
-
-        <div id="menu">
-            <h2>Étlap</h2>
-        </div>
-
-        <div>
             <div id="reservation" class="box">
                 <h2>Foglalás</h2>
             </div>
-    
-            <div id="contact" class="box">
-                <h2>Kapcsolat</h2>
+        </header>
+
+
+        <div id="menu">
+            <div id="food" class="box">
+                <h2>Étlap</h2>
+            </div>
+            <div id="drink" class="box">
+                <h2>Italaink</h2>
             </div>
         </div>
 
         <div id="about">
-            <h2>Rólunk</h2>
-        </div>
-
-        
-        <div>
-            <div id="guest">
+            <div id="about_us">
+                <h2>Rólunk</h2>
+            </div>
+            
+            <div id="guest" class="box">
                 <h2><i class="bi bi-map-fill"></i> Vendégkönyv</h2>
             </div>
         </div>
 
-        <div id="other">
-            <div id="company" class="box">
-                <h2>Banki információk</h2>
+        <div id="group">
+            <div class="box">
+                <h2><i class="bi bi-map-fill"></i> Csoportok</h2>
+            </div>
+            <div class="box">
+                <h2>Galéria</h2>
+            </div>
+        </div>
+
+        <div id="info">
+            <div id="contact" class="box">
+                <h2>Kapcsolat</h2>
             </div>
             <div id="faq" class="box">
                 <%- data.faqDiv %>
+            </div>
+            <div id="company" class="box">
+                <h2>Cég információk</h2>
+                <%- data.companyDiv %>
             </div>
         </div>
     </main>

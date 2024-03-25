@@ -18,6 +18,12 @@ const translate = {
             {question: 'Rendezvényeket is vállalnak?',
                 answer: 'Igen, esküvőket, keresztelőket, születésnapokat, névnapokat, osztálytalálkozókat, könyvbemutatókat, borkóstolókat, halotti tort stb.'}
         ]
+    },
+    company: {
+        vat: 'Adószám',
+        reg: 'Cégjegyzékszám',
+        bank: 'Bank',
+        bank_acc: 'Bankszámlaszám',
     }
 }
 
