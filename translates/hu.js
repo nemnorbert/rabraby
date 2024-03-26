@@ -20,6 +20,7 @@ const translate = {
         ]
     },
     contact: {
+        title: 'Kapcsolat',
         map: '2000 Szentendre, Kucsera Ferenc u. 1/A',
         card: 'Digitális Névjegykártya'
     },

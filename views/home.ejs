@@ -15,9 +15,7 @@
                         <div>Szépkártya elfogadó hely</div>
                     </div>
                 </div>
-                <div class="social">
-                    <%- data.socialDiv %>
-                </div>
+                <video src="/video/video-1.mp4" loop="" autoplay="" poster="" muted="" playsinline=""></video>
             </div>
             <div class="opens box">
                 <h2>OPEEEN HOURS</h2>
@@ -31,12 +29,18 @@
         </header>
 
 
-        <div id="menu">
+        <div id="menu" class="fill">
             <div id="food" class="box">
-                <h2>Étlap</h2>
+                <div class="content">
+                    <h2>Étlap</h2>
+                </div>
+                <img src="/img/food-1.webp" loading="lazy" alt="">
             </div>
             <div id="drink" class="box">
-                <h2>Italaink</h2>
+                <div class="content">
+                    <h2>Itallap & Borlap</h2>
+                </div>
+                <img src="/img/drink-1.webp" loading="lazy" alt="">
             </div>
         </div>
 
@@ -52,16 +56,17 @@
 
         <div id="group">
             <div class="box">
-                <h2><i class="bi bi-map-fill"></i> Csoportok</h2>
+                <h2>Csoport Menük</h2>
+                <button>Megtekintés</button>
+                <p>Természetesen más menüket is elkészítünk, valamint a szervezőknek ismételt csoportok étkeztetése esetén jutalékot biztosítunk, megegyezés szerint. Amennyiben a menük árai felől érdeklődik, kérjük, aktuális árainkat telefonon vagy e-mailben kérje.</p>
             </div>
             <div class="box">
                 <h2>Galéria</h2>
             </div>
         </div>
 
-        <div id="info">
+        <div id="info" class="fill">
             <div id="contact" class="box">
-                <h2>Kapcsolat</h2>
                 <%- data.contactDiv %>
                 <div>social</div>
             </div>

@@ -2,16 +2,6 @@ const lang = 'hu';
 const config = require('../config');
 const translate = require(`../translates/${lang}`);
 
-const socialBtn = () => {
-    const obj = config?.contact;
-    let result = '';
-    Object.keys(obj).forEach(key => {
-        const value = obj[key];
-        result += `<img src="/img/icons/${key}.svg" loading="lazy" alt="">`;
-    });
-    return result;
-};
-
 const faqDiv = () => {
     const array = translate.faq.questions;
     let result = '';
@@ -21,14 +11,14 @@ const faqDiv = () => {
             <p>${item.answer}</p>
         </details>`;
     });
-    return `<h2>${translate.faq.title}</h2> ${result}`;
+    return `<div class="title">${translate.faq.title}</div> ${result}`;
 }
 
 const companyBuilder = () => {
     const company = config?.company;
     if (!company) { return; }
-    let result = `<h2>${translate?.company?.title}</h2>
-    <h3>${company?.name}</h3>`;
+    let result = `<div class="title">${translate?.company?.title}</div>
+    <b>${company?.name}</b>`;
 
     for (let key in company?.data) {
         const title = translate?.company?.[key] ?? key;
@@ -41,38 +31,24 @@ const companyBuilder = () => {
     return result;
 }
 
-const socialBuild = (type) => {
-    const contact = config?.contact;
-    let result = ``;
-
-    for (let key in contact) {
-        if (contact?.[key]?.base) {
-            let title = translate?.contact?.[key] ?? key;
-            const icon = contact?.[key]?.icon;
-            title = `<i class="bi bi-${icon}"></i> ${title}`;
-
-            const link = contact?.[key]?.href ? null : contact?.[key]?.link;
-            result += link ? `<a target="_blank" href="${link}">${title}</a>` : `<div>${title}</div>`;
-        }
-    }
-    return result;
-}
-
 const contactBuilder = () => {
     const contact = config?.contact;
-    let result = ``;
+    let result = `<div class="title">${translate?.contact?.title}</div>`;
 
     for (let key in contact) {
         if (contact?.[key]?.base) {
+            const link = contact?.[key]?.link;
             let title = translate?.contact?.[key] ?? key;
+            if (link.startsWith('+36')) { title = link; }
+
             const icon = contact?.[key]?.icon;
             title = `<i class="bi bi-${icon}"></i> ${title}`;
 
-            const link = contact?.[key]?.href ? null : contact?.[key]?.link;
-            result += link ? `<a target="_blank" href="${link}">${title}</a>` : `<div>${title}</div>`;
+            const url = contact?.[key]?.href ? null : link;
+            result += url ? `<a target="_blank" href="${url}">${title}</a>` : `<div class='link'>${title}</div>`;
         }
     }
     return result;
 }
 
-module.exports = { socialBtn, faqDiv, companyBuilder, contactBuilder };
+module.exports = { faqDiv, companyBuilder, contactBuilder };
