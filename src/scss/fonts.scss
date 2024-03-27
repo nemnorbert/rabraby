@@ -1,0 +1,15 @@
+// Font Import
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 400;
+    src: local('Poppins Regular'),
+        url('/thirdparty/google-fonts/poppins/poppins-regular.woff2') format('woff2'),
+        url('/thirdparty/google-fonts/poppins/poppins-regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 700;
+    src: local('Poppins Bold'),
+        url('/thirdparty/google-fonts/poppins/poppins-bold.woff2') format('woff2'),
+        url('/thirdparty/google-fonts/poppins/poppins-bold.woff') format('woff');
+}

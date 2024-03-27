@@ -31,24 +31,50 @@ const companyBuilder = () => {
     return result;
 }
 
-const contactBuilder = () => {
-    const contact = config?.contact;
-    let result = `<div class="title">${translate?.contact?.title}</div>`;
-
-    for (let key in contact) {
-        if (contact?.[key]?.base) {
-            const link = contact?.[key]?.link;
-            let title = translate?.contact?.[key] ?? key;
-            if (link.startsWith('+36')) { title = link; }
-
-            const icon = contact?.[key]?.icon;
-            title = `<i class="bi bi-${icon}"></i> ${title}`;
-
-            const url = contact?.[key]?.href ? null : link;
-            result += url ? `<a target="_blank" href="${url}">${title}</a>` : `<div class='link'>${title}</div>`;
-        }
-    }
-    return result;
+const checkAlert = () => {
+    const alert = translate?.alert;
+    if (!alert) {return}
+    return `<div class="alert">${alert}</div>`;   
 }
 
-module.exports = { faqDiv, companyBuilder, contactBuilder };
+const iconBuild = (type) => {
+    const contacts = config?.contact;
+    let result = `<div class="social">`;
+
+    for (let key in contacts) {
+        const contact = contacts[key];
+        if (contact?.[type]) {
+            let { icon, link, href } = contact;
+            link = href ? `${href}:${link}` : link;
+            const title = `<i class="bi bi-${icon}"></i>`;
+            result += `<a target="_blank" href="${link}">${title}</a>`;
+        }
+    }
+
+    return result + '</div>';
+}
+
+const contactBuilder = () => {
+    const contacts = config?.contact;
+    let result = `<div class="title">${translate?.contact?.title}</div>`;
+
+    for (let key in contacts) {
+        const contact = contacts[key];
+        if (contact.base) {
+            let { icon, link, href } = contact;
+            let title = translate?.contact?.[key] ?? key;
+
+            if (href) {
+                title = link;
+                link = `${href}:${link}`;
+            }
+            
+            title = `<i class="bi bi-${icon}"></i> ${title}`;
+            result += `<a target="_blank" href="${link}">${title}</a>`;
+        }
+    }
+
+    return result + iconBuild('social');
+}
+
+module.exports = { iconBuild, checkAlert, faqDiv, companyBuilder, contactBuilder };

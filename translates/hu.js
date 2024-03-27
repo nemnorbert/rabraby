@@ -1,4 +1,42 @@
 const translate = {
+    alert: 'Üdvözlünk megújult weboldalunkon!',
+    nav: {
+        home: 'Főoldal',
+        menu: 'Étlap',
+        about: 'Rólunk',
+        group: 'Csoport',
+        contact: 'Kapcsolat',
+    },
+
+    // Home
+    home: {
+        title: 'Rab Ráby Étterem',
+        desc: 'Szeretettel várunk szentendrei éttermünkben, a belvárosban. Finom ételek, régiségek, lélegzetelállító beltér és kedvező árak, 1982 óta.',
+        mini_widgets: {
+            garden: 'Kerthelyiség',
+            dog: 'Kutyabarát hely',
+            card: 'Szépkártya elfogadóhely',
+        },
+    },
+    reservation: {
+        title: 'Asztalfoglalás',
+        phone: 'Foglalj asztalt telefonon:',
+        online: 'vagy online'
+    },
+
+    // About Us
+    about: {
+        title: 'Rólunk'
+    },
+    guest: {
+        title: 'Vendégkönyv'
+    },
+
+    // Menu
+    menu: {
+        menu_title: 'Étlap',
+        drink_title: 'Itallap & Borlap'
+    },
     faq: {
         title: 'Gyakran Ismételt Kérdések',
         questions:
@@ -19,6 +57,8 @@ const translate = {
                 answer: 'Igen, esküvőket, keresztelőket, születésnapokat, névnapokat, osztálytalálkozókat, könyvbemutatókat, borkóstolókat, halotti tort stb.'}
         ]
     },
+
+    // Contact
     contact: {
         title: 'Kapcsolat',
         map: '2000 Szentendre, Kucsera Ferenc u. 1/A',
