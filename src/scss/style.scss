@@ -19,7 +19,6 @@ body {
     background-color: white;
     background-image: linear-gradient(150deg, transparent, var(--color-primary));
     scroll-padding-top: $nav-height;
-    $min-width: $min-width;
 }
 
 
@@ -72,6 +71,41 @@ h1, h2 {
     background-image: linear-gradient(to bottom, transparent, rgba(29, 29, 29, .35));
 }
 
+//////////////// PRELOADER ////////////////
+#loading {
+    position: fixed;
+    inset: 0;
+    background: var(--color-primary) linear-gradient(130deg, transparent, rgba(19, 19, 19, .4));
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 3rem;
+    color: white;
+    visibility: visible;
+    transform: translateY(0);
+    transition: transform 500ms;
+
+    .logo {
+        height: 100px;
+    }
+
+    .loading {
+        width: clamp(100px, 50%, 150px);
+        animation: loading 1s infinite;
+    }
+    @keyframes loading {
+        to{
+            transform: rotate(1turn) scale(.8);
+        }
+    }
+}
+#loading.hide {
+    transform: translateY(-100%);
+    transition: transform 500ms, visibility 0ms 500ms;
+    visibility: hidden;
+}
 
 //////////////// NAV ////////////////
 #sidebar {
@@ -185,7 +219,7 @@ main {
 //////////////// HOME ////////////////
 #home {
     background-color: transparent;
-    gap: $spacing-1;
+    row-gap: $spacing-1;
 
     #reservation {
         display: flex;
@@ -212,7 +246,7 @@ main {
         }
     }
     .welcome {
-        background-color: yellow;
+        background-color: rgba(19, 19, 19, .7);
         grid-row: span 2;
         grid-column: span 12;
         min-height: 400px;
@@ -226,7 +260,8 @@ main {
             background-image: linear-gradient(to bottom, transparent, rgb(34, 34, 34));
             border-radius: $border-radius-1;
             padding-top: 2rem;
-            
+            z-index: 1;
+
             h1 {
                 font-size: 2.2rem;
                 padding-right: $spacing-1;
@@ -245,11 +280,15 @@ main {
         .title > * {
             padding-left: $spacing-1;
         }
-        video {
+        .media {
+            position: absolute;
+            inset: 0;
+        }
+        video, img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 1rem;
+            border-radius: $border-radius-1;
         }
     }
     .opens, .slider, #reservation {
@@ -441,9 +480,15 @@ footer > div {
 
 // Ultra Mini
 @media only screen and (max-width: $phone-width) {
+    .alert {display: none;}
+    #home {
+        .welcome {
+            min-height: 300px;
+        }
+    }
     body {
-        min-width: 260px;
-        overflow-x: hidden;
+        min-width: $min-width;
+        //overflow-x: hidden;
     }
     nav .menu .logo {
         max-width: 120px;
@@ -453,8 +498,9 @@ footer > div {
 // Tablet
 @media only screen and (min-width: $tablet-width) {
     #home {
+        column-gap: $spacing-1;
         .welcome {
-            min-height: 30vh;
+            min-height: 500px;
             grid-column: span 12;
         }
         .opens, .slider {

@@ -1,9 +1,6 @@
 <%- include('partials/head', data) %>
 <body>
     <%- include('partials/navigation', data) %>
-    <div id="loading"></div>
-    <div id="sidebar">Tezst</div>
-
     <main>
         <header id="home">
             <div class="welcome box">
@@ -15,7 +12,9 @@
                         <div>Szépkártya elfogadó hely</div>
                     </div>
                 </div>
-                <video src="/video/video-1.mp4" loop="" autoplay="" poster="" muted="" playsinline=""></video>
+                <div class="media">
+                    <img src="/img/home.webp" alt="">
+                </div>
             </div>
             <div class="opens box">
                 <h2>OPEEEN HOURS</h2>
@@ -77,6 +76,13 @@
             </div>
         </div>
     </main>
+
+    <div id="loading">
+        <img class="logo" src="/img/logo/white.webp" alt="Logo of Restaurant">
+        <img class="loading" src="/img/loading.webp" alt="Loading">
+    </div>
+
+    <div id="sidebar">Tezst</div>
     
     <a target="_blank" id="szechenyi" href="/img/2020_big.jpg">
         <img src="/img/2020.png" alt="">
