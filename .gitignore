@@ -1,3 +1,9 @@
+*.webp
+*.png
+*.jpg
+*.jpeg
+*.mp4
+
 # Build
 /dist
 /lib

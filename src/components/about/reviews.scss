@@ -1,0 +1,84 @@
+@import 'src/sass-global.scss';
+
+#reviews {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    padding: 1.5em 0;
+    overflow: hidden;
+    position: relative;
+
+    :not(.row) {
+        text-align: center;
+    }
+    .row {
+        display: flex;
+        animation: animateRow 30s linear infinite;
+        padding: 1rem 0;
+
+        .card {
+            border-radius: $border-size-main;
+            background-color: bisque;
+            min-width: 370px;
+            margin-left: 30px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 5px;
+
+            .name {
+                font-weight: bold;
+            }
+            .content {
+                color: var(--secundary-color);
+            }
+        }
+    }
+    .rating {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        & > * {
+            background-color: white;
+            border-radius: $border-size-main;
+            padding: 10px;
+        }
+    }
+    @keyframes animateRow {
+        to { translate: calc(-6 * 400px); }
+    }
+
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        width: clamp(20px, 20%, 100px);
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    &::before {
+        left: 0;
+        background-image: linear-gradient(to right, var(--primary-color), transparent);
+    }
+    &::after {
+        right: 0;
+        background-image: linear-gradient(to left, var(--primary-color), transparent);
+    }
+}
+#reviews.pure {
+    .row {
+        animation: none;
+        overflow: auto;
+    }
+}
+@media only screen and (min-width: $max-width) {
+    #reviews {
+        border-radius: $border-size-main;
+    }
+}

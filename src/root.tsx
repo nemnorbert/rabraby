@@ -1,20 +1,24 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, createContextId, useContextProvider, useStore } from "@builder.io/qwik";
 import {
   QwikCityProvider,
   RouterOutlet,
   ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
+import "./global.scss";
+import type { Translates } from "~/types/translates";
+export const CTX_Translate = createContextId<Translates>('CTX_Translate');
+import loadTranslations from "./utils/loadTranslations";
 
-import "./global.css";
+// Import Translation Data
+const language = "hu";
+const importedTranslation = await loadTranslations(language);
 
 export default component$(() => {
-  /**
-   * The root of a QwikCity site always start with the <QwikCityProvider> component,
-   * immediately followed by the document's <head> and <body>.
-   *
-   * Don't remove the `<head>` and `<body>` elements.
-   */
+  const translate = useStore({
+    current: importedTranslation,
+  });
+  useContextProvider(CTX_Translate, translate);
 
   return (
     <QwikCityProvider>
@@ -24,7 +28,7 @@ export default component$(() => {
         <RouterHead />
         <ServiceWorkerRegister />
       </head>
-      <body lang="en">
+      <body lang={translate.current?.iso ?? "en"}>
         <RouterOutlet />
       </body>
     </QwikCityProvider>

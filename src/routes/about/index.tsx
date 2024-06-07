@@ -1,17 +1,18 @@
 import { component$, useContext } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import "./index.scss";
-import Hero from "~/components/home/hero";
 import Reviews from "~/components/about/reviews";
 import { CTX_Translate } from '~/root';
+import AboutUs from "~/components/about/about_us";
 
 export default component$(() => {
   const translates = useContext(CTX_Translate);
+  //console.log(translates.current)
 
   return (
     <>
-      <Hero translate={translates.current} />
-      <Reviews pure={true} reviews={translates.current.reviews}/>
+      <h1>{translates.current.navigation.about}</h1>
+      <AboutUs />
+      <Reviews reviews={translates.current.reviews} />
     </>
   );
 });

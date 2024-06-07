@@ -1,0 +1,105 @@
+@import 'src/sass-global.scss';
+
+// Top Bar
+.topbar {
+    background-color: var(--primary-color);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+
+    a {
+        color: white;
+        font-weight: bold;
+        letter-spacing: 5px;
+        display: flex;
+        column-gap: 5px;
+        transition: color .25s;
+    }
+    a:hover {
+        color: var(--secundary-color);
+    }
+}
+
+// Header
+header {
+    position: sticky;
+    inset: 0 0 auto 0;
+    background-color: aliceblue;
+    background-image: linear-gradient(transparent, rgba(32, 32, 32, .1));
+    box-shadow: 0 0 5px #0000002b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: $max-width;
+        color: var(--secundary-color);
+        padding: 5px $gap-1;
+        text-transform: uppercase;
+
+        .desktop-menu {
+            display: none;
+            grid-column: span 8;
+            ul {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                column-gap: .8em;
+                font-size: 1.2em;
+                padding: 0;
+                font-weight: bold;
+            }
+            a {
+                color: var(--secundary-color);
+            }
+            a.current {
+                color: var(--primary-color);
+            }
+        }
+
+        .logo {
+            max-width: 120px;
+            img {
+                width: 100%;
+            }
+        }
+        .right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 1em;
+        }
+        .mobile-toggle {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            width: 35px;
+
+            span {
+                background-color: var(--primary-color);
+                height: 3px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $laptop-width) {
+    header {
+        .menu {
+            .desktop-menu {
+                display: block;
+            }
+            .mobile-toggle {
+                display: none;
+            }
+        }
+    }
+}

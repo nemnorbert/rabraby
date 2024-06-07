@@ -1,0 +1,77 @@
+footer {
+    background-image: linear-gradient(#2e2b24, #1b1915);
+    color: white;
+    text-align: center;
+
+    .top {
+        margin: 0 auto;
+        padding: 2rem 1rem;
+
+        min-height: 200px;
+        max-width: 1200px;
+        grid-template-columns: repeat(12, 1fr);
+        display: grid;
+        row-gap: 2em;
+
+        & > * {
+            grid-column: span 12;
+            justify-self: center;
+        }
+
+        b {
+            text-transform: uppercase;
+            color: var(--primary-color);
+            font-size: 20px;
+            letter-spacing: 3px;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            row-gap: 10px;
+
+            button {
+                background-color: transparent;
+                color: var(--primary-color);
+                border: none;
+                font-size: 1rem;
+                text-align: left;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    .bottom {
+        background-color: #1b1915;
+        min-height: 200px;
+        display: flex;
+        justify-content: center;
+        padding: 2rem;
+
+        .creator {
+            max-width: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: .5rem;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    footer {
+        .top {
+        & > * {
+            grid-column: span 4;
+        }
+        .contact {
+            text-align: left;
+        }
+        }
+    }
+}

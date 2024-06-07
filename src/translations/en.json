@@ -1,0 +1,85 @@
+{
+  "iso": "en",
+  "navigation": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About",
+    "gallery": "Gallery",
+    "group": "Group",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Rab Ráby Restaurant, Szentendre",
+    "description": "We warmly welcome you to our restaurant in the heart of Szentendre. Delicious food, antiques, breathtaking interior, and favorable prices since 1982.",
+    "buttons": {
+      "card": "Credit Card Accepted",
+      "garden": "Garden",
+      "dog": "Dog-friendly",
+      "wifi": "Wifi"
+    }
+  },
+  "reservation": {
+    "title": "Reservation",
+    "phone": "Book a table by phone",
+    "online": "or online"
+  },
+  "contact": {
+    "title": "Contact",
+    "map": "1/A Kucsera Ferenc Street, Szentendre 2000, Hungary",
+    "card": "Digital Business Card"
+  },
+  "company": {
+    "title": "Company Information",
+    "vat": "VAT Number",
+    "reg": "Company Registration Number",
+    "bank": "Bank",
+    "bank_acc": "Bank Account Number"
+  },
+  "groups": {
+    "title": "Group Menu Offer 2024",
+    "faq": [
+      { "q": "From how many people is it considered a group?",
+        "a": "-" },
+      { "q": "How can I pay?",
+        "a": "-" },
+      { "q": "How can I make a reservation?",
+        "a": "-" },
+      { "q": "Why is the price displayed in euros?",
+        "a": "-" },
+      { "q": "Where can I park? Is there a bus parking nearby?",
+        "a": "-" },
+      { "q": "How far in advance should I book?",
+        "a": "-" },
+      { "q": "Can I receive a commission?",
+        "a": "-" }
+    ]
+  },  
+  "reviews": [
+    {"name": "Katalin Novák", "title": "President of Hungary (2022-2024)", "text": "Thank you for allowing us to rest here for a short time on a tiring workday and taste genuine homemade flavors. With love: Katalin Novák"},
+    {"name": "Levente Balogh", "title": "Water King, Businessman, Investor","text": "Thank you for the cozy hospitality!"},
+    {"name": "András Moldován", "title": "Pork Mogul, Investor, Shark", "text": "We had a great dinner here with pleasure!"},
+    {"name": "Mária Varga", "text": "Entering feels like stepping into an archival museum yet a very homely feeling arises. The staff is quick, attentive, and the food is excellent. We had a great time and recommend it to everyone!"},
+    {"name": "Gábor Molnár", "text": "Rab Ráby Restaurant is a true gem! The menu offers a wide selection, and the dishes are always fresh and of excellent quality. I always find something delicious on the menu, and the desserts are divine too!"},
+    {"name": "Éva Kovács", "text": "It was once again an experience. The food is great, the service is good, and the atmosphere of the restaurant is magical. It's a bit nostalgic for me to come here because it was where my husband and I had our first date."}
+  ],
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions":
+      [
+        {"question": "Can I pay with card?",
+            "answer": "Yes, you can pay with a credit card. (We cannot accept American Express cards)"},
+        {"question": "Where can I park?",
+            "answer": "Parking in Szentendre changed in 2022: the old town can only be accessed with a permit. The nearest parking lot to us is about 1 minute walk away, on Bajcsy-Zsilinszky Endre Street. (Zone code: 2012)"},
+        {"question": "Where can I find the restaurant?",
+            "answer": "The restaurant is located in the downtown area of Szentendre, between the Town Hall and the Péter Pál Church. It is reachable within 1 minute walk from the city center."},
+        {"question": "Do you have a garden terrace, patio?",
+            "answer": "Yes, the restaurant has a cozy, wind-protected inner courtyard, which is cool and shady in summer."},
+        {"question": "Can I bring my dog?",
+            "answer": "Yes, we have been a dog-friendly place since our opening."},
+        {"question": "Is there WiFi?",
+            "answer": "Yes, without password. WiFi name: RAB_RÁBY_WIFI"},
+        {"question": "Do you also host events?",
+            "answer": "Yes, we host weddings, baptisms, birthdays, name days, class reunions, book presentations, wine tastings, funeral receptions, etc."}
+      ]
+}
+}

@@ -1,0 +1,87 @@
+{
+    "iso": "hu",
+    "navigation": {
+      "home": "Főoldal",
+      "menu": "Étlap",
+      "about": "Rólunk",
+      "gallery": "Galéria",
+      "group": "Csoport",
+      "contact": "Kapcsolat"
+    },
+    "home": {
+      "title": "Rab Ráby Étterem, Szentendre",
+      "description": "Szeretettel várunk szentendrei éttermünkben, a belvárosban. Finom ételek, régiségek, lélegzetelállító beltér és kedvező árak, 1982 óta.",
+      "buttons": {
+        "card": "Szépkártya",
+        "garden": "Kerthelyiség",
+        "dog": "Kutyabarát",
+        "wifi": "Wifi"
+      }
+    },
+    "reservation": {
+      "title": "Asztalfoglalás",
+      "phone": "Foglalj asztalt telefonon",
+      "online": "vagy online"
+    },
+    "contact": {
+      "title": "Kapcsolat",
+      "map": "2000 Szentendre, Kucsera Ferenc u. 1/A",
+      "card": "Digitális Névjegykártya"
+    },
+    "company": {
+      "title": "Cég információk",
+      "vat": "Adószám",
+      "reg": "Cégjegyzékszám",
+      "bank": "Bank",
+      "bank_acc": "Bankszámlaszám"
+    },
+    "groups": {
+      "title": "Csoport Menü Ajánlat 2024",
+      "faq": [
+        { "q": "Hány főtől számít csoportnak?",
+          "a": "-" },
+        { "q": "Mivel fizethetek?",
+          "a": "-" },
+        { "q": "Hogyan foglalhatok?",
+          "a": "-" },
+        { "q": "Miért euróban van feltüntetve az ár?",
+          "a": "-" },
+        { "q": "Hol tudok parkolni? Van busz parkoló a közelben?",
+          "a": "-" },
+        { "q": "Mennyivel előtte érdemes foglalni?",
+          "a": "-" },
+        { "q": "Van jutalék rendszer?",
+          "a": "-" },
+        { "q": "Mi a teendő ha van étel allergiás vendég is?",
+          "a": "-" }
+      ]
+    },
+    "reviews": [
+      {"name": "Novák Katalin", "title": "Magyarország Köztársasági Elnöke (2022-2024)", "text": "Köszönöm szépen, hogy egy fárasztó munkanapon, rövid időre megpihenhettünk itt, és igazi házias ízeket kóstoltunk. Szeretettel: Novák Katalin"},
+      {"name": "Balogh Levente", "title": "A vízkirály, Üzletember, Befektető","text": "Köszönjük a hangulatos vendéglátást!"},
+      {"name": "Moldován András", "title": "Sertésmogul, Befektető, Cápa", "text": "Nagy örömmel vacsoráztunk itt!"},
+      {"name": "Varga Mária", "text": "Belépve mint egy archív múzeumba lépnénk és mégis nagyon otthonos érzése támad az embernek. A személyzet gyors, figyelmes, az ételek kiválóak. Nagyon jól éreztük magunkat ajánljuk mindenkinek!"},
+      {"name": "Molnár Gábor", "text": "A Rab Ráby Étterem egy igazi gyöngyszem! Az étlap széles választékot kínál, és az ételek mindig frissek és kiváló minőségűek. Mindig találok valami finomat a menüből, és a desszertek is isteniek!"},
+      {"name": "Kovács Éva", "text": "Ismét egy élmény volt. Az étel remek, a kiszolgálás jó, az étterem atmoszférája pedig varázslatos. Nekem egy picit nosztalgikus idejárni, mert a férjemmel itt volt az első randevúnk."}
+    ],
+    "faq": {
+      "title": "Gyakran Ismételt Kérdések",
+      "questions":
+      [
+        {"question": "Fizethetek bankkártyával, SZÉP kártyával?",
+            "answer": "Igen, bankkártyával és az összes forgalomban lévő SZÉP kártyával fizethet nálunk. (American Express kártyát nem tudunk elfogadni)"},
+        {"question": "Hol parkolhatok?",
+            "answer": "A parkolás Szentendrén 2022-ben megváltozott: az óvárost csak engedéllyel lehet megközelíteni. A hozzánk legközelebbi parkoló kb 1 perc sétára, a Bajcsy-Zsilinszky Endre utcánál van. (Zóna kódja: 2012)"},
+        {"question": "Hol találom a vendéglőt?",
+            "answer": "Az étterem Szentendre belvárosában helyezkedik el, a Városháza és a Péter Pál templom között. A centrumban, a Főtértől 1 perc sétával megközelíthető."},
+        {"question": "Van kerthelyiség, terasz?",
+            "answer": "Igen, egy hangulatos, szél védett belső udvara van az étteremnek, ami nyáron hűvös, árnyékos."},
+        {"question": "Szabad kutyát bevinni?",
+            "answer": "Igen, nyitás óta kutyabarát hely vagyunk."},
+        {"question": "Van Wifi?",
+            "answer": "Igen, jelszó nélkül. Wifi név: RAB_RÁBY_WIFI"},
+        {"question": "Rendezvényeket is vállalnak?",
+            "answer": "Igen, esküvőket, keresztelőket, születésnapokat, névnapokat, osztálytalálkozókat, könyvbemutatókat, borkóstolókat, halotti tort stb."}
+      ]
+  }
+}

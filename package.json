@@ -36,9 +36,13 @@
     "eslint": "^8.57.0",
     "eslint-plugin-qwik": "^1.5.3",
     "prettier": "^3.2.5",
+    "sass": "^1.76.0",
     "typescript": "5.4.5",
     "undici": "*",
     "vite": "^5.2.10",
     "vite-tsconfig-paths": "^4.2.1"
+  },
+  "dependencies": {
+    "@qwikest/icons": "^0.0.13"
   }
 }
