@@ -34,7 +34,7 @@ export interface Config {
       home: NavigationLink;
       menu: NavigationLink;
       about: NavigationLink;
-      gallery: NavigationLink;
+      gallery?: NavigationLink;
       group: NavigationLink;
       contact: NavigationLink;
     };

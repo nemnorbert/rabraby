@@ -38,8 +38,6 @@ export default component$((props: Props) => {
             </div>
             <div class="rating">
                 <div>Google: 4+</div>
-                <div><Link href="/guest">Vendégkönyv</Link></div>
-                
             </div>
         </div>
     );

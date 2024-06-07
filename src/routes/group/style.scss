@@ -11,15 +11,20 @@
         grid-column: span 12;
     }
 }
+h1 {
+    font-size: 45px;
+    text-transform: uppercase;
+}
 .content {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+    width: 100%;
     gap: 1rem;
     .item {
         background-color: white;
         border-radius: $border-size-main;
         padding: $gap-1;
-        width: 300px;
+        //width: 300px;
         box-shadow: $shadow-1;
 
         .top {
@@ -58,12 +63,4 @@
 }
 .guide {
     //background-color: green;
-}
-
-@media only screen and (min-width: $tablet-width) {
-    .container {
-        &>* {
-            grid-column: span 6;
-        }
-    }
 }

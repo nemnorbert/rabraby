@@ -13,8 +13,8 @@ export default component$(() => {
   return (
     <>
       <div class="container">
+        <h1>{translates.current.groups?.title ?? "Groups"}</h1>
         <div class="menu">
-          <h1>{translates.current.groups?.title ?? "Groups"}</h1>
           <div class="content">
             {
               Object.entries(groupMenu.menu).map(([key, {price, food}]) => (
@@ -36,11 +36,10 @@ export default component$(() => {
               ))
             }
           </div>
-          <p>Frissítve: 2024.02.02.</p>
         </div>
 
         <div class="guide">
-          <h2>{ "Segédlet" }</h2>
+          <h2>{ translates.current.groups.guide }</h2>
           {
             translates.current.groups.faq.map(({q, a}, key) => (
               <details key={key}>

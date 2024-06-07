@@ -36,7 +36,8 @@
       "bank_acc": "Bankszámlaszám"
     },
     "groups": {
-      "title": "Csoport Menü Ajánlat 2024",
+      "title": "Csoport Menü 2024",
+      "guide": "Csoport Segédlet",
       "faq": [
         { "q": "Hány főtől számít csoportnak?",
           "a": "-" },

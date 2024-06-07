@@ -36,7 +36,8 @@
     "bank_acc": "Bank Account Number"
   },
   "groups": {
-    "title": "Group Menu Offer 2024",
+    "title": "Menu for Groups 2024",
+    "guide": "Group Guide",
     "faq": [
       { "q": "From how many people is it considered a group?",
         "a": "-" },

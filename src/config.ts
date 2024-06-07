@@ -17,7 +17,6 @@ const config : Config = {
         home: { link:"/" },
         menu: { link: "/menu/" },
         about: { link: "/about/" },
-        gallery: { link: "/gallery/" },
         group: { link: "/group/" },
         contact: { link: "/contact/" },
     },

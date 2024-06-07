@@ -3,6 +3,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import Reviews from "~/components/about/reviews";
 import { CTX_Translate } from '~/root';
 import AboutUs from "~/components/about/about_us";
+import Gallery from "~/components/about/gallery";
 
 export default component$(() => {
   const translates = useContext(CTX_Translate);
@@ -12,6 +13,7 @@ export default component$(() => {
     <>
       <h1>{translates.current.navigation.about}</h1>
       <AboutUs />
+      <Gallery />
       <Reviews reviews={translates.current.reviews} />
     </>
   );

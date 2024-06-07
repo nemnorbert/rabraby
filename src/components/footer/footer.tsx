@@ -13,6 +13,10 @@ export default component$(() => {
 
   return (
     <footer>
+      <div class="social">
+        
+      </div>
+
       <div class="top">
         <div>
           <Link href='/' class="logo">
