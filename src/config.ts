@@ -6,6 +6,15 @@ const config : Config = {
             {color: "green", message: "Üdvözöljük új weboldalunkon!"}
         ],
     },
+    home: {
+        btns: {
+            card: "credit-card-2-back-fill",
+            garden: "tree-fill",
+            dog: "gitlab",
+            wifi: "wifi",
+            parking: "p-circle-fill",
+        }
+    },
     languages: [
         "hu", 
         "en", 
@@ -23,34 +32,34 @@ const config : Config = {
     contact: {
         map: {
             link: 'https://g.page/rabraby?gm', 
+            icon: 'geo-alt-fill',
             base: true,
+            social: true,
             blank: true,
         },
         phone: {
             link: '+36209149737',
+            icon: 'telephone-fill',
             base: true,
             href: 'tel'
         },
         email: {
-            link: 'info@rabraby.hu', 
+            link: 'info@rabraby.hu',
+            icon: 'envelope-fill',
             base: true, 
             href: 'mailto',
             reservation: true
         },
         facebook: {
             link: 'https://www.facebook.com/rabraby.hu', 
-            social: true,
-            reservation: true,
-            blank: true,
-        },
-        instagram: {
-            link: 'https://www.instagram.com/rabraby.hu',
+            icon: 'facebook',
             social: true,
             reservation: true,
             blank: true,
         },
         card: {
             link: 'https://adanor.eu/c/rabraby',
+            icon: 'person-vcard-fill',
             base: true,
             blank: true,
         }

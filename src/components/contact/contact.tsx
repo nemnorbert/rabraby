@@ -37,11 +37,13 @@ export default component$((props: Props) => {
                 </div>
 
                 {
-                    contact.map(([key, value]) => (
-                        value.base && <a key={key} 
-                            target={value.blank ? "_blank" : undefined} 
-                            href={!value.href ? value.link : `${value.href}:${value.link}`}>
-                                { translate.contact?.[key] ?? value.link }
+                    contact.map(([key, {base, blank, link, icon, href}]) => (
+                        base && <a key={key} 
+                            target={blank ? "_blank" : undefined} 
+                            href={!href ? link : `${href}:${link}`}>
+                                <i key={key} class={`bi bi-${icon}`}></i> {
+                                    translate.contact?.[key] ?? link
+                                }
                         </a>
                     ))
                 }

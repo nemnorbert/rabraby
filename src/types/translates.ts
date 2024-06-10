@@ -53,6 +53,9 @@ export interface TranslatesCurrent {
       bank_acc?: string;
     };
     groups: {
+      title?: string;
+      guide?: string;
+      reservation?: string;
       faq: FAQ[];
     };
     reviews: Review[];

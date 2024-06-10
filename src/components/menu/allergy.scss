@@ -1,0 +1,13 @@
+.allergy {
+    background-color: red;
+
+    .content {
+        display: flex;
+        padding: 10px;
+        column-gap: 5px;
+    }
+
+    .item {
+        background-color: magenta;
+    }
+}

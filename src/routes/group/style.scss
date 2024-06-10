@@ -2,29 +2,69 @@
 
 .container {
     margin: 0 auto;
-    padding: 1rem 0;
     max-width: $max-width;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+
     &>* {
         padding: 1rem;
         grid-column: span 12;
     }
-}
-h1 {
-    font-size: 45px;
-    text-transform: uppercase;
+    h1 {
+        font-size: 45px;
+        text-transform: uppercase;
+    }
+    .hero {
+        grid-row: 1;
+        background-color: green;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        background-image: linear-gradient(transparent, #15151563);
+        color: white;
+        align-items: flex-start;
+    }
+    .menu {
+        grid-row: 2;
+        background-color: var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+    }
+    .guide {
+        padding: 1rem;
+        grid-row: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 5px;
+
+        h2 {
+            font-size: 30px;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 1rem;
+        }
+        details {
+            background-color: var(--primary-color);
+            padding: 7px 10px;
+            border-radius: 5px;
+        }
+    }
 }
 .content {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
     width: 100%;
     gap: 1rem;
+
     .item {
         background-color: white;
         border-radius: $border-size-main;
         padding: $gap-1;
-        //width: 300px;
         box-shadow: $shadow-1;
 
         .top {
@@ -53,14 +93,31 @@ h1 {
         }
     }
 }
-.menu {
-    background-color: var(--primary-color);
-    border-radius: $border-size-main;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 1rem;
+
+@media only screen and (min-width: $laptop-width) {
+    .container {
+        padding: 1rem 0;
+        row-gap: 1rem;
+        .hero, .guide {
+            grid-column: span 6;
+            grid-row: 1;
+        }
+        .hero {
+            margin-left: 1rem;
+            border-radius: 1rem;
+        }
+        .guide {
+            padding: 2rem;
+        }
+        .menu {
+            grid-row: 2;
+        }
+    }
 }
-.guide {
-    //background-color: green;
+@media only screen and (min-width: $max-width) {
+    .container {
+        .menu {
+            border-radius: $border-size-main;
+        }
+    }
 }

@@ -38,6 +38,7 @@
     "groups": {
       "title": "Csoport Menü 2024",
       "guide": "Csoport Segédlet",
+      "reservation": "Foglalás (email küldése)",
       "faq": [
         { "q": "Hány főtől számít csoportnak?",
           "a": "-" },
@@ -51,14 +52,12 @@
           "a": "-" },
         { "q": "Mennyivel előtte érdemes foglalni?",
           "a": "-" },
-        { "q": "Van jutalék rendszer?",
-          "a": "-" },
         { "q": "Mi a teendő ha van étel allergiás vendég is?",
           "a": "-" }
       ]
     },
     "reviews": [
-      {"name": "Novák Katalin", "title": "Magyarország Köztársasági Elnöke (2022-2024)", "text": "Köszönöm szépen, hogy egy fárasztó munkanapon, rövid időre megpihenhettünk itt, és igazi házias ízeket kóstoltunk. Szeretettel: Novák Katalin"},
+      {"name": "Novák Katalin", "title": "Magyarország Köztársasági Elnöke (2022-2024)", "text": "Köszönöm szépen, hogy egy fárasztó munkanapon, rövid időre megpihenhettünk itt, és igazi házias ízeket kóstoltunk."},
       {"name": "Balogh Levente", "title": "A vízkirály, Üzletember, Befektető","text": "Köszönjük a hangulatos vendéglátást!"},
       {"name": "Moldován András", "title": "Sertésmogul, Befektető, Cápa", "text": "Nagy örömmel vacsoráztunk itt!"},
       {"name": "Varga Mária", "text": "Belépve mint egy archív múzeumba lépnénk és mégis nagyon otthonos érzése támad az embernek. A személyzet gyors, figyelmes, az ételek kiválóak. Nagyon jól éreztük magunkat ajánljuk mindenkinek!"},
@@ -84,5 +83,12 @@
         {"question": "Rendezvényeket is vállalnak?",
             "answer": "Igen, esküvőket, keresztelőket, születésnapokat, névnapokat, osztálytalálkozókat, könyvbemutatókat, borkóstolókat, halotti tort stb."}
       ]
-  }
+    },
+    "menu": {
+      "category": {
+        "starter": "Előételek",
+        "soup": "Levesek",
+        "pasta": "Tészták"
+      }
+    }
 }

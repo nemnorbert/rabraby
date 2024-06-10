@@ -9,6 +9,7 @@ interface Alert {
   
   interface ContactLink {
     link: string;
+    icon?: string;
     base?: boolean;
     blank?: boolean;
     href?: string;

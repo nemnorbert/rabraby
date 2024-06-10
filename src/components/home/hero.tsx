@@ -22,7 +22,9 @@ export default component$((props) => {
                 {
                   welcomeArray.map(([key, value]) => (
                     <button class="btn" key={key} 
-                    onClick$={() => console.log("gomb:", key)}>{value}</button>
+                      onClick$={() => console.log("gomb:", key)}>
+                        <i class={`bi bi-${config.home.btns?.[key]}`}></i> {value}
+                    </button>
                   ))
                 }
               </div>
@@ -48,6 +50,7 @@ export default component$((props) => {
           <h2>{ translate.reservation.title }</h2>
           <p>{ translate.reservation.phone }:</p>
           <a class="phone" href={ "tel:" + config.contact.phone.link }>
+            <i class="bi bi-telephone-fill"></i>
             { config.contact.phone.link }
           </a>
           <p>{ translate.reservation.online }:</p>

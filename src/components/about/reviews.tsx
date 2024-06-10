@@ -20,24 +20,29 @@ export default component$((props: Props) => {
                 { reviews &&
                     reviews.map(({name, title, text}, key) => (
                         <div key={key} class="card">
+                            <div class="content">{ text }</div>
                             <div class="name">{ name }</div>
                             <div class="title">{ title }</div>
-                            <div class="content">{ text }</div>
                         </div>
                     ))
                 }
                 { reviews && !pure &&
                     reviews.map(({name, title, text}, key) => (
                         <div key={key} class="card">
+                            <div class="content">{ text }</div>
                             <div class="name">{ name }</div>
                             <div class="title">{ title }</div>
-                            <div class="content">{ text }</div>
                         </div>
                     ))
                 }
             </div>
             <div class="rating">
-                <div>Google: 4+</div>
+                <div>Google <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                </div>
             </div>
         </div>
     );

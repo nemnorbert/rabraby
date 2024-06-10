@@ -30,12 +30,13 @@
             align-items: center;
             justify-content: center;
             row-gap: 5px;
+            line-height: 20px;
 
-            .name {
+            .content {
                 font-weight: bold;
             }
-            .content {
-                color: var(--secundary-color);
+            .title {
+                opacity: .5;
             }
         }
     }
@@ -45,9 +46,11 @@
         flex-wrap: wrap;
         gap: 10px;
         & > * {
-            background-color: white;
             border-radius: $border-size-main;
+            border-radius: 20px;
             padding: 10px;
+            border: 2px solid white;
+            color: white;
         }
     }
     @keyframes animateRow {

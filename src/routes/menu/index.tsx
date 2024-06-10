@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import Allergy from "~/components/menu/allergy";
 
 export default component$(() => {
   return (
@@ -17,6 +18,7 @@ export default component$(() => {
         <div class="category">
           
         </div>
+        <Allergy />
       </section>
     </>
   );

@@ -1,7 +1,6 @@
 import config from "~/config";
 import { component$, useContext } from "@builder.io/qwik";
 import { Link } from '@builder.io/qwik-city';
-import { BsPersonBadgeFill, BsTelephoneFill, BsGeoAltFill, BsEnvelopeFill } from "@qwikest/icons/bootstrap";
 import "./footer.scss";
 import { CTX_Translate } from '~/root';
 
@@ -14,7 +13,14 @@ export default component$(() => {
   return (
     <footer>
       <div class="social">
-        
+        {
+          Object.entries(config.contact).map(([key, {icon, social, blank, link}]) => (
+            social &&
+            <a key={key} target={blank ? '_blank' : undefined} href={link}>
+              <i class={`bi bi-${icon}`}></i>
+            </a>
+          ))
+        }
       </div>
 
       <div class="top">
@@ -27,19 +33,20 @@ export default component$(() => {
 
         <div class="contact">
           <b>{ translate?.current?.navigation?.contact ?? "Contact" }</b>
-
-          <a target="_blank" href={ config.contact.map.link }>
-              <BsGeoAltFill /> { translate?.current?.contact?.map ?? "Map" }
-          </a>
-          <a href={`tel:${config.contact.phone.link}`}>
-              <BsTelephoneFill /> { config?.contact?.phone?.link }
-          </a>
-          <a href={`mailto:${config.contact.email.link}`}>
-              <BsEnvelopeFill /> { config?.contact?.email?.link }
-          </a>
-          <a target="_blank" href={ config.contact.card.link }>
-              <BsPersonBadgeFill /> { translate?.current?.contact?.card ?? "Card" }
-          </a>
+          {
+            Object.entries(config.contact).map(([key, {icon, base, link, blank, href}]) => (
+              base && 
+              <a key={key} target={
+                blank ? '_blank' : undefined
+              } href={
+                href ? `${href}:${link}` : link
+              }>
+                <i key={key} class={`bi bi-${icon}`}></i> {
+                  translate?.current?.contact?.[key] ?? link
+                }
+              </a>
+            ))
+          }
         </div>
 
         <div>

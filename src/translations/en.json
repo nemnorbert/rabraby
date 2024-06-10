@@ -38,6 +38,7 @@
   "groups": {
     "title": "Menu for Groups 2024",
     "guide": "Group Guide",
+    "reservation": "Reservation (send an email)",
     "faq": [
       { "q": "From how many people is it considered a group?",
         "a": "-" },
@@ -50,13 +51,11 @@
       { "q": "Where can I park? Is there a bus parking nearby?",
         "a": "-" },
       { "q": "How far in advance should I book?",
-        "a": "-" },
-      { "q": "Can I receive a commission?",
         "a": "-" }
     ]
   },  
   "reviews": [
-    {"name": "Katalin Novák", "title": "President of Hungary (2022-2024)", "text": "Thank you for allowing us to rest here for a short time on a tiring workday and taste genuine homemade flavors. With love: Katalin Novák"},
+    {"name": "Katalin Novák", "title": "President of Hungary (2022-2024)", "text": "Thank you for allowing us to rest here for a short time on a tiring workday and taste genuine homemade flavors."},
     {"name": "Levente Balogh", "title": "Water King, Businessman, Investor","text": "Thank you for the cozy hospitality!"},
     {"name": "András Moldován", "title": "Pork Mogul, Investor, Shark", "text": "We had a great dinner here with pleasure!"},
     {"name": "Mária Varga", "text": "Entering feels like stepping into an archival museum yet a very homely feeling arises. The staff is quick, attentive, and the food is excellent. We had a great time and recommend it to everyone!"},
