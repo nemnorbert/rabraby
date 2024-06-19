@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import { BsQuestionCircleFill, BsTelephoneFill, BsBuildingsFill } from "@qwikest/icons/bootstrap";
 import style from "./contact.scss?inline";
-import config from "~/config";
+import config from "~/config/config";
 
 interface Props {
     translate: {

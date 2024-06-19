@@ -1,5 +1,5 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import config from "~/config";
+import config from "~/config/config";
 import style from "./alerts.scss?inline";
 
 export default component$(({ translate }) => {

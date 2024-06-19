@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import style from "./hero.scss?inline"
-import config from '~/config';
+import config from '~/config/config';
 
 import heroImage from "/home/hero.webp";
 import heroVideo from "/home/hero.mp4";
@@ -34,7 +34,6 @@ export default component$((props) => {
               <img src={heroImage} alt="" /> : 
               <video src={heroVideo} loop={true} autoplay={true} poster={heroImage} muted={true} playsInline={true} />
             }
-              
           </div>
         </div>
 
@@ -54,6 +53,16 @@ export default component$((props) => {
             { config.contact.phone.link }
           </a>
           <p>{ translate.reservation.online }:</p>
+          <div class="social">
+            {
+              Object.entries(config.contact).map(([key, value]) => (
+                value.social && 
+                <a key={key} href={value.link} target="_blank">
+                  <i class={`bi bi-${value.icon}`}></i>
+                </a>
+              ))
+            }
+          </div>
         </div>
     </section>
   );

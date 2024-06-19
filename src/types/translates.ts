@@ -63,6 +63,11 @@ export interface TranslatesCurrent {
       title: string;
       questions: FAQ2[];
     };
+    menu: {
+      category: {
+        [key: string]: string;
+      };
+    };
 }
 
 export interface Translates {

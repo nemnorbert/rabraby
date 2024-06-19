@@ -8,9 +8,11 @@
 
 :root {
   --primary-color: hsl(34, 49%, 63%);
+  --primary-color-2: hsla(34, 49%, 63%, .8);
   --secundary-color: hsl(35, 28%, 25%);
   --text-color: black;
   --bg-color: white;
+  --bg-color-2: rgba(255, 255, 255, 0.9);
 }
 
 html {
@@ -57,7 +59,7 @@ a {
 a.current {
   color: var(--secundary-color);
 }
-.btn {
+.btn, button .btn {
   background-color: var(--primary-color);
   color: white;
   border: none;

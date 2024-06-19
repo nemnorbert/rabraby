@@ -2,8 +2,9 @@ import { component$, useContext, useStylesScoped$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { CTX_Translate } from '~/root';
 import style from "./style.scss?inline";
-import groupMenu from "~/config/menu.json";
-import config from "~/config";
+import groupMenu from "~/config/groups.json";
+import heroVideo from "~/media/groups/video.mp4";
+import heroImage from "~/media/groups/head.webp";
 
 export default component$(() => {
   useStylesScoped$(style);
@@ -16,6 +17,12 @@ export default component$(() => {
       <div class="container">
         <div class="hero">
           <h1>{translates.current.groups.title ?? "Groups"}</h1>
+          <div class="media">
+            { false ? 
+              <img src={heroImage} alt="" /> : 
+              <video src={heroVideo} loop={true} autoplay={true} poster={heroImage} muted={true} playsInline={true} />
+            }
+          </div>
         </div>
         <div class="menu">
           <div class="content">

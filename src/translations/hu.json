@@ -86,9 +86,31 @@
     },
     "menu": {
       "category": {
-        "starter": "Előételek",
-        "soup": "Levesek",
-        "pasta": "Tészták"
+        "starters": "Előételek",
+        "soups": "Levesek",
+        "pastas": "Tészták",
+        "fish": "Halételek",
+        "readymeals": "Készételek",
+        "grilled": "Frissensültek",
+        "desserts": "Desszertek"
+      },
+      "allergy": {
+        "title": "Allergének",
+
+        "gluten": "Glutén",
+        "crustaceans": "Rákfélék",
+        "eggs": "Tojás",
+        "fish": "Hal",
+        "peanuts": "Földimogyoró",
+        "soy": "Szója",
+        "milk": "Tej",
+        "nuts": "Diófélék",
+        "celery": "Zeller",
+        "mustard": "Mustár",
+        "sesame": "Szezámmag",
+        "sulfur": "Kén-dioxid és szulfitok",
+        "lupin": "Lupin",
+        "mollusks": "Puhatestűek"
       }
     }
 }

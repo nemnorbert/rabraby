@@ -41,7 +41,8 @@ header {
         width: 100%;
         max-width: $max-width;
         color: var(--secundary-color);
-        padding: 5px $gap-1;
+        padding: 0 $gap-1;
+        height: 70px;
         text-transform: uppercase;
 
         .desktop-menu {

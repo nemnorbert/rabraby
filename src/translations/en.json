@@ -81,5 +81,33 @@
         {"question": "Do you also host events?",
             "answer": "Yes, we host weddings, baptisms, birthdays, name days, class reunions, book presentations, wine tastings, funeral receptions, etc."}
       ]
-}
+  },
+  "menu": {
+    "category": {
+      "starters": "Starters",
+      "soups": "Soups",
+      "pastas": "Pastas",
+      "fish": "Fish",
+      "readymeals": "Ready Meals",
+      "grilled": "Grilled Dishes",
+      "desserts": "Desserts"
+    },
+    "allergy": {
+      "title": "Allergens",
+      "gluten": "Gluten",
+      "crustaceans": "Crustaceans",
+      "eggs": "Eggs",
+      "fish": "Fish",
+      "peanuts": "Peanuts",
+      "soy": "Soy",
+      "milk": "Milk",
+      "nuts": "Nuts",
+      "celery": "Celery",
+      "mustard": "Mustard",
+      "sesame": "Sesame",
+      "sulfur": "Sulfur",
+      "lupin": "Lupin",
+      "mollusks": "Mollusks"
+    }
+  }
 }

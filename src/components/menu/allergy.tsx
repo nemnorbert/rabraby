@@ -1,19 +1,24 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import style from "./allergy.scss?inline";
+import config from "~/config/menu.json"
 
-export default component$(() => {
+export default component$((props) => {
     useStylesScoped$(style);
+    const translate = props.translate;
 
     return (
         <details class="allergy">
-            <summary>Allergének</summary>
+            <summary>
+                {translate.menu.allergy.title}
+            </summary>
             <div class="content">
-                <div class="item" data-allergen="1">
-                    Glutén
-                </div>
-                <div class="item" data-allergen="2">
-                    Rákfélék
-                </div>
+                {
+                    config.allergy.map((value, key) => (
+                        <button key={key} class="item" data-allergen={value}>
+                            {translate.menu.allergy[value]}
+                        </button>
+                    ))
+                }
             </div>
         </details>
     );

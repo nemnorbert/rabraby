@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$, useContext, $ } from '@builder.io/qwik';
 import style from "./langswitcher.scss?inline";
-import config from '~/config';
+import config from '~/config/config';
 import { CTX_Translate } from '~/root';
 import loadTranslations from '~/utils/loadTranslations';
 

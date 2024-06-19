@@ -4,7 +4,6 @@ import type { RequestHandler } from "@builder.io/qwik-city";
 
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
-import Szechenyi from "../components/szechenyi/szechenyi";
 import Contact from "~/components/contact/contact";
 import { CTX_Translate } from '~/root';
 
@@ -32,7 +31,6 @@ export default component$(() => {
         <Contact  translate={translates.current} />
       </main>
       <Footer />
-      <Szechenyi />
     </>
   );
 });

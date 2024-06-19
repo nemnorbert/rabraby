@@ -4,7 +4,7 @@ import { Link, useLocation } from "@builder.io/qwik-city";
 import { CTX_Translate } from '~/root';
 import { BsTelephoneFill } from "@qwikest/icons/bootstrap";
 
-import config from '~/config';
+import config from '~/config/config';
 import ImgRabrabyBlack from '~/media/logo/rabraby-black.webp?jsx';
 import LangSwitcher from '~/components/langswitcher/langswitcher';
 import style from "./header.scss?inline";

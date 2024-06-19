@@ -82,6 +82,7 @@
 
         h2 {
             text-transform: uppercase;
+            padding: 10px;
         }
         a {
             font-weight: bold;
@@ -89,6 +90,12 @@
             padding: 5px;
             letter-spacing: 5px;
             color: white;
+        }
+        .social {
+            display: flex;
+            i {
+                font-size: 30px;
+            }
         }
     }
 }

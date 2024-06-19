@@ -1,4 +1,4 @@
-import config from "~/config";
+import config from "~/config/config";
 import { component$, useContext } from "@builder.io/qwik";
 import { Link } from '@builder.io/qwik-city';
 import "./footer.scss";
