@@ -16,7 +16,9 @@ export default component$(() => {
     <>
       <div class="container">
         <div class="hero">
-          <h1>{translates.current.groups.title ?? "Groups"}</h1>
+          <div class="title">
+            <h1>{translates.current.groups.title ?? "Groups"}</h1>
+          </div>
           <div class="media">
             { false ? 
               <img src={heroImage} alt="" /> : 
