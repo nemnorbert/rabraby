@@ -1,13 +1,20 @@
+$color-1: red;
+$ani-time: .5s;
+
 .allergy {
-    background-color: red;
+    background-color: $color-1;
     background-image: linear-gradient(rgba(236, 236, 236, 0.13), rgba(17, 17, 17, 0.2));
     color: var(--bg-color);
 
     summary {
-        font-size: 20px;
         text-align: center;
         padding: 10px;
-        font-weight: bold;
+
+        :first-child {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
     }
     .content {
         display: flex;
@@ -18,11 +25,17 @@
     }
 
     .item {
+        cursor: pointer;
         background-color: transparent;
         border: solid 2px var(--bg-color);
         border-radius: 2rem;
         padding: 5px 10px;
         font-size: 18px;
         color: var(--bg-color);
+        transition: color $ani-time, background-color $ani-time;
+    }
+    .active {
+        background-color: var(--bg-color);
+        color: $color-1;
     }
 }

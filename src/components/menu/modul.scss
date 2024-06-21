@@ -1,0 +1,36 @@
+@import 'src/sass-global.scss';
+
+.modul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    max-width: $max-width;
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-color);
+    box-shadow: $shadow-1;
+    padding: 10px;
+    border-radius: 1rem;
+
+    .close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: red;
+    }
+    .allergens {
+        display: flex;
+        gap: 5px;
+
+        & > div {
+            background-color: aqua;
+            border-radius: 10px;
+            padding: 8px 10px;
+        }
+    }
+}
+.modul.open {
+    display: flex;
+}

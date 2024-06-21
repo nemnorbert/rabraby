@@ -1,11 +1,13 @@
 @import 'src/sass-global.scss';
 $codeGap: 15px;
+$alert-color: rgb(202, 2, 2);
 
 .item {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
     transition: scale .25s;
+    cursor: pointer;
 
     @media (hover: hover) {
         &:hover {
@@ -13,6 +15,11 @@ $codeGap: 15px;
         }
     }
 
+    .code {
+        color: var(--primary-color);
+        font-weight: bold;
+        font-size: 20px;
+    }
     .title {
         font-weight: bold;
         font-size: 18px;
@@ -20,42 +27,61 @@ $codeGap: 15px;
     }
     .media {
         position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: $shadow-1;
+
+        .allergy {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: $alert-color;
+            padding: 5px 8px;
+            text-align: center;
+            font-weight: bold;
+        }
         img {
-            border-radius: 1rem;
             box-shadow: $shadow-1;
             background-color: var(--primary-color);
             aspect-ratio: 1/1;
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        .code {
-            opacity: .5;
-            position: absolute;
-            color: var(--primary-color);
-            font-weight: bold;
-            font-size: 20px;
-            left: $codeGap;
-            top: $codeGap;
+            opacity: 1;
+            transition: opacity .25s;
         }
     }
     .buttons {
         display: flex;
         gap: 5px;
         flex-wrap: wrap;
+        align-items: center;
         
         div {
             background-color: var(--primary-color);
             color: var(--bg-color);
             border-radius: 10px;
             font-weight: bold;
-            padding: 10px;
+            padding: 7px 10px;
             font-size: 18px;
         }
         div:not(.huf) {
             background-color: transparent;
             border: solid var(--primary-color) 2px;
             color: var(--primary-color);
+        }
+    }
+
+}
+.item.alert {
+    .title, .code {
+        color: $alert-color;
+    }
+    .media{
+        border: solid 2px $alert-color;
+        img {
+            opacity: .25;
         }
     }
 }

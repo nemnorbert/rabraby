@@ -1,9 +1,12 @@
+$color-1: rgb(29, 29, 29);
+
 .categories {
     display: flex;
+    align-items: center;
     column-gap: 5px;
     padding: 5px;
-    background-color: rgb(29, 29, 29);
-    height: 40px;
+    background-color: $color-1;
+    height: 45px;
     position: sticky;
     top: 70px;
     overflow: auto;
@@ -11,5 +14,7 @@
 
     button.btn {
         white-space: nowrap;
+        color: $color-1;
+        cursor: pointer;
     }
 }

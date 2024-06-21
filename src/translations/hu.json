@@ -96,6 +96,8 @@
       },
       "allergy": {
         "title": "Allergének",
+        "one": "Allergén",
+        "text": "Allergének kiválasztása",
 
         "gluten": "Glutén",
         "crustaceans": "Rákfélék",

@@ -94,6 +94,8 @@
     },
     "allergy": {
       "title": "Allergens",
+      "one": "Allergy",
+
       "gluten": "Gluten",
       "crustaceans": "Crustaceans",
       "eggs": "Eggs",
