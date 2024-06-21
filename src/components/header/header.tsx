@@ -8,6 +8,7 @@ import ImgRabrabyBlack from '~/media/logo/rabraby-black.webp?jsx';
 import LangSwitcher from '~/components/langswitcher/langswitcher';
 import style from "./header.scss?inline";
 import MobileMenu from '../mobilemenu/mobilemenu';
+import DarkMode from '../darkSwitcher/dark';
 import configJson from '~/config/general.json';
 import type { Config } from '~/types/general_config';
 const config: Config = configJson;
@@ -50,6 +51,7 @@ export default component$(() => {
                             }
                         </ul>
                     </nav>
+                    <DarkMode />
                     <LangSwitcher />
                     <div class="mobile-toggle" onClick$={() => mobileIsOpen.value = true}>
                         <span></span><span></span><span></span>

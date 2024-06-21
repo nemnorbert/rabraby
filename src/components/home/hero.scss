@@ -77,7 +77,8 @@
         justify-content: center;
         align-items: center;
         row-gap: 5px;
-        color: white;
+        color: var(--bg-color);
+        transition: color $ani-time-1;
         text-shadow: $shadow-1;
 
         h2 {
@@ -89,7 +90,8 @@
             font-size: 22px;
             padding: 5px;
             letter-spacing: 5px;
-            color: white;
+            color: var(--bg-color);
+            transition: color $ani-time-1;
         }
         .social {
             display: flex;
