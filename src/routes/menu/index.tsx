@@ -1,13 +1,18 @@
 import { component$, useContext, useStylesScoped$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import Allergy from "~/components/menu/allergy";
+import Categories from "~/components/menu/categories";
 import Category from "~/components/menu/category";
 import { CTX_Translate } from '~/root';
+import type { Translates } from "~/types/translates";
 import style from "./style.scss?inline";
+import configJson from '~/config/general.json';
+import type { Config } from '~/types/general_config';
+const config: Config = configJson;
 
 export default component$(() => {
   useStylesScoped$(style);
-  const translate = useContext(CTX_Translate);
+  const translate: Translates = useContext(CTX_Translate);
 
   return (
     <>
@@ -21,10 +26,14 @@ export default component$(() => {
           </div>
         </div>
 
-        <Category translate={translate.current} />
+        <Categories translate={translate.current} />
         <Allergy translate={translate.current} />
-        <div class="content">
-
+        <div class="menu">
+          {
+            config.menu.categories.map((value, key) => (
+              <Category key={key} title={value} translate={translate.current} />
+            ))
+          }
         </div>
       </section>
     </>

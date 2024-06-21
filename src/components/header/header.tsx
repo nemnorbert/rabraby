@@ -4,12 +4,14 @@ import { Link, useLocation } from "@builder.io/qwik-city";
 import { CTX_Translate } from '~/root';
 import { BsTelephoneFill } from "@qwikest/icons/bootstrap";
 
-import config from '~/config/config';
 import ImgRabrabyBlack from '~/media/logo/rabraby-black.webp?jsx';
 import LangSwitcher from '~/components/langswitcher/langswitcher';
 import style from "./header.scss?inline";
 import MobileMenu from '../mobilemenu/mobilemenu';
-const menuItemsArray = Object.entries(config.navigation);
+import configJson from '~/config/general.json';
+import type { Config } from '~/types/general_config';
+const config: Config = configJson;
+const menuItems = Object.entries(config.navigation);
 
 export default component$(() => {
     useStylesScoped$(style);
@@ -35,13 +37,13 @@ export default component$(() => {
                     <nav class="desktop-menu">
                         <ul>
                             {
-                                menuItemsArray.map(([key, value]) => (
+                                menuItems.map(([key, value]) => (
                                     <li key={key}>
                                         <Link 
                                             class={location.url.pathname === value.link ? 'current' : undefined}
                                             href={value.link}
                                         >
-                                            {translate?.current?.navigation?.[key] ?? key}
+                                            {translate.current.navigation[key] ?? key}
                                         </Link>
                                     </li>
                                 ))

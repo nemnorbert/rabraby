@@ -1,11 +1,19 @@
+import type { Config } from "~/types/general_config";
+import type { TranslatesCurrent } from "~/types/translates";
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import config from "~/config/config";
+import configJson from "~/config/general.json";
 import style from "./alerts.scss?inline";
 
-export default component$(({ translate }) => {
+const config: Config = configJson;
+interface Props {
+    translate?: TranslatesCurrent;
+}
+
+export default component$((props: Props) => {
+    const translate = props.translate;
     useStylesScoped$(style);
     const lang = translate?.iso ?? "en";
-    const alerts = config?.alerts?.[lang] ?? [];
+    const alerts = config.alerts?.[lang] ?? [];
 
     if (alerts.length === 0) {
         return undefined;
@@ -15,7 +23,8 @@ export default component$(({ translate }) => {
         <div class="alerts">
             {
                 alerts.map((item, key: number) => (
-                    <div key={key} class={item?.color ?? undefined}>
+                    (item.color && item.message) &&
+                    <div key={key} class={item.color}>
                         {item.message}
                     </div>
                 ))

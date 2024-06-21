@@ -1,16 +1,14 @@
-import config from '~/config/config';
+import configJson from '~/config/general.json';
+import type { Config } from '~/types/general_config';
+const config: Config = configJson;
+import type { TranslatesCurrent } from "~/types/translates";
 
-interface Translations {
-  iso: string;
-  [key: string]: any;
-}
-
-export default async function loadTranslations(iso: string): Promise<Translations | undefined> {
+export default async function loadTranslations(iso: string): Promise<TranslatesCurrent | undefined> {
   let language = iso;
   const supported = config.languages;
 
   try {
-    if (!supported.includes(language)) {
+    if (!supported?.includes(language)) {
       language = 'en';
     }
 

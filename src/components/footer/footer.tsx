@@ -1,11 +1,13 @@
-import config from "~/config/config";
+import configJson from "~/config/general.json";
 import { component$, useContext } from "@builder.io/qwik";
 import { Link } from '@builder.io/qwik-city';
 import "./footer.scss";
+import type { Config } from "~/types/general_config";
 import { CTX_Translate } from '~/root';
-
 import rabrabyLogo from "/logo/rabraby-white.webp";
 import adanorLogo from "/adanor.svg";
+
+const config: Config = configJson;
 
 export default component$(() => {
   const translate = useContext(CTX_Translate);
@@ -32,7 +34,7 @@ export default component$(() => {
         </div>
 
         <div class="contact">
-          <b>{ translate?.current?.navigation?.contact ?? "Contact" }</b>
+          <b>{ translate.current.navigation.contact ?? "Contact" }</b>
           {
             Object.entries(config.contact).map(([key, {icon, base, link, blank, href}]) => (
               base && 
@@ -42,7 +44,7 @@ export default component$(() => {
                 href ? `${href}:${link}` : link
               }>
                 <i key={key} class={`bi bi-${icon}`}></i> {
-                  translate?.current?.contact?.[key] ?? link
+                  translate.current.contact[key] ?? link
                 }
               </a>
             ))

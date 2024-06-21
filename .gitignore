@@ -4,6 +4,8 @@
 *.jpeg
 *.mp4
 
+/src/media
+
 # Build
 /dist
 /lib

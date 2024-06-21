@@ -1,0 +1,15 @@
+.categories {
+    display: flex;
+    column-gap: 5px;
+    padding: 5px;
+    background-color: rgb(29, 29, 29);
+    height: 40px;
+    position: sticky;
+    top: 70px;
+    overflow: auto;
+    z-index: 10;
+
+    button.btn {
+        white-space: nowrap;
+    }
+}

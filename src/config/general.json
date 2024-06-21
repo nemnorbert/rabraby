@@ -67,5 +67,9 @@
             "IBAN": "HU85-10403112-50526587-67851007",
             "SWIFT": "OKHBHUHB"
         }
+    },
+    "menu": {
+        "categories": ["starters", "soups", "pastas", "fish", "readymeals", "grilled", "desserts"],
+        "allergy": ["gluten", "crustaceans", "eggs", "fish", "peanuts", "soy", "milk", "nuts", "celery", "mustard", "sesame", "sulfur", "lupin", "mollusks"]
     }
 }

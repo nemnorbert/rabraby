@@ -1,11 +1,19 @@
 import { component$, useStylesScoped$, useContext } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import style from "./mobilemenu.scss?inline";
-import config from '~/config/config';
+import configJson from '~/config/general.json';
+import type { Config } from '~/types/general_config';
 import { CTX_Translate } from '~/root';
-const menuItems = Object.entries(config.navigation);
 
-export default component$((props) => {
+const config: Config = configJson;
+const menuItems = Object.entries(config.navigation);
+interface Props {
+  isOpen: {
+    value?: boolean
+  };
+}
+
+export default component$((props: Props) => {
   useStylesScoped$(style);
   const translate = useContext(CTX_Translate);
   const location = useLocation();
@@ -21,7 +29,7 @@ export default component$((props) => {
                         class={location.url.pathname === value.link ? 'current' : undefined}
                         href={value.link}
                     >
-                        {translate?.current?.navigation?.[key] ?? key}
+                        {translate.current.navigation[key] ?? key}
                     </Link>
                 </button>
               ))

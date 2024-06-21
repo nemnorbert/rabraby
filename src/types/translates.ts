@@ -23,6 +23,7 @@ export interface TranslatesCurrent {
       gallery?: string;
       group?: string;
       contact?: string;
+      [key: string]: string | undefined;
     };
     home: {
       title: string;
@@ -40,10 +41,11 @@ export interface TranslatesCurrent {
       online: string;
     };
     contact: {
-      title: string;
-      map: string;
-      email: string;
-      card: string;
+      title?: string;
+      map?: string;
+      email?: string;
+      card?: string;
+      [key: string]: string | undefined;
     };
     company: {
       title?: string;
@@ -51,6 +53,7 @@ export interface TranslatesCurrent {
       reg?: string;
       bank?: string;
       bank_acc?: string;
+      [key: string]: string | undefined;
     };
     groups: {
       title?: string;
@@ -60,12 +63,15 @@ export interface TranslatesCurrent {
     };
     reviews: Review[];
     faq: {
-      title: string;
+      title?: string;
       questions: FAQ2[];
     };
     menu: {
       category: {
-        [key: string]: string;
+        [key: string]: string | undefined;
+      };
+      allergy: {
+        [key: string]: string | undefined;
       };
     };
 }

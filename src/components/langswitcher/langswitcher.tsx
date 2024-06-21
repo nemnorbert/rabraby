@@ -1,24 +1,26 @@
 import { component$, useStylesScoped$, useContext, $ } from '@builder.io/qwik';
 import style from "./langswitcher.scss?inline";
-import config from '~/config/config';
 import { CTX_Translate } from '~/root';
 import loadTranslations from '~/utils/loadTranslations';
-
-interface TranslateInterface {
-    current: {
-        iso: string
-    };
-}
+import configJson from '~/config/general.json';
+import type { Config } from '~/types/general_config';
+const config: Config = configJson;
+import type { Translates } from "~/types/translates";
 
 export default component$(() => {
     useStylesScoped$(style);
-    const translate: TranslateInterface = useContext(CTX_Translate);
-    const allLangs = config?.languages ?? [];
+    const translate: Translates = useContext(CTX_Translate);
+    const allLangs = config.languages ?? [];
 
-    const handleSwitchLang = $(async (e) => {
-        const lang = e.target.value;
+    const handleSwitchLang = $(async (e: Event) => {
+        const target = e.target as HTMLSelectElement;
+        const lang = target.value;
         const data = await loadTranslations(lang);
-        translate.current = data;
+        if (data) {
+            translate.current = data;
+          } else {
+            console.error('Failed to load translations');
+          }
     })
 
     return (

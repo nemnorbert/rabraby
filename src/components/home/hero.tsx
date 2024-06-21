@@ -1,12 +1,18 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import style from "./hero.scss?inline"
-import config from '~/config/config';
-
 import heroImage from "/home/hero.webp";
 import heroVideo from "/home/hero.mp4";
 import Alerts from "../alerts/alerts";
+import type { TranslatesCurrent } from "~/types/translates";
+import configJson from '~/config/general.json';
+import type { Config } from '~/types/general_config';
+const config: Config = configJson;
 
-export default component$((props) => {
+interface Props {
+  translate: TranslatesCurrent;
+}
+
+export default component$((props: Props) => {
   useStylesScoped$(style);
   const translate = props.translate;
   const welcomeArray = Object.entries(translate.home.buttons);
@@ -23,7 +29,7 @@ export default component$((props) => {
                   welcomeArray.map(([key, value]) => (
                     <button class="btn" key={key} 
                       onClick$={() => console.log("gomb:", key)}>
-                        <i class={`bi bi-${config.home.btns?.[key]}`}></i> {value}
+                        <i class={`bi bi-${config.home.btns[key]}`}></i> {value}
                     </button>
                   ))
                 }

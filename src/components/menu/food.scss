@@ -1,0 +1,61 @@
+@import 'src/sass-global.scss';
+$codeGap: 15px;
+
+.item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    transition: scale .25s;
+
+    @media (hover: hover) {
+        &:hover {
+            scale: .95;
+        }
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .media {
+        position: relative;
+        img {
+            border-radius: 1rem;
+            box-shadow: $shadow-1;
+            background-color: var(--primary-color);
+            aspect-ratio: 1/1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .code {
+            opacity: .5;
+            position: absolute;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 20px;
+            left: $codeGap;
+            top: $codeGap;
+        }
+    }
+    .buttons {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        
+        div {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            border-radius: 10px;
+            font-weight: bold;
+            padding: 10px;
+            font-size: 18px;
+        }
+        div:not(.huf) {
+            background-color: transparent;
+            border: solid var(--primary-color) 2px;
+            color: var(--primary-color);
+        }
+    }
+}

@@ -1,8 +1,15 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import style from "./allergy.scss?inline";
-import config from "~/config/menu.json"
+import configJson from '~/config/general.json';
+import type { Config } from '~/types/general_config';
+const config: Config = configJson;
+import type { TranslatesCurrent } from "~/types/translates";
 
-export default component$((props) => {
+interface Props {
+    translate: TranslatesCurrent;
+}
+
+export default component$((props: Props) => {
     useStylesScoped$(style);
     const translate = props.translate;
 
@@ -13,7 +20,7 @@ export default component$((props) => {
             </summary>
             <div class="content">
                 {
-                    config.allergy.map((value, key) => (
+                    config.menu.allergy.map((value, key) => (
                         <button key={key} class="item" data-allergen={value}>
                             {translate.menu.allergy[value]}
                         </button>

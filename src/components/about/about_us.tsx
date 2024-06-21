@@ -1,11 +1,7 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import style from "./reviews.scss?inline";
 
-interface Props {
-
-}
-
-export default component$((props: Props) => {
+export default component$(() => {
     useStylesScoped$(style);
 
     return (
