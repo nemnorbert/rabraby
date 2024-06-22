@@ -58,9 +58,15 @@ export default component$((props: Props) => {
                         <i class="bi bi-exclamation-triangle-fill"></i> { translate?.menu.allergy?.one ?? "" }
                     </div> 
                 }
-                <img height={400} width={400} src={`/src/media/foods/${code}_400px.webp`} alt="Image" />
+                <img 
+                    height={400} 
+                    width={400} 
+                    decoding="async"
+                    loading="lazy"
+                    src={`/src/media/foods/${code}_400px.webp`} 
+                    alt={menuJson.foods?.[code].en} />
             </div>
-            
+
             <div class="title">{ menuJson.foods?.[code]?.[iso] ?? menuJson.foods?.[code].en }</div>
             <div class="buttons">
                 <div class="huf">{toHuf(menuJson.menu[code].huf)}</div>

@@ -80,6 +80,7 @@
         color: var(--bg-color);
         transition: color $ani-time-1;
         text-shadow: $shadow-1;
+        max-height: 220px;
 
         h2 {
             text-transform: uppercase;

@@ -11,7 +11,7 @@ import configJson from '~/config/general.json';
 import type { Config } from '~/types/general_config';
 const config: Config = configJson;
 
-import ImgTeszt from '/public/menu/teszt.png?jsx';
+import HeroImage from '~/media/hero/food.png?jsx';
 
 export default component$(() => {
   useStylesScoped$(style);
@@ -28,16 +28,17 @@ export default component$(() => {
     <>
       <section>
         <div class="hero">
+          <HeroImage />
           <div class="food">
             <h1>Étlap</h1>
           </div>
           <div class="drink">
-            <h2>Itallap</h2>
+            <h2><i class="bi bi-cup-hot-fill"></i> Itallap</h2>
           </div>
         </div>
 
-        <Categories translate={translate.current} />
         <Allergy translate={translate.current} allergies={allergies} />
+        <Categories translate={translate.current} />
         <div class="menu">
           {
             config.menu.categories.map((value, key) => (

@@ -85,7 +85,8 @@
     gap: 1rem;
 
     .item {
-        background-color: white;
+        background-color: var(--bg-color);
+        transition: background-color $ani-time-1;
         border-radius: $border-size-main;
         padding: $gap-1;
         box-shadow: $shadow-1;
@@ -99,7 +100,7 @@
             font-size: 22px;
 
             .name {
-                color: var(--secundary-color);
+                color: var(--primary-color);
             }
             .price {
                 border: solid 2px var(--secundary-color);

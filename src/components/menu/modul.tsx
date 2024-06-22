@@ -21,24 +21,32 @@ export default component$((props: Props) => {
 
     return (
         code && <div class={code ? "modul open" : "modul"}>
-          <div class="close" onClick$={purgeClose}>Kilépés</div>
-          <div class="media">
-            <img src={`/src/media/foods/${code}_400px.webp`} alt="Image" />
-          </div>
-          <div class="title">
-            {menuJson.foods[code]?.hu}
-
-            {
-              allergy.length && 
-              <div class="allergens">
-                {
-                  allergy.map((item, key) => (
-                    <div key={key}>{item}</div>
-                  ))
-                }
+          <div class="box">
+            <div class="media">
+              <i class="bi bi-x-circle-fill close" onClick$={purgeClose}></i>
+              <img src={`/src/media/foods/${code}_400px.webp`} alt="Image" />
+            </div>
+            <div class="content">
+              <div class="title">
+                {menuJson.foods[code]?.hu}
               </div>
-            }
+
+              {
+                allergy.length && 
+                <div class="allergy">
+                  <div>ALERRGY</div>
+                  <div class="allergens">
+                    {
+                      allergy.map((item, key) => (
+                        <div key={key}>{item}</div>
+                      ))
+                    }
+                  </div>
+                </div>
+              }
+            </div>
           </div>
+          <div class="bg" onClick$={purgeClose}></div>
         </div>
     );
 });

@@ -17,8 +17,8 @@ export default component$((props: Props) => {
             <h2>Vélemények</h2>
             <div class="row">
                 { reviews &&
-                    reviews.map(({name, title, text}, key) => (
-                        <div key={key} class="card">
+                    reviews.map(({name, title, text}, index) => (
+                        <div key={`pure-${index}`} class="card">
                             <div class="content">{ text }</div>
                             <div class="name">{ name }</div>
                             <div class="title">{ title }</div>
@@ -26,8 +26,8 @@ export default component$((props: Props) => {
                     ))
                 }
                 { reviews && !pure &&
-                    reviews.map(({name, title, text}, key) => (
-                        <div key={key} class="card">
+                    reviews.map(({name, title, text}, index) => (
+                        <div key={`not-pure-${index}`} class="card">
                             <div class="content">{ text }</div>
                             <div class="name">{ name }</div>
                             <div class="title">{ title }</div>

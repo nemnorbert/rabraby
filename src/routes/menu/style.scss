@@ -1,6 +1,36 @@
+@import 'src/sass-global.scss';
+
 .hero {
-    min-height: 300px;
-    background-color: blue;
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+
+    .food {
+        position: absolute;
+        font-size: 50px;
+        color: white;
+        text-shadow: $shadow-1;
+    }
+    .drink {
+        font-size: 20px;
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        background-color: var(--primary-color);
+        color: var(--bg-color);
+        box-shadow: $shadow-1;
+        padding: 1rem;
+        border-radius: 1rem 0 0 1rem;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+    }
 }
 .content {
     min-height: 150vh;

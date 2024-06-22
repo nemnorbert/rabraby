@@ -1,3 +1,4 @@
+@import 'src/sass-global.scss';
 $color-1: rgb(29, 29, 29);
 
 .categories {
@@ -14,7 +15,16 @@ $color-1: rgb(29, 29, 29);
 
     button.btn {
         white-space: nowrap;
-        color: $color-1;
+        color: var(--bg-color);
+        transition: color $ani-time-1;
         cursor: pointer;
     }
 }
+
+@media only screen and (min-width: $max-width) {
+    .categories {
+        border-radius: 0 0 1rem 1rem;
+        margin-bottom: 1rem;
+    }
+}
+

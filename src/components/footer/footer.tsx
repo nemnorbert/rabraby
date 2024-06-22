@@ -4,7 +4,7 @@ import { Link } from '@builder.io/qwik-city';
 import "./footer.scss";
 import type { Config } from "~/types/general_config";
 import { CTX_Translate } from '~/root';
-import rabrabyLogo from "/logo/rabraby-white.webp";
+import logo from "~/media/assets/logo.svg?raw";
 import adanorLogo from "/adanor.svg";
 
 const config: Config = configJson;
@@ -26,10 +26,10 @@ export default component$(() => {
       </div>
 
       <div class="top">
-        <div>
-          <Link href='/' class="logo">
-            <img width="150" height="59" src={rabrabyLogo} alt="Logo of Rab Ráby" />
-          </Link>
+        <div class="logo">
+        <Link href='/' class="logo" style={`fill: white`}>
+                    <div dangerouslySetInnerHTML={logo}></div>
+                </Link>
           <div>anno 1982</div>
         </div>
 

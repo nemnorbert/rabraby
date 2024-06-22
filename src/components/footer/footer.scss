@@ -12,7 +12,7 @@ footer {
         padding: 1rem;
         a {
             font-size: 40px;
-            color: white;
+            color: var(--bg-color);
         }
     }
 
@@ -38,6 +38,11 @@ footer {
             letter-spacing: 3px;
         }
 
+        .logo {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
         .contact {
             display: flex;
             flex-direction: column;

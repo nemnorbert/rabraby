@@ -2,13 +2,12 @@
 import { component$, useStylesScoped$, useSignal, useContext } from '@builder.io/qwik';
 import { Link, useLocation } from "@builder.io/qwik-city";
 import { CTX_Translate } from '~/root';
-import { BsTelephoneFill } from "@qwikest/icons/bootstrap";
+import logo from '~/media/assets/logo.svg?raw';
 
-import ImgRabrabyBlack from '~/media/logo/rabraby-black.webp?jsx';
 import LangSwitcher from '~/components/langswitcher/langswitcher';
 import style from "./header.scss?inline";
 import MobileMenu from '../mobilemenu/mobilemenu';
-import DarkMode from '../darkSwitcher/dark';
+import DarkMode from '~/components/darkmode/darkmode';
 import configJson from '~/config/general.json';
 import type { Config } from '~/types/general_config';
 const config: Config = configJson;
@@ -23,15 +22,15 @@ export default component$(() => {
     return (<>
         <div class="topbar">
             { config.contact.phone.link ?
-                <a href={ "tel:" + config.contact.phone.link }>
-                    <BsTelephoneFill /> { config.contact.phone.link }
+                <a href={`tel:${config.contact.phone.link}`}>
+                    <i class="bi bi-telephone-fill"></i> { config.contact.phone.link }
                 </a> : ''
             }
         </div>
         <header>
             <div class="menu">
-                <Link href='/' class="logo">
-                    <ImgRabrabyBlack alt="Rab Ráby Logo" />
+                <Link href='/' class="logo" style={`fill: var(--text-color)`}>
+                    <div dangerouslySetInnerHTML={logo}></div>
                 </Link>
 
                 <div class="right">

@@ -23,10 +23,18 @@ $foodGap: 1rem;
     }
 }
 
-@media only screen and (min-width: $tablet-width) {
+@media only screen and (min-width: $laptop-width) {
     .category {
         .content {
             grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        }
+    }
+}
+
+@media only screen and (min-width: $max-width) {
+    .category {
+        .title {
+            border-radius: 1rem;
         }
     }
 }
