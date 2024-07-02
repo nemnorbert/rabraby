@@ -14,8 +14,7 @@ export default component$((props: Props) => {
     const translate = props.translate;
 
     const goToFood = $((category: string) => {
-      console.log(category);
-      const headerOffset = 110 - 1; // Height of your header
+      const headerOffset = 115; // Height of header
       const targetElement = document.getElementById(category);
       if (!targetElement) {
         console.error(`Element not found for selector: ${category}`);

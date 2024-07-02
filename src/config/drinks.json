@@ -1,0 +1,9 @@
+{
+    "drinks": {
+        "soft_drinks": [
+            {"en": "Pepsi Cola", "price": 750}
+        ]
+    },
+    "wines": {
+    }
+}

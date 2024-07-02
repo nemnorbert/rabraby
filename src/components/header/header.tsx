@@ -50,7 +50,9 @@ export default component$(() => {
                             }
                         </ul>
                     </nav>
-                    <DarkMode />
+                    <div class="dark">
+                        <DarkMode />
+                    </div>
                     <LangSwitcher />
                     <div class="mobile-toggle" onClick$={() => mobileIsOpen.value = true}>
                         <span></span><span></span><span></span>

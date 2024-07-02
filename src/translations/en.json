@@ -83,6 +83,9 @@
       ]
   },
   "menu": {
+    "title": "Menu",
+    "drink": "Drinks",
+    "wine": "Wines",
     "category": {
       "starters": "Starters",
       "soups": "Soups",
@@ -95,6 +98,7 @@
     "allergy": {
       "title": "Allergens",
       "one": "Allergy",
+      "text": "Selecting allergens",
 
       "gluten": "Gluten",
       "crustaceans": "Crustaceans",

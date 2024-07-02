@@ -24,7 +24,8 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik"
+    "qwik": "qwik",
+    "build-images": "node scripts/build-images.js"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.5.3",
@@ -37,6 +38,7 @@
     "eslint-plugin-qwik": "^1.5.3",
     "prettier": "^3.2.5",
     "sass": "^1.76.0",
+    "sharp": "^0.33.4",
     "typescript": "5.4.5",
     "undici": "*",
     "vite": "^5.2.10",

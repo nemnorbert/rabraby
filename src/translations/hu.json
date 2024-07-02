@@ -40,21 +40,16 @@
       "guide": "Csoport Segédlet",
       "reservation": "Foglalás (email küldése)",
       "faq": [
-        { "q": "Hány főtől számít csoportnak?",
-          "a": "-" },
-        { "q": "Mivel fizethetek?",
-          "a": "-" },
-        { "q": "Hogyan foglalhatok?",
-          "a": "-" },
-        { "q": "Miért euróban van feltüntetve az ár?",
-          "a": "-" },
-        { "q": "Hol tudok parkolni? Van busz parkoló a közelben?",
-          "a": "-" },
-        { "q": "Mennyivel előtte érdemes foglalni?",
-          "a": "-" },
-        { "q": "Mi a teendő ha van étel allergiás vendég is?",
-          "a": "-" }
-      ]
+        { "q": "Hány főtől számít csoportnak?", "a": "Minimum 15 főtől." },
+        { "q": "Hány különböző menüt kérhetek?", "a": "15 fő fölött tudjuk elkészíteni a menüket." },
+        { "q": "Mekkora az étterem kapacitása?", "a": "Maximum 90-100 fő beltérben és 25-30 fő a kertben." },
+        { "q": "Mivel fizethetek?", "a": "Készpénzzel, kártyával, átutalással és SZÉP kártyával." },
+        { "q": "Hogyan foglalhatok?", "a": "Telefonon a leggyorsabb, majd e-mailben is megerősítve, írásban." },
+        { "q": "Miért euróban van feltüntetve az ár?", "a": "Az elmúlt évek hiperinflációja miatt euróban szerepelnek az árak, amelyeket így egész évben tartani tudunk." },
+        { "q": "Van buszparkoló a közelben?", "a": "Igen, a 11-es főút melletti nagy parkoló, tőlünk kb. 7 perc sétára." },
+        { "q": "Mennyivel előtte érdemes foglalni?", "a": "Érdemes több héttel előtte lefoglalni, hogy biztosan legyen szabad hely." },
+        { "q": "Mi a teendő, ha van ételallergiás vendég is?", "a": "Fontos, hogy tudjunk róla, mert így az ételallergiások mást kaphatnak a csoportmenük helyett." }
+      ]      
     },
     "reviews": [
       {"name": "Novák Katalin", "title": "Magyarország Köztársasági Elnöke (2022-2024)", "text": "Köszönöm szépen, hogy egy fárasztó munkanapon, rövid időre megpihenhettünk itt, és igazi házias ízeket kóstoltunk."},
@@ -85,6 +80,9 @@
       ]
     },
     "menu": {
+      "title": "Étlap",
+      "drink": "Itallap",
+      "wine": "Borlap",
       "category": {
         "starters": "Előételek",
         "soups": "Levesek",

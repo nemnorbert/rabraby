@@ -67,6 +67,7 @@ export interface TranslatesCurrent {
       questions: FAQ2[];
     };
     menu: {
+      title?: string,
       category: {
         [key: string]: string | undefined;
       };

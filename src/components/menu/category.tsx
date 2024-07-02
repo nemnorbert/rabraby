@@ -3,6 +3,7 @@ import style from "./category.scss?inline";
 import type { TranslatesCurrent } from "~/types/translates";
 import Food from "./food";
 import menuJson from "~/config/menu.json";
+import type { Open } from "~/types/isOpen";
 //import configJson from '~/config/general.json';
 //import type { Config } from '~/types/general_config';
 //const config: Config = configJson;
@@ -13,9 +14,7 @@ interface Props {
     allergies: {
         selected: string[];
     };
-    isOpen: {
-        open?: string
-    };
+    isOpen: Open;
 }
 
 export default component$((props: Props) => {

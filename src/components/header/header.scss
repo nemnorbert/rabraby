@@ -94,6 +94,13 @@ header {
     }
 }
 
+@media only screen and (max-width: 350px) {
+    header {
+        .dark {
+            display: none;
+        }
+    }
+}
 @media only screen and (min-width: $laptop-width) {
     header {
         .menu {
@@ -103,6 +110,13 @@ header {
             .mobile-toggle {
                 display: none;
             }
+        }
+    }
+}
+@media only screen and (min-width: $max-width) {
+    header {
+        .menu {
+            padding: 0;
         }
     }
 }

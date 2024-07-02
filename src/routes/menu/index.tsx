@@ -19,10 +19,7 @@ export default component$(() => {
   const allergies = useStore({
     selected: []
   })
-  const isOpen = useStore({
-    open: "",
-    allergy: []
-  });
+  const isOpen = useStore({ open: "", allergy: [], price: "" });
 
   return (
     <>
@@ -30,11 +27,15 @@ export default component$(() => {
         <div class="hero">
           <HeroImage />
           <div class="food">
-            <h1>Étlap</h1>
+            <h1>{translate.current.menu.title}</h1>
           </div>
-          <div class="drink">
-            <h2><i class="bi bi-cup-hot-fill"></i> Itallap</h2>
-          </div>
+          {
+            /*
+            <div class="drink">
+              <h2><i class="bi bi-cup-hot-fill"></i> {translate.current.menu.drink}</h2>
+            </div>
+            */
+          }
         </div>
 
         <Allergy translate={translate.current} allergies={allergies} />
