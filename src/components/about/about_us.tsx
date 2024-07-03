@@ -1,13 +1,30 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import style from "./reviews.scss?inline";
+import style from "./about_us.scss?inline";
 
-export default component$(() => {
+interface Props {
+    translate: {
+        text?: string
+    }
+}
+
+export default component$((props: Props) => {
     useStylesScoped$(style);
+    const translates = props.translate;
 
     return (
-        <div>
-            <p>Az éttermet még a vasfüggöny fennállásának idején Németh János és családja alapította 1982-ben. Nevét Jókai Mór Rab Ráby című regénye főhőséről kapta, aki Szentendrén élt és II. József idején oroszlánrészt vállalt a korrupció elleni küzdelemben.
-            Az épület, amiből az étterem lett kialakítva, több, mint 100 évvel ezelőtt még kovácsműhelyként működött. Egy néprajzi tárlaton túl, ritka érdekességek is találhatóak az étteremben.</p>
+        <div class="about">
+            <div class="text">
+                <h2>Rólunk</h2>
+                <p>{translates.text}</p>
+            </div>
+            <div class="media">
+                <video src="/hero_video/group.mp4" 
+                    loop={true} 
+                    autoplay={true} 
+                    muted={true} 
+                    playsInline={true} 
+                />
+            </div>
         </div>
     );
 });

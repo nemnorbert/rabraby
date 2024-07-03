@@ -37,22 +37,19 @@
   },
   "groups": {
     "title": "Menu for Groups 2024",
-    "guide": "Group Guide",
+    "guide": "Guide",
     "reservation": "Reservation (send an email)",
     "faq": [
-      { "q": "From how many people is it considered a group?",
-        "a": "-" },
-      { "q": "How can I pay?",
-        "a": "-" },
-      { "q": "How can I make a reservation?",
-        "a": "-" },
-      { "q": "Why is the price displayed in euros?",
-        "a": "-" },
-      { "q": "Where can I park? Is there a bus parking nearby?",
-        "a": "-" },
-      { "q": "How far in advance should I book?",
-        "a": "-" }
-    ]
+      { "q": "From how many people is it considered a group?", "a": "A minimum of 15 people." },
+      { "q": "How many different menus can I order?", "a": "We can prepare menus for more than 15 people." },
+      { "q": "What is the capacity of the restaurant?", "a": "A maximum of 90-100 people indoors and 25-30 people in the garden." },
+      { "q": "What payment methods are accepted?", "a": "Cash, card and bank transfer." },
+      { "q": "How can I make a reservation?", "a": "The simplest way is to write us an email detailing the specifics" },
+      { "q": "Why are the prices listed in euros?", "a": "Due to hyperinflation in recent years, prices are listed in euros to maintain consistency throughout the year." },
+      { "q": "Is there a bus parking nearby?", "a": "Yes, there is a large parking lot next to the main road 11, about a 7-minute walk from us." },
+      { "q": "How far in advance should I book?", "a": "It's advisable to book several weeks in advance to ensure availability." },
+      { "q": "What should I do if there is a guest with a food allergy?", "a": "It's important to inform us so that guests with food allergies can receive alternative dishes instead of the group menus." }
+    ]    
   },  
   "reviews": [
     {"name": "Katalin Novák", "title": "President of Hungary (2022-2024)", "text": "Thank you for allowing us to rest here for a short time on a tiring workday and taste genuine homemade flavors."},
@@ -115,5 +112,8 @@
       "lupin": "Lupin",
       "mollusks": "Mollusks"
     }
-  }
+  },
+  "about": {
+    "text": "The restaurant was founded by János Németh and his family in 1982, during the time of the Iron Curtain. It was named after the hero of Mór Jókai's novel, Rab Ráby, who lived in Szentendre and played a key role in fighting corruption during the reign of Joseph II. The building, which was converted into the restaurant, functioned as a blacksmith's workshop over 100 years ago. In addition to an ethnographic exhibition, the restaurant also features rare curiosities."
+  }  
 }

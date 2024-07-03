@@ -12,7 +12,7 @@ interface Props {
 }
 
 // Functions
-export function generateSrcSet(imageName: string, sizes: number[], format: string = 'webp'): string {
+function generateSrcSet(imageName: string, sizes: number[], format: string = 'webp'): string {
   return sizes.map(size => `/foods/${imageName}-${size}.${format} ${size}w`).join(', ');
 }
 
@@ -46,14 +46,14 @@ export default component$((props: Props) => {
               <div class="price">{ price }</div>
               { props.isOpen.open &&
                 <img 
-                    height={200} 
-                    width={200} 
-                    decoding="async"
-                    loading="lazy"
-                    src={`/foods/${code}-200.webp`} 
-                    srcset={srcSet}
-                    sizes={sizesAttr}
-                    alt="" 
+                  height={200} 
+                  width={200} 
+                  decoding="async"
+                  loading="lazy"
+                  src={`/foods/${code}-200.webp`} 
+                  srcset={srcSet}
+                  sizes={sizesAttr}
+                  alt="" 
                 />
               }
             </div>

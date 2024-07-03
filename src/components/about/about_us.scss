@@ -1,0 +1,40 @@
+@import 'src/sass-global.scss';
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    & > div {
+        grid-column: span 12;
+        padding: 2rem;
+        display: flex;
+        row-gap: 1rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text {
+        font-size: 22px;
+        line-height: 28px;
+        text-align: justify;
+
+        h2 {
+            text-transform: uppercase;
+        }
+    }
+    .media {
+        video {
+            border-radius: $border-size-main;
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: $laptop-width) {
+    .about {
+        & > div {
+            grid-column: span 6;
+        }
+    }
+}

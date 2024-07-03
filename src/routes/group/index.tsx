@@ -3,8 +3,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import { CTX_Translate } from '~/root';
 import style from "./style.scss?inline";
 import groupMenu from "~/config/groups.json";
-import heroVideo from "~/media/groups/video.mp4";
-import heroImage from "~/media/groups/head.webp";
+import Hero from "~/components/hero/hero";
 
 export default component$(() => {
   useStylesScoped$(style);
@@ -14,18 +13,8 @@ export default component$(() => {
 
   return (
     <>
+      <Hero title={translates.current.groups.title} video={true} bottom={true} image="group" />
       <div class="container">
-        <div class="hero">
-          <div class="title">
-            <h1>{translates.current.groups.title ?? "Groups"}</h1>
-          </div>
-          <div class="media">
-            { false ? 
-              <img src={heroImage} alt="" /> : 
-              <video src={heroVideo} loop={true} autoplay={true} poster={heroImage} muted={true} playsInline={true} />
-            }
-          </div>
-        </div>
         <div class="menu">
           <div class="content">
             {
@@ -51,7 +40,7 @@ export default component$(() => {
         </div>
 
         <div class="guide">
-          <h2>{ translates.current.groups.guide }</h2>
+          <h2><i class="bi bi-person-raised-hand"></i> { translates.current.groups.guide }</h2>
           {
             translates.current.groups.faq.map(({q, a}, key) => (
               <details key={key}>

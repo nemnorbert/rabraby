@@ -21,7 +21,7 @@ interface Props {
 // Functions
 export function generateSrcSet(imageName: string, sizes: number[], format: string = 'webp'): string {
     return sizes.map(size => `/foods/${imageName}-${size}.${format} ${size}w`).join(', ');
-} 
+}
 
 export default component$((props: Props) => {
     useStylesScoped$(style);

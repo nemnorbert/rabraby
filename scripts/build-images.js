@@ -6,9 +6,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const sizes = [200, 400, 800];
-const inDir = path.join(__dirname, '..', 'src', 'media', 'foods');
-const outDir = path.join(__dirname, '..', 'public', 'foods');
+const sizes = [200, 400, 800, 1000, 1200, 1500];
+const inDir = path.join(__dirname, '..', 'src', 'media', 'hero');
+const outDir = path.join(__dirname, '..', 'public', 'hero');
 
 async function generateImages() {
     console.log("Input directory:", inDir);
@@ -47,10 +47,10 @@ async function generateImages() {
                 sharp(filePath)
                     .resize({
                         width: size,
-                        height: size,
-                        fit: sharp.fit.cover
+                        //height: size,
+                        //fit: sharp.fit.cover
                     })
-                    .toFormat('webp') // Kimeneti formátum beállítása
+                    .toFormat('webp')
                     .toFile(path.join(outDir, `${filename}-${size}.webp`))
                     .then(() => console.log(`Generated ${filename}-${size}.webp`))
                     .catch(err => console.error(`Error resizing image ${file} to size ${size}:`, err))

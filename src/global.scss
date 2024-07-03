@@ -13,11 +13,13 @@
   --text-color: black;
   --bg-color: white;
   --bg-color-2: rgba(255, 255, 255, 0.9);
+  --bg-color-3: rgba(19, 19, 19, 0.4);
 }
 html.dark {
   --text-color: rgb(218, 218, 218);
   --bg-color: rgb(34, 34, 34);
   --bg-color-2: rgba(28, 28, 28, 0.9);
+  --bg-color-3: rgba(28, 28, 28, 0.8);
 }
 
 html {

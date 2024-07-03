@@ -12,43 +12,6 @@
         padding: 1rem;
         grid-column: span 12;
     }
-    .title {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-image: linear-gradient(transparent, rgba(36, 36, 36, 0.884));
-        z-index: 1;
-        padding: 1rem;
-        h1 {
-            font-size: 45px;
-            text-transform: uppercase;
-            text-shadow: $shadow-1;
-        }
-    }
-    .hero {
-        grid-row: 1;
-        min-height: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        background-image: linear-gradient(transparent, #15151563);
-        color: white;
-        align-items: flex-start;
-        position: relative;
-        overflow: hidden;
-
-        .media {
-            position: absolute;
-            inset: 0;
-
-            image, video {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-    }
     .menu {
         grid-row: 2;
         background-color: var(--primary-color);
@@ -62,21 +25,23 @@
         grid-row: 3;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         row-gap: 5px;
-
+        font-weight: bold;
+        text-shadow: $shadow-1;
+        
         h2 {
-            font-size: 30px;
+            font-size: 35px;
             text-transform: uppercase;
             text-align: center;
             padding: 1rem;
         }
         details {
+            color: var(--bg-color);
             background-color: var(--primary-color);
+            transition: color $ani-time-1;
             padding: 10px 15px;
             border-radius: 5px;
             summary {
-                font-weight: bold;
                 font-size: 1.1em;
             }
             p {
@@ -121,34 +86,16 @@
             display: flex;
             flex-direction: column;
             row-gap: 5px;
+            font-weight: bold;
+            line-height: 1.2em;
         }
     }
 }
 
-@media only screen and (min-width: $laptop-width) {
-    .container {
-        padding: 1rem 0;
-        row-gap: 1rem;
-        .hero, .guide {
-            grid-column: span 6;
-            grid-row: 1;
-        }
-        .hero {
-            margin-left: 1rem;
-            border-radius: 1rem;
-        }
-        .guide {
-            padding: 2rem;
-        }
-        .menu {
-            grid-row: 2;
-        }
-    }
-}
 @media only screen and (min-width: $max-width) {
     .container {
         .menu {
-            border-radius: $border-size-main;
+            border-radius: 0 0 $border-size-main $border-size-main;
         }
     }
 }

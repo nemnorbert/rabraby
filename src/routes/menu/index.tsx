@@ -9,35 +9,19 @@ import type { Translates } from "~/types/translates";
 import style from "./style.scss?inline";
 import configJson from '~/config/general.json';
 import type { Config } from '~/types/general_config';
+import Hero from "~/components/hero/hero";
 const config: Config = configJson;
-
-import HeroImage from '~/media/hero/food.png?jsx';
 
 export default component$(() => {
   useStylesScoped$(style);
   const translate: Translates = useContext(CTX_Translate);
-  const allergies = useStore({
-    selected: []
-  })
+  const allergies = useStore({ selected: [] })
   const isOpen = useStore({ open: "", allergy: [], price: "" });
 
   return (
     <>
       <section>
-        <div class="hero">
-          <HeroImage />
-          <div class="food">
-            <h1>{translate.current.menu.title}</h1>
-          </div>
-          {
-            /*
-            <div class="drink">
-              <h2><i class="bi bi-cup-hot-fill"></i> {translate.current.menu.drink}</h2>
-            </div>
-            */
-          }
-        </div>
-
+        <Hero title={translate.current.menu.title} image="food" bottom={true} />
         <Allergy translate={translate.current} allergies={allergies} />
         <Categories translate={translate.current} />
         <div class="menu">
