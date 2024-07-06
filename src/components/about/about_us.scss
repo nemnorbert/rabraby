@@ -27,6 +27,8 @@
         video {
             border-radius: $border-size-main;
             width: 100%;
+            border: none;
+            box-shadow: $shadow-1;
         }
     }
 }

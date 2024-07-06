@@ -18,12 +18,7 @@ export default component$((props: Props) => {
                 <p>{translates.text}</p>
             </div>
             <div class="media">
-                <video src="/hero_video/group.mp4" 
-                    loop={true} 
-                    autoplay={true} 
-                    muted={true} 
-                    playsInline={true} 
-                />
+                <video src="/promo_video/promo_1.mp4" poster="/hero/contact-800.webp" controls playsInline preload="none" />
             </div>
         </div>
     );

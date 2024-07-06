@@ -3,7 +3,7 @@
 .hero {
     position: relative;
     height: 500px;
-    max-height: 50vh;
+    max-height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,6 +17,7 @@
 
     h1 {
         font-size: 50px;
+        line-height: 56px;
         z-index: 1;
     }
     img, video {

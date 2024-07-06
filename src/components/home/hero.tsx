@@ -53,12 +53,11 @@ export default component$((props: Props) => {
 
         <div class="reservation">
           <h2>{ translate.reservation.title }</h2>
-          <p>{ translate.reservation.phone }:</p>
           <a class="phone" href={ "tel:" + config.contact.phone.link }>
             <i class="bi bi-telephone-fill"></i>
             { config.contact.phone.link }
           </a>
-          <p>{ translate.reservation.online }:</p>
+          <p>Online:</p>
           <div class="social">
             {
               Object.entries(config.contact).map(([key, value]) => (
