@@ -1,4 +1,73 @@
+@import 'src/sass-global.scss';
+
 .wifi {
-    padding: 1rem;
-    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    & > * {
+        grid-column: span 12;
+    }
+
+    .welcome {
+        position: relative;
+        height: 500px;
+        max-height: 40vh;
+        font-weight: bold;
+        text-transform: uppercase;
+        
+        .title {
+            position: absolute;
+            backdrop-filter: blur(5px);
+            z-index: 1;
+            left: 0;
+            top: 0;
+            right: 0;
+            padding: 1rem;
+            background-color: rgba(43, 107, 226, 0.8);
+            background-image: linear-gradient(transparent, rgba(31, 31, 31, 0.356));
+            color: var(--bg-color);
+            line-height: 1.5em;
+        }
+        video {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        padding: 1rem;
+
+        & > * {
+            padding: 1rem;
+            background-color: rgba(15, 15, 15, 0.842);
+            border-radius: $border-size-main;
+            text-transform: uppercase;
+            font-size: 22px;
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (min-width: $laptop-width) {
+    .wifi {
+        padding: 1rem;
+        & > * {
+            grid-column: span 6;
+        }
+        .welcome {
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+    }
+}
+
+@media only screen and (min-width: $max-width) {
+    .wifi {
+        padding-top: 1rem;
+    }
 }

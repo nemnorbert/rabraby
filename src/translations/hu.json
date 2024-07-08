@@ -8,6 +8,9 @@
       "group": "Csoport",
       "contact": "Kapcsolat"
     },
+    "wifi": {
+      "title": "Üdvözlünk a wifi hálózatunkon"
+    },
     "home": {
       "title": "Rab Ráby Étterem, Szentendre",
       "description": "Szeretettel várunk szentendrei éttermünkben, a belvárosban. Finom ételek, régiségek, lélegzetelállító beltér és kedvező árak, 1982 óta.",
