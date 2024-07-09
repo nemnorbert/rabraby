@@ -9,7 +9,7 @@
       "contact": "Kapcsolat"
     },
     "wifi": {
-      "title": "Üdvözlünk a wifi hálózatunkon"
+      "title": "Használd ingyenes wifi hálózatunk"
     },
     "home": {
       "title": "Rab Ráby Étterem, Szentendre",
@@ -23,8 +23,7 @@
     },
     "reservation": {
       "title": "Asztalfoglalás",
-      "phone": "Foglalj asztalt telefonon",
-      "online": "vagy online"
+      "online": "online foglalás"
     },
     "contact": {
       "title": "Kapcsolat",
@@ -54,14 +53,17 @@
         { "q": "Mi a teendő, ha van ételallergiás vendég is?", "a": "Fontos, hogy tudjunk róla, mert így az ételallergiások mást kaphatnak a csoportmenük helyett." }
       ]      
     },
-    "reviews": [
-      {"name": "Novák Katalin", "title": "Magyarország Köztársasági Elnöke (2022-2024)", "text": "Köszönöm szépen, hogy egy fárasztó munkanapon, rövid időre megpihenhettünk itt, és igazi házias ízeket kóstoltunk."},
-      {"name": "Balogh Levente", "title": "A vízkirály, Üzletember, Befektető","text": "Köszönjük a hangulatos vendéglátást!"},
-      {"name": "Moldován András", "title": "Sertésmogul, Befektető, Cápa", "text": "Nagy örömmel vacsoráztunk itt!"},
-      {"name": "Varga Mária", "text": "Belépve mint egy archív múzeumba lépnénk és mégis nagyon otthonos érzése támad az embernek. A személyzet gyors, figyelmes, az ételek kiválóak. Nagyon jól éreztük magunkat ajánljuk mindenkinek!"},
-      {"name": "Molnár Gábor", "text": "A Rab Ráby Étterem egy igazi gyöngyszem! Az étlap széles választékot kínál, és az ételek mindig frissek és kiváló minőségűek. Mindig találok valami finomat a menüből, és a desszertek is isteniek!"},
-      {"name": "Kovács Éva", "text": "Ismét egy élmény volt. Az étel remek, a kiszolgálás jó, az étterem atmoszférája pedig varázslatos. Nekem egy picit nosztalgikus idejárni, mert a férjemmel itt volt az első randevúnk."}
-    ],
+    "reviews": {
+      "title": "Vélemények",
+      "people": [
+        {"name": "Novák Katalin", "title": "Magyarország Köztársasági Elnöke (2022-2024)", "text": "Köszönöm szépen, hogy egy fárasztó munkanapon, rövid időre megpihenhettünk itt, és igazi házias ízeket kóstoltunk."},
+        {"name": "Balogh Levente", "title": "A vízkirály, Üzletember, Befektető","text": "Köszönjük a hangulatos vendéglátást!"},
+        {"name": "Moldován András", "title": "Sertésmogul, Befektető, Cápa", "text": "Nagy örömmel vacsoráztunk itt!"},
+        {"name": "Varga Mária", "text": "Belépve mint egy archív múzeumba lépnénk és mégis nagyon otthonos érzése támad az embernek. A személyzet gyors, figyelmes, az ételek kiválóak. Nagyon jól éreztük magunkat ajánljuk mindenkinek!"},
+        {"name": "Molnár Gábor", "text": "A Rab Ráby Étterem egy igazi gyöngyszem! Az étlap széles választékot kínál, és az ételek mindig frissek és kiváló minőségűek. Mindig találok valami finomat a menüből, és a desszertek is isteniek!"},
+        {"name": "Kovács Éva", "text": "Ismét egy élmény volt. Az étel remek, a kiszolgálás jó, az étterem atmoszférája pedig varázslatos. Nekem egy picit nosztalgikus idejárni, mert a férjemmel itt volt az első randevúnk."}
+      ]
+    },
     "faq": {
       "title": "Gyakran Ismételt Kérdések",
       "questions":

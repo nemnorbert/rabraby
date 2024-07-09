@@ -45,6 +45,7 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        font-weight: bold;
         gap: 10px;
         & > * {
             border-radius: $border-size-main;

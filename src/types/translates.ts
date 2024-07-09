@@ -25,6 +25,9 @@ export interface TranslatesCurrent {
       contact?: string;
       [key: string]: string | undefined;
     };
+    wifi?: {
+      title?: string;
+    },
     home: {
       title: string;
       description: string;
@@ -37,7 +40,6 @@ export interface TranslatesCurrent {
     };
     reservation: {
       title: string;
-      phone: string;
       online: string;
     };
     contact: {
@@ -61,7 +63,10 @@ export interface TranslatesCurrent {
       reservation?: string;
       faq: FAQ[];
     };
-    reviews: Review[];
+    reviews: {
+      title?: string;
+      people?: Review[]
+    };
     faq: {
       title?: string;
       questions: FAQ2[];
@@ -75,6 +80,9 @@ export interface TranslatesCurrent {
         [key: string]: string | undefined;
       };
     };
+    about?: {
+      text?: string;
+    }
 }
 
 export interface Translates {

@@ -12,7 +12,7 @@ export default async function loadTranslations(iso: string): Promise<TranslatesC
       language = 'en';
     }
 
-    const translations = await import(/* @vite-ignore */ `../translations/${language}.json`);
+    const translations = await import(/* @vite-ignore */ `../locales/${language}.json`);
 
     if (!translations || !translations.default || !translations.default.iso) {
       throw new Error(`Translation file for ${language} is missing or invalid`);

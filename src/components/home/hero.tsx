@@ -57,12 +57,16 @@ export default component$((props: Props) => {
             <i class="bi bi-telephone-fill"></i>
             { config.contact.phone.link }
           </a>
-          <p>Online:</p>
+          <p>{translate.reservation.online || "Online"}:</p>
           <div class="social">
             {
               Object.entries(config.contact).map(([key, value]) => (
-                value.social && 
-                <a key={key} href={value.link} target="_blank">
+                value.reservation && 
+                <a 
+                  key={key} 
+                  href={value.href ? `${value.href}:${value.link}` : value.link}
+                  target={value.href ? undefined : "_blank"}
+                >
                   <i class={`bi bi-${value.icon}`}></i>
                 </a>
               ))

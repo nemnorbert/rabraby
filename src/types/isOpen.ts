@@ -3,4 +3,5 @@ export type Open = {
     title?: string;
     allergy?: string[];
     price: any;
+    danger?: boolean;
 };

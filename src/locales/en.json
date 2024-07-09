@@ -3,10 +3,13 @@
   "navigation": {
     "home": "Home",
     "menu": "Menu",
-    "about": "About",
+    "about": "About Us",
     "gallery": "Gallery",
     "group": "Group",
     "contact": "Contact"
+  },
+  "wifi": {
+    "title": "Enjoy the wifi"
   },
   "home": {
     "title": "Rab Ráby Restaurant, Szentendre",
@@ -20,8 +23,7 @@
   },
   "reservation": {
     "title": "Reservation",
-    "phone": "Book a table by phone",
-    "online": "or online"
+    "online": "online reservation"
   },
   "contact": {
     "title": "Contact",
@@ -50,15 +52,18 @@
       { "q": "How far in advance should I book?", "a": "It's advisable to book several weeks in advance to ensure availability." },
       { "q": "What should I do if there is a guest with a food allergy?", "a": "It's important to inform us so that guests with food allergies can receive alternative dishes instead of the group menus." }
     ]    
-  },  
-  "reviews": [
-    {"name": "Katalin Novák", "title": "President of Hungary (2022-2024)", "text": "Thank you for allowing us to rest here for a short time on a tiring workday and taste genuine homemade flavors."},
-    {"name": "Levente Balogh", "title": "Water King, Businessman, Investor","text": "Thank you for the cozy hospitality!"},
-    {"name": "András Moldován", "title": "Pork Mogul, Investor, Shark", "text": "We had a great dinner here with pleasure!"},
-    {"name": "Mária Varga", "text": "Entering feels like stepping into an archival museum yet a very homely feeling arises. The staff is quick, attentive, and the food is excellent. We had a great time and recommend it to everyone!"},
-    {"name": "Gábor Molnár", "text": "Rab Ráby Restaurant is a true gem! The menu offers a wide selection, and the dishes are always fresh and of excellent quality. I always find something delicious on the menu, and the desserts are divine too!"},
-    {"name": "Éva Kovács", "text": "It was once again an experience. The food is great, the service is good, and the atmosphere of the restaurant is magical. It's a bit nostalgic for me to come here because it was where my husband and I had our first date."}
-  ],
+  },
+  "reviews": {
+    "title": "Reviews",
+    "people": [
+      {"name": "Katalin Novák", "title": "President of Hungary (2022-2024)", "text": "Thank you for allowing us to rest here for a short time on a tiring workday and taste genuine homemade flavors."},
+      {"name": "Levente Balogh", "title": "Water King, Businessman, Investor","text": "Thank you for the cozy hospitality!"},
+      {"name": "András Moldován", "title": "Pork Mogul, Investor, Shark", "text": "We had a great dinner here with pleasure!"},
+      {"name": "Mária Varga", "text": "Entering feels like stepping into an archival museum yet a very homely feeling arises. The staff is quick, attentive, and the food is excellent. We had a great time and recommend it to everyone!"},
+      {"name": "Gábor Molnár", "text": "Rab Ráby Restaurant is a true gem! The menu offers a wide selection, and the dishes are always fresh and of excellent quality. I always find something delicious on the menu, and the desserts are divine too!"},
+      {"name": "Éva Kovács", "text": "It was once again an experience. The food is great, the service is good, and the atmosphere of the restaurant is magical. It's a bit nostalgic for me to come here because it was where my husband and I had our first date."}
+    ]
+  },
   "faq": {
     "title": "Frequently Asked Questions",
     "questions":

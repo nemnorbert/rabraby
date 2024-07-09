@@ -8,7 +8,7 @@ import { RouterHead } from "./components/router-head/router-head";
 import "./global.scss";
 import type { Translates } from "~/types/translates";
 export const CTX_Translate = createContextId<Translates>('CTX_Translate');
-import loadTranslations from "./utils/loadTranslations";
+import loadTranslations from "./utils/loadLocales";
 
 // Import Translation Data
 const language = "hu";

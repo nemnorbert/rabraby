@@ -1,7 +1,7 @@
 import { component$, useStylesScoped$, useContext, $ } from '@builder.io/qwik';
 import style from "./langswitcher.scss?inline";
 import { CTX_Translate } from '~/root';
-import loadTranslations from '~/utils/loadTranslations';
+import loadTranslations from '~/utils/loadLocales';
 import configJson from '~/config/general.json';
 import type { Config } from '~/types/general_config';
 const config: Config = configJson;

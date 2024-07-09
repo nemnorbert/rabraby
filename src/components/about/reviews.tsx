@@ -1,20 +1,22 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import style from "./reviews.scss?inline";
-import type { Review } from "~/types/translates";
+import type { TranslatesCurrent } from "~/types/translates";
+import configJson from "~/config/general.json"
 
 interface Props {
     pure?: boolean;
-    reviews?: Review[];
+    translate: TranslatesCurrent;
 }
 
 export default component$((props: Props) => {
     useStylesScoped$(style);
     const pure = props.pure;
-    const reviews = props.reviews;
+    const title = props.translate.reviews.title;
+    const reviews = props.translate.reviews.people;
 
     return (
         <div id="reviews" class={pure ? 'pure' : undefined}>
-            <h2>Vélemények</h2>
+            <h2>{title}</h2>
             <div class="row">
                 { reviews &&
                     reviews.map(({name, title, text}, index) => (
@@ -36,12 +38,12 @@ export default component$((props: Props) => {
                 }
             </div>
             <div class="rating">
-                <div>Google <i class="bi bi-star-fill"></i>
+                <a href={configJson.contact.map.link} target="_blank">Google <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-half"></i>
-                </div>
+                </a>
             </div>
         </div>
     );

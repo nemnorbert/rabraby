@@ -16,7 +16,7 @@ export default component$(() => {
   useStylesScoped$(style);
   const translate: Translates = useContext(CTX_Translate);
   const allergies = useStore({ selected: [] })
-  const isOpen = useStore({ open: "", allergy: [], price: "" });
+  const isOpen = useStore({ open: "", allergy: [], price: "", danger: false });
 
   return (
     <>

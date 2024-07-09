@@ -1,4 +1,5 @@
 {
+    "stars": ["003", "702"],
     "menu": {
         "003": {"huf": 3300, "allergy": [1,3,7], "category": "starters"},
         "004": {"huf": 2790, "allergy": [1,3,7,10], "category": "starters"},

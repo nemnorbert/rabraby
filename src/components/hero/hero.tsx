@@ -1,5 +1,6 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import style from "./hero.scss?inline";
+import { buildSrcSet, buildSizes } from "~/utils/buildImages";
 
 interface Props {
     title?: string;
@@ -8,24 +9,15 @@ interface Props {
     video?: boolean;
 }
 
-// Functions
-function generateSrcSet(imageName: string, sizes: number[], format: string = 'webp'): string {
-    return sizes.map(size => `/hero/${imageName}-${size}.${format} ${size}w`).join(', ');
-}
-function generateSizes(sizes: number[]): string {
-    return sizes.map(size => `(max-width: ${size}px) ${size}px`).join(', ') + ', 100vw';
-}
-const sizes = [200, 400, 800, 1000, 1200, 1500];
-
-
 export default component$((props: Props) => {
     useStylesScoped$(style);
+    const sizes = [200, 400, 800, 1000, 1200, 1500];
     const title = props.title || "";
     const bottom = props.bottom;
     const image = props.image;
     const video = props.video;
-    const srcSet = generateSrcSet(image, sizes);
-    const sizesAttr = generateSizes(sizes);
+    const srcSet = buildSrcSet(image, sizes, ['hero']);
+    const sizesAttr = buildSizes(sizes);
 
   return (
     <div class={ bottom ? "hero" : "hero round"}>

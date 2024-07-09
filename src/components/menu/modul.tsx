@@ -2,6 +2,7 @@ import { component$, useStylesScoped$, useContext, $ } from "@builder.io/qwik";
 import menuJson from "~/config/menu.json";
 import { CTX_Translate } from '~/root';
 import style from "./modul.scss?inline";
+import { buildSrcSet, buildSizes } from "~/utils/buildImages";
 import type { Menu } from "~/types/menu_config";
 import type { Open } from "~/types/isOpen";
 
@@ -9,15 +10,6 @@ const menuData: Menu = menuJson;
 
 interface Props {
   isOpen: Open;
-}
-
-// Functions
-function generateSrcSet(imageName: string, sizes: number[], format: string = 'webp'): string {
-  return sizes.map(size => `/foods/${imageName}-${size}.${format} ${size}w`).join(', ');
-}
-
-function generateSizes(sizes: number[]): string {
-  return sizes.map(size => `(max-width: ${size}px) ${size}px`).join(', ') + ', 100vw';
 }
 
 export default component$((props: Props) => {
@@ -28,15 +20,17 @@ export default component$((props: Props) => {
     const price = props.isOpen.price || "";
     const lang = translate.current.iso;
     const title = menuData.foods[code]?.[lang] || menuData.foods[code]?.en || "";
+    const danger = props.isOpen.danger;
 
     const sizes = [200, 400, 800];
-    const srcSet = generateSrcSet(code, sizes);
-    const sizesAttr = generateSizes(sizes);
+    const srcSet = buildSrcSet(code, sizes, ['foods']);
+    const sizesAttr = buildSizes(sizes);
 
     const purgeClose = $(() => {
       props.isOpen.open = "";
-      props.isOpen.allergy = [];
       props.isOpen.price = "";
+      props.isOpen.allergy = [];
+      props.isOpen.danger = false;
     });
 
     return (
@@ -44,6 +38,9 @@ export default component$((props: Props) => {
           <div class="box">
             <div class="media">
               <div class="price">{ price }</div>
+              {
+                danger && <div class="allergy_alert">{ translate.current.menu.allergy.one }</div>
+              }
               { props.isOpen.open &&
                 <img 
                   height={200} 
