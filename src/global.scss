@@ -9,6 +9,7 @@
 :root {
   --primary-color: hsl(34, 49%, 63%);
   --primary-color-2: hsla(34, 49%, 63%, .8);
+  --primary-color-3: hsla(34, 49%, 63%, .2);
   --secundary-color: hsl(35, 28%, 39%);
   --text-color: black;
   --bg-color: white;
@@ -62,6 +63,10 @@ main {
   margin: 0 auto;
 }
 
+h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+}
 a {
   text-decoration: none;
   color: var(--primary-color);

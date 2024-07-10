@@ -1,4 +1,11 @@
 @import 'src/sass-global.scss';
+.price_alert {
+    color: var(--primary-color);
+    padding: 1rem;
+    line-height: 1.3em;
+    text-align: center;
+    font-weight: bold;
+}
 
 .hero {
     position: relative;

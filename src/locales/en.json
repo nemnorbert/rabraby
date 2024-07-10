@@ -85,9 +85,18 @@
       ]
   },
   "menu": {
-    "title": "Menu",
-    "drink": "Drinks",
-    "wine": "Wines",
+    "drink": {
+      "title": "Drinks"
+    },
+    "wine": {
+      "title": "Wines"
+    },
+    "food": {
+      "title": "Menu",
+      "stars": "Featured dishes",
+      "show": "Show menu",
+      "price": "Prices are for informational purposes only! Errors may occur, and the prices listed on our printed menu are official!"
+    },
     "category": {
       "starters": "Starters",
       "soups": "Soups",

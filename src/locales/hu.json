@@ -85,9 +85,18 @@
       ]
     },
     "menu": {
-      "title": "Étlap",
-      "drink": "Itallap",
-      "wine": "Borlap",
+      "drink": {
+        "title": "Itallap"
+      },
+      "wine": {
+        "title": "Borlap"
+      },
+      "food": {
+        "title": "Étlap",
+        "stars": "Kiemelt ételek",
+        "show": "Étlap megtekintése",
+        "price": "Az árak tájékoztató jellegűek, előfordulhatnak hibák. A nyomtatott étlapunkon szereplő árak a hivatalosak!"
+      },
       "category": {
         "starters": "Előételek",
         "soups": "Levesek",

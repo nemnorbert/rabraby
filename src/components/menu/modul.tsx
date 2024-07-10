@@ -1,36 +1,34 @@
 import { component$, useStylesScoped$, useContext, $ } from "@builder.io/qwik";
 import menuJson from "~/config/menu.json";
 import { CTX_Translate } from '~/root';
+import { CTX_FoodModule } from '~/root';
 import style from "./modul.scss?inline";
 import { buildSrcSet, buildSizes } from "~/utils/buildImages";
 import type { Menu } from "~/types/menu_config";
-import type { Open } from "~/types/isOpen";
 
 const menuData: Menu = menuJson;
 
-interface Props {
-  isOpen: Open;
-}
-
-export default component$((props: Props) => {
+export default component$(() => {
     useStylesScoped$(style);
     const translate = useContext(CTX_Translate);
-    const code = props.isOpen.open ?? "";
-    const allergy = props.isOpen.allergy ?? [];
-    const price = props.isOpen.price || "";
+    const foodModule = useContext(CTX_FoodModule);
+
+    const code = foodModule.code || "";
+    const allergy = foodModule.allergy || [];
+    const price = foodModule.price || "";
+    const danger = foodModule.isDanger;
     const lang = translate.current.iso;
     const title = menuData.foods[code]?.[lang] || menuData.foods[code]?.en || "";
-    const danger = props.isOpen.danger;
 
     const sizes = [200, 400, 800];
     const srcSet = buildSrcSet(code, sizes, ['foods']);
     const sizesAttr = buildSizes(sizes);
 
     const purgeClose = $(() => {
-      props.isOpen.open = "";
-      props.isOpen.price = "";
-      props.isOpen.allergy = [];
-      props.isOpen.danger = false;
+      foodModule.code = null;
+      foodModule.price = "";
+      foodModule.allergy = [];
+      foodModule.isDanger = false;
     });
 
     return (
@@ -41,7 +39,7 @@ export default component$((props: Props) => {
               {
                 danger && <div class="allergy_alert">{ translate.current.menu.allergy.one }</div>
               }
-              { props.isOpen.open &&
+              { foodModule.code &&
                 <img 
                   height={200} 
                   width={200} 

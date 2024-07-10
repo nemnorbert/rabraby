@@ -72,7 +72,18 @@ export interface TranslatesCurrent {
       questions: FAQ2[];
     };
     menu: {
-      title?: string,
+      drink?: {
+        title?: string;
+      };
+      wine?: {
+        title?: string;
+      };
+      food?: {
+        title?: string;
+        stars?: string;
+        show?: string;
+        price?: string
+      };
       category: {
         [key: string]: string | undefined;
       };
