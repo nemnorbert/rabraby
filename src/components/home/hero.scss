@@ -131,3 +131,10 @@
         }
     }
 }
+
+@media only screen and (min-width: $max-width) {
+    #home {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+}

@@ -3,10 +3,6 @@ type Alert = {
     message: string;
 };
   
-type NavigationLink = {
-    link: string;
-};
-  
 type ContactInfo = {
     link: string;
     icon: string;
@@ -31,13 +27,16 @@ export type Config = {
     alerts?: {
       [key: string]: Alert[];
     };
+    paths: {
+      [key: string]: {
+        path: string;
+        main?: boolean;
+      };
+    };
     home: {
       btns: {
         [key: string]: string;
       };
-    };
-    navigation: {
-      [key: string]: NavigationLink;
     };
     contact: {
       map: ContactInfo;

@@ -10,8 +10,9 @@ import MobileMenu from '../mobilemenu/mobilemenu';
 import DarkMode from '~/components/darkmode/darkmode';
 import configJson from '~/config/general.json';
 import type { Config } from '~/types/general_config';
+
 const config: Config = configJson;
-const menuItems = Object.entries(config.navigation);
+const menuItems = Object.entries(config.paths);
 
 export default component$(() => {
     useStylesScoped$(style);
@@ -38,10 +39,10 @@ export default component$(() => {
                         <ul>
                             {
                                 menuItems.map(([key, value]) => (
-                                    <li key={key}>
+                                    value.main && <li key={key}>
                                         <Link 
-                                            class={location.url.pathname === value.link ? 'current' : undefined}
-                                            href={value.link}
+                                            class={location.url.pathname === value.path ? 'current' : undefined}
+                                            href={value.path}
                                         >
                                             {translate.current.navigation[key] ?? key}
                                         </Link>

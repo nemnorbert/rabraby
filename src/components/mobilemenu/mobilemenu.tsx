@@ -6,7 +6,7 @@ import type { Config } from '~/types/general_config';
 import { CTX_Translate } from '~/root';
 
 const config: Config = configJson;
-const menuItems = Object.entries(config.navigation);
+const menuItems = Object.entries(config.paths);
 interface Props {
   isOpen: {
     value?: boolean
@@ -24,10 +24,10 @@ export default component$((props: Props) => {
         <nav>
             {
               menuItems.map(([key, value]) => (
-                <button key={key} onClick$={() => props.isOpen.value = false}>
+                value.main && <button key={key} onClick$={() => props.isOpen.value = false}>
                     <Link 
-                        class={location.url.pathname === value.link ? 'current' : undefined}
-                        href={value.link}
+                        class={location.url.pathname === value.path ? 'current' : undefined}
+                        href={value.path}
                     >
                         {translate.current.navigation[key] ?? key}
                     </Link>

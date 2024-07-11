@@ -25,7 +25,7 @@ export default component$((props: Props) => {
                 alerts.map((item, key: number) => (
                     (item.color && item.message) &&
                     <div key={key} class={item.color}>
-                        {item.message}
+                        <i class="bi bi-chat-dots-fill"></i> {item.message}
                     </div>
                 ))
             }

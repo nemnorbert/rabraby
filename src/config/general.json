@@ -2,8 +2,17 @@
     "languages": ["hu", "en"],
     "alerts": {
         "hu": [
-            {"color": "green", "message": "Üdvözöljük új weboldalunkon!"}
+            {"color": "blue", "message": "Üdvözlünk új weboldalunkon"}
         ]
+    },
+
+    "paths": {
+        "home": { "path":"/", "main": true },
+        "menu": { "path": "/menu/", "main": true },
+        "about": { "path": "/about/", "main": true },
+        "group": { "path": "/group/", "main": true },
+        "contact": { "path": "/contact/", "main": true },
+        "wifi": { "path": "/contact/", "main": false }
     },
     
     "home": {
@@ -14,13 +23,6 @@
             "wifi": "wifi",
             "parking": "p-circle-fill"
         }
-    },
-    "navigation": {
-        "home": { "link":"/" },
-        "menu": { "link": "/menu/" },
-        "about": { "link": "/about/" },
-        "group": { "link": "/group/" },
-        "contact": { "link": "/contact/" }
     },
     "contact": {
         "map": {

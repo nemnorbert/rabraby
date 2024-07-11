@@ -3,21 +3,30 @@ import {
   QwikCityProvider,
   RouterOutlet,
   ServiceWorkerRegister,
+  useLocation
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.scss";
-import loadTranslations from "./utils/loadLocales";
+import loadLocales from "./utils/loadLocales";
+import config from "~/config/general.json";
 import type { Translates } from "~/types/translates";
 import type { FoodModuleType } from "~/types/food_module";
 export const CTX_Translate = createContextId<Translates>('CTX_Translate');
 export const CTX_FoodModule = createContextId<FoodModuleType>('CTX_FoodModule');
 
 // Import Translation Data
-const language = "hu";
-const importedTranslation = await loadTranslations(language);
+const language = "en";
+const importedTranslation = await loadLocales(language);
 
 export default component$(() => {
+
+  /*
+  const loc = useLocation();
+  const locale = loc.url.pathname.split('/')[1] || '';
+  const isLang = config.languages.includes(locale)
+  console.log(isLang ? `nyelv kiválasztva: ${locale}` : null);
+  */
 
   // Translate CTX
   const translate = useStore({
@@ -42,9 +51,21 @@ export default component$(() => {
         <RouterHead />
         <ServiceWorkerRegister />
       </head>
-      <body lang={translate.current?.iso ?? "en"}>
+      <body lang={translate.current?.iso}>
         <RouterOutlet />
+        <InnerComponent />
       </body>
     </QwikCityProvider>
+  );
+});
+
+const InnerComponent = component$(() => {
+  const loc = useLocation();
+  const locale = loc.url.pathname.split('/')[1] || '';
+  const isLang = config.languages.includes(locale);
+  console.log(isLang ? `nyelv kiválasztva: ${locale}` : null);
+
+  return (
+    // A tartalom ami a helyhez kapcsolódik
   );
 });

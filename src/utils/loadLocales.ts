@@ -21,6 +21,6 @@ export default async function loadTranslations(iso: string): Promise<TranslatesC
     return translations.default;
   } catch (error) {
     console.error('Error with language import:', error);
-    return undefined;
+    return;
   }
 }
