@@ -18,24 +18,24 @@ export default component$(() => {
                 <video src="/home/hero.mp4" loop={true} autoplay={true} muted={true} playsInline={true} />
             </div>
             <div class="box">
-                <div class="menu">
+                <div>
                     <Link href="/menu">
-                        <h2><i class="bi bi-cup-hot-fill"></i> Étlap</h2>
+                        <h2><i class="bi bi-cup-hot-fill"></i> {translates.current.navigation.menu}</h2>
                     </Link>
                 </div>
-                <div class="about">
-                    <Link href="/menu">
-                        <h2><i class="bi bi-person-circle"></i> Rólunk</h2>
+                <div>
+                    <Link href="/about">
+                        <h2><i class="bi bi-person-circle"></i> {translates.current.navigation.about}</h2>
                     </Link>
                 </div>
-                <div class="about">
-                    <Link href="/menu">
-                        <h2><i class="bi bi-people-fill"></i> Csoport</h2>
+                <div>
+                    <Link href="/group">
+                        <h2><i class="bi bi-people-fill"></i> {translates.current.navigation.group}</h2>
                     </Link>
                 </div>
-                <div class="about">
-                    <Link href="/menu">
-                        <h2><i class="bi bi-telephone-fill"></i> Kapcsolat</h2>
+                <div>
+                    <Link href="/contact">
+                        <h2><i class="bi bi-telephone-fill"></i> {translates.current.navigation.contact}</h2>
                     </Link>
                 </div>
             </div>

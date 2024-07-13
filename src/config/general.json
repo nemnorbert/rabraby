@@ -12,7 +12,8 @@
         "about": { "path": "/about/", "main": true },
         "group": { "path": "/group/", "main": true },
         "contact": { "path": "/contact/", "main": true },
-        "wifi": { "path": "/contact/", "main": false }
+        "wifi": { "path": "/contact/", "main": false },
+        "tenders": { "path": "/tenders/", "main": false }
     },
     
     "home": {

@@ -6,7 +6,7 @@ import "./szechenyi.scss";
 export default component$(() => {
 
   return (
-    <Link id="szechenyi" href="/">
+    <Link id="szechenyi" href="/tenders">
       <img width="250" height="175" src={szechenyi} alt="Logo of Szechenyi2020" />
     </Link>
   );
