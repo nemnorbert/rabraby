@@ -8,8 +8,8 @@ import Hero from "~/components/hero/hero";
 export default component$(() => {
   useStylesScoped$(style);
   const translates = useContext(CTX_Translate);
-  const allFood = groupMenu.food;
-  const lang = translates.current.iso;
+  const allFood: any = groupMenu.food;
+  const lang = translates.current.iso || 'en';
 
   return (
     <>

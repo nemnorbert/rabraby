@@ -1,5 +1,9 @@
 {
   "iso": "en",
+  "open":{
+    "title": "Open Hours",
+    "days": ["m", "tu", "w", "th", "f", "sa", "su"]
+  },
   "navigation": {
     "home": "Home",
     "menu": "Menu",

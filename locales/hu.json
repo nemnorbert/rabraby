@@ -1,5 +1,9 @@
 {
     "iso": "hu",
+    "open":{
+      "title": "Nyitvatartás",
+      "days": ["h", "k", "sze", "cs", "p", "szo", "v"]
+    },
     "navigation": {
       "home": "Főoldal",
       "menu": "Étlap",

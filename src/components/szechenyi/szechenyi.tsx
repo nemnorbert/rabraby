@@ -1,7 +1,7 @@
-import szechenyi from '/szechenyi.png';
 import { component$ } from "@builder.io/qwik";
 import { Link } from '@builder.io/qwik-city';
 import "./szechenyi.scss";
+const szechenyi = '/szechenyi.png';
 
 export default component$(() => {
 

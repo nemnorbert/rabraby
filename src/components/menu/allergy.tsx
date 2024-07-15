@@ -17,7 +17,7 @@ export default component$((props: Props) => {
     const translate = props.translate;
     const allergies = props.allergies.selected;
 
-    const controllAllergy = $((value?: string) => {
+    const controllAllergy = $((value: string) => {
         if (!allergies.includes(value)) {
             allergies.push(value)
         } else {
@@ -29,7 +29,7 @@ export default component$((props: Props) => {
         <details class="allergy">
             <summary>
                 <span>{translate.menu.allergy.title}</span>
-                <p>{translate.menu.allergy?.text}</p>
+                <p>{translate.menu.allergy.text}</p>
             </summary>
             <div class="content">
                 {

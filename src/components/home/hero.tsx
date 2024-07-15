@@ -1,11 +1,11 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import style from "./hero.scss?inline"
-import heroImage from "/home/hero.webp";
-import heroVideo from "/home/hero.mp4";
 import Alerts from "../alerts/alerts";
+import OpenHours from "./open_hours";
 import type { TranslatesCurrent } from "~/types/translates";
 import configJson from '~/config/general.json';
 import type { Config } from '~/types/general_config';
+
 const config: Config = configJson;
 
 interface Props {
@@ -16,6 +16,9 @@ export default component$((props: Props) => {
   useStylesScoped$(style);
   const translate = props.translate;
   const welcomeArray = Object.entries(translate.home.buttons);
+
+  const heroImage = "/home/hero.webp";
+  const heroVideo = "/home/hero.mp4";
 
   return (
     <section id="home">
@@ -36,19 +39,14 @@ export default component$((props: Props) => {
               </div>
           </div>
           <div class="media">
-            { false ? 
-              <img src={heroImage} alt="" /> : 
+            {  
               <video src={heroVideo} loop={true} autoplay={true} poster={heroImage} muted={true} playsInline={true} />
             }
           </div>
         </div>
 
-        <div class="important">
-          Étlap
-        </div>
-
         <div class="opentime">
-          Nyitvatartás
+          <OpenHours />
         </div>
 
         <div class="reservation">

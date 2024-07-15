@@ -1,0 +1,52 @@
+@import 'src/sass-global.scss';
+
+$gap1: 7px;
+
+.open_hours {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    height: 100%;
+    text-align: center;
+    
+    .title {
+        font-weight: bold;
+        padding: 1rem;
+        text-transform: uppercase;
+        font-size: 24px;
+    }
+    .content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        overflow: auto;
+        gap: $gap1;
+        padding: $gap1;
+
+        & > * {
+            display: flex;
+            row-gap: $gap1;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        & > :not(.info) {
+            background-color: var(--bg-color);
+            background-image: linear-gradient(transparent, rgba(14, 14, 14, 0.096));
+            color: var(--text-color);
+            border-radius: calc($border-size-main - $gap1);
+            padding: 10px;
+            
+            .d {
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 1.2em;
+            }
+        }
+        .info {
+            font-size: 50px;
+        }
+        .closed {
+            opacity: .5;
+        }
+    }
+}

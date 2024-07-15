@@ -1,5 +1,4 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { BsQuestionCircleFill, BsTelephoneFill, BsBuildingsFill } from "@qwikest/icons/bootstrap";
 import style from "./contact.scss?inline";
 import configJson from "~/config/general.json";
 import type { Config } from "~/types/general_config";
@@ -22,7 +21,7 @@ export default component$((props: Props) => {
 
             <div id="contact">
                 <div class="title">
-                    <BsTelephoneFill /><br />
+                    <i class="bi bi-telephone-fill"></i><br />
                     {translate.navigation.contact ?? "Contact"}
                 </div>
 
@@ -42,7 +41,7 @@ export default component$((props: Props) => {
 
             <div id="faq">
                 <div class="title">
-                    <BsQuestionCircleFill /><br />
+                    <i class="bi bi-question-circle-fill"></i><br />
                     {faq.title ?? "Faq"}
                 </div>
                 {faq.questions.map(({question, answer}, key) => (
@@ -56,7 +55,7 @@ export default component$((props: Props) => {
 
             <div id="company">
                 <div class="title">
-                    <BsBuildingsFill /><br />
+                    <i class="bi bi-buildings-fill"></i><br />
                     {translate.company.title ?? "Company"}
                 </div>
                 <b>{ config.company.name }</b>

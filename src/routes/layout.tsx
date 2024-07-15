@@ -1,6 +1,5 @@
 import { component$, Slot, useContext, useTask$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
-import { isServer } from '@builder.io/qwik/build';
 import type { RequestHandler, DocumentHead } from "@builder.io/qwik-city";
 
 import Header from "../components/header/header";
@@ -29,8 +28,8 @@ export const useTranslationLoader = routeLoader$(async (requestEvent) => {
   const lang = checkLang(pathname, userLang);
   const translateData = await loadLocales(lang);
   const metaData = {
-    title: translateData?.home.title || 'Rab Ráby', 
-    description: translateData?.home.title || ''
+    title: 'Rab Ráby Restaurant, Szentendre', 
+    description: translateData?.home.description || ''
   }
 
   return { lang, translateData, metaData };

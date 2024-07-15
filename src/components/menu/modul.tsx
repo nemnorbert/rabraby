@@ -17,7 +17,7 @@ export default component$(() => {
     const allergy = foodModule.allergy || [];
     const price = foodModule.price || "";
     const danger = foodModule.isDanger;
-    const lang = translate.current.iso;
+    const lang = translate.current.iso || 'en';
     const title = menuData.foods[code]?.[lang] || menuData.foods[code]?.en || "";
 
     const sizes = [200, 400, 800];

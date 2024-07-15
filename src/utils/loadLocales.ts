@@ -1,26 +1,34 @@
 import configJson from '~/config/general.json';
 import type { Config } from '~/types/general_config';
-const config: Config = configJson;
 import type { TranslatesCurrent } from "~/types/translates";
 
-export default async function loadTranslations(iso: string): Promise<TranslatesCurrent | undefined> {
-  let language = iso;
-  const supported = config.languages;
+const config: Config = configJson;
 
-  try {
+export default function loadTranslations(iso?: string): Promise<TranslatesCurrent | undefined> {
+  return new Promise((resolve, reject) => {
+    let language = iso || 'en'; 
+    const supported = config.languages;
+    const path = 'http://localhost:3000/';
+
     if (!supported?.includes(language)) {
       language = 'en';
     }
 
-    const translations = await import(/* @vite-ignore */ `../locales/${language}.json`);
+    const url = `${path}locales/${language}.json`;
 
-    if (!translations || !translations.default || !translations.default.iso) {
-      throw new Error(`Translation file for ${language} is missing or invalid`);
-    }
-
-    return translations.default;
-  } catch (error) {
-    console.error('Error with language import:', error);
-    return;
-  }
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Nem sikerült letölteni a(z) ${language} nyelvű fordítási fájlt`);
+        }
+        return response.json();  // JSON formátumra alakítjuk a választ
+      })
+      .then(translations => {
+        resolve(translations);  // Sikeres letöltés esetén visszaadjuk a fordításokat
+      })
+      .catch(error => {
+        console.error('Hiba fordítás letöltése közben:', error);  // Hiba esetén hibakezelés
+        reject(error);
+      });
+  });
 }

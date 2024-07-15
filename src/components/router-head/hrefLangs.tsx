@@ -7,10 +7,10 @@ export default component$((props: any) => {
     if (!urlData) {
         return null;
     }
-
+    
     const pathName = urlData.pathname.split('/').slice(1, -1);
     const isUrlLang = config.languages.includes(pathName[0]);
-    const endpath = isUrlLang ? pathName[1] : pathName[0];
+    const endpath = (isUrlLang ? pathName[1] : pathName[0]) || '';
     
     return (
     <>

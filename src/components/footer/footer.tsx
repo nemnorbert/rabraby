@@ -5,9 +5,9 @@ import "./footer.scss";
 import type { Config } from "~/types/general_config";
 import { CTX_Translate } from '~/root';
 import logo from "~/media/assets/logo.svg?raw";
-import adanorLogo from "/adanor.svg";
 
 const config: Config = configJson;
+const adanorLogo = "/adanor.svg";
 
 export default component$(() => {
   const translate = useContext(CTX_Translate);

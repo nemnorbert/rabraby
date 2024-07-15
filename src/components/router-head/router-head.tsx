@@ -13,7 +13,7 @@ export const RouterHead = component$(() => {
       <link rel="canonical" href={loc.url.href} />
       <HrefLangs url={loc.url} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="icon" href="/favicon.ico" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
       {head.meta.map((m) => (

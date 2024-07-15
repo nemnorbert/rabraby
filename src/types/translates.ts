@@ -15,7 +15,11 @@ interface FAQ {
 }
   
 export interface TranslatesCurrent {
-    iso: string;
+    iso?: string;
+    open: {
+      title: string;
+      days: string[];
+    };
     navigation: {
       home?: string;
       menu?: string;

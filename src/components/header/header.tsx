@@ -20,6 +20,11 @@ export default component$(() => {
     const translate = useContext(CTX_Translate);
     const location = useLocation();
 
+    const langPath = location.url.pathname.split('/')[1] || '';
+    const isUrlLang = config.languages?.includes(langPath);
+    const pathname = location.url.pathname;
+    const pathResult = !isUrlLang ? pathname : pathname.slice(3);
+
     return (<>
         <div class="topbar">
             { config.contact.phone.link ?
@@ -41,7 +46,7 @@ export default component$(() => {
                                 menuItems.map(([key, value]) => (
                                     value.main && <li key={key}>
                                         <Link 
-                                            class={location.url.pathname === value.path ? 'current' : undefined}
+                                            class={pathResult === value.path ? 'current' : undefined}
                                             href={value.path}
                                         >
                                             {translate.current.navigation[key] ?? key}
