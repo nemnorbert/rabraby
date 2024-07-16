@@ -21,8 +21,8 @@ export default component$((props: Props) => {
 
             <div id="contact">
                 <div class="title">
-                    <i class="bi bi-telephone-fill"></i><br />
-                    {translate.navigation.contact ?? "Contact"}
+                    <i class="bi bi-telephone-fill"></i>
+                    <div>{translate.navigation.contact ?? "Contact"}</div>
                 </div>
 
                 {
@@ -41,8 +41,8 @@ export default component$((props: Props) => {
 
             <div id="faq">
                 <div class="title">
-                    <i class="bi bi-question-circle-fill"></i><br />
-                    {faq.title ?? "Faq"}
+                    <i class="bi bi-question-circle-fill"></i>
+                    <div>{faq.title ?? "Faq"}</div>
                 </div>
                 {faq.questions.map(({question, answer}, key) => (
                     <details key={key}>
@@ -55,8 +55,8 @@ export default component$((props: Props) => {
 
             <div id="company">
                 <div class="title">
-                    <i class="bi bi-buildings-fill"></i><br />
-                    {translate.company.title ?? "Company"}
+                    <i class="bi bi-buildings-fill"></i>
+                    <div>{translate.company.title ?? "Company"}</div>
                 </div>
                 <b>{ config.company.name }</b>
                 {

@@ -1,35 +1,26 @@
-import configJson from '~/config/general.json';
-import type { Config } from '~/types/general_config';
+import config from '~/config/general.json';
 import type { TranslatesCurrent } from "~/types/translates";
+const supportedLanguages = Object.keys(config.langs);
 
-const config: Config = configJson;
+async function loadTranslations(iso = "en"): Promise<TranslatesCurrent | undefined> {
+  try {
+    const lang = supportedLanguages.includes(iso) ? iso : 'en';
+    const baseUrl = getBaseUrl();
+    const url = `${baseUrl}/locales/${lang}.json`;
 
-export default function loadTranslations(iso?: string): Promise<TranslatesCurrent | undefined> {
-  return new Promise((resolve, reject) => {
-    let language = iso || 'en'; 
-    const supported = config.languages;
-    //const baseUrl = process.env.NODE_ENV === 'production' ? 'https://test.adanor.eu/' : 'http://localhost:5173/';
-    const baseUrl = process.env.NODE_ENV === 'production' ? 'https://rabraby.hu/' : 'http://localhost:5173/';
-
-    if (!supported?.includes(language)) {
-      language = 'en';
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Nem sikerült letölteni a(z) ${lang} nyelvű fordítási fájlt`);
     }
-
-    const url = `${baseUrl}locales/${language}.json`;
-
-    fetch(url)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`Nem sikerült letölteni a(z) ${language} nyelvű fordítási fájlt`);
-        }
-        return response.json();
-      })
-      .then(translations => {
-        resolve(translations);
-      })
-      .catch(error => {
-        console.error('Hiba fordítás letöltése közben:', error);
-        reject(error);
-      });
-  });
+    return await response.json();
+  } catch (error) {
+    console.error('Error when importing lang JSON:', error);
+    throw error;
+  }
 }
+
+function getBaseUrl(): string {
+  return process.env.NODE_ENV === 'production' ? 'https://rabraby.hu' : 'http://localhost:5173';
+}
+
+export default loadTranslations;

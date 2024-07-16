@@ -2,8 +2,9 @@
 
 #home {
     display: grid;
+    align-items: start;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: auto 1fr;
     padding: $gap-1;
     row-gap: $gap-1;
     max-width: $max-width;

@@ -9,6 +9,7 @@ import { RouterHead } from "./components/router-head/router-head";
 import "./global.scss";
 import type { Translates } from "~/types/translates";
 import type { FoodModuleType } from "~/types/food_module";
+import langBase from "../locales/en.json";
 export const CTX_Translate = createContextId<Translates>('CTX_Translate');
 export const CTX_FoodModule = createContextId<FoodModuleType>('CTX_FoodModule');
 
@@ -17,7 +18,7 @@ export const CTX_FoodModule = createContextId<FoodModuleType>('CTX_FoodModule');
 export default component$(() => {
 
   // Translate CTX
-  const translate: any = useStore({current: {}});
+  const translate: any = useStore({current: langBase});
   useContextProvider(CTX_Translate, translate);
 
   // Food Module CTX

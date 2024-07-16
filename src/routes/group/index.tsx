@@ -10,12 +10,19 @@ export default component$(() => {
   const translates = useContext(CTX_Translate);
   const allFood: any = groupMenu.food;
   const lang = translates.current.iso || 'en';
+  const supportedLanguages = ['hu', 'en'];
+  const thisYear = "2024";
 
   return (
     <>
-      <Hero title={translates.current.groups.title} video={true} bottom={true} image="group" />
+      <Hero title={`${translates.current.groups.title} ${thisYear}`} video={true} bottom={true} image="group" />
       <div class="container">
         <div class="menu">
+          { !supportedLanguages.includes(lang) &&
+            <div class="alert">
+              <i class="bi bi-translate"></i> This part of the site is not translated into this language
+            </div>
+          }
           <div class="content">
             {
               Object.entries(groupMenu.menu).map(([key, {price, food}]) => (
@@ -28,7 +35,7 @@ export default component$(() => {
                     {
                       Object.entries(food).map(([key, {name}]) => (
                         <li key={key}>
-                          {allFood?.[name]?.[lang] ?? "?"}
+                          {allFood?.[name]?.[lang] ?? allFood?.[name]?.['en'] ?? "?"}
                         </li>
                       ))
                     }
@@ -56,11 +63,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Rab Ráby",
-  meta: [
-    {
-      name: "description",
-      content: "Rab Ráby Restaurant",
-    },
-  ],
+  title: "Rab Ráby"
 };

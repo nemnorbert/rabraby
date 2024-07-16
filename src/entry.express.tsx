@@ -1,12 +1,3 @@
-/*
- * WHAT IS THIS FILE?
- *
- * It's the entry point for the Express HTTP server when building for production.
- *
- * Learn more about Node.js server integrations here:
- * - https://qwik.dev/docs/deployments/node/
- *
- */
 import {
   createQwikCity,
   type PlatformNode,
@@ -29,7 +20,7 @@ const distDir = join(fileURLToPath(import.meta.url), "..", "..", "dist");
 const buildDir = join(distDir, "build");
 
 // Allow for dynamic port
-const PORT = process.env.PORT ?? 3000;
+const PORT = process.env.PORT ?? 5173;
 
 // Create the Qwik City Node middleware
 const { router, notFound } = createQwikCity({
@@ -47,11 +38,11 @@ const { router, notFound } = createQwikCity({
 });
 
 // Create the express server
-// https://expressjs.com/
 const app = express();
 
 // Enable gzip compression
 app.use(compression());
+app.disable('x-powered-by');
 
 // Static asset handlers
 // https://expressjs.com/en/starter/static-files.html

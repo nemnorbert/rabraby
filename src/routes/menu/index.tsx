@@ -38,11 +38,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Rab Ráby Étlap",
-  meta: [
-    {
-      name: "description",
-      content: "Rab Ráby Restaurant",
-    },
-  ],
+  title: "Rab Ráby Étlap"
 };

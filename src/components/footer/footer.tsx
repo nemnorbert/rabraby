@@ -27,9 +27,9 @@ export default component$(() => {
 
       <div class="top">
         <div class="logo">
-        <Link href='/' class="logo" style={`fill: white`}>
-                    <div dangerouslySetInnerHTML={logo}></div>
-                </Link>
+          <Link href='/' class="logo" style={`fill: white`}>
+            <div dangerouslySetInnerHTML={logo}></div>
+          </Link>
           <div>anno 1982</div>
         </div>
 
@@ -60,7 +60,7 @@ export default component$(() => {
         <div class="creator">
           <div>powered by</div>
           <a href="https://adanor.eu" target="_blank">
-            <img width="120" height="21" src={adanorLogo} alt="" />
+            <img width="120" height="21" src={adanorLogo} alt="Logo of the Website's Developer" />
           </a>
         </div>
       </div>

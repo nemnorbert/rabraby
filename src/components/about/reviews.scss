@@ -1,5 +1,8 @@
 @import 'src/sass-global.scss';
 
+$card-width: 270px;
+$card-margin: 30px;
+
 #reviews {
     width: 100%;
     max-width: $max-width;
@@ -25,8 +28,8 @@
         .card {
             border-radius: $border-size-main;
             background-color: var(--bg-color-2);
-            min-width: 370px;
-            margin-left: 30px;
+            min-width: $card-width;
+            margin-left: $card-margin;
             padding: 1rem;
             display: flex;
             flex-direction: column;
@@ -59,24 +62,7 @@
         }
     }
     @keyframes animateRow {
-        to { translate: calc(-6 * 400px); }
-    }
-
-    &::before, &::after {
-        content: "";
-        position: absolute;
-        width: clamp(20px, 20%, 100px);
-        top: 0;
-        bottom: 0;
-        z-index: 1;
-    }
-    &::before {
-        left: 0;
-        background-image: linear-gradient(to right, var(--primary-color), transparent);
-    }
-    &::after {
-        right: 0;
-        background-image: linear-gradient(to left, var(--primary-color), transparent);
+        to { translate: calc(-6 * ($card-width + $card-margin)); }
     }
 }
 #reviews.pure {

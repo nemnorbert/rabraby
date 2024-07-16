@@ -1,0 +1,130 @@
+{
+    "iso": "fr",
+    "open": {
+      "title": "Heures d'ouverture",
+      "days": ["l", "ma", "me", "j", "v", "s", "d"]
+    },
+    "navigation": {
+      "home": "Accueil",
+      "menu": "Menu",
+      "about": "À propos",
+      "gallery": "Galerie",
+      "group": "Groupe",
+      "contact": "Contact",
+      "tenders": "Appels d'offres"
+    },
+    "wifi": {
+      "title": "Connecté avec succès"
+    },
+    "home": {
+      "title": "Restaurant Rab Ráby, Szentendre",
+      "description": "Nous vous accueillons chaleureusement dans notre restaurant au cœur de Szentendre. Délicieux plats, antiquités, intérieur à couper le souffle et prix avantageux depuis 1982.",
+      "buttons": {
+        "card": "Carte de crédit acceptée",
+        "garden": "Jardin",
+        "dog": "Accueille les chiens",
+        "wifi": "Wifi"
+      }
+    },
+    "reservation": {
+      "title": "Réservation",
+      "online": "réservation en ligne"
+    },
+    "contact": {
+      "title": "Contact",
+      "map": "Rue Kucsera Ferenc 1/A, Szentendre 2000, Hongrie",
+      "card": "Carte de visite numérique"
+    },
+    "company": {
+      "title": "Informations sur l'entreprise",
+      "vat": "Numéro de TVA",
+      "reg": "Numéro d'enregistrement de l'entreprise",
+      "bank": "Banque",
+      "bank_acc": "Numéro de compte bancaire"
+    },
+    "groups": {
+      "title": "Menu pour les groupes",
+      "guide": "Guide",
+      "reservation": "Réservation (envoyer un e-mail)",
+      "faq": [
+        { "q": "À partir de combien de personnes est-ce considéré comme un groupe ?", "a": "Un minimum de 15 personnes." },
+        { "q": "Combien de menus différents puis-je commander ?", "a": "Nous pouvons préparer des menus pour plus de 15 personnes." },
+        { "q": "Quelle est la capacité du restaurant ?", "a": "Un maximum de 90 à 100 personnes à l'intérieur et 25 à 30 personnes dans le jardin." },
+        { "q": "Quels modes de paiement sont acceptés ?", "a": "Espèces, carte et virement bancaire." },
+        { "q": "Comment puis-je faire une réservation ?", "a": "La manière la plus simple est de nous écrire un e-mail en détaillant les spécificités." },
+        { "q": "Pourquoi les prix sont-ils indiqués en euros ?", "a": "En raison de l'hyperinflation des dernières années, les prix sont indiqués en euros pour maintenir la cohérence tout au long de l'année." },
+        { "q": "Y a-t-il un parking pour les bus à proximité ?", "a": "Oui, il y a un grand parking à côté de la route principale 11, à environ 7 minutes à pied de chez nous." },
+        { "q": "À quelle avance dois-je réserver ?", "a": "Il est conseillé de réserver plusieurs semaines à l'avance pour assurer la disponibilité." },
+        { "q": "Que faire s'il y a un invité avec une allergie alimentaire ?", "a": "Il est important de nous en informer afin que les invités allergiques puissent recevoir des plats alternatifs au lieu des menus de groupe." }
+      ]
+    },
+    "reviews": {
+      "title": "Critiques",
+      "people": [
+        { "name": "Katalin Novák", "title": "Présidente de Hongrie (2022-2024)", "text": "Merci de nous avoir permis de nous reposer ici pendant un court moment lors d'une journée de travail fatigante et de goûter à de véritables saveurs faites maison." },
+        { "name": "Levente Balogh", "title": "Roi de l'eau, homme d'affaires, investisseur", "text": "Merci pour l'hospitalité chaleureuse !" },
+        { "name": "András Moldován", "title": "Mogul du porc, investisseur, requin", "text": "Nous avons passé un excellent dîner ici avec plaisir !" },
+        { "name": "Mária Varga", "text": "Entrer donne l'impression de pénétrer dans un musée d'archives mais un sentiment très familial s'élève. Le personnel est rapide, attentif, et la nourriture est excellente. Nous avons passé un bon moment et le recommandons à tout le monde !" },
+        { "name": "Gábor Molnár", "text": "Le restaurant Rab Ráby est un véritable joyau ! Le menu offre un large choix et les plats sont toujours frais et d'excellente qualité. Je trouve toujours quelque chose de délicieux au menu, et les desserts sont divins aussi !" },
+        { "name": "Éva Kovács", "text": "Ce fut encore une fois une expérience. La nourriture est excellente, le service est bon, et l'atmosphère du restaurant est magique. C'est un peu nostalgique pour moi de venir ici car c'était là que mon mari et moi avons eu notre premier rendez-vous." }
+      ]
+    },
+    "faq": {
+      "title": "Questions fréquemment posées",
+      "questions": [
+        { "question": "Puis-je payer par carte ?", "answer": "Oui, vous pouvez payer par carte de crédit. (Nous n'acceptons pas les cartes American Express)" },
+        { "question": "Où puis-je me garer ?", "answer": "Le stationnement à Szentendre a changé en 2022 : la vieille ville n'est accessible qu'avec un permis. Le parking le plus proche de nous est à environ 1 minute à pied, rue Bajcsy-Zsilinszky Endre. (Code de zone : 2012)" },
+        { "question": "Où puis-je trouver le restaurant ?", "answer": "Le restaurant est situé dans le centre-ville de Szentendre, entre l'Hôtel de Ville et l'église Péter Pál. Il est accessible à moins de 1 minute à pied du centre-ville." },
+        { "question": "Avez-vous une terrasse de jardin, un patio ?", "answer": "Oui, le restaurant dispose d'une cour intérieure confortable et à l'abri du vent, qui est fraîche et ombragée en été." },
+        { "question": "Puis-je amener mon chien ?", "answer": "Oui, nous sommes un lieu accueillant pour les chiens depuis notre ouverture." },
+        { "question": "Y a-t-il du WiFi ?", "answer": "Oui, sans mot de passe. Nom du WiFi : RAB_RÁBY_WIFI" },
+        { "question": "Organisez-vous également des événements ?", "answer": "Oui, nous organisons des mariages, des baptêmes, des anniversaires, des jours de nom, des réunions de classe, des présentations de livres, des dégustations de vin, des réceptions funéraires, etc." }
+      ]
+    },
+    "menu": {
+      "drink": {
+        "title": "Boissons"
+      },
+      "wine": {
+        "title": "Vins"
+      },
+      "food": {
+        "title": "Menu",
+        "stars": "Plats vedettes",
+        "show": "Afficher le menu",
+        "price": "Les prix sont donnés à titre informatif ! Des erreurs peuvent survenir, et les prix indiqués sur notre menu imprimé sont officiels !"
+      },
+      "category": {
+        "starters": "Entrées",
+        "soups": "Soupes",
+        "pastas": "Pâtes",
+        "fish": "Poisson",
+        "readymeals": "Plats préparés",
+        "grilled": "Plats grillés",
+        "desserts": "Desserts"
+      },
+      "allergy": {
+        "title": "Allergènes",
+        "one": "Allergie",
+        "text": "Sélection des allergènes",
+  
+        "gluten": "Gluten",
+        "crustaceans": "Crustacés",
+        "eggs": "Œufs",
+        "fish": "Poisson",
+        "peanuts": "Arachides",
+        "soy": "Soja",
+        "milk": "Lait",
+        "nuts": "Noix",
+        "celery": "Céleri",
+        "mustard": "Moutarde",
+        "sesame": "Sésame",
+        "sulfur": "Soufre",
+        "lupin": "Lupin",
+        "mollusks": "Mollusques"
+      }
+    },
+    "about": {
+      "text": "Le restaurant a été fondé par János Németh et sa famille en 1982, à l'époque du Rideau de fer. Il a été nommé d'après le héros du roman de Mór Jókai, Rab Ráby, qui a vécu à Szentendre et a joué un rôle clé dans la lutte contre la corruption sous le règne de Joseph II. Le bâtiment, converti en restaurant, fonctionnait comme un atelier de forgeron il y a plus de 100 ans. En plus d'une exposition ethnographique, le restaurant présente également des curiosités rares."
+    }
+}

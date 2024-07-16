@@ -14,7 +14,7 @@
     "tenders": "Tenders"
   },
   "wifi": {
-    "title": "Enjoy the wifi"
+    "title": "Successfully connected"
   },
   "home": {
     "title": "Rab Ráby Restaurant, Szentendre",
@@ -43,7 +43,7 @@
     "bank_acc": "Bank Account Number"
   },
   "groups": {
-    "title": "Menu for Groups 2024",
+    "title": "Menu for Groups",
     "guide": "Guide",
     "reservation": "Reservation (send an email)",
     "faq": [

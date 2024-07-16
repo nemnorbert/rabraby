@@ -1,5 +1,13 @@
 {
     "languages": ["hu", "en"],
+    "langs": {
+        "hu": {"n": "magyar", "active": true},
+        "en": {"n": "english", "active": true},
+        "de": {"n": "deutsch", "active": true},
+        "es": {"n": "español", "active": true},
+        "fr": {"n": "français", "active": true},
+        "ru": {"n": "русский", "active": true}
+    }, 
     "alerts": {
         "hu": [
             {"color": "blue", "message": "Üdvözlünk új weboldalunkon"}

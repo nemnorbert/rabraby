@@ -14,7 +14,8 @@
       "tenders": "Pályázatok"
     },
     "wifi": {
-      "title": "Használd ingyenes wifi hálózatunk"
+      "title": "Sikeresen csatlakozva",
+      "share": "Oszd meg a wifit a melletted ülőkkel is"
     },
     "home": {
       "title": "Rab Ráby Étterem, Szentendre",
@@ -43,7 +44,7 @@
       "bank_acc": "Bankszámlaszám"
     },
     "groups": {
-      "title": "Csoport Menü 2024",
+      "title": "Csoport Menü",
       "guide": "Segédlet",
       "reservation": "Foglalás (email küldése)",
       "faq": [

@@ -12,21 +12,29 @@
         position: relative;
         height: 500px;
         max-height: 40vh;
-        font-weight: bold;
         text-transform: uppercase;
+        overflow: hidden;
         
         .title {
             position: absolute;
             backdrop-filter: blur(5px);
             z-index: 1;
-            left: 0;
-            top: 0;
-            right: 0;
-            padding: 1rem;
+            left: 10px;
+            top: 10px;
+            right: 10px;
+            padding: 15px;
+            border-radius: calc($border-size-main - 10px);
             background-color: rgba(43, 107, 226, 0.8);
             background-image: linear-gradient(transparent, rgba(31, 31, 31, 0.356));
             color: var(--bg-color);
             line-height: 1.5em;
+            letter-spacing: 0.2rem;
+            animation: 1s welcomeAni 2s forwards;
+            transform: translateY(-150%);
+        }
+        @keyframes welcomeAni {
+            0% {transform: translateY(-150%);}
+            100% {transform: translateY(0);}
         }
         video {
             position: absolute;
@@ -60,7 +68,7 @@
             grid-column: span 6;
         }
         .welcome {
-            border-radius: 1rem;
+            border-radius: $border-size-main;
             overflow: hidden;
         }
     }

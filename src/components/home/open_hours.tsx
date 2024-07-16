@@ -7,11 +7,10 @@ export default component$(() => {
   useStylesScoped$(style);
   const translate = useContext(CTX_Translate);
   const days = openData.days;
-  const openTrans = translate.current.open;
 
   return (
     <div class="open_hours">
-        <div class="title">{openTrans.title}</div>
+        <div class="title">{translate.current.open.title}</div>
         <div class="content">
             <div class="info">
                 <i class="bi bi-clock-history"></i>
@@ -21,7 +20,7 @@ export default component$(() => {
                 Object.entries(openData.default).map(([key, {open, close}], index) => (
                     <div key={`${key}-${index}`} class={!open && 'closed'}>
                         <div class="d">
-                            {openTrans.days[index] || days[index]}
+                            {translate.current.open.days[index] || days[index]}
                         </div>
                         <div class="time">
                             { !open && '-' }
