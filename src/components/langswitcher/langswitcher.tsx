@@ -11,7 +11,7 @@ export default component$(() => {
     useStylesScoped$(style);
     const translate: Translates = useContext(CTX_Translate);
     const allLangs = config.languages ?? [];
-
+    
     const handleSwitchLang = $(async (e: Event) => {
         const target = e.target as HTMLSelectElement;
         const lang = target.value;

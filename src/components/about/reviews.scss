@@ -11,6 +11,9 @@
     overflow: hidden;
     position: relative;
 
+    h2 {
+        color: var(--bg-color);
+    }
     :not(.row) {
         text-align: center;
     }
@@ -21,7 +24,7 @@
 
         .card {
             border-radius: $border-size-main;
-            background-color: bisque;
+            background-color: var(--bg-color-2);
             min-width: 370px;
             margin-left: 30px;
             padding: 1rem;
@@ -51,8 +54,8 @@
             border-radius: $border-size-main;
             border-radius: 20px;
             padding: 10px;
-            border: 2px solid white;
-            color: white;
+            border: 2px solid var(--bg-color);
+            color: var(--bg-color);
         }
     }
     @keyframes animateRow {
