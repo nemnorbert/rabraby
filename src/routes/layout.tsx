@@ -1,13 +1,13 @@
-import { component$, Slot, useContext, useTask$ } from "@builder.io/qwik";
+import { component$, Slot, useContext } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import type { RequestHandler, DocumentHead } from "@builder.io/qwik-city";
 
+import loadLocales from '~/utils/loadLocales';
+import { langCheck } from "~/utils/langValid";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import Contact from "~/components/contact/contact";
 import { CTX_Translate } from '~/root';
-import loadLocales from '~/utils/loadLocales';
-import checkLang from "~/utils/checkLang";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   cacheControl({
@@ -23,27 +23,21 @@ export const useServerTimeLoader = routeLoader$(() => {
 });
 
 export const useTranslationLoader = routeLoader$(async (requestEvent) => {
-  const pathname = requestEvent.pathname;
-  const userLang = requestEvent.request.headers.get('accept-language')?.substring(0, 2) || '';
-  const lang = checkLang(pathname, userLang);
-  const translateData = await loadLocales(lang);
-  const metaData = {
-    title: 'Rab Ráby Restaurant, Szentendre', 
-    description: translateData?.home.description || ''
-  }
+  const pathname = requestEvent.pathname || '/';
+  const userLang = requestEvent.request.headers.get('accept-language') || '';
+  const lang = langCheck(pathname, userLang);
+  const translates = await loadLocales(lang);
 
-  return { lang, translateData, metaData };
+  const metaData = {
+    title: translates?.home.title, 
+    description: translates?.home.description || ''
+  }
+  
+  return { metaData };
 });
 
 export default component$(() => {
   const translates = useContext(CTX_Translate);
-  const { lang, translateData } = useTranslationLoader().value;
-
-  useTask$(async () => {
-    if (lang !== translates.current.iso && translateData) {
-      translates.current = translateData;
-    }
-  });
   
   return (
     <>

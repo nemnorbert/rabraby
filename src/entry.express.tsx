@@ -8,6 +8,7 @@ import { manifest } from "@qwik-client-manifest";
 import compression from "compression";
 import render from "./entry.ssr";
 import express from "express";
+import cors from "cors";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";
 
@@ -39,6 +40,7 @@ const { router, notFound } = createQwikCity({
 
 // Create the express server
 const app = express();
+app.use(cors());
 
 // Enable gzip compression
 app.use(compression());

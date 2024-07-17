@@ -1,5 +1,5 @@
 import { component$, useContext, useStylesScoped$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+//import type { DocumentHead } from "@builder.io/qwik-city";
 import { CTX_Translate } from '~/root';
 import style from "./style.scss?inline";
 import groupMenu from "~/config/groups.json";
@@ -10,15 +10,15 @@ export default component$(() => {
   const translates = useContext(CTX_Translate);
   const allFood: any = groupMenu.food;
   const lang = translates.current.iso || 'en';
-  const supportedLanguages = ['hu', 'en'];
+  const isSupported = ['hu','en'].includes(lang);
   const thisYear = "2024";
 
   return (
     <>
-      <Hero title={`${translates.current.groups.title} ${thisYear}`} video={true} bottom={true} image="group" />
+      <Hero title={`${translates.current.groups.title} - ${thisYear}`} video={true} bottom={true} image="group" />
       <div class="container">
         <div class="menu">
-          { !supportedLanguages.includes(lang) &&
+          { !isSupported &&
             <div class="alert">
               <i class="bi bi-translate"></i> This part of the site is not translated into this language
             </div>
@@ -62,6 +62,8 @@ export default component$(() => {
   );
 });
 
+/*
 export const head: DocumentHead = {
   title: "Rab Ráby"
 };
+*/

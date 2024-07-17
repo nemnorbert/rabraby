@@ -1,11 +1,10 @@
-import config from '~/config/general.json';
 import type { TranslatesCurrent } from "~/types/translates";
-const supportedLanguages = Object.keys(config.langs);
+import { langValid } from '~/utils/langValid';
 
-async function loadTranslations(iso = "en"): Promise<TranslatesCurrent | undefined> {
+async function loadTranslations(iso = "en", path?: string): Promise<TranslatesCurrent | undefined> {
   try {
-    const lang = supportedLanguages.includes(iso) ? iso : 'en';
-    const baseUrl = getBaseUrl();
+    const lang = langValid(iso);
+    const baseUrl = getBaseUrl(path);
     const url = `${baseUrl}/locales/${lang}.json`;
 
     const response = await fetch(url);
@@ -19,7 +18,8 @@ async function loadTranslations(iso = "en"): Promise<TranslatesCurrent | undefin
   }
 }
 
-function getBaseUrl(): string {
+function getBaseUrl(path?: string): string {
+  if (path) { return path; }
   return process.env.NODE_ENV === 'production' ? 'https://rabraby.hu' : 'http://localhost:5173';
 }
 
