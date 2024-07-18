@@ -7,8 +7,8 @@
 }
 
 :root {
-  --primary-color: #cfa772;
-  --primary-color-2: hsla(34, 49%, 63%, .8);
+  --primary-color: #dbb179;
+  --primary-color-2: hsla(34, 64%, 69%, 0.8);
   --primary-color-3: hsla(34, 49%, 63%, .2);
   --secundary-color: hsl(35, 28%, 39%);
   --text-color: black;
@@ -69,18 +69,23 @@ h2 {
 }
 a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--secundary-color);
   transition: color .3s;
 }
 a.current {
-  color: var(--secundary-color);
+  color: var(--primary-color);
 }
 .btn, button .btn {
   background-color: var(--primary-color);
-  color: white;
+  color: black;
   border: none;
   padding: 7px 10px;
   border-radius: 1rem;
   font-weight: bold;
   font-size: 16px;
+}
+footer {
+  a {
+    color: white;
+  }
 }

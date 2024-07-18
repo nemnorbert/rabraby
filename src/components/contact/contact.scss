@@ -7,8 +7,7 @@
     grid-template-columns: repeat(12, 1fr);
     padding: $gap-1;
     row-gap: $gap-1;
-    color: var(--bg-color);
-    text-shadow: $shadow-1;
+    color: black;
 
     & > div {
         padding: 2rem;
@@ -47,7 +46,7 @@
     }
     #contact {
         & > :not(.title) {
-            color: var(--bg-color);
+            color: black;
             font-size: 20px;
             text-align: center;
             font-weight: bold;
