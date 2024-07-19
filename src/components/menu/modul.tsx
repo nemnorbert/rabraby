@@ -35,6 +35,7 @@ export default component$(() => {
         <div class={code ? "modul open" : "modul"}>
           <div class="box">
             <div class="media">
+              <div class="code">#{code}</div>
               <div class="price">{ price }</div>
               {
                 danger && <div class="allergy_alert">{ translate.current.menu.allergy.one }</div>

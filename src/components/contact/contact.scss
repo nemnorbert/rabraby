@@ -7,12 +7,12 @@
     grid-template-columns: repeat(12, 1fr);
     padding: $gap-1;
     row-gap: $gap-1;
-    color: black;
+    color: var(--black);
 
     & > div {
         padding: 2rem;
         background-color: var(--primary-color);
-        background-image: linear-gradient(to bottom, transparent, rgba(29, 29, 29, 0.35));
+        background-image: linear-gradient(to bottom, transparent, rgba(29, 29, 29, 0.15));
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -46,7 +46,7 @@
     }
     #contact {
         & > :not(.title) {
-            color: black;
+            color: var(--black);
             font-size: 20px;
             text-align: center;
             font-weight: bold;

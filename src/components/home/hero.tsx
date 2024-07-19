@@ -64,6 +64,7 @@ export default component$((props: Props) => {
                   key={key} 
                   href={value.href ? `${value.href}:${value.link}` : value.link}
                   target={value.href ? undefined : "_blank"}
+                  rel={value.href ? undefined : "noreferrer"}
                 >
                   <i class={`bi bi-${value.icon}`}></i>
                 </a>

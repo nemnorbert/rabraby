@@ -15,7 +15,7 @@ $color-1: rgb(29, 29, 29);
 
     button.btn {
         white-space: nowrap;
-        color: var(--bg-color);
+        color: var(--black);
         transition: color $ani-time-1;
         cursor: pointer;
     }

@@ -38,7 +38,7 @@ export default component$((props: Props) => {
                 }
             </div>
             <div class="rating">
-                <a href={configJson.contact.map.link} target="_blank">Google <i class="bi bi-star-fill"></i>
+                <a href={configJson.contact.map.link} rel="noreferrer" target="_blank">Google <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>

@@ -18,7 +18,12 @@ export default component$(() => {
         {
           Object.entries(config.contact).map(([key, {icon, social, blank, link}]) => (
             social &&
-            <a key={key} target={blank ? '_blank' : undefined} href={link}>
+            <a 
+              key={key} 
+              target={blank ? '_blank' : undefined} 
+              rel={blank ? 'noreferrer' : undefined}
+              href={link}
+            >
               <i class={`bi bi-${icon}`}></i>
             </a>
           ))
@@ -38,11 +43,12 @@ export default component$(() => {
           {
             Object.entries(config.contact).map(([key, {icon, base, link, blank, href}]) => (
               base && 
-              <a key={key} target={
-                blank ? '_blank' : undefined
-              } href={
-                href ? `${href}:${link}` : link
-              }>
+              <a 
+                key={key} 
+                target={blank ? '_blank' : undefined}
+                rel={blank ? 'noreferrer' : undefined}
+                href={href ? `${href}:${link}` : link}
+              >
                 <i key={key} class={`bi bi-${icon}`}></i> {
                   translate.current.contact[key] ?? link
                 }
@@ -59,7 +65,7 @@ export default component$(() => {
       <div class="bottom">
         <div class="creator">
           <div>powered by</div>
-          <a href="https://adanor.eu" target="_blank">
+          <a href="https://adanor.eu" target="_blank" rel="noreferrer">
             <img width="120" height="21" src={adanorLogo} alt="Logo of the Website's Developer" />
           </a>
         </div>

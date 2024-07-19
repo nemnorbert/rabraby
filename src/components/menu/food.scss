@@ -19,6 +19,7 @@ $alert-color: rgb(202, 2, 2);
         font-weight: bold;
         font-size: 18px;
         line-height: 22px;
+        overflow: hidden;
     }
     .media {
         position: relative;
@@ -64,7 +65,7 @@ $alert-color: rgb(202, 2, 2);
         
         div {
             background-color: var(--primary-color);
-            color: var(--bg-color);
+            color: var(--black);
             border-radius: 10px;
             font-weight: bold;
             padding: 7px 10px;

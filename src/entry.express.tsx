@@ -8,6 +8,7 @@ import { manifest } from "@qwik-client-manifest";
 import compression from "compression";
 import render from "./entry.ssr";
 import express from "express";
+import helmet from 'helmet';
 import cors from "cors";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";
@@ -40,11 +41,28 @@ const { router, notFound } = createQwikCity({
 
 // Create the express server
 const app = express();
-app.use(cors());
 
 // Enable gzip compression
 app.use(compression());
 app.disable('x-powered-by');
+
+// Helmet middleware to set various HTTP headers for security
+app.use(helmet({
+  contentSecurityPolicy: {
+    useDefaults: true,
+    directives: {
+      "script-src": ["'self'", "'unsafe-inline'"],
+    },
+  },
+}));
+
+// CORS configuration
+const corsOptions = {
+  origin: ['https://rabraby.hu', 'http://localhost:5173'],
+  methods: 'GET',
+  allowedHeaders: 'Content-Type,Authorization',
+};
+app.use(cors(corsOptions));
 
 // Static asset handlers
 // https://expressjs.com/en/starter/static-files.html

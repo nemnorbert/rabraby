@@ -15,7 +15,7 @@ $card-margin: 30px;
     position: relative;
 
     h2 {
-        color: var(--bg-color);
+        color: var(--black);
     }
     :not(.row) {
         text-align: center;
@@ -57,8 +57,8 @@ $card-margin: 30px;
             border-radius: $border-size-main;
             border-radius: 20px;
             padding: 10px;
-            border: 2px solid var(--bg-color);
-            color: var(--bg-color);
+            border: 2px solid var(--black);
+            color: var(--black);
         }
     }
     @keyframes animateRow {
