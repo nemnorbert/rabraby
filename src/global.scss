@@ -70,11 +70,11 @@ h2 {
 }
 a {
   text-decoration: none;
-  color: var(--secundary-color);
+  color: var(--primary-color);
   transition: color .3s;
 }
 a.current {
-  color: var(--primary-color);
+  color: var(--secundary-color);
 }
 .btn, button .btn {
   background-color: var(--primary-color);

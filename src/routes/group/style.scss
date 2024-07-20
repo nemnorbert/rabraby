@@ -20,13 +20,33 @@
         align-items: center;
         row-gap: 1rem;
 
-        .alert {
-            background-color: rgb(29, 70, 146);
-            padding: 7px 10px;
-            border-radius: 1rem;
-            color: white;
-            font-weight: bold;
-            text-align: center;
+        .info {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+            & > * {
+                padding: 7px 10px;
+                border-radius: 1rem;
+                font-size: 20px;
+                line-height: 22px;
+                color: white;
+                font-weight: bold;
+                text-align: center;
+                box-shadow: $shadow-1;
+            }
+            .alert {
+                background-color: rgb(36, 73, 143);
+            }
+            .pdf {
+                background-color: rgb(32, 139, 32);
+                animation: 2s pdfAni infinite;
+            }
+            @keyframes pdfAni {
+                0%, 100% {scale: 1;}
+                50% {scale: .9;}
+            }
         }
     }
     .guide {

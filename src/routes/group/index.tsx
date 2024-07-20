@@ -1,5 +1,4 @@
 import { component$, useContext, useStylesScoped$ } from "@builder.io/qwik";
-//import type { DocumentHead } from "@builder.io/qwik-city";
 import { CTX_Translate } from '~/root';
 import style from "./style.scss?inline";
 import groupMenu from "~/config/groups.json";
@@ -15,14 +14,21 @@ export default component$(() => {
 
   return (
     <>
-      <Hero title={`${translates.current.groups.title} - ${thisYear}`} video={true} bottom={true} image="group" />
+      <Hero title={`${translates.current.groups.title} ${thisYear}`} video={true} bottom={true} image="group" />
       <div class="container">
         <div class="menu">
-          { !isSupported &&
-            <div class="alert">
-              <i class="bi bi-translate"></i> This part of the site is not translated into this language
-            </div>
-          }
+
+          <div class="info">
+            <a href="/pdf/group.pdf" target="_blank" rel="noreferrer" class="pdf">
+              <i class="bi bi-arrow-down-circle-fill"></i> PDF
+            </a>
+            {!isSupported && (
+              <div class="alert">
+                <i class="bi bi-translate"></i> This part of the site is not translated into this language
+              </div>
+            )}
+          </div>
+
           <div class="content">
             {
               Object.entries(groupMenu.menu).map(([key, {price, food}]) => (
@@ -61,9 +67,3 @@ export default component$(() => {
     </>
   );
 });
-
-/*
-export const head: DocumentHead = {
-  title: "Rab Ráby"
-};
-*/

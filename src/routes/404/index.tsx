@@ -13,10 +13,11 @@ export default component$(() => {
                 <h3>Az oldal nem található</h3>
             </div>
             <div class="buttons">
-                <Link class="btn" href="/"> <i class="bi bi-house-fill"></i> Home | Főoldal</Link>
-                <Link class="btn" href="/menu"> <i class="bi bi-book-half"></i> Menu | Étlap</Link>
-                <Link class="btn" href="/about"> <i class="bi bi-person-circle"></i> About Us | Rólunk</Link>
-                <Link class="btn" href="/group"> <i class="bi bi-people-fill"></i> Group | Csoport</Link>
+                <Link class="btn" href="/"><i class="bi bi-house-fill"></i> Home | Főoldal</Link>
+                <Link class="btn" href="/menu"><i class="bi bi-book-half"></i> Menu | Étlap</Link>
+                <Link class="btn" href="/about"><i class="bi bi-person-circle"></i> About Us | Rólunk</Link>
+                <Link class="btn" href="/group"><i class="bi bi-people-fill"></i> Group | Csoport</Link>
+                <Link class="btn" href="/parking"><i class="bi bi-car-front-fill"></i> Parking | Parkolás</Link>
             </div>
         </section>
     );

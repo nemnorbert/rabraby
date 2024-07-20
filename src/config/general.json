@@ -21,7 +21,8 @@
         "group": { "path": "/group/", "main": true },
         "contact": { "path": "/contact/", "main": true },
         "wifi": { "path": "/contact/", "main": false },
-        "tenders": { "path": "/tenders/", "main": false }
+        "tenders": { "path": "/tenders/", "main": false },
+        "parking": { "path": "/parking/", "main": false }
     },
     
     "home": {

@@ -1,4 +1,5 @@
 import { component$, useContext } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import "./index.scss";
 import FoodModul from "~/components/menu/modul";
@@ -15,6 +16,11 @@ export default component$(() => {
   return (
     <>
       <Hero translate={translates.current} />
+      <div class="parking">
+        <Link class="btn" href="/parking">
+          <i class="bi bi-car-front-fill"></i> {translates.current.navigation.parking || 'P'}
+        </Link>
+      </div>
       <Foods translate={translates.current} />
       <AboutUs translate={translates.current} />
       <Reviews pure={true} translate={translates.current} />

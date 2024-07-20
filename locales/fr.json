@@ -11,6 +11,7 @@
       "gallery": "Galerie",
       "group": "Groupe",
       "contact": "Contact",
+      "parking": "Parking",
       "tenders": "Appels d'offres"
     },
     "wifi": {
@@ -123,6 +124,9 @@
         "lupin": "Lupin",
         "mollusks": "Mollusques"
       }
+    },
+    "parking": {
+      "text": "À Szentendre, il est possible d'entrer en voiture dans le centre-ville uniquement avec une autorisation spéciale. Vous pouvez vous garer à 1 minute à pied du restaurant, dans la rue Bajcsy-Zsilinszky. Le code de la zone de stationnement est 2012. Sur la carte, les parcmètres sont marqués en bleu. À Szentendre, il faut également payer pour le stationnement le week-end !"
     },
     "about": {
       "text": "Le restaurant a été fondé par János Németh et sa famille en 1982, à l'époque du Rideau de fer. Il a été nommé d'après le héros du roman de Mór Jókai, Rab Ráby, qui a vécu à Szentendre et a joué un rôle clé dans la lutte contre la corruption sous le règne de Joseph II. Le bâtiment, converti en restaurant, fonctionnait comme un atelier de forgeron il y a plus de 100 ans. En plus d'une exposition ethnographique, le restaurant présente également des curiosités rares."

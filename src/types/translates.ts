@@ -95,6 +95,9 @@ export interface TranslatesCurrent {
         [key: string]: string | undefined;
       };
     };
+    parking?: {
+      text?: string
+    }
     about?: {
       text?: string;
     }

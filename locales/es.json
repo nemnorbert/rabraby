@@ -11,6 +11,7 @@
       "gallery": "Galería",
       "group": "Grupo",
       "contact": "Contacto",
+      "parking": "Estacionamiento",
       "tenders": "Licitaciones"
     },
     "wifi": {
@@ -122,6 +123,9 @@
         "lupin": "Altramuces",
         "mollusks": "Moluscos"
       }
+    },
+    "parking": {
+      "text": "En Szentendre solo se puede entrar al centro en coche con un permiso especial. Puede aparcar a 1 minuto a pie del restaurante, en la calle Bajcsy-Zsilinszky. El código de la zona de aparcamiento es 2012. En el mapa, los parquímetros están marcados en azul. ¡En Szentendre también hay que pagar por el aparcamiento los fines de semana!"
     },
     "about": {
       "text": "El restaurante fue fundado por János Németh y su familia en 1982, durante la época del Telón de Acero. Fue nombrado en honor al héroe de la novela de Mór Jókai, Rab Ráby, que vivió en Szentendre y jugó un papel clave en la lucha contra la corrupción durante el reinado de José II. El edificio, que fue convertido en restaurante, funcionó como una herrería hace más de 100 años. Además de una exposición etnográfica, el restaurante también presenta curiosidades raras."

@@ -11,6 +11,7 @@
       "gallery": "Galerie",
       "group": "Gruppe",
       "contact": "Kontakt",
+      "parking": "Parken",
       "tenders": "Ausschreibungen"
     },
     "wifi": {
@@ -122,6 +123,9 @@
         "lupin": "Lupinen",
         "mollusks": "Weichtiere"
       }
+    },
+    "parking": {
+      "text": "In Szentendre können Sie die Innenstadt nur mit einer speziellen Genehmigung mit dem Auto betreten. Sie können 1 Minute vom Restaurant entfernt in der Bajcsy-Zsilinszky Straße parken. Der Parkzonen-Code ist 2012. Auf der Karte sind die Parkautomaten blau markiert. In Szentendre müssen Sie auch am Wochenende für das Parken bezahlen!"
     },
     "about": {
       "text": "Das Restaurant wurde 1982 von János Németh und seiner Familie während des Eisernen Vorhangs gegründet. Es wurde nach dem Helden aus Mór Jókai's Roman, Rab Ráby, benannt, der in Szentendre lebte und eine Schlüsselrolle im Kampf gegen die Korruption während der Herrschaft von Joseph II. spielte. Das Gebäude, das in ein Restaurant umgewandelt wurde, diente vor über 100 Jahren als Schmiede. Neben einer ethnographischen Ausstellung zeigt das Restaurant auch seltene Kuriositäten."
