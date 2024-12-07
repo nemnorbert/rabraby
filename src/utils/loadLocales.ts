@@ -1,6 +1,11 @@
 import type { TranslatesCurrent } from "~/types/translates";
 import { langValid } from '~/utils/langValid';
 
+function getBaseUrl(path?: string): string {
+  if (path) { return path; }
+  return process.env.NODE_ENV === 'production' ? 'https://rabraby.hu' : 'http://localhost:5174';
+}
+
 async function loadTranslations(iso = "en", path?: string): Promise<TranslatesCurrent | undefined> {
   try {
     const lang = langValid(iso);
@@ -16,11 +21,6 @@ async function loadTranslations(iso = "en", path?: string): Promise<TranslatesCu
     console.error('Error when importing lang JSON:', error);
     throw error;
   }
-}
-
-function getBaseUrl(path?: string): string {
-  if (path) { return path; }
-  return process.env.NODE_ENV === 'production' ? 'https://rabraby.hu' : 'http://localhost:5173';
 }
 
 export default loadTranslations;

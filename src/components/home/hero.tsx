@@ -15,7 +15,12 @@ interface Props {
 export default component$((props: Props) => {
   useStylesScoped$(style);
   const translate = props.translate;
-  const welcomeArray = Object.entries(translate.home.buttons);
+  const welcomeBtns = translate.home.buttons;
+  
+  // Típusellenőrzés
+  const activeBtns = (translate.home.buttons_active || []).filter(
+    (item): item is keyof typeof welcomeBtns => item in welcomeBtns
+  );
 
   const heroImage = "/home/hero.webp";
   const heroVideo = "/home/hero.mp4";
@@ -29,19 +34,18 @@ export default component$((props: Props) => {
               <p>{ translate.home.description }</p>
               <div class="btns">
                 {
-                  welcomeArray.map(([key, value]) => (
-                    <button class="btn" key={key} 
-                      onClick$={() => console.log("gomb:", key)}>
-                        <i class={`bi bi-${config.home.btns[key]}`}></i> {value}
-                    </button>
+                  activeBtns.map((item) => (
+                    welcomeBtns[item] && (
+                      <button class="btn" key={item}>
+                          <i class={`bi bi-${config.home.btns[item]}`}></i> {welcomeBtns[item]}
+                      </button>
+                    )
                   ))
                 }
               </div>
           </div>
           <div class="media">
-            {  
-              <video src={heroVideo} loop={true} autoplay={true} poster={heroImage} muted={true} playsInline={true} />
-            }
+            <video src={heroVideo} loop={true} autoplay={true} poster={heroImage} muted={true} playsInline={true} />
           </div>
         </div>
 
@@ -55,9 +59,9 @@ export default component$((props: Props) => {
             <i class="bi bi-telephone-fill"></i>
             { config.contact.phone.link }
           </a>
-          <p>{translate.reservation.online || "Online"}:</p>
+          <p>{ translate.reservation.online || "Online" }:</p>
           <div class="social">
-            {
+            { 
               Object.entries(config.contact).map(([key, value]) => (
                 value.reservation && 
                 <a 

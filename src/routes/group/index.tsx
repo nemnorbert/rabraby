@@ -10,7 +10,7 @@ export default component$(() => {
   const allFood: any = groupMenu.food;
   const lang = translates.current.iso || 'en';
   const isSupported = ['hu','en'].includes(lang);
-  const thisYear = "2024";
+  const thisYear = "2025";
 
   return (
     <>
@@ -19,9 +19,13 @@ export default component$(() => {
         <div class="menu">
 
           <div class="info">
-            <a href="/pdf/group.pdf" target="_blank" rel="noreferrer" class="pdf">
-              <i class="bi bi-arrow-down-circle-fill"></i> PDF
-            </a>
+            {
+              /*
+                <a href="/pdf/group.pdf" target="_blank" rel="noreferrer" class="pdf">
+                  <i class="bi bi-arrow-down-circle-fill"></i> PDF
+                </a>
+              */
+            }
             {!isSupported && (
               <div class="alert">
                 <i class="bi bi-translate"></i> This part of the site is not translated into this language
@@ -49,6 +53,9 @@ export default component$(() => {
                 </div>
               ))
             }
+          </div>
+          <div>
+            <b><i class="bi bi-cloud-upload"></i> 2025v1 - 2024.12.06.</b>
           </div>
         </div>
 

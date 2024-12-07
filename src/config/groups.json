@@ -26,8 +26,8 @@
         },
 
         "F01": {
-            "en": "Highwayman's roast meat in gravy with parsley potatoes and rice",
-            "hu": "Zaftos fokhagymás zsiványpecsenye petrezselymes burgonyával és rizzsel"
+            "en": "Rogue steak with parsley potatoes and rice",
+            "hu": "Zsiványpecsenye petrezselymes burgonyával és rizzsel"
         },
         "F02": {
             "en": "Zucchini chicken with French fries",
@@ -61,22 +61,30 @@
             "en": "Paprika Chicken (chicken stew) with Gnocchi",
             "hu": "Csirkepaprikás galuskával"
         },
+        "F10": {
+            "en": "Breaded chicken breast fillet with parsley potatoes",
+            "hu": "Rántott csirkemell filé petrezselymes burgonyával"
+        },
+        "F11": {
+            "en": "Crispy duck leg with braised champagne cabbage",
+            "hu": "Ropogós kacsacomb, párolt káposztával"
+        },
 
         "D01": {
             "en": "Apple pie",
             "hu": "Almás pite"
         },
         "D02": {
-            "en": "Pancake filled with walnut cream with chocolate sauce",
-            "hu": "Dióval töltött palacsinta, csokoládéöntettel"
+            "en": "Pancake filled with walnut cream",
+            "hu": "Dióval töltött palacsinta"
         },
         "D03": {
             "en": "Mashed chestnuts with whipped cream",
             "hu": "Gesztenyepüré"
         },
         "D04": {
-            "en": "Fruit salad or ice cream cup",
-            "hu": "Gyümölcssaláta vagy fagylaltkehely"
+            "en": "Ice cream cup",
+            "hu": "Fagylaltkehely"
         },
         "D05": {
             "en": "Sweet cottage cheese dumplings",
@@ -97,82 +105,67 @@
         }
     },
     "menu": {
-        "2401": {
-            "price": 17,
+        "2501": {
+            "price": 19,
             "food": [
                {"name": "L01"},
-               {"name": "F02"},
-               {"name": "D05"}
+               {"name": "F05"},
+               {"name": "D02"}
             ]
         },
-        "2402": {
+        "2502": {
             "price": 16,
-            "food": [
-               {"name": "L02"},
-               {"name": "F03"},
-               {"name": "D06"}
-            ]
-        },
-        "2403": {
-            "price": 12,
-            "food": [
-               {"name": "L03"},
-               {"name": "F01"}
-            ]
-        },
-        "2404": {
-            "price": 14,
             "food": [
                {"name": "L04"},
                {"name": "D01"}
             ]
         },
-        "2405": {
+        "2503": {
+            "price": 14,
+            "food": [
+               {"name": "L03"},
+               {"name": "F01"},
+               {"name": "D01"}
+            ]
+        },
+        "2504": {
             "price": 25,
-            "person": 2,
             "food": [
-               {"name": "L03", "person": 2},
-               {"name": "F04"}
+               {"name": "L04"},
+               {"name": "F06"},
+               {"name": "D03"}
             ]
         },
-        "2406": {
-            "price": 17,
+        "2505": {
+            "price": 24,
             "food": [
-                {"name": "L01"},
-                {"name": "F05"},
-                {"name": "D02"}
+               {"name": "E01"},
+               {"name": "F07"},
+               {"name": "D04"}
             ]
         },
-        "2407": {
-            "price": 22,
+        "2506": {
+            "price": 19,
             "food": [
-                {"name": "L04"},
-                {"name": "F06"},
-                {"name": "D03"}
+                {"name": "L05"},
+                {"name": "F03"},
+                {"name": "D06"}
             ]
         },
-        "2408": {
-            "price": 21,
+        "2507": {
+            "price": 15,
             "food": [
-                {"name": "E01"},
-                {"name": "F07"},
-                {"name": "D04"}
-            ]
-        },
-        "2409": {
-            "price": 17,
-            "food": [
-                {"name": "L02"},
-                {"name": "F08"},
-                {"name": "D07"}
-            ]
-        },
-        "2410": {
-            "price": 17,
-            "food": [
-                {"name": "L06"},
-                {"name": "F09"},
+                {"name": "L05"},
+                {"name": "F10"},
                 {"name": "D01"}
+            ]
+        },
+        "2508": {
+            "price": 24,
+            "food": [
+                {"name": "L05"},
+                {"name": "F11"},
+                {"name": "D07"}
             ]
         }
     }

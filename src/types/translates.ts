@@ -35,6 +35,7 @@ export interface TranslatesCurrent {
     home: {
       title: string;
       description: string;
+      buttons_active?: string[];
       buttons: {
         card: string;
         garden: string;

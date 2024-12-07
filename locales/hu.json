@@ -21,11 +21,13 @@
     "home": {
       "title": "Rab Ráby Étterem, Szentendre",
       "description": "Szeretettel várunk szentendrei éttermünkben, a belvárosban. Finom ételek, régiségek, lélegzetelállító beltér és kedvező árak, 1982 óta.",
+      "buttons_active": ["card", "fire", "dog", "wifi"],
       "buttons": {
         "card": "Szépkártya",
         "garden": "Kerthelyiség",
         "dog": "Kutyabarát",
-        "wifi": "Wifi"
+        "wifi": "Wifi",
+        "fire": "Kandalóval fűtött"
       }
     },
     "reservation": {

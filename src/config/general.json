@@ -7,10 +7,26 @@
         "es": {"n": "español", "active": true},
         "fr": {"n": "français", "active": true},
         "ru": {"n": "русский", "active": true}
-    }, 
+    },
     "alerts": {
+        "en": [
+            {"color": "blue", "message": "We wish you happy holidays!😊"}
+        ],
         "hu": [
-            {"color": "blue", "message": "Üdvözlünk új weboldalunkon"}
+            {"color": "blue", "message": "Karácsonyra halászlé és töltött káposzta elvihető! 06209149737"},
+            {"color": "green", "message": "Kellemes ünnepeket kívánunk!😊"}
+        ],
+        "de": [
+            {"color": "red", "message": "Bitte nehmen Sie Kontakt mit uns entweder auf Ungarisch oder Englisch auf. Vielen Dank!"}
+        ],
+        "es": [
+            {"color": "red", "message": "Por favor, póngase en contacto con nosotros en húngaro o inglés. ¡Gracias!"}
+        ],
+        "fr": [
+            {"color": "red", "message": "Veuillez nous contacter en hongrois ou en anglais. Merci !"}
+        ],
+        "ru": [
+            {"color": "red", "message": "Пожалуйста, свяжитесь с нами на венгерском или английском языке. Спасибо!"}
         ]
     },
 
@@ -29,6 +45,7 @@
         "btns": {
             "card": "credit-card-2-back-fill",
             "garden": "tree-fill",
+            "fire": "fire",
             "dog": "gitlab",
             "wifi": "wifi",
             "parking": "p-circle-fill"
