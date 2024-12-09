@@ -90,3 +90,11 @@ footer {
     color: white;
   }
 }
+
+@media only screen and (min-width: $max-width) {
+  main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}

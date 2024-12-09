@@ -6,7 +6,7 @@ import loadLocales from '~/utils/loadLocales';
 import { langCheck } from "~/utils/langValid";
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
-import Contact from "~/components/contact/contact";
+import Contact from "~/components/pages/contact/parts/contact_info";
 import { CTX_Translate } from '~/root';
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {

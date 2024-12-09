@@ -10,23 +10,23 @@
     },
     "alerts": {
         "en": [
-            {"color": "blue", "message": "We wish you happy holidays!😊"}
+            {"color": "blue", "message": "We wish you happy holidays!", "icon": "emoji-laughing-fill"}
         ],
         "hu": [
-            {"color": "blue", "message": "Karácsonyra halászlé és töltött káposzta elvihető! 06209149737"},
-            {"color": "green", "message": "Kellemes ünnepeket kívánunk!😊"}
+            {"color": "blue", "message": "Karácsonyra halászlé és töltött káposzta elvihető! 06209149737" },
+            {"color": "green", "message": "Kellemes ünnepeket kívánunk!", "icon": "emoji-laughing-fill" }
         ],
         "de": [
-            {"color": "red", "message": "Bitte nehmen Sie Kontakt mit uns entweder auf Ungarisch oder Englisch auf. Vielen Dank!"}
+            {"color": "orange", "message": "Bitte nehmen Sie Kontakt mit uns entweder auf Ungarisch oder Englisch auf. Vielen Dank!", "icon": "translate"}
         ],
         "es": [
-            {"color": "red", "message": "Por favor, póngase en contacto con nosotros en húngaro o inglés. ¡Gracias!"}
+            {"color": "orange", "message": "Por favor, póngase en contacto con nosotros en húngaro o inglés. ¡Gracias!", "icon": "translate"}
         ],
         "fr": [
-            {"color": "red", "message": "Veuillez nous contacter en hongrois ou en anglais. Merci !"}
+            {"color": "orange", "message": "Veuillez nous contacter en hongrois ou en anglais. Merci !", "icon": "translate"}
         ],
         "ru": [
-            {"color": "red", "message": "Пожалуйста, свяжитесь с нами на венгерском или английском языке. Спасибо!"}
+            {"color": "orange", "message": "Пожалуйста, свяжитесь с нами на венгерском или английском языке. Спасибо!", "icon": "translate"}
         ]
     },
 

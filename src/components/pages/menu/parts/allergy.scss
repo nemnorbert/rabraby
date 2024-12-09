@@ -40,3 +40,10 @@ $ani-time: .5s;
         color: $color-1;
     }
 }
+
+@media only screen and (min-width: $max-width) {
+    .allergy {
+        margin-top: 25px;
+        border-radius: 1rem 1rem 0 0;
+    }
+}

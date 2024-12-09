@@ -2,7 +2,7 @@ import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import style from "./starfood.scss?inline";
 import menuJson from "~/config/menu.json";
-import Food from "~/components/menu/food";
+import Food from "~/components/pages/menu/parts/food";
 import type { TranslatesCurrent } from "~/types/translates";
 const menuData: any = menuJson;
 

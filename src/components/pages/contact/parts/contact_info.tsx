@@ -1,5 +1,5 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import style from "./contact.scss?inline";
+import styles from "./contact_info.scss?inline";
 import configJson from "~/config/general.json";
 import type { Config } from "~/types/general_config";
 import type { TranslatesCurrent } from "~/types/translates";
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default component$((props: Props) => {
-    useStylesScoped$(style);
+    useStylesScoped$(styles);
     const translate = props.translate;
     const faq = props.translate.faq;
     const company = Object.entries(config.company.data);

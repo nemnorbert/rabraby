@@ -7,6 +7,7 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
     position: relative;
+    width: 100%;
 
     & > * {
         padding: 1rem;
@@ -123,7 +124,7 @@
 @media only screen and (min-width: $max-width) {
     .container {
         .menu {
-            border-radius: 0 0 $border-size-main $border-size-main;
+            border-radius: $border-size-main;
         }
     }
 }

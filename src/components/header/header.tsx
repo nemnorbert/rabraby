@@ -4,10 +4,9 @@ import { Link, useLocation } from "@builder.io/qwik-city";
 import { CTX_Translate } from '~/root';
 import logo from '~/media/assets/logo.svg?raw';
 
-import LangSwitcher from '~/components/langswitcher/langswitcher';
+import LangSwitcher from '~/components/utils/langswitcher/langswitcher';
 import style from "./header.scss?inline";
 import MobileMenu from '../mobilemenu/mobilemenu';
-import DarkMode from '~/components/darkmode/darkmode';
 import configJson from '~/config/general.json';
 import type { Config } from '~/types/general_config';
 
@@ -56,9 +55,6 @@ export default component$(() => {
                             }
                         </ul>
                     </nav>
-                    <div class="dark">
-                        <DarkMode />
-                    </div>
                     <LangSwitcher />
                     <div class="mobile-toggle" onClick$={() => mobileIsOpen.value = true}>
                         <span></span><span></span><span></span>

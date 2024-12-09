@@ -8,12 +8,13 @@
     z-index: 1;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
     max-height: 40%;
     overflow: auto;
     line-height: 1.3em;
     text-align: center;
     align-items: baseline;
+    text-align: left;
 
     & > div {
         background-color: var(--primary-color);
@@ -24,6 +25,7 @@
         border-radius: $gap-2;
         font-weight: bold;
         overflow: auto;
+        text-transform: uppercase;
     }
     .red { background-color: rgba(255, 0, 0, .8); }
     .blue { background-color: rgba(40, 112, 194, .8); }

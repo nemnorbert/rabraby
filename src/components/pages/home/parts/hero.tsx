@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import style from "./hero.scss?inline"
-import Alerts from "../alerts/alerts";
+import Alerts from "../../../utils/alerts/alerts";
 import OpenHours from "./open_hours";
 import type { TranslatesCurrent } from "~/types/translates";
 import configJson from '~/config/general.json';
@@ -15,7 +15,9 @@ interface Props {
 export default component$((props: Props) => {
   useStylesScoped$(style);
   const translate = props.translate;
+  const lang = translate.iso ?? "en";
   const welcomeBtns = translate.home.buttons;
+  const alerts = config.alerts?.[lang] ?? [];
   
   // Típusellenőrzés
   const activeBtns = (translate.home.buttons_active || []).filter(
@@ -28,7 +30,7 @@ export default component$((props: Props) => {
   return (
     <section id="home">
         <div class="welcome">
-          <Alerts translate={translate} />
+          <Alerts alerts={alerts} />
           <div class="title">
               <h1>{ translate.home.title }</h1>
               <p>{ translate.home.description }</p>

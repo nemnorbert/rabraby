@@ -42,7 +42,7 @@
 @media only screen and (min-width: $max-width) {
     .hero {
         margin-top: 2rem;
-        border-radius: $border-size-main $border-size-main 0 0;
+        border-radius: $border-size-main;
         
         h1 {
             font-size: 70px;
@@ -53,10 +53,6 @@
             right: -1rem;
             animation: drinkAni2 5s infinite;
         }
-    }
-    .hero.round {
-        border-radius: $border-size-main;
-        margin-bottom: 1rem;
     }
 
     @keyframes drinkAni2 {

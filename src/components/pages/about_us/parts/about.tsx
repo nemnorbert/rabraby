@@ -1,5 +1,5 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import style from "./about_us.scss?inline";
+import style from "./about.scss?inline";
 import type { TranslatesCurrent } from "~/types/translates";
 
 interface Props {

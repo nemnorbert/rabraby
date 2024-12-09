@@ -1,24 +1,11 @@
-import { component$, useContext, useStylesScoped$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import Reviews from "~/components/about/reviews";
-import { CTX_Translate } from '~/root';
-import AboutUs from "~/components/about/about_us";
-//import Gallery from "~/components/about/gallery";
-import style from "./style.scss?inline";
-import Hero from "~/components/hero/hero";
+import AboutUs from "~/components/pages/about_us/about_us";
 
 export default component$(() => {
-  const translates = useContext(CTX_Translate);
-  useStylesScoped$(style);
 
   return (
-    <>
-      <section>
-        <Hero title={translates.current.navigation.about} image="about" />
-        <AboutUs translate={translates.current} />
-        <Reviews translate={translates.current} />
-      </section>
-    </>
+    <AboutUs />
   );
 });
 

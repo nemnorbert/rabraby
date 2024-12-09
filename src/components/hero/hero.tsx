@@ -5,7 +5,6 @@ import { buildSrcSet, buildSizes } from "~/utils/buildImages";
 interface Props {
     title?: string;
     image: string;
-    bottom?: boolean;
     video?: boolean;
 }
 
@@ -13,14 +12,13 @@ export default component$((props: Props) => {
     useStylesScoped$(style);
     const sizes = [200, 400, 800, 1000, 1200, 1500];
     const title = props.title || "";
-    const bottom = props.bottom;
     const image = props.image;
     const video = props.video;
     const srcSet = buildSrcSet(image, sizes, ['hero']);
     const sizesAttr = buildSizes(sizes);
 
   return (
-    <div class={ bottom ? "hero" : "hero round"}>
+    <div class='hero'>
         <h1>{ title }</h1>
         { video ?
             <video 
