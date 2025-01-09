@@ -1,172 +1,156 @@
 {
-    "food": {
-        "L01": {
-            "en": "French onion soup",
-            "hu": "Francia hagymaleves"
+    "dishes": [
+        {
+            "id": "1",
+            "hu": "Francia hagymaleves",
+            "en": "French onion soup"
         },
-        "L02": {
-            "en": "Bouillon with threadnoodles in bowl",
-            "hu": "Húsleves cérnametélttel csészében"
+        {
+            "id": "2",
+            "hu": "Magyar gulyásleves",
+            "en": "Hungarian goulash soup"
         },
-        "L03": {
-            "en": "Chicken ragout soup",
-            "hu": "Csirkeragu leves"
+        {
+            "id": "3",
+            "hu": "Csirkeragu leves",
+            "en": "Chicken soup"
         },
-        "L04": {
-            "en": "Hungarian Goulash soup",
-            "hu": "Magyar gulyásleves"
+        {
+            "id": "4",
+            "hu": "Húsleves cérnametélttel",
+            "en": "Chicken soup with vermicelli"
         },
-        "L05": {
-            "en": "Bouillon with threadnoodles in bowl",
-            "hu": "Húsleves cérnametélttel, csészében"
+        {
+            "id": "5",
+            "hu": "Csirkemell filé roston házi lecsóval, rizzsel",
+            "en": "Grilled chicken breast with Hungarian ratatouille (peppers and tomatoes) and rice"
         },
-        "L06": {
-            "en": "Green pea soup in a cup",
-            "hu": "Zöldborsóleves csészében"
+        {
+            "id": "6",
+            "hu": "Gesztenyepüré",
+            "en": "Chestnut purée"
         },
-
-        "F01": {
-            "en": "Rogue steak with parsley potatoes and rice",
-            "hu": "Zsiványpecsenye petrezselymes burgonyával és rizzsel"
+        {
+            "id": "7",
+            "hu": "Almáspite",
+            "en": "Apple pie"
         },
-        "F02": {
-            "en": "Zucchini chicken with French fries",
-            "hu": "Cukkinis csirke hasábburgonyával"
+        {
+            "id": "8",
+            "hu": "Zsí­ványpecsenye petrezselymes burgonyával",
+            "en": "Highwayman's roast meat in gravy with garlic and parsley potatoes"
         },
-        "F03": {
-            "en": "Grilled chicken breast with forest fruit sauce and croquettes",
-            "hu": "Roston sült csirkemell erdei gyümölcsszósszal, krokettel"
+        {
+            "id": "9",
+            "hu": "Csirkemell filé Cordon Bleu módon, petrezselymes burgonyával",
+            "en": "Chicken breast fillet à la Cordon Bleu with parsley mashed potatoes"
         },
-        "F04": {
-            "en": "A savoury selection of meat slices a'la Rab Ráby (2 person)",
-            "hu": "Vegyes hús ízelítő fatányéron (két személyre)"
+        {
+            "id": "10",
+            "hu": "Vegyes friss saláta",
+            "en": "Fresh mixed salad"
         },
-        "F05": {
-            "en": "Roasted chicken breast fillet with a Hungarian homemade dish of tomato and rice",
-            "hu": "Csirkemell filé roston, házi lecsóval, rizzsel"
+        {
+            "id": "11",
+            "hu": "Vörösboros marhapörkölt galuskával",
+            "en": "Beef stew in red wine sauce with dumplings"
         },
-        "F06": {
-            "en": "Chicken breast cutlet á la “Cordon bleu”",
-            "hu": "Csirkemell filé Cordon Bleu módon, petrezselymes burgonyával"
+        {
+            "id": "12",
+            "hu": "Fagylalt kehelyben",
+            "en": "Ice cream served in a bowl"
         },
-        "F07": {
-            "en": "Beef stew in red wine with dumplings",
-            "hu": "Vörösboros marhapörkölt galuskával"
+        {
+            "id": "13",
+            "hu": "Roston sült csirkemell erdei gyümölcsszósszal, burgonya kroketttal",
+            "en": "Grilled chicken breast with forest fruit sauce and potato croquette"
         },
-        "F08": {
-            "en": "Pork medallions Bakony style with dumplings",
-            "hu": "Bakonyi sertés szelet, galuskával"
+        {
+            "id": "14",
+            "hu": "Rántott csirkemell filé, petrezselymes burgonyával",
+            "en": "Breaded fried chicken breast with potatoes"
         },
-        "F09": {
-            "en": "Paprika Chicken (chicken stew) with Gnocchi",
-            "hu": "Csirkepaprikás galuskával"
+        {
+            "id": "15",
+            "hu": "Ropogós kacsacomb párolt káposztával",
+            "en": "Crispy duck leg with braised cabbage"
         },
-        "F10": {
-            "en": "Breaded chicken breast fillet with parsley potatoes",
-            "hu": "Rántott csirkemell filé petrezselymes burgonyával"
+        {
+            "id": "16",
+            "hu": "Palacsinta házi lekvárral töltve",
+            "en": "Pancake filled with homemade jam"
         },
-        "F11": {
-            "en": "Crispy duck leg with braised champagne cabbage",
-            "hu": "Ropogós kacsacomb, párolt káposztával"
+        {
+            "id": "17",
+            "hu": "Cigánypecsenye hasábburgonyával",
+            "en": "Gypsy roast pork steak with fried potato"
         },
-
-        "D01": {
-            "en": "Apple pie",
-            "hu": "Almás pite"
+        {
+            "id": "18",
+            "hu": "Húsleves szárnyas hússal",
+            "en": "Bouillon (chicken soup) with poultry meat"
         },
-        "D02": {
-            "en": "Pancake filled with walnut cream",
-            "hu": "Dióval töltött palacsinta"
+        {
+            "id": "19",
+            "hu": "Sült csülök",
+            "en": "Roast pork knuckle"
         },
-        "D03": {
-            "en": "Mashed chestnuts with whipped cream",
-            "hu": "Gesztenyepüré"
-        },
-        "D04": {
-            "en": "Ice cream cup",
-            "hu": "Fagylaltkehely"
-        },
-        "D05": {
-            "en": "Sweet cottage cheese dumplings",
-            "hu": "Tejfeles túrógombóc"
-        },
-        "D06": {
-            "en": "Pancakes stuffed with cocoa",
-            "hu": "Kakaóval töltött palacsinta"
-        },
-        "D07": {
-            "en": "Pancakes stuffed with homemade jam",
-            "hu": "Palacsinta házi lekvárral töltve"
-        },
-
-        "E01": {
-            "en": "Fresh mixed salad",
-            "hu": "Vegyes friss saláta"
+        {
+            "id": "20",
+            "hu": "Somlói galuska",
+            "en": "Sponge cake Somló style with whipped cream"
         }
-    },
-    "menu": {
-        "2501": {
-            "price": 19,
-            "food": [
-               {"name": "L01"},
-               {"name": "F05"},
-               {"name": "D02"}
-            ]
+    ],
+    "menus": [
+        {
+            "id": "2501",
+            "items": [1, 5, 16],
+            "price": 19
         },
-        "2502": {
-            "price": 16,
-            "food": [
-               {"name": "L04"},
-               {"name": "D01"}
-            ]
+        {
+            "id": "2502",
+            "items": [2, 7],
+            "price": 14
         },
-        "2503": {
-            "price": 14,
-            "food": [
-               {"name": "L03"},
-               {"name": "F01"},
-               {"name": "D01"}
-            ]
+        {
+            "id": "2503",
+            "items": [3, 8, 7],
+            "price": 14
         },
-        "2504": {
-            "price": 25,
-            "food": [
-               {"name": "L04"},
-               {"name": "F06"},
-               {"name": "D03"}
-            ]
+        {
+            "id": "2504",
+            "items": [2, 9, 6],
+            "price": 22
         },
-        "2505": {
-            "price": 24,
-            "food": [
-               {"name": "E01"},
-               {"name": "F07"},
-               {"name": "D04"}
-            ]
+        {
+            "id": "2505",
+            "items": [10, 11, 12],
+            "price": 22
         },
-        "2506": {
-            "price": 19,
-            "food": [
-                {"name": "L05"},
-                {"name": "F03"},
-                {"name": "D06"}
-            ]
+        {
+            "id": "2506",
+            "items": [4, 13],
+            "price": 18
         },
-        "2507": {
-            "price": 15,
-            "food": [
-                {"name": "L05"},
-                {"name": "F10"},
-                {"name": "D01"}
-            ]
+        {
+            "id": "2507",
+            "items": [4, 14, 7],
+            "price": 15
         },
-        "2508": {
-            "price": 24,
-            "food": [
-                {"name": "L05"},
-                {"name": "F11"},
-                {"name": "D07"}
-            ]
+        {
+            "id": "2508",
+            "items": [4, 15, 16],
+            "price": 24
+        },
+        {
+            "id": "2509",
+            "items": [2, 17, 12],
+            "price": 19
+        },
+        {
+            "id": "2510",
+            "items": [18, 19, 20],
+            "price": 23
         }
-    }
+    ]
 }

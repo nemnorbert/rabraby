@@ -41,12 +41,10 @@
                 background-color: rgb(36, 73, 143);
             }
             .pdf {
-                background-color: rgb(32, 139, 32);
-                animation: 2s pdfAni infinite;
+                background-color: rgb(52, 146, 52);
             }
-            @keyframes pdfAni {
-                0%, 100% {scale: 1;}
-                50% {scale: .9;}
+            .word {
+                background-color: rgb(45, 43, 179);
             }
         }
     }

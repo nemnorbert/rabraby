@@ -10,11 +10,10 @@
     },
     "alerts": {
         "en": [
-            {"color": "blue", "message": "We wish you happy holidays!", "icon": "emoji-laughing-fill"}
+            
         ],
         "hu": [
-            {"color": "blue", "message": "Karácsonyra halászlé és töltött káposzta elvihető! 06209149737" },
-            {"color": "green", "message": "Kellemes ünnepeket kívánunk!", "icon": "emoji-laughing-fill" }
+            
         ],
         "de": [
             {"color": "orange", "message": "Bitte nehmen Sie Kontakt mit uns entweder auf Ungarisch oder Englisch auf. Vielen Dank!", "icon": "translate"}
