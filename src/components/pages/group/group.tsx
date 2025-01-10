@@ -24,7 +24,7 @@ export default component$(() => {
               </a>
             }
             {
-              <a href={`/pdf/group_2025_${lang}.xml`} target="_blank" rel="noreferrer" class="word">
+              <a href={`/pdf/group_2025_${lang}.doc`} target="_blank" rel="noreferrer" class="word">
                 <i class="bi bi-file-earmark-word-fill"></i> Word
               </a>
             }
