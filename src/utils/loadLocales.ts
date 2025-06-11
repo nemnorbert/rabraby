@@ -3,7 +3,7 @@ import { langValid } from '~/utils/langValid';
 
 function getBaseUrl(path?: string): string {
   if (path) { return path; }
-  return process.env.NODE_ENV === 'production' ? 'https://rabraby.hu' : 'http://localhost:5173';
+  return process.env.NODE_ENV === 'production' ? 'https://rabraby.hu' : 'http://localhost:5174';
 }
 
 async function loadTranslations(iso = "en", path?: string): Promise<TranslatesCurrent | undefined> {

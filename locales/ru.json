@@ -20,7 +20,7 @@
     "home": {
       "title": "Ресторан Rab Ráby, Szentendre",
       "description": "Мы тепло приветствуем вас в нашем ресторане в сердце Сентендре. Вкусная еда, антиквариат, потрясающий интерьер и выгодные цены с 1982 года.",
-      "buttons_active": ["card", "dog", "fire", "wifi"],
+      "buttons_active": ["card", "garden", "dog", "wifi"],
       "buttons": {
         "card": "Принимаем кредитные карты",
         "garden": "Сад",

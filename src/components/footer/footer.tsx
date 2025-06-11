@@ -7,7 +7,6 @@ import { CTX_Translate } from '~/root';
 import logo from "~/media/assets/logo.svg?raw";
 
 const config: Config = configJson;
-const adanorLogo = "/adanor.svg";
 
 export default component$(() => {
   const translate = useContext(CTX_Translate);
@@ -64,10 +63,6 @@ export default component$(() => {
 
       <div class="bottom">
         <div class="creator">
-          <div>powered by</div>
-          <a href="https://adanor.eu" target="_blank" rel="noreferrer">
-            <img width="120" height="21" src={adanorLogo} alt="Logo of the Website's Developer" />
-          </a>
         </div>
       </div>
     </footer>

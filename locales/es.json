@@ -20,7 +20,7 @@
     "home": {
       "title": "Restaurante Rab Ráby, Szentendre",
       "description": "Le damos una cálida bienvenida a nuestro restaurante en el corazón de Szentendre. Comida deliciosa, antigüedades, un interior impresionante y precios favorables desde 1982.",
-      "buttons_active": ["card", "dog", "fire", "wifi"],
+      "buttons_active": ["card", "dog", "garden", "wifi"],
       "buttons": {
         "card": "Tarjeta de Crédito Aceptada",
         "garden": "Jardín",
